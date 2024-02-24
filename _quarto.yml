@@ -2,18 +2,40 @@ project:
   type: website
 
 website:
-  title: "AIBasicswithAK"
+ # comments:
+  #  giscus:
+   #   repo: ArunKoundinya/AIBasicswithAK
+
+  title: "<img src='https://arunkoundinya.github.io/AIBasicswithAK/logo.png' style='width: 2.2em; height: 2.2em; border-radius: 30%;'> <b>AI Basics with AK</b>"
+  site-url: https://arunkoundinya.github.io/AIBasicswithAK/
+  description: "LETS BREATHE DATA"
+  favicon: "images/logo.png"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: seasons/index.qmd
+        text: VlogSeries
+      - href: blogs/index.qmd
+        text: Blogs
+
+
+    right: 
+      - icon: rss
+        href: index.xml
+      - icon: github
+        href: http://arunkoundinya.github.io/
+      - icon: linkedin
+        href: https://www.linkedin.com/in/arunkoundinya0710/  
+
+page-footer:
+  right: "This page is built with 💛 and [Quarto](https://quarto.org/)."
+  left: "&copy; Copyright 2024, Arun Koundinya Parasa"
+  background: "#36494E" 
+
 
 format:
   html:
-    theme: cosmo
+    theme: cerulean
     css: styles.css
     toc: true
-
-
-

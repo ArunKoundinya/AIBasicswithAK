@@ -1,7 +1,12 @@
 ---
-title: "AIBasicswithAK"
+title: "AI Basics with AK"
 ---
 
-This is a Quarto website.
+Welcome to my AI Vlog Series Hub! 🚀 This website is crafted to elevate your experience with my YouTube AI Vlog Series. Let's dive into the exciting content structured into two sections:
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+💻 Notes and Codes: Uncover the magic behind the scenes! Starting from Season-2 onward, immerse yourself in detailed notes and codes. May be presented in markdown files or dynamic presentations.
+
+📚 Assisted Blogs: Thoughtfully created blogs designed to complement the AI Vlog Series. It has fascinating details that bring the series to life.
+
+I'm thrilled to embark on this next chapter, and I hope you'll find joy and enrichment in exploring these resources. Your support is my motivation—thank you for being a part of this exciting adventure! 🌟
+

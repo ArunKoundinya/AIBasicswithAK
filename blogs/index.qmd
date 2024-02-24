@@ -1,0 +1,14 @@
+---
+title: "My Views and Learnings on AI"
+subtitle: "Having AI for breakfast"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  feed: true
+page-layout: full
+title-block-banner: true
+---
