@@ -5,7 +5,7 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>&lt;img src=&#39;logo.png&#39; style=&#39;width: 2.2em; height: 2.2em; border-radius: 30%;&#39;&gt; &lt;b&gt;AI Basics with AK&lt;/b&gt;</title>
+<title>&lt;img src=&#39;https://arunkoundinya.github.io/AIBasicswithAK/logo.png&#39; style=&#39;width: 2.2em; height: 2.2em; border-radius: 30%;&#39;&gt; &lt;b&gt;AI Basics with AK&lt;/b&gt;</title>
 <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/</link>
 <atom:link href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/index.xml" rel="self" type="application/rss+xml"/>
 <description>LETS BREATHE DATA</description>
