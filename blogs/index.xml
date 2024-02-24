@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>&lt;img src=&#39;logo.png&#39; style=&#39;width: 2.2em; height: 2.2em; border-radius: 30%;&#39;&gt; &lt;b&gt;AI Basics with AK&lt;/b&gt;</title>
+<link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/</link>
+<atom:link href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/index.xml" rel="self" type="application/rss+xml"/>
+<description>LETS BREATHE DATA</description>
+<generator>quarto-1.4.550</generator>
+<lastBuildDate>Tue, 25 Jul 2023 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Does Data Scientists need to understand Domain Knowledge?</title>
+  <dc:creator>Arun Koundinya Parasa</dc:creator>
+  <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/image.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="439"></p>
+</figure>
+</div>
+<p>This article intends to explain domain knowledge’s importance to freshers. The example provided below is from my own experience.</p>
+<p>Businesses, by nature, want to earn profits, and why is it needed to make profits? From an employee perspective, the company gives salary and growth; from a company perspective, it intends to stay long, live and fresh as it grows.</p>
+<p>Profit = Revenue - Cost</p>
+<p>If the business needs to stay longer, the profit has to be on the positive side. It means either the revenue should increase or the cost should decrease; also, both can happen.</p>
+<p>Let us explore simple business case scenarios that will help us learn why understanding the business comes first before we solutionize.</p>
+<p>Case { Retail Store Business }</p>
+<p>Assume that a data scientist was tasked to help the retail store stock the “right” quantity. By intuition, most “data scientists” consider the last X years of data for prediction. They may take various models from “simple averages” to “ARIMA” to “LSTM” and choose the best model based on the evaluation metrics like AIC or BIC, or MAPE. { Classic Time series modelling algorithms }</p>
+<p>After this exercise, we will determine the quantity that could sell for the next period. Does it end here?</p>
+<p>It would not, because we haven’t answered the business question of what should be the stock holding for the next period. i.e., how many goods should be stocked in the store?</p>
+<p>Say, if we want to proceed with the model’s output itself. Since the model has inherent bias and variance, certain goods might get stocked out sooner, and others will not sell as predicted. { Alternatively, at times, the business could not procure the goods as indicated due to the cash flow constraint. Which we will discuss in other cases}</p>
+<p>What happens if there is stock out; revenue drops. Alternatively, what happens if there is excess stock; cost increases. In both of these cases, the profit decreases.</p>
+<p>Should we conclude that data science is not helping in this scenario? No, it isn’t.</p>
+<p>It is just that it has not been adequately solutionized. So far, we have put the hat of “Machine Learning”, which needs to be started with the “Traditional Research” cap.</p>
+<p>Under Traditional research, we may learn the following things: - Stock will come from warehouses every two days, for which the indent has to be shared a day earlier.</p>
+<ul>
+<li>In all case scenarios, a buffer or safety stock should be kept in the store for fast-moving items to avoid supply chain shocks.</li>
+<li>Evading bull-whip effect, the probable forecast for certain goods must be shared with vendors for effective coordination.</li>
+<li>A simulation must be constructed such that the stock at the store is not too high to avoid high business costs. Also, the store needs to maintain sufficient service levels(of the goods, i.e., stock availability) so the customer doesn’t face a bad experience.</li>
+</ul>
+<p>Based on these learnings, we will research any existing methodologies available to address these questions. Bingo!!</p>
+<p>We would crack the solution by browsing the topics of Supply Chain Analytics or Operations Optimization.</p>
+<p>Which will provide methods to arrive at Safety Stock, Re-order Level, Re-order Quantity and Service Levels.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/safety_stock.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="437"></p>
+</figure>
+</div>
+<p>From here, we can use ML ( Time Series Modelling ) to arrive at tomorrow’s prediction and perform a simulation ( Monte Carlo Simulation ) to arrive at service levels for different clusters ( K-Means Clustering ) of products. These outputs are fed into the above solution we saw in “Traditional Research”.</p>
+<p>Later we wear the “Software Development” hat to fine-tune the coding and keep the end-to-end pieces in hands-off mode.</p>
+<p>In this way, Data Scientists must change hats to complete the work.</p>
+<p>In this case, we can clearly see that the “Traditional Research” hat is hugely needed to understand the “lay of the land”. Else the entire modelling effort would have faced an identity crisis.</p>
+<p>Is there any defined prescription or rules to understand the lay of the land? The answer is NO. The long answer is</p>
+<ul>
+<li>Curiosity to learn about the domain.</li>
+<li>Asking the business the right questions.</li>
+<li>Doing personal research as, at times, business is driven by perceptions or experience. { Only a “fresh eye” brings a new perspective } - Learning what others have done already. There would have been plenty of research already available. <span style="font-size: small;">{ There is no need for new IP in most of the scenarios }</span></li>
+<li>Learning Consultant frameworks like BCG Matrix, Product Life Cycle, Customer Life Cycle, etc., will help us think on alternative perspectives.</li>
+</ul>
+<p>There are several examples that I have faced personally in my early data science career, which told me the hard way about the importance of domain knowledge. The above example is one such classic. Stay tuned for more Data science news.</p>
+
+
+
+ ]]></description>
+  <category>domain</category>
+  <category>operations</category>
+  <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/</guid>
+  <pubDate>Tue, 25 Jul 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/image.png" medium="image" type="image/png" height="131" width="144"/>
+</item>
+</channel>
+</rss>
