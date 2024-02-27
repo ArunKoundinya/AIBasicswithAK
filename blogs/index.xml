@@ -9,8 +9,8 @@
 <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/</link>
 <atom:link href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/index.xml" rel="self" type="application/rss+xml"/>
 <description>LETS BREATHE DATA</description>
-<generator>quarto-1.4.550</generator>
-<lastBuildDate>Tue, 25 Jul 2023 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.4.537</generator>
+<lastBuildDate>Tue, 25 Jul 2023 07:00:00 GMT</lastBuildDate>
 <item>
   <title>Does Data Scientists need to understand Domain Knowledge?</title>
   <dc:creator>Arun Koundinya Parasa</dc:creator>
@@ -72,7 +72,7 @@
   <category>domain</category>
   <category>operations</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/</guid>
-  <pubDate>Tue, 25 Jul 2023 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 25 Jul 2023 07:00:00 GMT</pubDate>
   <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/image.png" medium="image" type="image/png" height="131" width="144"/>
 </item>
 </channel>
