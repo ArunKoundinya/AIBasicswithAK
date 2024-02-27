@@ -1,24 +1,17 @@
 [
   {
-    "objectID": "blogs/index.html",
-    "href": "blogs/index.html",
-    "title": "My Views and Learnings on AI",
-    "section": "",
-    "text": "Does Data Scientists need to understand Domain Knowledge?\n\n\n\n\n\n\ndomain\n\n\noperations\n\n\n\n\n\n\n\n\n\nJul 25, 2023\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "seasons_homework/index.html",
-    "href": "seasons_homework/index.html",
+    "objectID": "AI_Vlogs/index.html",
+    "href": "AI_Vlogs/index.html",
     "title": "AI Basics with AK",
     "section": "",
     "text": "This format is inspired from my data visualization class; So will be sticking to this format.\n\n\n\nDate\nSeason\nSeason Title\nEpisode\nEposide Title\nSlides/Markdown Link\nYour Homework\n\n\n\n\n1st March 2024\nSeason-2\nIntroduction to Python Programming\nEpisode-1\nWhy Python?\nLink\nLink"
   },
   {
-    "objectID": "seasons_homework/season02/episode01/homework.html",
-    "href": "seasons_homework/season02/episode01/homework.html",
-    "title": "Home Work 01",
+    "objectID": "blogs/index.html",
+    "href": "blogs/index.html",
+    "title": "My Views and Learnings on AI",
     "section": "",
-    "text": "This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create a Github Account\n\n\nQuestion 2 - Install VS Code or Use Google Colab\n\n\nQuestion 3 - Create a Python File or Jupyter Notebook file that answers the following questions:\n\nCreate a function that adds two numbers.\nCreate a function that subtracts two numbers.\n\nCheck slides for reference.\n\n\nQuestion 3 - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.\n———————————————— Happy Learning —————————————————–"
+    "text": "Does Data Scientists need to understand Domain Knowledge?\n\n\n\n\n\n\ndomain\n\n\noperations\n\n\n\n\n\n\n\n\n\nJul 25, 2023\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -33,5 +26,12 @@
     "title": "Does Data Scientists need to understand Domain Knowledge?",
     "section": "",
     "text": "This article intends to explain domain knowledge’s importance to freshers. The example provided below is from my own experience.\nBusinesses, by nature, want to earn profits, and why is it needed to make profits? From an employee perspective, the company gives salary and growth; from a company perspective, it intends to stay long, live and fresh as it grows.\nProfit = Revenue - Cost\nIf the business needs to stay longer, the profit has to be on the positive side. It means either the revenue should increase or the cost should decrease; also, both can happen.\nLet us explore simple business case scenarios that will help us learn why understanding the business comes first before we solutionize.\nCase { Retail Store Business }\nAssume that a data scientist was tasked to help the retail store stock the “right” quantity. By intuition, most “data scientists” consider the last X years of data for prediction. They may take various models from “simple averages” to “ARIMA” to “LSTM” and choose the best model based on the evaluation metrics like AIC or BIC, or MAPE. { Classic Time series modelling algorithms }\nAfter this exercise, we will determine the quantity that could sell for the next period. Does it end here?\nIt would not, because we haven’t answered the business question of what should be the stock holding for the next period. i.e., how many goods should be stocked in the store?\nSay, if we want to proceed with the model’s output itself. Since the model has inherent bias and variance, certain goods might get stocked out sooner, and others will not sell as predicted. { Alternatively, at times, the business could not procure the goods as indicated due to the cash flow constraint. Which we will discuss in other cases}\nWhat happens if there is stock out; revenue drops. Alternatively, what happens if there is excess stock; cost increases. In both of these cases, the profit decreases.\nShould we conclude that data science is not helping in this scenario? No, it isn’t.\nIt is just that it has not been adequately solutionized. So far, we have put the hat of “Machine Learning”, which needs to be started with the “Traditional Research” cap.\nUnder Traditional research, we may learn the following things: - Stock will come from warehouses every two days, for which the indent has to be shared a day earlier.\n\nIn all case scenarios, a buffer or safety stock should be kept in the store for fast-moving items to avoid supply chain shocks.\nEvading bull-whip effect, the probable forecast for certain goods must be shared with vendors for effective coordination.\nA simulation must be constructed such that the stock at the store is not too high to avoid high business costs. Also, the store needs to maintain sufficient service levels(of the goods, i.e., stock availability) so the customer doesn’t face a bad experience.\n\nBased on these learnings, we will research any existing methodologies available to address these questions. Bingo!!\nWe would crack the solution by browsing the topics of Supply Chain Analytics or Operations Optimization.\nWhich will provide methods to arrive at Safety Stock, Re-order Level, Re-order Quantity and Service Levels.\n\n\n\n\n\nFrom here, we can use ML ( Time Series Modelling ) to arrive at tomorrow’s prediction and perform a simulation ( Monte Carlo Simulation ) to arrive at service levels for different clusters ( K-Means Clustering ) of products. These outputs are fed into the above solution we saw in “Traditional Research”.\nLater we wear the “Software Development” hat to fine-tune the coding and keep the end-to-end pieces in hands-off mode.\nIn this way, Data Scientists must change hats to complete the work.\nIn this case, we can clearly see that the “Traditional Research” hat is hugely needed to understand the “lay of the land”. Else the entire modelling effort would have faced an identity crisis.\nIs there any defined prescription or rules to understand the lay of the land? The answer is NO. The long answer is\n\nCuriosity to learn about the domain.\nAsking the business the right questions.\nDoing personal research as, at times, business is driven by perceptions or experience. { Only a “fresh eye” brings a new perspective } - Learning what others have done already. There would have been plenty of research already available. { There is no need for new IP in most of the scenarios }\nLearning Consultant frameworks like BCG Matrix, Product Life Cycle, Customer Life Cycle, etc., will help us think on alternative perspectives.\n\nThere are several examples that I have faced personally in my early data science career, which told me the hard way about the importance of domain knowledge. The above example is one such classic. Stay tuned for more Data science news."
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode01/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode01/homework.html",
+    "title": "Home Work 01",
+    "section": "",
+    "text": "This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create a Github Account\n\n\nQuestion 2 - Install VS Code or Use Google Colab\n\n\nQuestion 3 - Create a Python File or Jupyter Notebook file that answers the following questions:\n\nCreate a function that adds two numbers.\nCreate a function that subtracts two numbers.\n\nCheck slides for reference.\n\n\nQuestion 3 - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.\n———————————————— Happy Learning —————————————————–"
   }
 ]
