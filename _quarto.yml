@@ -14,8 +14,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: seasons_homework/index.qmd
-        text: VlogSeries
+      - href: AI_Vlogs/index.qmd
+        text: AI_Vlogs
       - href: blogs/index.qmd
         text: Blogs
 
