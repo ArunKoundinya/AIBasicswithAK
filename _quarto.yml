@@ -14,7 +14,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: seasons/index.qmd
+      - href: seasons_homework/index.qmd
         text: VlogSeries
       - href: blogs/index.qmd
         text: Blogs
@@ -39,3 +39,7 @@ format:
     theme: cerulean
     css: styles.css
     toc: true
+
+execute:
+  freeze: auto
+  echo: true

@@ -1,0 +1,10 @@
+---
+title: "AI Basics with AK"
+subtitle: "Notes for my Vlogs"
+---
+
+This format is inspired from my [data visualization](https://datavizaz.org) class; So will be sticking to this format.
+
+| Date           | Season   | Season Title                       | Episode   | Eposide Title | Slides/Markdown Link                                                                              | Your Homework                                                                                            |
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| 1st March 2024 | Season-2 | Introduction to Python Programming | Episode-1 | Why Python?   | [Link](https://arunkoundinya.github.io/AIBasicswithAK/seasons/season02/episode01/why-python.html) | [Link](https://arunkoundinya.github.io/AIBasicswithAK/seasons_homework/season02/episode01/homework.html) |

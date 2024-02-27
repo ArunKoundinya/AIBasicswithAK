@@ -1,0 +1,132 @@
+---
+title: AI Basics with AK 
+subtitle: Season 02 - Introduction to Python Programming
+title-slide-attributes:
+  data-slide-number: none
+format: 
+  revealjs:
+    incremental: true
+auto-stretch: true
+---
+
+# Episode 01
+
+Why Python ?
+
+## Agenda
+
+-   Growth of Python
+-   Advantages of Python
+-   Use Cases and Popular Libraries
+-   Simple Hello World Program
+-   Other Examples
+-   Resources to learn Python
+-   Tools we use
+
+## Growth of Python
+
+-   Fastest Growing Programming Langauge
+-   Became the official teaching language in major universities
+
+![](growth_of_python.png){width="463"}![](growth_of_python_projection.png){width="455"}
+
+[Link](https://stackoverflow.blog/2017/09/06/incredible-growth-python/)
+
+## Advantages of Python
+
+-   Most popular tool in data science
+-   Good general purpose high-level language program.
+-   Objected Oriented Programming.
+-   It is Free!!!!
+-   Community and Documentation.
+
+## Use Cases and Popular Libraries
+
+::: columns
+::: {.column width="50%"}
+
+###  Use Cases
+- Web Development
+-   Data Science
+-   Artificial Intelligence
+-   Automation & Scripting
+-   Cloud Computing
+
+:::
+
+::: {.column width="50%"}
+###  Popular Libraries
+-   Pandas
+-   Numpy
+-   Scikit-learn
+-   Scapy / NLTK
+-   Tensorflow
+-   Boto3
+:::
+:::
+
+## Simple 'Hello World' Program
+
+```{python}
+print("Hello, World!")
+```
+
+
+```{python}
+def hello_world():
+    print("Hello, World!")
+
+# Call the function
+hello_world()
+
+```
+
+## Simple Operators
+
+```{python}
+100+100
+```
+
+
+```{python}
+x = 9 * 9
+print(x)
+```
+
+
+```{python}
+x = 300 - x
+print(x)
+```
+
+## Other Example
+
+```{python}
+for countdown in 5, 4, 3, 2, 1, "0":
+    print(countdown)
+```
+
+
+```{python}
+for countdown in 5, 4, 3, 2, 1, "0":
+  if countdown == "0":
+    print("Got You")
+```
+
+## Resources to learn Python
+
+-   [Python for Data Analysis, 2nd Edition](https://learning.oreilly.com/library/view/python-for-data/9781491957653/)
+-   [Introducing Python, 2nd Edition](https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/)
+-   Practice ,Google, Stackover flow, ChatGpt
+-   Medium
+
+## Tools to Use - Live Demo
+
+-   VS Code
+    -   A lightweight and versatile code editor that supports seamless integration with multiple tools, enhancing your development workflow.
+-   Google Colab
+    -   Operates in the cloud, eliminating the need for physical installations on laptops or computers. Additionally, it provides the flexibility to work on projects even from tablets, offering a convenient and accessible platform.
+
+# Thank You
+
+Lets see the tools!

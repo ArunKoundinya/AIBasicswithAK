@@ -1,8 +1,0 @@
----
-title: "AI Basics with AK"
-subtitle: "Notes for my Vlogs"
----
-
-| Date           | Season   | Episode   | Eposide Name                       | Slides/Markdown Link | Your Homework |
-|------------|------------|------------|------------|------------|------------|
-| 1st March 2024 | Season-2 | Episode-1 | Introduction to Python Programming | Link                 | Link          |

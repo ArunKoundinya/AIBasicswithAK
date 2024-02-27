@@ -1,0 +1,24 @@
+---
+title: Home Work 01
+subtitle: 26th Feb 2024
+format: html
+---
+
+This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
+
+#### Question 1  - Create a Github Account
+
+#### Question 2  - Install VS Code or Use Google Colab
+
+#### Question 3  - Create a Python File or Jupyter Notebook file that answers the following questions:
+
+-  Create a function that adds two numbers.
+
+-  Create a function that subtracts two numbers. 
+
+Check slides for reference.
+
+#### Question 3  - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.
+
+
+------------------------------------------------  Happy Learning -----------------------------------------------------

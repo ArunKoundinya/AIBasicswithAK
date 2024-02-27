@@ -1,0 +1,20 @@
+author: "Arun Koundinya Parasa"
+footer: "[🔗 VlogsPage](https://arunkoundinya.github.io/AIBasicswithAK/seasons/)"
+logo: "../logo.png"
+
+format:
+  revealjs:
+    menu: false
+    progress: false
+    transition: fade
+    slide-number: true
+    chalkboard: true
+    theme: simple
+
+search : false
+
+editor: visual
+
+execute:
+  freeze: auto
+  echo: true
