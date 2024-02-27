@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.537">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -157,6 +157,15 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This format is inspired from my <a href="https://datavizaz.org">data visualization</a> class; So will be sticking to this format.</p>
 <table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Date</th>
@@ -175,8 +184,8 @@ ul.task-list li input[type="checkbox"] {
 <td>Introduction to Python Programming</td>
 <td>Episode-1</td>
 <td>Why Python?</td>
-<td><a href="https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/slides/season02/episode01/why-python.html">Link</a></td>
-<td><a href="https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/homework/season02/episode01/homework.html">Link</a></td>
+<td>Link</td>
+<td>Link</td>
 </tr>
 </tbody>
 </table>
@@ -345,7 +354,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -566,6 +580,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 
 
