@@ -1,17 +1,24 @@
 [
   {
-    "objectID": "seasons/index.html",
-    "href": "seasons/index.html",
-    "title": "AI Basics with AK",
-    "section": "",
-    "text": "Date\nSeason\nEpisode\nEposide Name\nSlides/Markdown Link\nYour Homework\n\n\n\n\n1st March 2024\nSeason-2\nEpisode-1\nIntroduction to Python Programming\nLink\nLink"
-  },
-  {
     "objectID": "blogs/index.html",
     "href": "blogs/index.html",
     "title": "My Views and Learnings on AI",
     "section": "",
     "text": "Does Data Scientists need to understand Domain Knowledge?\n\n\n\n\n\n\ndomain\n\n\noperations\n\n\n\n\n\n\n\n\n\nJul 25, 2023\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "seasons_homework/index.html",
+    "href": "seasons_homework/index.html",
+    "title": "AI Basics with AK",
+    "section": "",
+    "text": "This format is inspired from my data visualization class; So will be sticking to this format.\n\n\n\nDate\nSeason\nSeason Title\nEpisode\nEposide Title\nSlides/Markdown Link\nYour Homework\n\n\n\n\n1st March 2024\nSeason-2\nIntroduction to Python Programming\nEpisode-1\nWhy Python?\nLink\nLink"
+  },
+  {
+    "objectID": "seasons_homework/season02/episode01/homework.html",
+    "href": "seasons_homework/season02/episode01/homework.html",
+    "title": "Home Work 01",
+    "section": "",
+    "text": "This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create a Github Account\n\n\nQuestion 2 - Install VS Code or Use Google Colab\n\n\nQuestion 3 - Create a Python File or Jupyter Notebook file that answers the following questions:\n\nCreate a function that adds two numbers.\nCreate a function that subtracts two numbers.\n\nCheck slides for reference.\n\n\nQuestion 3 - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.\n———————————————— Happy Learning —————————————————–"
   },
   {
     "objectID": "index.html",
