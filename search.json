@@ -4,7 +4,7 @@
     "href": "AI_Vlogs/index.html",
     "title": "AI Basics with AK",
     "section": "",
-    "text": "This format is inspired from my data visualization class; So will be sticking to this format.\n\n\n\n\n\n\n\n\n\n\n\n\nDate\nSeason\nSeason Title\nEpisode\nEposide Title\nSlides/Markdown Link\nYour Homework\n\n\n\n\n1st March 2024\nSeason-2\nIntroduction to Python Programming\nEpisode-1\nWhy Python?\nLink\nLink"
+    "text": "This format is inspired from my data visualization class; So will be sticking to this format.\n\n\n\nDate\nSeason\nSeason Title\nEpisode\nEposide Title\nSlides/Markdown Link\nYour Homework\n\n\n\n\n1st March 2024\nSeason-2\nIntroduction to Python Programming\nEpisode-1\nWhy Python?\nLink\nLink\n\n\n8th March 2024\nSeason-2\nIntroduction to Python Programming\nEpisode-2\nPython Data Types"
   },
   {
     "objectID": "blogs/index.html",
@@ -32,6 +32,6 @@
     "href": "AI_Vlogs/homework/season02/episode01/homework.html",
     "title": "Home Work 01",
     "section": "",
-    "text": "This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create a Github Account\n\n\nQuestion 2 - Install VS Code or Use Google Colab\n\n\nQuestion 3 - Create a Python File or Jupyter Notebook file that answers the following questions:\n\nCreate a function that adds two numbers.\nCreate a function that subtracts two numbers.\n\nCheck slides for reference.\n\n\nQuestion 3 - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.\n———————————————— Happy Learning —————————————————–"
+    "text": "This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create a Github Account\nRefer to this video if you have doubts.\n\n\n\nQuestion 2 - Install VS Code or Use Google Colab\nRefer to this video for installing VS Code\n\nRefer to this video for Google Colab Python File Creation.\n\n\n\nQuestion 3 - Create a Python File or Jupyter Notebook file that answers the following questions:\n\nCreate a function that adds two numbers.\nCreate a function that subtracts two numbers.\n\nCheck slides for reference.\n\n\nQuestion 3 - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.\n———————————————— Happy Learning —————————————————–"
   }
 ]
