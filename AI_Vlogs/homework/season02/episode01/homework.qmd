@@ -6,19 +6,30 @@ format: html
 
 This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
 
-#### Question 1  - Create a Github Account
+#### Question 1 - Create a Github Account
 
-#### Question 2  - Install VS Code or Use Google Colab
+Refer to this video if you have doubts.
 
-#### Question 3  - Create a Python File or Jupyter Notebook file that answers the following questions:
+{{< video https://www.youtube.com/embed/LcuzlEv8qRI?si=DSmhjJLSyiDNXZH6 width="600" height="400" >}}
 
--  Create a function that adds two numbers.
+#### Question 2 - Install VS Code or Use Google Colab
 
--  Create a function that subtracts two numbers. 
+Refer to this video for installing VS Code
+
+{{< video https://www.youtube.com/embed/CPmQwlycfGI?si=coqa7ZipCh2kvfaJ width="600" height="400" >}}
+
+Refer to this video for Google Colab Python File Creation.
+
+{{< video https://www.youtube.com/embed/1MqYi-mlBDA?si=5Lia0dTUUZ4T8rW3 width="600" height="400" >}}
+
+#### Question 3 - Create a Python File or Jupyter Notebook file that answers the following questions:
+
+-   Create a function that adds two numbers.
+
+-   Create a function that subtracts two numbers.
 
 Check slides for reference.
 
-#### Question 3  - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.
+#### Question 3 - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.
 
-
-------------------------------------------------  Happy Learning -----------------------------------------------------
+------------------------------------------------ Happy Learning -----------------------------------------------------
