@@ -59,7 +59,7 @@ Why Python ?
 -   Pandas
 -   Numpy
 -   Scikit-learn
--   Scapy / NLTK
+-   Spacy / NLTK
 -   Tensorflow
 -   Boto3
 :::
