@@ -1,0 +1,162 @@
+---
+title: AI Basics with AK 
+subtitle: Season 02 - Introduction to Python Programming
+title-slide-attributes:
+  data-slide-number: none
+format: 
+  revealjs:
+    incremental: false
+auto-stretch: true
+---
+
+# Episode 02
+
+Variables & Data Types
+
+## Agenda
+
+::: {style="font-size: 75%;"}
+-   Variables: Foundations of Programming
+    -   Initializaton & Declaration
+    -   Reserve KeyWords
+    -   Updations
+-   Data Types: DNA of Information
+    -   Different Data Types
+    -   Data Type Identification
+:::
+
+## Initializing & Declaration Variables
+
+::: {style="font-size: 75%;"}
+Last week we have seen an example of variables declaration i.e.; `x=2`. However, let us see some basic rules:
+:::
+
+::: {style="font-size: 60%;"}
+-   Variables are like characters.
+-   Variables can contain only Alphabets, Numbers and Underscore
+-   They are case sensitive.
+-   They can start with underscore & alphabets but not with digits.
+:::
+
+::: {style="font-size: 75%;"}
+```{python}
+x0 = "Fish"
+_x = "2"
+x_x = 1203
+x = 2
+x = y = z = "MultipleAssignment"
+```
+
+Declarations that are not allowed
+:::
+
+::: {style="font-size: 60%;"}
+-   `0x = "startingwithzero"`
+-   `x-x = "hyphen"`
+-   `x x = "space"`
+:::
+
+## Reserve Keywords
+
+```{python}
+help("keywords")
+```
+
+## Updating Variables
+
+::: columns
+::: {.column width="50%"}
+```{python}
+
+x =  2
+y = "AI"
+print(y)
+y = x
+print(y)
+
+```
+::: {style="font-size: 75%;"}
+
+Here we can see that the variable `y` has been assigned the value 2.
+
+:::
+
+:::
+::: {.column width="50%"}
+```{python}
+
+x =  2
+y = x
+print(y)
+x = x + 5
+print(y)
+
+```
+
+::: {style="font-size: 75%;"}
+
+Here we can observe that the `y` variable does not get updated after the addition operation.
+
+:::
+
+:::
+
+:::
+
+Why there is a difference?
+
+## Data Types
+
+::: {style="font-size: 75%;"}
+
+| Name          | Type      | Examples                                    |
+|---------------|-----------|---------------------------------------------|
+| Boolean       | `bool`    | `True`, `False`                             |
+| Integer       | `int`     | `1900`, `2000`, `203`                       |
+| Float         | `float`   | `10.30`, `34.56`                            |
+| Complex       | `complex` | `4j`, `6j + 5`                              |
+| Text & String | `str`     | `"AI"`, `"Basics"`                          |
+| Lists         | `list`    | `[ 1 , 2, 3, 4 ]`                           |
+| Tuples        | `tuple`   | `( 3, 4, 5 )`                               |
+| Dictionaries  | `dict`    | `{'course' : "AI" , 'Subject' : "Python" }` |
+| Sets          | `set`     | `{ 4 , 7, 8 }`                              |
+
+:::
+
+## Data Type Identification
+
+::: columns
+::: {.column width="50%"}
+```{python}
+x1 = "3"
+print("Data Type of x1 is :", type(x1))
+x2 = 5
+print("Data Type of x2 is :", type(x2))
+x3 = True
+print("Data Type of x3 is :", type(x3))
+x4 = 4j + 1
+print("Data Type of x4 is :", type(x4))
+x5 = 4.3
+print("Data Type of x5 is :", type(x5))
+```
+:::
+
+::: {.column width="50%"}
+
+```{python}
+x6 = [1,3,4]
+print("Data Type of x6 is :", type(x6))
+x7 = (1,3,4)
+print("Data Type of x7 is :", type(x7))
+x8 = {1,3,4}
+print("Data Type of x8 is :", type(x8))
+x9 = {'course' : "AI" , "Subject": "Python"}
+print("Data Type of x9 is :", type(x9))
+
+```
+
+:::
+
+:::
+
+# Thank You

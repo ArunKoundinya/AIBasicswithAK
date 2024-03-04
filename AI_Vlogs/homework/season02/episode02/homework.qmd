@@ -1,0 +1,29 @@
+---
+title: Home Work 02
+subtitle: 8th March 2024
+format: html
+---
+
+This is our second homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
+
+#### Question 1 - What is Syntax Error? Provide some examples of Syntax Error?
+
+Use comments in `py` file or markdown in `ipynb` file to provide the answer
+
+#### Question 2 - What is meant by Mutable data type? How is it useful in programming?
+
+Hint: Think from Data Science perspective.
+
+Use comments in `py` file or markdown in `ipynb` file to provide the answer
+
+#### Question 3 - Create a function such that you can initialize the variable as zero.
+
+Check slides for reference of week1 and week2.
+
+#### Question 4 - How to convert from one data type to other data type and store in a variable 
+
+Hint: Google how to change the data type of a variable in python
+
+Use comments in `py` file or markdown in `ipynb` file to provide the answer
+
+------------------------------------------------ Happy Learning -----------------------------------------------------

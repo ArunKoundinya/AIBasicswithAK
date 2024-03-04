@@ -5,7 +5,248 @@ subtitle: "Notes for my Vlogs"
 
 This format is inspired from my [data visualization](https://datavizaz.org) class; So will be sticking to this format.
 
-| Date           | Season   | Season Title                       | Episode   | Eposide Title     | Slides/Markdown Link                                                                                      | Your Homework                                                                                             | YouTube Video Link                   |
-|---------|---------|---------|---------|---------|---------|---------|---------|
-| 1st March 2024 | Season-2 | Introduction to Python Programming | Episode-1 | Why Python?       | [Link](https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/slides/season02/episode01/why-python.html) | [Link](https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/homework/season02/episode01/homework.html) | [Link](https://youtu.be/zynrOOSNXro) |
-| 8th March 2024 | Season-2 | Introduction to Python Programming | Episode-2 | Python Data Types |                                                                                                           |                                                                                                           |                                      |
+```{=html}
+<style>
+    .tb table.collapsible {
+        width: 950px;
+        border-collapse: collapse;
+        margin: 50px auto;
+        font-family: 'Calibri (Body)';
+    }
+
+    .tb .collapsible td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .tb {
+        margin: 10px 0;
+    }
+
+    .tb span+span,
+    .collapsible {
+        display: none;
+    }
+
+    .tb input[type="checkbox"]:checked ~ span {
+        display: none;
+    }
+
+    .tb input[type="checkbox"]:checked ~ span+span {
+        display: inline;
+    }
+
+    .tb input[type="checkbox"]:checked ~ .collapsible {
+        display: table;
+    }
+
+    .tb a {
+        color: #3498db; /* Set link color */
+        text-decoration: none; /* Remove underlines */
+    }
+
+    .tb a:hover {
+        text-decoration: underline; /* Add underline on hover */
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="toggle"]').change(function () {
+            $(this).parents('.tb').find('.collapsible').toggle();
+        });
+    });
+</script>
+
+<div class="tb">
+    <input type="checkbox" data-toggle="toggle"/>
+    <span>Season-2 : Introduction to Python Programming</span><span>Season-2</span>
+    <table class="collapsible" id="season02">
+
+<tr>
+<td style="background-color: #3498db; color: white;"><b>Episode</b></td>
+<td style="background-color: #3498db; color: white;"><b>Episode Title</b></td>
+<td style="background-color: #3498db; color: white;"><b>Slides / Handout</b></td>
+<td style="background-color: #3498db; color: white;"><b>Home Work</b></td>
+<td style="background-color: #3498db; color: white;"><b>YouTube Video Link</b></td>
+<td style="background-color: #3498db; color: white;"><b>Date of Upload</b></td>
+</tr>
+<tr>
+<td>Episode - 01</td>
+<td>Why Python?</td>
+<td><a href="slides/season02/episode01/why-python.html" target="_blank">Link</a></td>
+<td><a href="homework/season02/episode01/homework.html" target="_blank">Link</a></td>
+<td><a href="https://youtu.be/zynrOOSNXro?feature=shared" target="_blank">Link</a></td>
+<td>1st March 2024</td>
+</tr>
+<tr>
+<td>Episode - 02</td>
+<td>Python Data Types</td>
+<td><a href="slides/season02/episode02/variable_datatypes.html" target="_blank">Link</a></td>
+<td><a href="homework/season02/episode02/homework.html" target="_blank">Link</a></td>
+<td><a href="">Link</a></td>
+<td>8th March 2024</td>
+</tr>
+
+<tr>
+<td>Episode - 03</td>
+<td>Numbers & Strings</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>
+
+
+<tr>
+<td>Episode - 04</td>
+<td>Loops</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Episode - 05</td>
+<td>Lists & Tuples</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Episode - 06</td>
+<td>Ifs & Breaks</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>
+        
+<tr>
+<td>Episode - 07</td>
+<td>Dictionaries</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Episode - 08</td>
+<td>Functions</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Episode - 09</td>
+<td>Lambda Functions</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Episode - 10</td>
+<td>Classes & Objects - 1</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Episode - 11</td>
+<td>Classes & Objects - 2</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>        
+
+<tr>
+<td>Episode - 12</td>
+<td>Inheritance</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>    
+
+<tr>
+<td>Episode - 13</td>
+<td>Mutiple Inheritance</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>  
+
+<tr>
+<td>Episode - 14</td>
+<td>Multi Threading & Multi Processing</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>  
+
+<tr>
+<td>Episode - 15</td>
+<td>Debugging the Code</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>         
+
+<tr>
+<td>Episode - 16</td>
+<td>End to End Project</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>     
+
+<tr>
+<td>Episode - 17</td>
+<td>Deployin the Project</td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+</tr>     
+               
+        
+</table>
+</div>
+
+<div class="tb">
+    <input type="checkbox"/>
+    <span>Season-3</span><span>Hide</span>
+    <table class="collapsible" id="season03">
+<tr>
+<td>Not Yet Available</td>
+</tr>
+</table>
+</div>
+
+<div class="tb">
+    <input type="checkbox"/>
+    <span>Season-4</span><span>Hide</span>
+    <table class="collapsible" id="season04">
+<tr>
+<td>Not Yet Available</td>
+</tr>
+</table>
+</div>
+```
