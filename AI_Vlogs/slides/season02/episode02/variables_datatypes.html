@@ -407,156 +407,228 @@ Arun Koundinya Parasa
 
 </section>
 <section>
-<section id="episode-01" class="title-slide slide level1 center">
-<h1>Episode 01</h1>
-<p>Why Python ?</p>
+<section id="episode-02" class="title-slide slide level1 center">
+<h1>Episode 02</h1>
+<p>Variables &amp; Data Types</p>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
+<div style="font-size: 75%;">
 <ul>
-<li class="fragment">Growth of Python</li>
-<li class="fragment">Advantages of Python</li>
-<li class="fragment">Use Cases and Popular Libraries</li>
-<li class="fragment">Simple Hello World Program</li>
-<li class="fragment">Other Examples</li>
-<li class="fragment">Resources to learn Python</li>
-<li class="fragment">Tools we use</li>
-</ul>
-</section>
-<section id="growth-of-python" class="slide level2">
-<h2>Growth of Python</h2>
+<li>Variables: Foundations of Programming
 <ul>
-<li class="fragment">Fastest Growing Programming Langauge</li>
-<li class="fragment">Became the official teaching language in major universities</li>
-</ul>
-<p><img data-src="growth_of_python.png" width="463"><img data-src="growth_of_python_projection.png" width="455"></p>
-<p><a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">Link</a></p>
-</section>
-<section id="advantages-of-python" class="slide level2">
-<h2>Advantages of Python</h2>
+<li>Initializaton &amp; Declaration</li>
+<li>Reserve KeyWords</li>
+<li>Updations</li>
+</ul></li>
+<li>Data Types: DNA of Information
 <ul>
-<li class="fragment">Most popular tool in data science</li>
-<li class="fragment">Good general purpose high-level language program.</li>
-<li class="fragment">Objected Oriented Programming.</li>
-<li class="fragment">It is Free!!!!</li>
-<li class="fragment">Community and Documentation.</li>
+<li>Different Data Types</li>
+<li>Data Type Identification</li>
+</ul></li>
 </ul>
+</div>
 </section>
-<section id="use-cases-and-popular-libraries" class="slide level2">
-<h2>Use Cases and Popular Libraries</h2>
+<section id="initializing-declaration-variables" class="slide level2">
+<h2>Initializing &amp; Declaration Variables</h2>
+<div style="font-size: 75%;">
+<p>Last week we have seen an example of variables declaration i.e.; <code>x=2</code>. However, let us see some basic rules:</p>
+</div>
+<div style="font-size: 60%;">
+<ul>
+<li>Variables are like characters.</li>
+<li>Variables can contain only Alphabets, Numbers and Underscore</li>
+<li>They are case sensitive.</li>
+<li>They can start with underscore &amp; alphabets but not with digits.</li>
+</ul>
+</div>
+<div style="font-size: 75%;">
+<div id="5840a03d" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>x0 <span class="op">=</span> <span class="st">"Fish"</span></span>
+<span id="cb1-2"><a></a>_x <span class="op">=</span> <span class="st">"2"</span></span>
+<span id="cb1-3"><a></a>x_x <span class="op">=</span> <span class="dv">1203</span></span>
+<span id="cb1-4"><a></a>x <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-5"><a></a>x <span class="op">=</span> y <span class="op">=</span> z <span class="op">=</span> <span class="st">"MultipleAssignment"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Declarations that are not allowed</p>
+</div>
+<div style="font-size: 60%;">
+<ul>
+<li><code>0x = "startingwithzero"</code></li>
+<li><code>x-x = "hyphen"</code></li>
+<li><code>x x = "space"</code></li>
+</ul>
+</div>
+</section>
+<section id="reserve-keywords" class="slide level2">
+<h2>Reserve Keywords</h2>
+<div id="7b6b9c51" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="bu">help</span>(<span class="st">"keywords"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 
+</code></pre>
+</div>
+</div>
+</section>
+<section id="updating-variables" class="slide level2">
+<h2>Updating Variables</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="use-cases">Use Cases</h3>
-<ul>
-<li class="fragment">Web Development</li>
-<li class="fragment">Data Science</li>
-<li class="fragment">Artificial Intelligence</li>
-<li class="fragment">Automation &amp; Scripting</li>
-<li class="fragment">Cloud Computing</li>
-</ul>
+<div id="96dba3ad" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>x <span class="op">=</span>  <span class="dv">2</span></span>
+<span id="cb4-2"><a></a>y <span class="op">=</span> <span class="st">"AI"</span></span>
+<span id="cb4-3"><a></a><span class="bu">print</span>(y)</span>
+<span id="cb4-4"><a></a>y <span class="op">=</span> x</span>
+<span id="cb4-5"><a></a><span class="bu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>AI
+2</code></pre>
+</div>
+</div>
+<div style="font-size: 75%;">
+<p>Here we can see that the variable <code>y</code> has been assigned the value 2.</p>
+</div>
 </div><div class="column" style="width:50%;">
-<h3 id="popular-libraries">Popular Libraries</h3>
-<ul>
-<li class="fragment">Pandas</li>
-<li class="fragment">Numpy</li>
-<li class="fragment">Scikit-learn</li>
-<li class="fragment">Spacy / NLTK</li>
-<li class="fragment">Tensorflow</li>
-<li class="fragment">Boto3</li>
-</ul>
+<div id="3d0b6006" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>x <span class="op">=</span>  <span class="dv">2</span></span>
+<span id="cb6-2"><a></a>y <span class="op">=</span> x</span>
+<span id="cb6-3"><a></a><span class="bu">print</span>(y)</span>
+<span id="cb6-4"><a></a>x <span class="op">=</span> x <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb6-5"><a></a><span class="bu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2
+2</code></pre>
 </div>
+</div>
+<div style="font-size: 75%;">
+<p>Here we can observe that the <code>y</code> variable does not get updated after the addition operation.</p>
+</div>
+</div>
+</div>
+<p>Why there is a difference?</p>
+</section>
+<section id="data-types" class="slide level2">
+<h2>Data Types</h2>
+<div style="font-size: 75%;">
+<table>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 15%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Boolean</td>
+<td><code>bool</code></td>
+<td><code>True</code>, <code>False</code></td>
+</tr>
+<tr class="even">
+<td>Integer</td>
+<td><code>int</code></td>
+<td><code>1900</code>, <code>2000</code>, <code>203</code></td>
+</tr>
+<tr class="odd">
+<td>Float</td>
+<td><code>float</code></td>
+<td><code>10.30</code>, <code>34.56</code></td>
+</tr>
+<tr class="even">
+<td>Complex</td>
+<td><code>complex</code></td>
+<td><code>4j</code>, <code>6j + 5</code></td>
+</tr>
+<tr class="odd">
+<td>Text &amp; String</td>
+<td><code>str</code></td>
+<td><code>"AI"</code>, <code>"Basics"</code></td>
+</tr>
+<tr class="even">
+<td>Lists</td>
+<td><code>list</code></td>
+<td><code>[ 1 , 2, 3, 4 ]</code></td>
+</tr>
+<tr class="odd">
+<td>Tuples</td>
+<td><code>tuple</code></td>
+<td><code>( 3, 4, 5 )</code></td>
+</tr>
+<tr class="even">
+<td>Dictionaries</td>
+<td><code>dict</code></td>
+<td><code>{'course' : "AI" , 'Subject' : "Python" }</code></td>
+</tr>
+<tr class="odd">
+<td>Sets</td>
+<td><code>set</code></td>
+<td><code>{ 4 , 7, 8 }</code></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
-<section id="simple-hello-world-program" class="slide level2">
-<h2>Simple ‘Hello World’ Program</h2>
-<div id="428d317a" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="bu">print</span>(<span class="st">"Hello, World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="data-type-identification" class="slide level2">
+<h2>Data Type Identification</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="4270fb3c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>x1 <span class="op">=</span> <span class="st">"3"</span></span>
+<span id="cb8-2"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x1 is :"</span>, <span class="bu">type</span>(x1))</span>
+<span id="cb8-3"><a></a>x2 <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb8-4"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x2 is :"</span>, <span class="bu">type</span>(x2))</span>
+<span id="cb8-5"><a></a>x3 <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb8-6"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x3 is :"</span>, <span class="bu">type</span>(x3))</span>
+<span id="cb8-7"><a></a>x4 <span class="op">=</span> <span class="ot">4j</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb8-8"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x4 is :"</span>, <span class="bu">type</span>(x4))</span>
+<span id="cb8-9"><a></a>x5 <span class="op">=</span> <span class="fl">4.3</span></span>
+<span id="cb8-10"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x5 is :"</span>, <span class="bu">type</span>(x5))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hello, World!</code></pre>
+<pre><code>Data Type of x1 is : &lt;class 'str'&gt;
+Data Type of x2 is : &lt;class 'int'&gt;
+Data Type of x3 is : &lt;class 'bool'&gt;
+Data Type of x4 is : &lt;class 'complex'&gt;
+Data Type of x5 is : &lt;class 'float'&gt;</code></pre>
 </div>
 </div>
-<div id="ac21d9a7" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">def</span> hello_world():</span>
-<span id="cb3-2"><a></a>    <span class="bu">print</span>(<span class="st">"Hello, World!"</span>)</span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a><span class="co"># Call the function</span></span>
-<span id="cb3-5"><a></a>hello_world()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div id="95f4e180" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>x6 <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
+<span id="cb10-2"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x6 is :"</span>, <span class="bu">type</span>(x6))</span>
+<span id="cb10-3"><a></a>x7 <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb10-4"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x7 is :"</span>, <span class="bu">type</span>(x7))</span>
+<span id="cb10-5"><a></a>x8 <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>}</span>
+<span id="cb10-6"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x8 is :"</span>, <span class="bu">type</span>(x8))</span>
+<span id="cb10-7"><a></a>x9 <span class="op">=</span> {<span class="st">'course'</span> : <span class="st">"AI"</span> , <span class="st">"Subject"</span>: <span class="st">"Python"</span>}</span>
+<span id="cb10-8"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x9 is :"</span>, <span class="bu">type</span>(x9))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hello, World!</code></pre>
+<pre><code>Data Type of x6 is : &lt;class 'list'&gt;
+Data Type of x7 is : &lt;class 'tuple'&gt;
+Data Type of x8 is : &lt;class 'set'&gt;
+Data Type of x9 is : &lt;class 'dict'&gt;</code></pre>
 </div>
 </div>
-</section>
-<section id="simple-operators" class="slide level2">
-<h2>Simple Operators</h2>
-<div id="e65a4275" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="dv">100</span><span class="op">+</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>200</code></pre>
 </div>
 </div>
-<div id="34d2fc8f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>x <span class="op">=</span> <span class="dv">9</span> <span class="op">*</span> <span class="dv">9</span></span>
-<span id="cb7-2"><a></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>81</code></pre>
-</div>
-</div>
-<div id="ce9401f2" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>x <span class="op">=</span> <span class="dv">300</span> <span class="op">-</span> x</span>
-<span id="cb9-2"><a></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>219</code></pre>
-</div>
-</div>
-</section>
-<section id="other-example" class="slide level2">
-<h2>Other Example</h2>
-<div id="95339ec7" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="cf">for</span> countdown <span class="kw">in</span> <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="st">"0"</span>:</span>
-<span id="cb11-2"><a></a>    <span class="bu">print</span>(countdown)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5
-4
-3
-2
-1
-0</code></pre>
-</div>
-</div>
-<div id="07bb5476" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="cf">for</span> countdown <span class="kw">in</span> <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="st">"0"</span>:</span>
-<span id="cb13-2"><a></a>  <span class="cf">if</span> countdown <span class="op">==</span> <span class="st">"0"</span>:</span>
-<span id="cb13-3"><a></a>    <span class="bu">print</span>(<span class="st">"Got You"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Got You</code></pre>
-</div>
-</div>
-</section>
-<section id="resources-to-learn-python" class="slide level2">
-<h2>Resources to learn Python</h2>
-<ul>
-<li class="fragment"><a href="https://learning.oreilly.com/library/view/python-for-data/9781491957653/">Python for Data Analysis, 2nd Edition</a></li>
-<li class="fragment"><a href="https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/">Introducing Python, 2nd Edition</a></li>
-<li class="fragment">Practice ,Google, Stackover flow, ChatGpt</li>
-<li class="fragment">Medium</li>
-</ul>
-</section>
-<section id="tools-to-use---live-demo" class="slide level2">
-<h2>Tools to Use - Live Demo</h2>
-<ul>
-<li class="fragment">VS Code
-<ul>
-<li class="fragment">A lightweight and versatile code editor that supports seamless integration with multiple tools, enhancing your development workflow.</li>
-</ul></li>
-<li class="fragment">Google Colab
-<ul>
-<li class="fragment">Operates in the cloud, eliminating the need for physical installations on laptops or computers. Additionally, it provides the flexibility to work on projects even from tablets, offering a convenient and accessible platform.</li>
-</ul></li>
-</ul>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank You</h1>
-<p>Lets see the tools!</p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../../../logo.png" class="slide-logo"></p>
