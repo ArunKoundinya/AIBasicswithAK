@@ -8,7 +8,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 ```{=html}
 <style>
     .tb table.collapsible {
-        width: 950px;
+        width: 1008px;
         border-collapse: collapse;
         margin: 50px auto;
         font-family: 'Calibri (Body)';
@@ -71,6 +71,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td style="background-color: #3498db; color: white;"><b>Slides / Handout</b></td>
 <td style="background-color: #3498db; color: white;"><b>Home Work</b></td>
 <td style="background-color: #3498db; color: white;"><b>YouTube Video Link</b></td>
+<td style="background-color: #3498db; color: white;"><b>YouTube Demo File</b></td>
 <td style="background-color: #3498db; color: white;"><b>Date of Upload</b></td>
 </tr>
 <tr>
@@ -79,14 +80,16 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="slides/season02/episode01/why-python.html" target="_blank">Link</a></td>
 <td><a href="homework/season02/episode01/homework.html" target="_blank">Link</a></td>
 <td><a href="https://youtu.be/zynrOOSNXro?feature=shared" target="_blank">Link</a></td>
+<td>NA</td>
 <td>1st March 2024</td>
 </tr>
 <tr>
 <td>Episode - 02</td>
 <td>Python Data Types</td>
-<td><a href="slides/season02/episode02/variable_datatypes.html" target="_blank">Link</a></td>
+<td><a href="slides/season02/episode02/variables_datatypes.html" target="_blank">Link</a></td>
 <td><a href="homework/season02/episode02/homework.html" target="_blank">Link</a></td>
-<td><a href="">Link</a></td>
+<td><a href="https://youtu.be/-41cT7lAsZ4" target="_blank">Link</a> </td>
+<td><a href="slides/season02/episode02/Demo.py" target="_blank">Demo File</a></td>
 <td>8th March 2024</td>
 </tr>
 
@@ -96,6 +99,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
+<td></td>
 <td></td>
 </tr>
 
@@ -107,6 +111,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td></td>
+<td></td>
 </tr>
 
 <tr>
@@ -115,6 +120,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
+<td></td>
 <td></td>
 </tr>
 
@@ -125,6 +131,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td></td>
+<td></td>
 </tr>
         
 <tr>
@@ -133,6 +140,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
+<td></td>
 <td></td>
 </tr>
 
@@ -143,6 +151,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td></td>
+<td></td>
 </tr>
 
 <tr>
@@ -151,6 +160,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
+<td></td>
 <td></td>
 </tr>
 
@@ -161,6 +171,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td></td>
+<td></td>
 </tr>
 
 <tr>
@@ -169,6 +180,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
+<td></td>
 <td></td>
 </tr>        
 
@@ -179,6 +191,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td></td>
+<td></td>
 </tr>    
 
 <tr>
@@ -187,6 +200,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
+<td></td>
 <td></td>
 </tr>  
 
@@ -197,6 +211,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td></td>
+<td></td>
 </tr>  
 
 <tr>
@@ -205,6 +220,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
+<td></td>
 <td></td>
 </tr>         
 
@@ -215,6 +231,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td></td>
+<td></td>
 </tr>     
 
 <tr>
@@ -223,6 +240,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
+<td></td>
 <td></td>
 </tr>     
                
