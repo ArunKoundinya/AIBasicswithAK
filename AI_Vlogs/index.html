@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -246,14 +246,23 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>Episode - 03</td>
-<td>Numbers &amp; Strings</td>
+<td>Numbers &amp; Booleans</td>
+<td><a href="slides/season02/episode03/numbers_booleans.html" target="_blank">Link</a></td>
+<td><a href="homework/season02/episode03/homework.html" target="_blank">Link</a></td>
+<td><a href="">Link</a></td>
+<td></td>
+<td>17th March 2024</td>
+</tr>
+<tr class="odd">
+<td>Episode - 04</td>
+<td>Strings &amp; Characters</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Episode - 04</td>
 <td>Loops</td>
 <td><a href="">Link</a></td>
@@ -262,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Episode - 05</td>
 <td>Lists &amp; Tuples</td>
 <td><a href="">Link</a></td>
@@ -271,7 +280,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Episode - 06</td>
 <td>Ifs &amp; Breaks</td>
 <td><a href="">Link</a></td>
@@ -280,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Episode - 07</td>
 <td>Dictionaries</td>
 <td><a href="">Link</a></td>
@@ -289,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Episode - 08</td>
 <td>Functions</td>
 <td><a href="">Link</a></td>
@@ -298,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Episode - 09</td>
 <td>Lambda Functions</td>
 <td><a href="">Link</a></td>
@@ -307,7 +316,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Episode - 10</td>
 <td>Classes &amp; Objects - 1</td>
 <td><a href="">Link</a></td>
@@ -316,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Episode - 11</td>
 <td>Classes &amp; Objects - 2</td>
 <td><a href="">Link</a></td>
@@ -325,7 +334,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Episode - 12</td>
 <td>Inheritance</td>
 <td><a href="">Link</a></td>
@@ -334,7 +343,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Episode - 13</td>
 <td>Mutiple Inheritance</td>
 <td><a href="">Link</a></td>
@@ -343,7 +352,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Episode - 14</td>
 <td>Multi Threading &amp; Multi Processing</td>
 <td><a href="">Link</a></td>
@@ -352,7 +361,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Episode - 15</td>
 <td>Debugging the Code</td>
 <td><a href="">Link</a></td>
@@ -361,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Episode - 16</td>
 <td>End to End Project</td>
 <td><a href="">Link</a></td>
@@ -370,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Episode - 17</td>
 <td>Deployin the Project</td>
 <td><a href="">Link</a></td>
@@ -490,24 +499,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/arunkoundinya\.github\.io\/AIBasicswithAK\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -542,11 +533,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -820,10 +807,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
-</script>
-<input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
  <!-- /content -->
 
 

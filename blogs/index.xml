@@ -9,8 +9,29 @@
 <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/</link>
 <atom:link href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/index.xml" rel="self" type="application/rss+xml"/>
 <description>LETS BREATHE DATA</description>
-<generator>quarto-1.4.551</generator>
-<lastBuildDate>Tue, 25 Jul 2023 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.4.550</generator>
+<lastBuildDate>Sun, 17 Mar 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Does Data Scientists need to learn programming?</title>
+  <dc:creator>Arun Koundinya Parasa</dc:creator>
+  <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming?/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="purple_dark" data-lang="en" crossorigin="anonymous" async="">
+</script>
+
+
+
+ ]]></description>
+  <category>programming</category>
+  <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming?/</guid>
+  <pubDate>Sun, 17 Mar 2024 07:00:00 GMT</pubDate>
+  <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming?/image.png" medium="image" type="image/png"/>
+</item>
 <item>
   <title>Does Data Scientists need to understand Domain Knowledge?</title>
   <dc:creator>Arun Koundinya Parasa</dc:creator>
@@ -65,6 +86,8 @@
 <li>Learning Consultant frameworks like BCG Matrix, Product Life Cycle, Customer Life Cycle, etc., will help us think on alternative perspectives.</li>
 </ul>
 <p>There are several examples that I have faced personally in my early data science career, which told me the hard way about the importance of domain knowledge. The above example is one such classic. Stay tuned for more Data science news.</p>
+<script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="purple_dark" data-lang="en" crossorigin="anonymous" async="">
+</script>
 
 
 
@@ -72,7 +95,7 @@
   <category>domain</category>
   <category>operations</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/</guid>
-  <pubDate>Tue, 25 Jul 2023 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 25 Jul 2023 07:00:00 GMT</pubDate>
   <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/image.png" medium="image" type="image/png" height="131" width="144"/>
 </item>
 </channel>
