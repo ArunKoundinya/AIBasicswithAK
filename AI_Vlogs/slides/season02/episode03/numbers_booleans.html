@@ -8,7 +8,7 @@
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Arun Koundinya Parasa">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -324,7 +389,7 @@
     }
   </style>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -341,11 +406,386 @@ Arun Koundinya Parasa
 </div>
 
 </section>
+<section>
 <section id="episode-03" class="title-slide slide level1 center">
 <h1>Episode 03</h1>
 <p>Numbers &amp; Booleans</p>
 </section>
-
+<section id="agenda" class="slide level2">
+<h2>Agenda</h2>
+<ul>
+<li>Booleans</li>
+<li>Integers</li>
+<li>Floats</li>
+<li>Type Casting</li>
+<li>Arthimetic Operators</li>
+<li>Comparison Operators</li>
+</ul>
+</section>
+<section id="booleans" class="slide level2">
+<h2>Booleans</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="f2452545" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>var <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-2"><a></a><span class="bu">type</span>(var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>bool</code></pre>
+</div>
+</div>
+<div id="5e9c97bd" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>var1 <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb3-2"><a></a><span class="bu">type</span>(var1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>bool</code></pre>
+</div>
+</div>
+<div id="ecdf91e3" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="bu">print</span>(var <span class="op">+</span> var1)</span>
+<span id="cb5-2"><a></a><span class="bu">print</span>(var <span class="op">*</span> var1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1
+0</code></pre>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="a76d9716" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(var <span class="kw">and</span> var1)</span>
+<span id="cb7-2"><a></a><span class="bu">print</span>(var <span class="kw">or</span> var1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False
+True</code></pre>
+</div>
+</div>
+<div id="b0da604a" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span>)</span>
+<span id="cb9-2"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">&lt;</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+False</code></pre>
+</div>
+</div>
+<div id="ad2d9f5d" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="bu">print</span>((<span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span>) <span class="kw">and</span> (<span class="dv">2</span> <span class="op">&lt;</span> var1))</span>
+<span id="cb11-2"><a></a><span class="bu">print</span>((<span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span>) <span class="kw">or</span> (<span class="dv">2</span> <span class="op">&lt;</span> var1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False
+True</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="integers" class="slide level2">
+<h2>Integers</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="9e3b15f1" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>var <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb13-2"><a></a><span class="bu">type</span>(var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>int</code></pre>
+</div>
+</div>
+<div id="1332a424" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>var1 <span class="op">=</span> <span class="op">-</span><span class="dv">100</span></span>
+<span id="cb15-2"><a></a><span class="bu">type</span>(var1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>int</code></pre>
+</div>
+</div>
+<div id="1d0dd6a6" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="bu">print</span>(var <span class="op">+</span> var1)</span>
+<span id="cb17-2"><a></a><span class="bu">print</span>(var <span class="op">-</span> var1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+200</code></pre>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="032338dc" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="bu">print</span>(<span class="dv">1</span>,<span class="dv">000</span>,<span class="dv">000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 0 0</code></pre>
+</div>
+</div>
+<div id="5fd8fd6a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="bu">print</span>(<span class="dv">10_11_12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>101112</code></pre>
+</div>
+</div>
+<div style="font-size: 50%;">
+<ul>
+<li><code>_1</code> can we do this ?</li>
+</ul>
+</div>
+<div id="b4d8bd83" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>_1 <span class="op">=</span> <span class="dv">1_3_4</span></span>
+<span id="cb23-2"><a></a><span class="bu">type</span>(_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>int</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="floats" class="slide level2">
+<h2>Floats</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="4ed2984c" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>var <span class="op">=</span> <span class="fl">5.</span></span>
+<span id="cb25-2"><a></a><span class="bu">type</span>(var)</span>
+<span id="cb25-3"><a></a><span class="bu">print</span>(var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.0</code></pre>
+</div>
+</div>
+<div id="4e7f5648" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="bu">print</span>(<span class="fl">5.0</span>)</span>
+<span id="cb27-2"><a></a><span class="bu">print</span>(<span class="fl">05.</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.0
+5.0</code></pre>
+</div>
+</div>
+<div id="cb11a1b7" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="bu">print</span>(var <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb29-2"><a></a><span class="bu">print</span>(var <span class="op">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>6.0
+4.0</code></pre>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="8375d691" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a><span class="bu">print</span>(<span class="fl">5e0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.0</code></pre>
+</div>
+</div>
+<div id="59c54956" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a><span class="bu">print</span>(<span class="fl">5e1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>50.0</code></pre>
+</div>
+</div>
+<div style="font-size: 50%;">
+<ul>
+<li><code>1.01_1</code> can we do this ?</li>
+<li><code>1_.01_1</code> can we do this ?</li>
+</ul>
+</div>
+<div id="da9bdc6c" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a>pi <span class="op">=</span> <span class="fl">3.141_592_654</span></span>
+<span id="cb35-2"><a></a><span class="bu">print</span>(pi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3.141592654</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="type-casting" class="slide level2">
+<h2>Type Casting</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="a92849f3" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a><span class="bu">print</span>(<span class="bu">float</span>(<span class="va">True</span>))</span>
+<span id="cb37-2"><a></a><span class="bu">print</span>(<span class="bu">float</span>(<span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.0
+0.0</code></pre>
+</div>
+</div>
+<div id="84846250" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a><span class="bu">print</span>(<span class="bu">int</span>(<span class="fl">2.9</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2</code></pre>
+</div>
+</div>
+<div id="030ffa91" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="dv">100</span>))</span>
+<span id="cb41-2"><a></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="op">-</span><span class="dv">100</span>))</span>
+<span id="cb41-3"><a></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+True
+False</code></pre>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="9f71caa9" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a><span class="bu">print</span>(<span class="fl">1.0</span> <span class="op">+</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2.0</code></pre>
+</div>
+</div>
+<div id="d242b289" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a><span class="bu">print</span>(<span class="fl">5e1</span> <span class="op">+</span> <span class="bu">bool</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>51.0</code></pre>
+</div>
+</div>
+<div id="7b318a59" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a></a>pi <span class="op">=</span> <span class="fl">3.141_592</span></span>
+<span id="cb47-2"><a></a><span class="bu">int</span>(pi) <span class="op">+</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>4</code></pre>
+</div>
+</div>
+<div id="4a0cdbf0" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a></a><span class="bu">print</span>(pi <span class="op">*</span> <span class="va">True</span>)</span>
+<span id="cb49-2"><a></a><span class="bu">print</span>(pi <span class="op">*</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3.141592
+0.0</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="arthimetic-operators" class="slide level2">
+<h2>Arthimetic Operators</h2>
+<div style="font-size: 70%;">
+<table>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Operator</strong></th>
+<th style="text-align: center;"><strong>Description</strong></th>
+<th style="text-align: center;"><strong>Example</strong></th>
+<th style="text-align: center;"><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>+</code></strong></td>
+<td style="text-align: center;"><strong>Addition</strong></td>
+<td style="text-align: center;"><strong><code>100 + 100</code></strong></td>
+<td style="text-align: center;"><strong><code>200</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>-</code></strong></td>
+<td style="text-align: center;"><strong>Subtraction</strong></td>
+<td style="text-align: center;"><strong><code>20 - 10</code></strong></td>
+<td style="text-align: center;"><strong><code>10</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>*</code></strong></td>
+<td style="text-align: center;"><strong>Multiplication</strong></td>
+<td style="text-align: center;"><strong><code>5 * 5</code></strong></td>
+<td style="text-align: center;"><strong><code>25</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>/</code></strong></td>
+<td style="text-align: center;"><strong>Floating-point division</strong></td>
+<td style="text-align: center;"><strong><code>5 / 2</code></strong></td>
+<td style="text-align: center;"><strong><code>2.5</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>//</code></strong></td>
+<td style="text-align: center;"><strong>Integer (truncating) division</strong></td>
+<td style="text-align: center;"><strong><code>5 // 2</code></strong></td>
+<td style="text-align: center;"><strong><code>2</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>%</code></strong></td>
+<td style="text-align: center;"><strong>Modulus (remainder)</strong></td>
+<td style="text-align: center;"><strong><code>5 % 2</code></strong></td>
+<td style="text-align: center;"><strong><code>1</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>**</code></strong></td>
+<td style="text-align: center;"><strong>Exponentiation</strong></td>
+<td style="text-align: center;"><strong><code>5 ** 2</code></strong></td>
+<td style="text-align: center;"><strong><code>25</code></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="comparison-operators" class="slide level2">
+<h2>Comparison Operators</h2>
+<div style="font-size: 70%;">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 42%">
+<col style="width: 19%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Operator</strong></th>
+<th style="text-align: center;"><strong>Description</strong></th>
+<th style="text-align: center;"><strong>Example</strong></th>
+<th style="text-align: center;"><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>==</code></strong></td>
+<td style="text-align: center;"><strong>Equal to</strong></td>
+<td style="text-align: center;"><strong><code>5 == 5</code></strong></td>
+<td style="text-align: center;"><strong><code>True</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>!=</code></strong></td>
+<td style="text-align: center;"><strong>Not equal to</strong></td>
+<td style="text-align: center;"><strong><code>5 != 5</code></strong></td>
+<td style="text-align: center;"><strong><code>False</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>&lt;</code></strong></td>
+<td style="text-align: center;"><strong>Less than</strong></td>
+<td style="text-align: center;"><strong><code>4 &lt; 5</code></strong></td>
+<td style="text-align: center;"><strong><code>True</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>&gt;=</code></strong></td>
+<td style="text-align: center;"><strong>Greater than or equal to</strong></td>
+<td style="text-align: center;"><strong><code>5 &gt;= 5</code></strong></td>
+<td style="text-align: center;"><strong><code>True</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><code>&lt;=</code></strong></td>
+<td style="text-align: center;"><strong>Less than or equal to</strong></td>
+<td style="text-align: center;"><strong><code>4 &lt;= 5</code></strong></td>
+<td style="text-align: center;"><strong><code>True</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><code>&gt;</code></strong></td>
+<td style="text-align: center;"><strong>Greater than</strong></td>
+<td style="text-align: center;"><strong><code>5 &gt; 4</code></strong></td>
+<td style="text-align: center;"><strong><code>True</code></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section></section>
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank You</h1>
 
