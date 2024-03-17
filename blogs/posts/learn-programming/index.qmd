@@ -1,0 +1,63 @@
+---
+title: "Does Data Scientists need to learn programming?"
+author: "Arun Koundinya Parasa"
+date: "2024-03-17"
+categories: [programming]
+image: "image.png"
+---
+
+In an era of AI-enabled applications, chats, and programming ([now with Devin](https://www.cognition-labs.com/blog-posts)), many youngsters and new entrants in the data science field assume that learning programming isn't needed as almost all codes are available either on stack overflow or ChatGPT.
+
+![](image.png){fig-align="center" width="373"}
+
+However, programming is not just a copy-and-paste activity. But it is an iterative process of four pieces:
+
+-   What to Code?
+-   How to Code?
+-   Test the Code?
+-   Coding with-in limitations.
+
+Here, `What to Code` can be comprehended as an `Ideaation/Requirement Gathering and Planning` stage. Ideas can be either intrinsic or extrinsic, but the primary reward goes to both, i.e., the idea and proper planning. This is itself an intensive area where the know-how of coding is required; otherwise, the entire planning and further execution would fall into a fallacy.
+
+`How to Code` involves the `Coding the requirement, unit-testing and documentation` stage. Coding becomes an iterative step along with unit testing since our code changes should not hamper that part of the unit.
+
+`Test the Code` involves `Reviewing the code and completing the system-testing` stage. After we complete our code, it needs to be reviewed and refined by a senior programmer, ideally with an intention to optimize its performance and ensure that this particular fix will not hamper other units in the system.
+
+`Coding within limitation` involves the `Deployment and Maintenance` stage. After the entire coding, testing, and documentation are completed, Deployment becomes a central learning as initial programming doesn't involve physical limitations. Deployment limitations, becomes an iterative process to enhance our coding.
+
+If we understand this complete cycle of programming, we will learn that coding is not just a copy-paste job but often requires a thought process for maintenance of the code for long-term usage. However, there might be some applications ( we can term such applications as `AI-assisted` programming applications ) in the future that would help automate some of these. Still, it would require a keen human eye and thought process for thorough Deployment.
+
+If you heard about Scrum masters or Scrum certification it is good else google it. These people are often valued because they are aware of the fundamentals of agile methodological practices, which involve iterative steps of planning, coding, testing, and maintenance.
+
+##### Some Future or Current Technologies
+
+-   Coding Assistant:
+    -   Code Autocompletion ; Example: Github Copilot
+    -   AI Driven Automation Testing; Example: Testim
+-   Minimal Coding:
+    -   Low-Code Platform ; Example: Microsoft Power Apps
+    -   No-Code Platform; Example: Bubble, Google AppSheet
+-   Power Computing:
+    -   Serverless Computing ; Example: AWS Lambda
+    -   Edge Computing; Example: AWS IoT
+    -   Quantum Computing; Example: IBM Quantum
+
+View them as assistants that will fasten our process such that a particular idea's "time to market" will come down exponentially.
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="ArunKoundinya/AIBasicswithAK"
+        data-repo-id="R_kgDOLXPVRw"
+        data-category="General"
+        data-category-id="DIC_kwDOLXPVR84CdeVx"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="purple_dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```

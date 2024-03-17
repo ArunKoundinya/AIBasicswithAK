@@ -64,3 +64,21 @@ Is there any defined prescription or rules to understand the lay of the land? Th
 -   Learning Consultant frameworks like BCG Matrix, Product Life Cycle, Customer Life Cycle, etc., will help us think on alternative perspectives.
 
 There are several examples that I have faced personally in my early data science career, which told me the hard way about the importance of domain knowledge. The above example is one such classic. Stay tuned for more Data science news.
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="ArunKoundinya/AIBasicswithAK"
+        data-repo-id="R_kgDOLXPVRw"
+        data-category="General"
+        data-category-id="DIC_kwDOLXPVR84CdeVx"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="purple_dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```

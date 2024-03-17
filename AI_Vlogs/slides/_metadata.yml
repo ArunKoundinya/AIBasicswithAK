@@ -9,7 +9,7 @@ format:
     transition: fade
     slide-number: true
     chalkboard: true
-    theme: moon
+    theme: [simple,customtheming.scss]
 
 search : false
 

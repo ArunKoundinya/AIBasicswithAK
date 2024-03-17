@@ -1,0 +1,81 @@
+---
+title: Home Work 03
+subtitle: 17th March 2024
+format: html
+---
+
+This is our third homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
+
+#### Question 1 - Create the function for arthimetic operations 
+
+Function accepts two numbers and perform all the arthimetic operation
+
+```{python}
+#| message: FALSE
+#| warning: FALSE
+#| echo: FALSE
+def arthimetic_operations(num1,num2):
+        print("Addition: ", num1 + num2)
+        print("Subtraction: ", num1 - num2)
+        print("Multiplication: ", num1 * num2)
+        print("Division: ", round(num1 / num2,2))
+        print("Remainder: ", num1 % num2)
+        print("Exponential:", num1 ** num2)
+```
+
+Output should atleast resemble like this
+
+```{python}
+#| message: FALSE
+#| warning: FALSE
+arthimetic_operations(10,3)
+```
+
+#### Question 2 - What are the mistakes in the following code 
+
+What is the reason for that error
+
+```{python}
+#| message: FALSE
+#| warning: FALSE
+#| eval: FALSE
+
+a = 10
+b = 0
+
+print(a / b)
+
+print(a % b)
+
+print(a = b)
+
+print(a > b)
+
+new =  5._23
+
+print(new + a)
+
+```
+
+
+Use comments in `py` file or markdown in `ipynb` file to provide the answer
+
+------------------------------------------------ Happy Learning -----------------------------------------------------
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="ArunKoundinya/AIBasicswithAK"
+        data-repo-id="R_kgDOLXPVRw"
+        data-category="General"
+        data-category-id="DIC_kwDOLXPVR84CdeVx"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="purple_dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```

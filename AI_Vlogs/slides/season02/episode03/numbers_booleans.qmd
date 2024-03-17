@@ -1,0 +1,233 @@
+---
+title: AI Basics with AK 
+subtitle: Season 02 - Introduction to Python Programming
+title-slide-attributes:
+  data-slide-number: none
+format: 
+  revealjs:
+    incremental: false
+auto-stretch: true
+---
+
+# Episode 03
+
+Numbers & Booleans
+
+## Agenda
+
+-   Booleans
+-   Integers
+-   Floats
+-   Type Casting
+-   Arthimetic Operators
+-   Comparison Operators
+
+## Booleans
+
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+```{python}
+var = True
+type(var)
+```
+
+```{python}
+var1 = False
+type(var1)
+```
+
+```{python}
+print(var + var1)
+print(var * var1)
+```
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+```{python}
+print(var and var1)
+print(var or var1)
+```
+
+```{python}
+print(3 > 2)
+print(3 < 2)
+```
+
+```{python}
+print((3 > 2) and (2 < var1))
+print((3 > 2) or (2 < var1))
+```
+:::
+:::
+:::
+
+## Integers
+
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+```{python}
+var = 100
+type(var)
+```
+
+```{python}
+var1 = -100
+type(var1)
+```
+
+```{python}
+print(var + var1)
+print(var - var1)
+```
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+```{python}
+print(1,000,000)
+```
+
+```{python}
+print(10_11_12)
+```
+
+::: {style="font-size: 50%;"}
+-   `_1` can we do this ?
+:::
+
+```{python}
+_1 = 1_3_4
+type(_1)
+```
+:::
+:::
+:::
+
+## Floats
+
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+```{python}
+var = 5.
+type(var)
+print(var)
+```
+
+```{python}
+print(5.0)
+print(05.)
+```
+
+```{python}
+print(var + 1)
+print(var - 1)
+```
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+```{python}
+print(5e0)
+```
+
+```{python}
+print(5e1)
+```
+
+::: {style="font-size: 50%;"}
+-   `1.01_1` can we do this ?
+-   `1_.01_1` can we do this ?
+:::
+
+```{python}
+pi = 3.141_592_654
+print(pi)
+```
+:::
+:::
+:::
+
+## Type Casting
+
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+```{python}
+print(float(True))
+print(float(False))
+```
+
+```{python}
+print(int(2.9))
+```
+
+```{python}
+print(bool(100))
+print(bool(-100))
+print(bool(0))
+```
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+```{python}
+print(1.0 + True)
+```
+
+```{python}
+print(5e1 + bool(100))
+```
+
+```{python}
+pi = 3.141_592
+int(pi) + True
+```
+
+```{python}
+print(pi * True)
+print(pi * False)
+```
+:::
+:::
+:::
+
+## Arthimetic Operators
+
+::: {style="font-size: 70%;"}
+
+| **Operator** |          **Description**          |   **Example**   | **Result** |
+|:---------------:|:--------------------:|:---------------:|:---------------:|
+|   **`+`**    |           **Addition**            | **`100 + 100`** | **`200`**  |
+|   **`-`**    |          **Subtraction**          |  **`20 - 10`**  |  **`10`**  |
+|   **`*`**    |        **Multiplication**         |   **`5 * 5`**   |  **`25`**  |
+|   **`/`**    |    **Floating-point division**    |   **`5 / 2`**   | **`2.5`**  |
+|   **`//`**   | **Integer (truncating) division** |  **`5 // 2`**   |  **`2`**   |
+|   **`%`**    |      **Modulus (remainder)**      |   **`5 % 2`**   |  **`1`**   |
+|   **`**`**   |        **Exponentiation**         |  **`5 ** 2`**   |  **`25`**  |
+
+:::
+
+## Comparison Operators
+
+::: {style="font-size: 70%;"}
+
+| **Operator** |       **Description**        | **Example**  | **Result**  |
+|:------------:|:----------------------------:|:------------:|:-----------:|
+|   **`==`**   |         **Equal to**         | **`5 == 5`** | **`True`**  |
+|   **`!=`**   |       **Not equal to**       | **`5 != 5`** | **`False`** |
+|   **`<`**    |        **Less than**         | **`4 < 5`**  | **`True`**  |
+|   **`>=`**   | **Greater than or equal to** | **`5 >= 5`** | **`True`**  |
+|   **`<=`**   |  **Less than or equal to**   | **`4 <= 5`** | **`True`**  |
+|   **`>`**    |       **Greater than**       | **`5 > 4`**  | **`True`**  |
+
+:::
+
+# Thank You

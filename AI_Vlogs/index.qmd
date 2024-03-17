@@ -95,14 +95,23 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 
 <tr>
 <td>Episode - 03</td>
-<td>Numbers & Strings</td>
+<td>Numbers & Booleans</td>
+<td><a href="slides/season02/episode03/numbers_booleans.html" target="_blank">Link</a></td>
+<td><a href="homework/season02/episode03/homework.html" target="_blank">Link</a></td>
+<td><a href="https://youtu.be/i4ubGLFbu30" target="_blank">Link</a></td>
+<td><a href="slides/season02/episode03/epi03demo.py" target="_blank">Demo File</a></td>
+<td>17th March 2024</td>
+</tr>
+
+<tr>
+<td>Episode - 04</td>
+<td>Strings & Characters</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
 <td></td>
 <td></td>
 </tr>
-
 
 <tr>
 <td>Episode - 04</td>
