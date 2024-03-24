@@ -22,7 +22,7 @@ website:
 
     right: 
       - icon: rss
-        href: index.xml
+        href: blogs/index.xml
       - icon: github
         href: http://arunkoundinya.github.io/
       - icon: linkedin
