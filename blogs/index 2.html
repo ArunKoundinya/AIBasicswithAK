@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title> AI Basics with AK - AI Basics with AK</title>
+<title> AI Basics with AK - My Views and Learnings on AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,15 +69,73 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
-</head>
+<link rel="alternate" type="application/rss+xml" title="<img src='https://arunkoundinya.github.io/AIBasicswithAK/logo.png' style='width: 2.2em; height: 2.2em; border-radius: 30%;'> <b>AI Basics with AK</b>" href="index.xml" data-external="1"></head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -94,11 +154,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../AI_Vlogs/index.html" aria-current="page"> 
+    <a class="nav-link" href="../AI_Vlogs/index.html"> 
 <span class="menu-text">AI_Vlogs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blogs/index.html"> 
+    <a class="nav-link active" href="../blogs/index.html" aria-current="page"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
 </ul>
@@ -126,300 +186,116 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">My Views and Learnings on AI</h1>
+            <p class="subtitle lead">Having AI for breakfast</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="domain">domain <span class="quarto-category-count">(1)</span></div><div class="category" data-category="operations">operations <span class="quarto-category-count">(1)</span></div><div class="category" data-category="programming">programming <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">AI Basics with AK</h1>
-<p class="subtitle lead">Notes for my Vlogs</p>
+
+
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="programming" data-listing-date-sort="1710658800000" data-listing-file-modified-sort="1710547991598" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="588">
+<div class="thumbnail">
+<p><a href="../blogs/posts/learn-programming/index.html" class="no-external"></a></p><a href="../blogs/posts/learn-programming/index.html" class="no-external">
+<p><img src="../blogs/posts/learn-programming/image.png" class="thumbnail-image"></p>
+</a><p><a href="../blogs/posts/learn-programming/index.html" class="no-external"></a></p>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>This format is inspired from my <a href="https://datavizaz.org">data visualization</a> class; So will be sticking to this format.</p>
-<div>
-<style>
-    .tb table.collapsible {
-        width: 1008px;
-        border-collapse: collapse;
-        margin: 50px auto;
-        font-family: 'Calibri (Body)';
-    }
-
-    .tb .collapsible td {
-        padding: 10px;
-        border: 1px solid #ccc;
-        text-align: center;
-        font-size: 16px;
-    }
-
-    .tb {
-        margin: 10px 0;
-    }
-
-    .tb span+span,
-    .collapsible {
-        display: none;
-    }
-
-    .tb input[type="checkbox"]:checked ~ span {
-        display: none;
-    }
-
-    .tb input[type="checkbox"]:checked ~ span+span {
-        display: inline;
-    }
-
-    .tb input[type="checkbox"]:checked ~ .collapsible {
-        display: table;
-    }
-
-    .tb a {
-        color: #3498db; /* Set link color */
-        text-decoration: none; /* Remove underlines */
-    }
-
-    .tb a:hover {
-        text-decoration: underline; /* Add underline on hover */
-    }
-</style>
-
-<script>
-    $(document).ready(function () {
-        $('[data-toggle="toggle"]').change(function () {
-            $(this).parents('.tb').find('.collapsible').toggle();
-        });
-    });
-</script>
-
-<div class="tb">
-    <input type="checkbox" data-toggle="toggle">
-    <span>Season-2 : Introduction to Python Programming</span><span>Season-2</span>
-    
-<table id="season02" class="collapsible table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td style="background-color: #3498db; color: white"><strong>Episode</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Episode Title</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Slides / Handout</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Home Work</strong></td>
-<td style="background-color: #3498db; color: white"><strong>YouTube Video Link</strong></td>
-<td style="background-color: #3498db; color: white"><strong>YouTube Demo File</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Date of Upload</strong></td>
-</tr>
-<tr class="even">
-<td>Episode - 01</td>
-<td>Why Python?</td>
-<td><a href="slides/season02/episode01/why-python.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode01/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/zynrOOSNXro?feature=shared" target="_blank">Link</a></td>
-<td>NA</td>
-<td>1st March 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 02</td>
-<td>Python Data Types</td>
-<td><a href="slides/season02/episode02/variables_datatypes.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode02/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/-41cT7lAsZ4" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode02/Demo.py" target="_blank">Demo File</a></td>
-<td>8th March 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 03</td>
-<td>Numbers &amp; Booleans</td>
-<td><a href="slides/season02/episode03/numbers_booleans.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode03/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/i4ubGLFbu30" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode03/epi03demo.py" target="_blank">Demo File</a></td>
-<td>17th March 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 04</td>
-<td>Strings &amp; Characters - 1</td>
-<td><a href="slides/season02/episode04/strings_characters_1.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode04/homework.html" target="_blank">Link</a></td>
-<td><a href="">Not Yet Upoad</a></td>
-<td><a href="" target="_blank">Not Yet</a></td>
-<td>24th March 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 05</td>
-<td>Strings &amp; Characters - 2</td>
-<td><a href="" target="_blank">Link</a></td>
-<td><a href="" target="_blank">Link</a></td>
-<td><a href="">Not Yet</a></td>
-<td><a href="" target="_blank">Not Yet</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 06</td>
-<td>Lists &amp; Tuples</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 07</td>
-<td>Ifs &amp; Breaks</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 08</td>
-<td>Dictionaries</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 09</td>
-<td>Functions</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 10</td>
-<td>Lambda Functions</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 11</td>
-<td>Classes &amp; Objects - 1</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 12</td>
-<td>Classes &amp; Objects - 2</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 13</td>
-<td>Inheritance</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 14</td>
-<td>Mutiple Inheritance</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 15</td>
-<td>Multi Threading &amp; Multi Processing</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 16</td>
-<td>Debugging the Code</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 17</td>
-<td>End to End Project</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 18</td>
-<td>Deployin the Project</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/posts/learn-programming/index.html" class="no-external">Does Data Scientists need to learn programming?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../blogs/posts/learn-programming/index.html" class="no-external"></a>
 </div>
-<div class="tb">
-<input type="checkbox">
- <span>Season-3</span><span>Hide</span>
-<table id="season03" class="collapsible table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td>Not Yet Available</td>
-</tr>
-</tbody>
-</table>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('programming'); return false;">
+programming
 </div>
-<div class="tb">
-<input type="checkbox">
- <span>Season-4</span><span>Hide</span>
-<table id="season04" class="collapsible table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td>Not Yet Available</td>
-</tr>
-</tbody>
-</table>
 </div>
-
+<div class="listing-description">
+<a href="../blogs/posts/learn-programming/index.html" class="no-external">In an era of AI-enabled applications, chats, and programming (now with Devin), many youngsters and new entrants in the data science field assume that learning programming…</a>
 </div>
-</main></div>
-
-
-
- <!-- /main -->
+</div>
+<div class="metadata">
+<a href="../blogs/posts/learn-programming/index.html" class="no-external">
+<div class="listing-date">
+Mar 17, 2024
+</div>
+<div class="listing-author">
+Arun Koundinya Parasa
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="domain,operations" data-listing-date-sort="1690268400000" data-listing-file-modified-sort="1710518637526" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="891">
+<div class="thumbnail">
+<p><a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external"></a></p><a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">
+<p><img src="../blogs/posts/is-domain-knowledge-important/image.png" class="thumbnail-image"></p>
+</a><p><a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">Does Data Scientists need to understand Domain Knowledge?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('domain'); return false;">
+domain
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('operations'); return false;">
+operations
+</div>
+</div>
+<div class="listing-description">
+<a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">This article intends to explain domain knowledge’s importance to freshers. The example provided below is from my own experience.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">
+<div class="listing-date">
+Jul 25, 2023
+</div>
+<div class="listing-author">
+Arun Koundinya Parasa
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -807,7 +683,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
- <!-- /content -->
+</div> <!-- /content -->
 
 
 

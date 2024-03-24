@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Arun Koundinya Parasa">
 
 <title> AI Basics with AK - AI Basics with AK</title>
 <style>
@@ -20,26 +21,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<link href="../../../../logo.png" rel="icon" type="image/png">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -79,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title"><img src="https://arunkoundinya.github.io/AIBasicswithAK/logo.png" style="width: 2.2em; height: 2.2em; border-radius: 30%;"> <b>AI Basics with AK</b></span>
     </a>
   </div>
@@ -90,21 +125,21 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../AI_Vlogs/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../../AI_Vlogs/index.html"> 
 <span class="menu-text">AI_Vlogs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blogs/index.html"> 
+    <a class="nav-link" href="../../../../blogs/index.html"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../../index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -130,7 +165,25 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#episode-01" id="toc-episode-01" class="nav-link active" data-scroll-target="#episode-01">Episode 01</a>
+  <ul class="collapse">
+  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
+  <li><a href="#growth-of-python" id="toc-growth-of-python" class="nav-link" data-scroll-target="#growth-of-python">Growth of Python</a></li>
+  <li><a href="#advantages-of-python" id="toc-advantages-of-python" class="nav-link" data-scroll-target="#advantages-of-python">Advantages of Python</a></li>
+  <li><a href="#use-cases-and-popular-libraries" id="toc-use-cases-and-popular-libraries" class="nav-link" data-scroll-target="#use-cases-and-popular-libraries">Use Cases and Popular Libraries</a></li>
+  <li><a href="#simple-hello-world-program" id="toc-simple-hello-world-program" class="nav-link" data-scroll-target="#simple-hello-world-program">Simple ‘Hello World’ Program</a></li>
+  <li><a href="#simple-operators" id="toc-simple-operators" class="nav-link" data-scroll-target="#simple-operators">Simple Operators</a></li>
+  <li><a href="#other-example" id="toc-other-example" class="nav-link" data-scroll-target="#other-example">Other Example</a></li>
+  <li><a href="#resources-to-learn-python" id="toc-resources-to-learn-python" class="nav-link" data-scroll-target="#resources-to-learn-python">Resources to learn Python</a></li>
+  <li><a href="#tools-to-use---live-demo" id="toc-tools-to-use---live-demo" class="nav-link" data-scroll-target="#tools-to-use---live-demo">Tools to Use - Live Demo</a></li>
+  </ul></li>
+  <li><a href="#thank-you" id="toc-thank-you" class="nav-link" data-scroll-target="#thank-you">Thank You</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="why-python.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -138,13 +191,19 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">AI Basics with AK</h1>
-<p class="subtitle lead">Notes for my Vlogs</p>
+<p class="subtitle lead">Season 02 - Introduction to Python Programming</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Arun Koundinya Parasa </p>
+          </div>
+  </div>
     
   
     
@@ -155,271 +214,165 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This format is inspired from my <a href="https://datavizaz.org">data visualization</a> class; So will be sticking to this format.</p>
-<div>
-<style>
-    .tb table.collapsible {
-        width: 1008px;
-        border-collapse: collapse;
-        margin: 50px auto;
-        font-family: 'Calibri (Body)';
-    }
-
-    .tb .collapsible td {
-        padding: 10px;
-        border: 1px solid #ccc;
-        text-align: center;
-        font-size: 16px;
-    }
-
-    .tb {
-        margin: 10px 0;
-    }
-
-    .tb span+span,
-    .collapsible {
-        display: none;
-    }
-
-    .tb input[type="checkbox"]:checked ~ span {
-        display: none;
-    }
-
-    .tb input[type="checkbox"]:checked ~ span+span {
-        display: inline;
-    }
-
-    .tb input[type="checkbox"]:checked ~ .collapsible {
-        display: table;
-    }
-
-    .tb a {
-        color: #3498db; /* Set link color */
-        text-decoration: none; /* Remove underlines */
-    }
-
-    .tb a:hover {
-        text-decoration: underline; /* Add underline on hover */
-    }
-</style>
-
-<script>
-    $(document).ready(function () {
-        $('[data-toggle="toggle"]').change(function () {
-            $(this).parents('.tb').find('.collapsible').toggle();
-        });
-    });
-</script>
-
-<div class="tb">
-    <input type="checkbox" data-toggle="toggle">
-    <span>Season-2 : Introduction to Python Programming</span><span>Season-2</span>
-    
-<table id="season02" class="collapsible table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td style="background-color: #3498db; color: white"><strong>Episode</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Episode Title</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Slides / Handout</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Home Work</strong></td>
-<td style="background-color: #3498db; color: white"><strong>YouTube Video Link</strong></td>
-<td style="background-color: #3498db; color: white"><strong>YouTube Demo File</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Date of Upload</strong></td>
-</tr>
-<tr class="even">
-<td>Episode - 01</td>
-<td>Why Python?</td>
-<td><a href="slides/season02/episode01/why-python.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode01/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/zynrOOSNXro?feature=shared" target="_blank">Link</a></td>
-<td>NA</td>
-<td>1st March 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 02</td>
-<td>Python Data Types</td>
-<td><a href="slides/season02/episode02/variables_datatypes.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode02/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/-41cT7lAsZ4" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode02/Demo.py" target="_blank">Demo File</a></td>
-<td>8th March 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 03</td>
-<td>Numbers &amp; Booleans</td>
-<td><a href="slides/season02/episode03/numbers_booleans.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode03/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/i4ubGLFbu30" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode03/epi03demo.py" target="_blank">Demo File</a></td>
-<td>17th March 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 04</td>
-<td>Strings &amp; Characters - 1</td>
-<td><a href="slides/season02/episode04/strings_characters_1.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode04/homework.html" target="_blank">Link</a></td>
-<td><a href="">Not Yet Upoad</a></td>
-<td><a href="" target="_blank">Not Yet</a></td>
-<td>24th March 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 05</td>
-<td>Strings &amp; Characters - 2</td>
-<td><a href="" target="_blank">Link</a></td>
-<td><a href="" target="_blank">Link</a></td>
-<td><a href="">Not Yet</a></td>
-<td><a href="" target="_blank">Not Yet</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 06</td>
-<td>Lists &amp; Tuples</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 07</td>
-<td>Ifs &amp; Breaks</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 08</td>
-<td>Dictionaries</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 09</td>
-<td>Functions</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 10</td>
-<td>Lambda Functions</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 11</td>
-<td>Classes &amp; Objects - 1</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 12</td>
-<td>Classes &amp; Objects - 2</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 13</td>
-<td>Inheritance</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 14</td>
-<td>Mutiple Inheritance</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 15</td>
-<td>Multi Threading &amp; Multi Processing</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 16</td>
-<td>Debugging the Code</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 17</td>
-<td>End to End Project</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 18</td>
-<td>Deployin the Project</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<section id="episode-01" class="level1">
+<h1>Episode 01</h1>
+<p>Why Python ?</p>
+<section id="agenda" class="level2">
+<h2 class="anchored" data-anchor-id="agenda">Agenda</h2>
+<ul>
+<li>Growth of Python</li>
+<li>Advantages of Python</li>
+<li>Use Cases and Popular Libraries</li>
+<li>Simple Hello World Program</li>
+<li>Other Examples</li>
+<li>Resources to learn Python</li>
+<li>Tools we use</li>
+</ul>
+</section>
+<section id="growth-of-python" class="level2">
+<h2 class="anchored" data-anchor-id="growth-of-python">Growth of Python</h2>
+<ul>
+<li>Fastest Growing Programming Langauge</li>
+<li>Became the official teaching language in major universities</li>
+</ul>
+<p><img src="growth_of_python.png" class="img-fluid" width="463"><img src="growth_of_python_projection.png" class="img-fluid" width="455"></p>
+<p><a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">Link</a></p>
+</section>
+<section id="advantages-of-python" class="level2">
+<h2 class="anchored" data-anchor-id="advantages-of-python">Advantages of Python</h2>
+<ul>
+<li>Most popular tool in data science</li>
+<li>Good general purpose high-level language program.</li>
+<li>Objected Oriented Programming.</li>
+<li>It is Free!!!!</li>
+<li>Community and Documentation.</li>
+</ul>
+</section>
+<section id="use-cases-and-popular-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases-and-popular-libraries">Use Cases and Popular Libraries</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="use-cases" class="level3">
+<h3 class="anchored" data-anchor-id="use-cases">Use Cases</h3>
+<ul>
+<li>Web Development</li>
+<li>Data Science</li>
+<li>Artificial Intelligence</li>
+<li>Automation &amp; Scripting</li>
+<li>Cloud Computing</li>
+</ul>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="popular-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="popular-libraries">Popular Libraries</h3>
+<ul>
+<li>Pandas</li>
+<li>Numpy</li>
+<li>Scikit-learn</li>
+<li>Spacy / NLTK</li>
+<li>Tensorflow</li>
+<li>Boto3</li>
+</ul>
+</section>
 </div>
-<div class="tb">
-<input type="checkbox">
- <span>Season-3</span><span>Hide</span>
-<table id="season03" class="collapsible table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td>Not Yet Available</td>
-</tr>
-</tbody>
-</table>
 </div>
-<div class="tb">
-<input type="checkbox">
- <span>Season-4</span><span>Hide</span>
-<table id="season04" class="collapsible table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td>Not Yet Available</td>
-</tr>
-</tbody>
-</table>
+</section>
+<section id="simple-hello-world-program" class="level2">
+<h2 class="anchored" data-anchor-id="simple-hello-world-program">Simple ‘Hello World’ Program</h2>
+<div id="d1e18dea" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, World!</code></pre>
 </div>
-
 </div>
-</main></div>
+<div id="31f5118e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hello_world():</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello, World!"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the function</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>hello_world()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, World!</code></pre>
+</div>
+</div>
+</section>
+<section id="simple-operators" class="level2">
+<h2 class="anchored" data-anchor-id="simple-operators">Simple Operators</h2>
+<div id="d5c98255" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span><span class="op">+</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>200</code></pre>
+</div>
+</div>
+<div id="cebf57a2" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">9</span> <span class="op">*</span> <span class="dv">9</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>81</code></pre>
+</div>
+</div>
+<div id="1bd42015" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">300</span> <span class="op">-</span> x</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>219</code></pre>
+</div>
+</div>
+</section>
+<section id="other-example" class="level2">
+<h2 class="anchored" data-anchor-id="other-example">Other Example</h2>
+<div id="4efb7162" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> countdown <span class="kw">in</span> <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="st">"0"</span>:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(countdown)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5
+4
+3
+2
+1
+0</code></pre>
+</div>
+</div>
+<div id="2bbd2e28" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> countdown <span class="kw">in</span> <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="st">"0"</span>:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> countdown <span class="op">==</span> <span class="st">"0"</span>:</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Got You"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Got You</code></pre>
+</div>
+</div>
+</section>
+<section id="resources-to-learn-python" class="level2">
+<h2 class="anchored" data-anchor-id="resources-to-learn-python">Resources to learn Python</h2>
+<ul>
+<li><a href="https://learning.oreilly.com/library/view/python-for-data/9781491957653/">Python for Data Analysis, 2nd Edition</a></li>
+<li><a href="https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/">Introducing Python, 2nd Edition</a></li>
+<li>Practice ,Google, Stackover flow, ChatGpt</li>
+<li>Medium</li>
+</ul>
+</section>
+<section id="tools-to-use---live-demo" class="level2">
+<h2 class="anchored" data-anchor-id="tools-to-use---live-demo">Tools to Use - Live Demo</h2>
+<ul>
+<li>VS Code
+<ul>
+<li>A lightweight and versatile code editor that supports seamless integration with multiple tools, enhancing your development workflow.</li>
+</ul></li>
+<li>Google Colab
+<ul>
+<li>Operates in the cloud, eliminating the need for physical installations on laptops or computers. Additionally, it provides the flexibility to work on projects even from tablets, offering a convenient and accessible platform.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="thank-you" class="level1">
+<h1>Thank You</h1>
+<p>Lets see the tools!</p>
 
 
+</section>
 
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -807,7 +760,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
- <!-- /content -->
+</div> <!-- /content -->
 
 
 

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Arun Koundinya Parasa">
 
 <title> AI Basics with AK - AI Basics with AK</title>
 <style>
@@ -20,26 +21,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<link href="../../../../logo.png" rel="icon" type="image/png">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -79,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title"><img src="https://arunkoundinya.github.io/AIBasicswithAK/logo.png" style="width: 2.2em; height: 2.2em; border-radius: 30%;"> <b>AI Basics with AK</b></span>
     </a>
   </div>
@@ -90,21 +125,21 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../AI_Vlogs/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../../AI_Vlogs/index.html"> 
 <span class="menu-text">AI_Vlogs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blogs/index.html"> 
+    <a class="nav-link" href="../../../../blogs/index.html"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../../index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -130,7 +165,22 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#episode-02" id="toc-episode-02" class="nav-link active" data-scroll-target="#episode-02">Episode 02</a>
+  <ul class="collapse">
+  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
+  <li><a href="#initializing-declaration-variables" id="toc-initializing-declaration-variables" class="nav-link" data-scroll-target="#initializing-declaration-variables">Initializing &amp; Declaration Variables</a></li>
+  <li><a href="#reserve-keywords" id="toc-reserve-keywords" class="nav-link" data-scroll-target="#reserve-keywords">Reserve Keywords</a></li>
+  <li><a href="#updating-variables" id="toc-updating-variables" class="nav-link" data-scroll-target="#updating-variables">Updating Variables</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data Types</a></li>
+  <li><a href="#data-type-identification" id="toc-data-type-identification" class="nav-link" data-scroll-target="#data-type-identification">Data Type Identification</a></li>
+  </ul></li>
+  <li><a href="#thank-you" id="toc-thank-you" class="nav-link" data-scroll-target="#thank-you">Thank You</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="variables_datatypes.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -138,13 +188,19 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">AI Basics with AK</h1>
-<p class="subtitle lead">Notes for my Vlogs</p>
+<p class="subtitle lead">Season 02 - Introduction to Python Programming</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Arun Koundinya Parasa </p>
+          </div>
+  </div>
     
   
     
@@ -155,271 +211,233 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This format is inspired from my <a href="https://datavizaz.org">data visualization</a> class; So will be sticking to this format.</p>
-<div>
-<style>
-    .tb table.collapsible {
-        width: 1008px;
-        border-collapse: collapse;
-        margin: 50px auto;
-        font-family: 'Calibri (Body)';
-    }
+<section id="episode-02" class="level1">
+<h1>Episode 02</h1>
+<p>Variables &amp; Data Types</p>
+<section id="agenda" class="level2">
+<h2 class="anchored" data-anchor-id="agenda">Agenda</h2>
+<div style="font-size: 75%;">
+<ul>
+<li>Variables: Foundations of Programming
+<ul>
+<li>Initializaton &amp; Declaration</li>
+<li>Reserve KeyWords</li>
+<li>Updations</li>
+</ul></li>
+<li>Data Types: DNA of Information
+<ul>
+<li>Different Data Types</li>
+<li>Data Type Identification</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="initializing-declaration-variables" class="level2">
+<h2 class="anchored" data-anchor-id="initializing-declaration-variables">Initializing &amp; Declaration Variables</h2>
+<div style="font-size: 75%;">
+<p>Last week we have seen an example of variables declaration i.e.; <code>x=2</code>. However, let us see some basic rules:</p>
+</div>
+<div style="font-size: 60%;">
+<ul>
+<li>Variables are like characters.</li>
+<li>Variables can contain only Alphabets, Numbers and Underscore</li>
+<li>They are case sensitive.</li>
+<li>They can start with underscore &amp; alphabets but not with digits.</li>
+</ul>
+</div>
+<div style="font-size: 75%;">
+<div id="c89f2b66" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> <span class="st">"Fish"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>_x <span class="op">=</span> <span class="st">"2"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x_x <span class="op">=</span> <span class="dv">1203</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> y <span class="op">=</span> z <span class="op">=</span> <span class="st">"MultipleAssignment"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Declarations that are not allowed</p>
+</div>
+<div style="font-size: 60%;">
+<ul>
+<li><code>0x = "startingwithzero"</code></li>
+<li><code>x-x = "hyphen"</code></li>
+<li><code>x x = "space"</code></li>
+</ul>
+</div>
+</section>
+<section id="reserve-keywords" class="level2">
+<h2 class="anchored" data-anchor-id="reserve-keywords">Reserve Keywords</h2>
+<div id="b5eba729" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="st">"keywords"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Here is a list of the Python keywords.  Enter any keyword to get more help.
 
-    .tb .collapsible td {
-        padding: 10px;
-        border: 1px solid #ccc;
-        text-align: center;
-        font-size: 16px;
-    }
-
-    .tb {
-        margin: 10px 0;
-    }
-
-    .tb span+span,
-    .collapsible {
-        display: none;
-    }
-
-    .tb input[type="checkbox"]:checked ~ span {
-        display: none;
-    }
-
-    .tb input[type="checkbox"]:checked ~ span+span {
-        display: inline;
-    }
-
-    .tb input[type="checkbox"]:checked ~ .collapsible {
-        display: table;
-    }
-
-    .tb a {
-        color: #3498db; /* Set link color */
-        text-decoration: none; /* Remove underlines */
-    }
-
-    .tb a:hover {
-        text-decoration: underline; /* Add underline on hover */
-    }
-</style>
-
-<script>
-    $(document).ready(function () {
-        $('[data-toggle="toggle"]').change(function () {
-            $(this).parents('.tb').find('.collapsible').toggle();
-        });
-    });
-</script>
-
-<div class="tb">
-    <input type="checkbox" data-toggle="toggle">
-    <span>Season-2 : Introduction to Python Programming</span><span>Season-2</span>
-    
-<table id="season02" class="collapsible table" data-quarto-postprocess="true">
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 
+</code></pre>
+</div>
+</div>
+</section>
+<section id="updating-variables" class="level2">
+<h2 class="anchored" data-anchor-id="updating-variables">Updating Variables</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fdab8be1" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span>  <span class="dv">2</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="st">"AI"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>AI
+2</code></pre>
+</div>
+</div>
+<div style="font-size: 75%;">
+<p>Here we can see that the variable <code>y</code> has been assigned the value 2.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="8972f330" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span>  <span class="dv">2</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2
+2</code></pre>
+</div>
+</div>
+<div style="font-size: 75%;">
+<p>Here we can observe that the <code>y</code> variable does not get updated after the addition operation.</p>
+</div>
+</div>
+</div>
+<p>Why there is a difference?</p>
+</section>
+<section id="data-types" class="level2">
+<h2 class="anchored" data-anchor-id="data-types">Data Types</h2>
+<div style="font-size: 75%;">
+<table class="table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 15%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Examples</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="background-color: #3498db; color: white"><strong>Episode</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Episode Title</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Slides / Handout</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Home Work</strong></td>
-<td style="background-color: #3498db; color: white"><strong>YouTube Video Link</strong></td>
-<td style="background-color: #3498db; color: white"><strong>YouTube Demo File</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Date of Upload</strong></td>
+<td>Boolean</td>
+<td><code>bool</code></td>
+<td><code>True</code>, <code>False</code></td>
 </tr>
 <tr class="even">
-<td>Episode - 01</td>
-<td>Why Python?</td>
-<td><a href="slides/season02/episode01/why-python.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode01/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/zynrOOSNXro?feature=shared" target="_blank">Link</a></td>
-<td>NA</td>
-<td>1st March 2024</td>
+<td>Integer</td>
+<td><code>int</code></td>
+<td><code>1900</code>, <code>2000</code>, <code>203</code></td>
 </tr>
 <tr class="odd">
-<td>Episode - 02</td>
-<td>Python Data Types</td>
-<td><a href="slides/season02/episode02/variables_datatypes.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode02/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/-41cT7lAsZ4" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode02/Demo.py" target="_blank">Demo File</a></td>
-<td>8th March 2024</td>
+<td>Float</td>
+<td><code>float</code></td>
+<td><code>10.30</code>, <code>34.56</code></td>
 </tr>
 <tr class="even">
-<td>Episode - 03</td>
-<td>Numbers &amp; Booleans</td>
-<td><a href="slides/season02/episode03/numbers_booleans.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode03/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/i4ubGLFbu30" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode03/epi03demo.py" target="_blank">Demo File</a></td>
-<td>17th March 2024</td>
+<td>Complex</td>
+<td><code>complex</code></td>
+<td><code>4j</code>, <code>6j + 5</code></td>
 </tr>
 <tr class="odd">
-<td>Episode - 04</td>
-<td>Strings &amp; Characters - 1</td>
-<td><a href="slides/season02/episode04/strings_characters_1.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode04/homework.html" target="_blank">Link</a></td>
-<td><a href="">Not Yet Upoad</a></td>
-<td><a href="" target="_blank">Not Yet</a></td>
-<td>24th March 2024</td>
+<td>Text &amp; String</td>
+<td><code>str</code></td>
+<td><code>"AI"</code>, <code>"Basics"</code></td>
 </tr>
 <tr class="even">
-<td>Episode - 05</td>
-<td>Strings &amp; Characters - 2</td>
-<td><a href="" target="_blank">Link</a></td>
-<td><a href="" target="_blank">Link</a></td>
-<td><a href="">Not Yet</a></td>
-<td><a href="" target="_blank">Not Yet</a></td>
-<td></td>
+<td>Lists</td>
+<td><code>list</code></td>
+<td><code>[ 1 , 2, 3, 4 ]</code></td>
 </tr>
 <tr class="odd">
-<td>Episode - 06</td>
-<td>Lists &amp; Tuples</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
+<td>Tuples</td>
+<td><code>tuple</code></td>
+<td><code>( 3, 4, 5 )</code></td>
 </tr>
 <tr class="even">
-<td>Episode - 07</td>
-<td>Ifs &amp; Breaks</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 08</td>
 <td>Dictionaries</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 09</td>
-<td>Functions</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
+<td><code>dict</code></td>
+<td><code>{'course' : "AI" , 'Subject' : "Python" }</code></td>
 </tr>
 <tr class="odd">
-<td>Episode - 10</td>
-<td>Lambda Functions</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 11</td>
-<td>Classes &amp; Objects - 1</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 12</td>
-<td>Classes &amp; Objects - 2</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 13</td>
-<td>Inheritance</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 14</td>
-<td>Mutiple Inheritance</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 15</td>
-<td>Multi Threading &amp; Multi Processing</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 16</td>
-<td>Debugging the Code</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Episode - 17</td>
-<td>End to End Project</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Episode - 18</td>
-<td>Deployin the Project</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
+<td>Sets</td>
+<td><code>set</code></td>
+<td><code>{ 4 , 7, 8 }</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="tb">
-<input type="checkbox">
- <span>Season-3</span><span>Hide</span>
-<table id="season03" class="collapsible table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td>Not Yet Available</td>
-</tr>
-</tbody>
-</table>
+</section>
+<section id="data-type-identification" class="level2">
+<h2 class="anchored" data-anchor-id="data-type-identification">Data Type Identification</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="2519eb3c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> <span class="st">"3"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data Type of x1 is :"</span>, <span class="bu">type</span>(x1))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data Type of x2 is :"</span>, <span class="bu">type</span>(x2))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>x3 <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data Type of x3 is :"</span>, <span class="bu">type</span>(x3))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>x4 <span class="op">=</span> <span class="ot">4j</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data Type of x4 is :"</span>, <span class="bu">type</span>(x4))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>x5 <span class="op">=</span> <span class="fl">4.3</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data Type of x5 is :"</span>, <span class="bu">type</span>(x5))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Data Type of x1 is : &lt;class 'str'&gt;
+Data Type of x2 is : &lt;class 'int'&gt;
+Data Type of x3 is : &lt;class 'bool'&gt;
+Data Type of x4 is : &lt;class 'complex'&gt;
+Data Type of x5 is : &lt;class 'float'&gt;</code></pre>
 </div>
-<div class="tb">
-<input type="checkbox">
- <span>Season-4</span><span>Hide</span>
-<table id="season04" class="collapsible table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td>Not Yet Available</td>
-</tr>
-</tbody>
-</table>
 </div>
-
+</div><div class="column" style="width:50%;">
+<div id="b04d8596" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x6 <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data Type of x6 is :"</span>, <span class="bu">type</span>(x6))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>x7 <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data Type of x7 is :"</span>, <span class="bu">type</span>(x7))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>x8 <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>}</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data Type of x8 is :"</span>, <span class="bu">type</span>(x8))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>x9 <span class="op">=</span> {<span class="st">'course'</span> : <span class="st">"AI"</span> , <span class="st">"Subject"</span>: <span class="st">"Python"</span>}</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data Type of x9 is :"</span>, <span class="bu">type</span>(x9))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Data Type of x6 is : &lt;class 'list'&gt;
+Data Type of x7 is : &lt;class 'tuple'&gt;
+Data Type of x8 is : &lt;class 'set'&gt;
+Data Type of x9 is : &lt;class 'dict'&gt;</code></pre>
 </div>
-</main></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="thank-you" class="level1">
+<h1>Thank You</h1>
 
 
+</section>
 
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -807,7 +825,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
- <!-- /content -->
+</div> <!-- /content -->
 
 
 
