@@ -108,19 +108,19 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Strings & Characters - 1</td>
 <td><a href="slides/season02/episode04/strings_characters_1.html" target="_blank">Link</a></td>
 <td><a href="homework/season02/episode04/homework.html" target="_blank">Link</a></td>
-<td><a href="">Not Yet Upoad</a></td>
-<td><a href="" target="_blank">Not Yet</a></td>
+<td><a href="https://youtu.be/Pr-qno6m3kA" target="_blank">Link</a></td>
+<td><a href="" target="_blank">No Demo</a></td>
 <td>24th March 2024</td>
 </tr>
 
 <tr>
 <td>Episode - 05</td>
 <td>Strings & Characters - 2</td>
-<td><a href="" target="_blank">Link</a></td>
-<td><a href="" target="_blank">Link</a></td>
+<td><a href="slides/season02/episode05/strings_characters_2.html" target="_blank">Link</a></td>
+<td><a href="homework/season02/episode05/homework.html" target="_blank">Link</a></td>
 <td><a href="">Not Yet</a></td>
 <td><a href="" target="_blank">Not Yet</a></td>
-<td></td>
+<td>31st March 2024</td>
 </tr>
 
 <tr>
