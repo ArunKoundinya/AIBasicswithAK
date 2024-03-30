@@ -407,221 +407,368 @@ Arun Koundinya Parasa
 
 </section>
 <section>
-<section id="episode-02" class="title-slide slide level1 center">
-<h1>Episode 02</h1>
-<p>Variables &amp; Data Types</p>
+<section id="episode-05" class="title-slide slide level1 center">
+<h1>Episode 05</h1>
+<p>Strings &amp; Characters - Part2</p>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
-<div style="font-size: 75%;">
 <ul>
-<li>Variables: Foundations of Programming
-<ul>
-<li>Initializaton &amp; Declaration</li>
-<li>Reserve KeyWords</li>
-<li>Updations</li>
-</ul></li>
-<li>Data Types: DNA of Information
-<ul>
-<li>Different Data Types</li>
-<li>Data Type Identification</li>
-</ul></li>
+<li>Strings { Last Episode }</li>
+<li>String Mathematical Operations { Last Episode }</li>
+<li>Indexing { Last Episode }</li>
+<li>Slicing { Last Episode }</li>
+<li>String Operations</li>
+<li>New Style Operators { Next Episode }</li>
 </ul>
-</div>
 </section>
-<section id="initializing-declaration-variables" class="slide level2">
-<h2>Initializing &amp; Declaration Variables</h2>
-<div style="font-size: 75%;">
-<p>Last week we have seen an example of variables declaration i.e.; <code>x=2</code>. However, let us see some basic rules:</p>
-</div>
-<div style="font-size: 60%;">
-<ul>
-<li>Variables are like characters.</li>
-<li>Variables can contain only Alphabets, Numbers and Underscore</li>
-<li>They are case sensitive.</li>
-<li>They can start with underscore &amp; alphabets but not with digits.</li>
-</ul>
-</div>
-<div style="font-size: 75%;">
-<div id="b882fe4e" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>x0 <span class="op">=</span> <span class="st">"Fish"</span></span>
-<span id="cb1-2"><a></a>_x <span class="op">=</span> <span class="st">"2"</span></span>
-<span id="cb1-3"><a></a>x_x <span class="op">=</span> <span class="dv">1203</span></span>
-<span id="cb1-4"><a></a>x <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb1-5"><a></a>x <span class="op">=</span> y <span class="op">=</span> z <span class="op">=</span> <span class="st">"MultipleAssignment"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Declarations that are not allowed</p>
-</div>
-<div style="font-size: 60%;">
-<ul>
-<li><code>0x = "startingwithzero"</code></li>
-<li><code>x-x = "hyphen"</code></li>
-<li><code>x x = "space"</code></li>
-</ul>
-</div>
-</section>
-<section id="reserve-keywords" class="slide level2">
-<h2>Reserve Keywords</h2>
-<div id="7cd567ad" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="bu">help</span>(<span class="st">"keywords"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="string-operations" class="slide level2">
+<h2>String Operations</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Split</a></li><li><a href="#tabset-1-2">Join</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="cell-7" class="cell" data-outputid="e3827c07-6d29-4f97-b00d-ccfa9da8054d" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>var <span class="op">=</span> <span class="st">"It is a very beautiful day!"</span></span>
+<span id="cb1-2"><a></a><span class="bu">print</span>(var)</span>
+<span id="cb1-3"><a></a>splitvariable <span class="op">=</span> var.split()</span>
+<span id="cb1-4"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>,splitvariable)</span>
+<span id="cb1-5"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>,<span class="bu">len</span>(splitvariable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Here is a list of the Python keywords.  Enter any keyword to get more help.
+<pre><code>It is a very beautiful day!
 
-False               class               from                or
-None                continue            global              pass
-True                def                 if                  raise
-and                 del                 import              return
-as                  elif                in                  try
-assert              else                is                  while
-async               except              lambda              with
-await               finally             nonlocal            yield
-break               for                 not                 
+ ['It', 'is', 'a', 'very', 'beautiful', 'day!']
+
+ 6</code></pre>
+</div>
+</div>
+<div id="cell-8" class="cell" data-outputid="7ee13be8-5887-467f-83ef-f713aa9ba2e7" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="bu">print</span>(var.split(<span class="st">'d'</span>))</span>
+<span id="cb3-2"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>,<span class="bu">len</span>(var.split(<span class="st">'d'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['It is a very beautiful ', 'ay!']
+
+ 2</code></pre>
+</div>
+</div>
+<div id="cell-9" class="cell" data-outputid="5072af2d-d8bc-456d-a4b5-ba12e2eeb0cf" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="bu">print</span>(var.split(<span class="st">'!'</span>))</span>
+<span id="cb5-2"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>,<span class="bu">len</span>(var.split(<span class="st">'!'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['It is a very beautiful day', '']
+
+ 2</code></pre>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="cell-12" class="cell" data-outputid="13038611-1dc4-4234-9677-256d4fba3c52" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>var <span class="op">=</span> <span class="st">"I have 10$ cash with me!"</span></span>
+<span id="cb7-2"><a></a><span class="bu">print</span>(var)</span>
+<span id="cb7-3"><a></a>splitvariable <span class="op">=</span> var.split(<span class="st">'$'</span>)</span>
+<span id="cb7-4"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>,splitvariable)</span>
+<span id="cb7-5"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>,<span class="bu">len</span>(splitvariable))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I have 10$ cash with me!
+
+ ['I have 10', ' cash with me!']
+
+ 2</code></pre>
+</div>
+</div>
+<div id="cell-13" class="cell" data-outputid="87fabdf8-77cb-4112-a4d7-3ea740f15d58" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>splitvariable[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>'I have 10'</code></pre>
+</div>
+</div>
+<div id="cell-14" class="cell" data-outputid="cea80d89-1bc2-437a-f84a-bcc56b61a3fc" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>splitvariable[<span class="dv">0</span>].split()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>['I', 'have', '10']</code></pre>
+</div>
+</div>
+<div id="cell-15" class="cell" data-outputid="fe264440-d149-4a5f-a945-29401cd97ad9" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>splitvariable[<span class="dv">0</span>].split()[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>'10'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="cell-19" class="cell" data-outputid="1e76e175-c286-48eb-88a3-cf266e0c113b" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="bu">print</span>(splitvariable)</span>
+<span id="cb15-2"><a></a></span>
+<span id="cb15-3"><a></a><span class="co">''</span>.join(splitvariable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['I have 10', ' cash with me!']</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>'I have 10 cash with me!'</code></pre>
+</div>
+</div>
+<div id="cell-20" class="cell" data-outputid="24f8a083-446e-4a6f-ec4d-7d9cd03a5402" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="co">'$'</span>.join(splitvariable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>'I have 10$ cash with me!'</code></pre>
+</div>
+</div>
+<div id="cell-21" class="cell" data-outputid="d166f646-0046-467c-cecc-2592ee8615a7" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>var <span class="op">=</span> [<span class="st">"I"</span>,<span class="st">"want"</span>,<span class="st">"to"</span>,<span class="st">"dance"</span>,<span class="st">"now!"</span>]</span>
+<span id="cb20-2"><a></a></span>
+<span id="cb20-3"><a></a><span class="co">' '</span>.join(var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>'I want to dance now!'</code></pre>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="cell-24" class="cell" data-outputid="e788faeb-b99b-4ded-af2d-10b81adeb006" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="co">'space'</span>.join(var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>'Ispacewantspacetospacedancespacenow!'</code></pre>
+</div>
+</div>
+<div id="cell-25" class="cell" data-outputid="6b785c1b-5b86-4d62-9620-19a913ccec8e" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>join_seperator <span class="op">=</span> <span class="st">" %&amp; "</span></span>
+<span id="cb24-2"><a></a>var <span class="op">=</span> [<span class="st">"This"</span>,<span class="st">"is"</span>,<span class="st">"just"</span>,<span class="st">"an"</span>,<span class="st">"Example"</span>]</span>
+<span id="cb24-3"><a></a><span class="bu">print</span>(join_seperator.join(var))</span>
+<span id="cb24-4"><a></a><span class="bu">print</span>(<span class="st">" "</span>)</span>
+<span id="cb24-5"><a></a><span class="bu">print</span>(<span class="bu">type</span>(join_seperator.join(var)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>This %&amp; is %&amp; just %&amp; an %&amp; Example
+ 
+&lt;class 'str'&gt;</code></pre>
+</div>
+</div>
+<div id="cell-26" class="cell" data-outputid="11c1b0af-e3a0-47ba-eb23-7d80f0eea938" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="bu">print</span>(<span class="bu">type</span>(var))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'list'&gt;</code></pre>
+</div>
+</div>
+<div style="font-size: 65%;">
+<p>this is list variable type which we wil discuss in future episodes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-operations-1" class="slide level2">
+<h2>String Operations</h2>
+<h3 id="strip">Strip</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="cell-35" class="cell" data-outputid="b67aa217-9485-43b3-efc9-df68cae4a4f9" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a>new_var <span class="op">=</span> <span class="st">"  Wow! there is a tree!! over there! "</span></span>
+<span id="cb28-2"><a></a><span class="bu">print</span>(new_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Wow! there is a tree!! over there! </code></pre>
+</div>
+</div>
+<div id="cell-36" class="cell" data-outputid="241e8de7-fc8b-458f-bb62-3edb7ae04ebc" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a>new_var.strip()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>'Wow! there is a tree!! over there!'</code></pre>
+</div>
+</div>
+<div id="cell-37" class="cell" data-outputid="fa67d33c-64b4-479d-ca6c-4e35e6efcbba" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>new_var.lstrip()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>'Wow! there is a tree!! over there! '</code></pre>
+</div>
+</div>
+<div id="cell-38" class="cell" data-outputid="a2d1584d-f285-4eb6-e876-042e13851b30" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a>new_var.rstrip()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>'  Wow! there is a tree!! over there!'</code></pre>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="cell-41" class="cell" data-outputid="a27a75ea-2914-4135-96c2-40bea88cab42" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a>new_var2 <span class="op">=</span> <span class="st">"What the program </span><span class="ch">\\</span><span class="st"> "</span></span>
+<span id="cb36-2"><a></a><span class="bu">print</span>(new_var2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>What the program \ </code></pre>
+</div>
+</div>
+<div id="cell-42" class="cell" data-outputid="f6e26798-c0ae-47e3-8c22-862da1774633" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a></a>new_var2.strip(<span class="st">' </span><span class="ch">\\</span><span class="st"> '</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>'What the program'</code></pre>
+</div>
+</div>
+<div id="cell-43" class="cell" data-outputid="ea53a97a-02cf-428f-8829-f640650ad690" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a></a>new_var3 <span class="op">=</span> <span class="st">"Hi!!! I Miss you a lot ..:)"</span></span>
+<span id="cb40-2"><a></a>new_var3.strip(<span class="st">':().!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>'Hi!!! I Miss you a lot '</code></pre>
+</div>
+</div>
+<div id="cell-44" class="cell" data-outputid="870b713f-5d03-4e05-81ab-638fd1c01e97" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a></a>new_var3.strip(<span class="st">':().!'</span> <span class="op">+</span> <span class="st">' '</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>'Hi!!! I Miss you a lot'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-operations-2" class="slide level2">
+<h2>String Operations</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Find</a></li><li><a href="#tabset-2-2">Replace &amp; Case</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="cell-50" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a></a>var <span class="op">=</span> <span class="st">'''You know my name</span></span>
+<span id="cb44-2"><a></a><span class="st">You know my name</span></span>
+<span id="cb44-3"><a></a><span class="st">You know my name</span></span>
+<span id="cb44-4"><a></a><span class="st">You know my name</span></span>
+<span id="cb44-5"><a></a><span class="st">You know my name</span></span>
+<span id="cb44-6"><a></a><span class="st">You know my name</span></span>
+<span id="cb44-7"><a></a><span class="st">'''</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-51" class="cell" data-outputid="1cc4b02b-c5ec-4298-d65e-fe3a8aaef9bd" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a>var.find(<span class="st">'You'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>0</code></pre>
+</div>
+</div>
+<div id="cell-52" class="cell" data-outputid="a11a6252-d1f7-4b11-c42a-51ec4038f976" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a></a>var.rfind(<span class="st">'You'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>85</code></pre>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="font-size: 80%;">
+<div id="cell-55" class="cell" data-outputid="41ae3651-31e0-4214-b623-6e80f4477c40" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a></a>var.find(<span class="st">'you'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>-1</code></pre>
+</div>
+</div>
+<div id="cell-56" class="cell" data-outputid="cf7bea65-3d0c-49c9-9d2c-20b94bd3f795" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a></a>var.startswith(<span class="st">'You'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="cell-57" class="cell" data-outputid="c63dc011-45bf-4319-b383-ac62f8c2072b" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a></a>var.endswith(<span class="st">'name'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>False</code></pre>
+</div>
+</div>
+<div id="cell-58" class="cell" data-outputid="70889e51-c4fa-4731-febd-db2fec63e010" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a></a>var.endswith(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="cell-59" class="cell" data-outputid="bba5a89f-9ecb-45bd-a01b-d456748c3147" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a></a>var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<pre><code>'You know my name\nYou know my name\nYou know my name\nYou know my name\nYou know my name\nYou know my name\n'</code></pre>
+</div>
+</div>
+<div id="cell-60" class="cell" data-outputid="86d3804d-301f-49de-cb5b-6ea748ebcf11" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a></a>var.count(<span class="st">'You know my name'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<pre><code>6</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="replace" style="font-size: 80%;">
+<h4>Replace</h4>
+<div id="cell-65" class="cell" data-outputid="107b262c-bdc5-42d7-b832-3acaf55a2824" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a></a>new_var <span class="op">=</span> var.replace(<span class="st">'You'</span>,<span class="st">'I'</span>)</span>
+<span id="cb61-2"><a></a></span>
+<span id="cb61-3"><a></a><span class="bu">print</span>(new_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I know my name
+I know my name
+I know my name
+I know my name
+I know my name
+I know my name
+</code></pre>
+</div>
+</div>
+<div id="cell-66" class="cell" data-outputid="2f3212c3-4172-4e40-93b0-87ace857416a" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a></a><span class="bu">print</span>(var.replace(<span class="st">'You'</span>,<span class="st">'I'</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I know my name
+I know my name
+I know my name
+You know my name
+You know my name
+You know my name
 </code></pre>
 </div>
 </div>
 </section>
-<section id="updating-variables" class="slide level2">
-<h2>Updating Variables</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div id="d0a55f9d" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>x <span class="op">=</span>  <span class="dv">2</span></span>
-<span id="cb4-2"><a></a>y <span class="op">=</span> <span class="st">"AI"</span></span>
-<span id="cb4-3"><a></a><span class="bu">print</span>(y)</span>
-<span id="cb4-4"><a></a>y <span class="op">=</span> x</span>
-<span id="cb4-5"><a></a><span class="bu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>AI
-2</code></pre>
-</div>
-</div>
-<div style="font-size: 75%;">
-<p>Here we can see that the variable <code>y</code> has been assigned the value 2.</p>
-</div>
 </div><div class="column" style="width:50%;">
-<div id="2af5dec1" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>x <span class="op">=</span>  <span class="dv">2</span></span>
-<span id="cb6-2"><a></a>y <span class="op">=</span> x</span>
-<span id="cb6-3"><a></a><span class="bu">print</span>(y)</span>
-<span id="cb6-4"><a></a>x <span class="op">=</span> x <span class="op">+</span> <span class="dv">5</span></span>
-<span id="cb6-5"><a></a><span class="bu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="casestatement" style="font-size: 80%;">
+<h4>CaseStatement</h4>
+<div id="cell-70" class="cell" data-outputid="af6661b4-1b88-40b3-b119-f271767452f6" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a></a>var <span class="op">=</span> <span class="st">"i am a spiritual cognitive scientist."</span></span>
+<span id="cb65-2"><a></a>var.capitalize()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<pre><code>'I am a spiritual cognitive scientist.'</code></pre>
+</div>
+</div>
+<div id="cell-71" class="cell" data-outputid="a79bf9e2-777f-4381-d212-a135cad19b66" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a></a><span class="bu">print</span>( var.upper() )</span>
+<span id="cb67-2"><a></a><span class="bu">print</span>(<span class="st">" "</span>)</span>
+<span id="cb67-3"><a></a><span class="bu">print</span>(var.lower())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>2
-2</code></pre>
+<pre><code>I AM A SPIRITUAL COGNITIVE SCIENTIST.
+ 
+i am a spiritual cognitive scientist.</code></pre>
 </div>
 </div>
-<div style="font-size: 75%;">
-<p>Here we can observe that the <code>y</code> variable does not get updated after the addition operation.</p>
+<div id="cell-72" class="cell" data-outputid="30797905-a036-4370-900c-f5bf650971d6" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a></a><span class="bu">print</span>(var.title())</span>
+<span id="cb69-2"><a></a><span class="bu">print</span>(<span class="st">""</span>)</span>
+<span id="cb69-3"><a></a><span class="bu">print</span>(var.title().swapcase())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I Am A Spiritual Cognitive Scientist.
+
+i aM a sPIRITUAL cOGNITIVE sCIENTIST.</code></pre>
 </div>
-</div>
-</div>
-<p>Why there is a difference?</p>
-</section>
-<section id="data-types" class="slide level2">
-<h2>Data Types</h2>
-<div style="font-size: 75%;">
-<table>
-<colgroup>
-<col style="width: 21%">
-<col style="width: 15%">
-<col style="width: 63%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Examples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Boolean</td>
-<td><code>bool</code></td>
-<td><code>True</code>, <code>False</code></td>
-</tr>
-<tr class="even">
-<td>Integer</td>
-<td><code>int</code></td>
-<td><code>1900</code>, <code>2000</code>, <code>203</code></td>
-</tr>
-<tr class="odd">
-<td>Float</td>
-<td><code>float</code></td>
-<td><code>10.30</code>, <code>34.56</code></td>
-</tr>
-<tr class="even">
-<td>Complex</td>
-<td><code>complex</code></td>
-<td><code>4j</code>, <code>6j + 5</code></td>
-</tr>
-<tr class="odd">
-<td>Text &amp; String</td>
-<td><code>str</code></td>
-<td><code>"AI"</code>, <code>"Basics"</code></td>
-</tr>
-<tr class="even">
-<td>Lists</td>
-<td><code>list</code></td>
-<td><code>[ 1 , 2, 3, 4 ]</code></td>
-</tr>
-<tr class="odd">
-<td>Tuples</td>
-<td><code>tuple</code></td>
-<td><code>( 3, 4, 5 )</code></td>
-</tr>
-<tr class="even">
-<td>Dictionaries</td>
-<td><code>dict</code></td>
-<td><code>{'course' : "AI" , 'Subject' : "Python" }</code></td>
-</tr>
-<tr class="odd">
-<td>Sets</td>
-<td><code>set</code></td>
-<td><code>{ 4 , 7, 8 }</code></td>
-</tr>
-</tbody>
-</table>
 </div>
 </section>
-<section id="data-type-identification" class="slide level2">
-<h2>Data Type Identification</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div id="440473ef" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>x1 <span class="op">=</span> <span class="st">"3"</span></span>
-<span id="cb8-2"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x1 is :"</span>, <span class="bu">type</span>(x1))</span>
-<span id="cb8-3"><a></a>x2 <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb8-4"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x2 is :"</span>, <span class="bu">type</span>(x2))</span>
-<span id="cb8-5"><a></a>x3 <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb8-6"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x3 is :"</span>, <span class="bu">type</span>(x3))</span>
-<span id="cb8-7"><a></a>x4 <span class="op">=</span> <span class="ot">4j</span> <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb8-8"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x4 is :"</span>, <span class="bu">type</span>(x4))</span>
-<span id="cb8-9"><a></a>x5 <span class="op">=</span> <span class="fl">4.3</span></span>
-<span id="cb8-10"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x5 is :"</span>, <span class="bu">type</span>(x5))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Data Type of x1 is : &lt;class 'str'&gt;
-Data Type of x2 is : &lt;class 'int'&gt;
-Data Type of x3 is : &lt;class 'bool'&gt;
-Data Type of x4 is : &lt;class 'complex'&gt;
-Data Type of x5 is : &lt;class 'float'&gt;</code></pre>
 </div>
-</div>
-</div><div class="column" style="width:50%;">
-<div id="56b160ae" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>x6 <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
-<span id="cb10-2"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x6 is :"</span>, <span class="bu">type</span>(x6))</span>
-<span id="cb10-3"><a></a>x7 <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
-<span id="cb10-4"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x7 is :"</span>, <span class="bu">type</span>(x7))</span>
-<span id="cb10-5"><a></a>x8 <span class="op">=</span> {<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>}</span>
-<span id="cb10-6"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x8 is :"</span>, <span class="bu">type</span>(x8))</span>
-<span id="cb10-7"><a></a>x9 <span class="op">=</span> {<span class="st">'course'</span> : <span class="st">"AI"</span> , <span class="st">"Subject"</span>: <span class="st">"Python"</span>}</span>
-<span id="cb10-8"><a></a><span class="bu">print</span>(<span class="st">"Data Type of x9 is :"</span>, <span class="bu">type</span>(x9))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Data Type of x6 is : &lt;class 'list'&gt;
-Data Type of x7 is : &lt;class 'tuple'&gt;
-Data Type of x8 is : &lt;class 'set'&gt;
-Data Type of x9 is : &lt;class 'dict'&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -629,6 +776,7 @@ Data Type of x9 is : &lt;class 'dict'&gt;</code></pre>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank You</h1>
+<p><a href="https://colab.research.google.com/github/ArunKoundinya/AIBasicswithAK/blob/master/AI_Vlogs/slides/season02/episode05/strings_characters_2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../../../logo.png" class="slide-logo"></p>
