@@ -1,16 +1,33 @@
 ---
-title: Home Work 03
+title: Home Work 05
 subtitle: 31st March 2024
 format: html
 ---
 
-This is our fourth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
+This is our fifth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
 
-#### Question 1 - Why class character is not available in python
+#### Question 1 - What are the limitations of the string operators that we have learned in this week. Please pick atleast two
 
 Use comments in `py` file or markdown in `ipynb` file to provide the answer
 
 #### Question 2 - Performing different creative versions of slicings and indexing.
+
+
+```{python}
+#| message: FALSE
+#| warning: FALSE
+#| eval: FALSE
+
+variable = "  Python is a versatile and powerful programming language used for web development, data analysis, artificial intelligence, and much more !:)"
+
+Question 2.1 - Remove the trailing spaces and special characters
+
+Question 2.2 - Split the sentences by comma
+
+Question 2.3 - Pick one split in the above sentence and replace any text of your choice to your name
+
+```
+
 
 
 ------------------------------------------------ Happy Learning -----------------------------------------------------
