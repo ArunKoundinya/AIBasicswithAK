@@ -10,7 +10,7 @@ This is our fifth homework assignment where you will address the following quest
 
 Use comments in `py` file or markdown in `ipynb` file to provide the answer
 
-#### Question 2 - Performing different creative versions of slicings and indexing.
+#### Question 2 - Complete the following subsquestions.
 
 
 ```{python}
