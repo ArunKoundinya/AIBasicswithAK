@@ -134,7 +134,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 </tr>
 
 <tr>
-<td>Episode - 06</td>
+<td>Episode - 07</td>
 <td>Lists & Tuples</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
