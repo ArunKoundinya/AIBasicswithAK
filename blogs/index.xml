@@ -10,7 +10,71 @@
 <atom:link href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/index.xml" rel="self" type="application/rss+xml"/>
 <description>LETS BREATHE DATA</description>
 <generator>quarto-1.4.550</generator>
-<lastBuildDate>Sun, 17 Mar 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 05 Apr 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>What metrics to be chosen for classification modelling?</title>
+  <dc:creator>Arun Koundinya Parasa</dc:creator>
+  <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>This blog is a reponse to my team-mates questions posted on <code>Whatsapp</code>. I’m sharing my learnings and views for her each question in a seperate blog.</p>
+<p>The biggest problem in classification modelling is to choose to a right metric for our problem at hand. Added to it, confusion matrix creates more confusion to us as it has more metrices that we imagine.</p>
+<p>Lets cut-short this Arun. Ask <code>GenAI</code> tools we rely on it.</p>
+<p>Go through this link of <code>ChatGPT</code> <a href="https://chat.openai.com/share/44e15e4f-ed46-49e4-97c7-232d98a3006c">response</a>. Definetly it will not help. Why?</p>
+<p>Arun!!! prompt has to be more specific.</p>
+<p>Okay! Okay! here it is with a revised prompt <a href="https://chat.openai.com/share/353267af-3dc4-449b-b0a1-2c4124a08ffe">response</a> from <code>ChatGPT</code>. Still it doesn’t help. Why?</p>
+<p>It is because, we have humans need to decide what is the right metric. For this <code>Data Scientists</code> need to step up and do three important things which are usually not in their comfort zone:</p>
+<ul>
+<li>Speak to business stakeholders and understand their purpose again.</li>
+<li>Also, understand how they will use our predictions.</li>
+<li>Finally, before jumping into modelling and its coding; step-back and check whether dependant variable is defined as per business purpose and its corresponding usage.</li>
+</ul>
+<p>Step three is the recipe of experience i.e.; multiple tries and failures, which will not be discussed in this blog.</p>
+<section id="confusion-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="confusion-matrix">Confusion Matrix</h2>
+<p>Understanding details of <code>Confusion Matrix</code> is fundamental.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/confusion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="857"></p>
+<figcaption>Source : https://en.wikipedia.org/wiki/Confusion_matrix</figcaption>
+</figure>
+</div>
+<p>Top four boxes is the result of prediction vs actual. Remaining boxes are dervied metrics based on the numbers.</p>
+<p>Lets not bog down into these multiple metrices.</p>
+</section>
+<section id="simpler-thumb-rules" class="level2">
+<h2 class="anchored" data-anchor-id="simpler-thumb-rules">Simpler Thumb Rules</h2>
+<p>R</p>
+</section>
+<section id="how-to-choose" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-choose">How to Choose</h2>
+<p>U</p>
+</section>
+<section id="why-stick-to-one-metric" class="level2">
+<h2 class="anchored" data-anchor-id="why-stick-to-one-metric">Why stick to one metric?</h2>
+<p>N</p>
+</section>
+<section id="can-we-change-the-metric-if-model-perform-is-poor" class="level2">
+<h2 class="anchored" data-anchor-id="can-we-change-the-metric-if-model-perform-is-poor">Can we change the metric if model perform is poor?</h2>
+<p>K</p>
+<script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="purple_dark" data-lang="en" crossorigin="anonymous" async="">
+</script>
+
+
+</section>
+
+ ]]></description>
+  <category>classification</category>
+  <category>modelling</category>
+  <category>metrics</category>
+  <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/</guid>
+  <pubDate>Fri, 05 Apr 2024 07:00:00 GMT</pubDate>
+  <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/confusion.png" medium="image" type="image/png" height="89" width="144"/>
+</item>
 <item>
   <title>Does Data Scientists need to learn programming?</title>
   <dc:creator>Arun Koundinya Parasa</dc:creator>

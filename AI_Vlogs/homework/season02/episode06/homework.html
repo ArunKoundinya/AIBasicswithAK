@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title> AI Basics with AK - My Views and Learnings on AI</title>
+<title> AI Basics with AK - Home Work 06</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +23,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<link href="../../../../logo.png" rel="icon" type="image/png">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +67,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="<img src='https://arunkoundinya.github.io/AIBasicswithAK/logo.png' style='width: 2.2em; height: 2.2em; border-radius: 30%;'> <b>AI Basics with AK</b>" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../../../../styles.css">
+</head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title"><img src="https://arunkoundinya.github.io/AIBasicswithAK/logo.png" style="width: 2.2em; height: 2.2em; border-radius: 30%;"> <b>AI Basics with AK</b></span>
     </a>
   </div>
@@ -150,21 +90,21 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../AI_Vlogs/index.html"> 
+    <a class="nav-link" href="../../../../AI_Vlogs/index.html"> 
 <span class="menu-text">AI_Vlogs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blogs/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../../blogs/index.html"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../blogs/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../../blogs/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -186,155 +126,47 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">My Views and Learnings on AI</h1>
-            <p class="subtitle lead">Having AI for breakfast</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="classification">classification <span class="quarto-category-count">(1)</span></div><div class="category" data-category="domain">domain <span class="quarto-category-count">(1)</span></div><div class="category" data-category="metrics">metrics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="modelling">modelling <span class="quarto-category-count">(1)</span></div><div class="category" data-category="operations">operations <span class="quarto-category-count">(1)</span></div><div class="category" data-category="programming">programming <span class="quarto-category-count">(1)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Home Work 06</h1>
+<p class="subtitle lead">07th April 2024</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<p>This is our sixth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file</p>
+<section id="question-1---what-are-the-limitations-of-the-f-style-operators." class="level4">
+<h4 class="anchored" data-anchor-id="question-1---what-are-the-limitations-of-the-f-style-operators.">Question 1 - What are the limitations of the f-style operators.</h4>
+<p>Use comments in <code>py</code> file or markdown in <code>ipynb</code> file to provide the answer</p>
+<p>———————————————— Happy Learning —————————————————–</p>
+<script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="purple_dark" data-lang="en" crossorigin="anonymous" async="">
+</script>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="classification,modelling,metrics" data-listing-date-sort="1712300400000" data-listing-file-modified-sort="1712301068924" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="367">
-<div class="thumbnail">
-<p><a href="../blogs/posts/metrics-classification-model/index.html" class="no-external"></a></p><a href="../blogs/posts/metrics-classification-model/index.html" class="no-external">
-<p><img src="../blogs/posts/metrics-classification-model/confusion.png" class="thumbnail-image"></p>
-</a><p><a href="../blogs/posts/metrics-classification-model/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blogs/posts/metrics-classification-model/index.html" class="no-external">What metrics to be chosen for classification modelling?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blogs/posts/metrics-classification-model/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('classification'); return false;">
-classification
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('modelling'); return false;">
-modelling
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('metrics'); return false;">
-metrics
-</div>
-</div>
-<div class="listing-description">
-<a href="../blogs/posts/metrics-classification-model/index.html" class="no-external">This blog is a reponse to my team-mates questions posted on <code>Whatsapp</code>. I’m sharing my learnings and views for her each question in a seperate blog.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blogs/posts/metrics-classification-model/index.html" class="no-external">
-<div class="listing-date">
-Apr 5, 2024
-</div>
-<div class="listing-author">
-Arun Koundinya Parasa
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="programming" data-listing-date-sort="1710658800000" data-listing-file-modified-sort="1710547991598" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="588">
-<div class="thumbnail">
-<p><a href="../blogs/posts/learn-programming/index.html" class="no-external"></a></p><a href="../blogs/posts/learn-programming/index.html" class="no-external">
-<p><img src="../blogs/posts/learn-programming/image.png" class="thumbnail-image"></p>
-</a><p><a href="../blogs/posts/learn-programming/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blogs/posts/learn-programming/index.html" class="no-external">Does Data Scientists need to learn programming?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blogs/posts/learn-programming/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('programming'); return false;">
-programming
-</div>
-</div>
-<div class="listing-description">
-<a href="../blogs/posts/learn-programming/index.html" class="no-external">In an era of AI-enabled applications, chats, and programming (now with Devin), many youngsters and new entrants in the data science field assume that learning programming…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blogs/posts/learn-programming/index.html" class="no-external">
-<div class="listing-date">
-Mar 17, 2024
-</div>
-<div class="listing-author">
-Arun Koundinya Parasa
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="domain,operations" data-listing-date-sort="1690268400000" data-listing-file-modified-sort="1710518637526" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="891">
-<div class="thumbnail">
-<p><a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external"></a></p><a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">
-<p><img src="../blogs/posts/is-domain-knowledge-important/image.png" class="thumbnail-image"></p>
-</a><p><a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">Does Data Scientists need to understand Domain Knowledge?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('domain'); return false;">
-domain
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('operations'); return false;">
-operations
-</div>
-</div>
-<div class="listing-description">
-<a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">This article intends to explain domain knowledge’s importance to freshers. The example provided below is from my own experience.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">
-<div class="listing-date">
-Jul 25, 2023
-</div>
-<div class="listing-author">
-Arun Koundinya Parasa
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
