@@ -10,3 +10,10 @@ Welcome to my AI Vlog Series Hub! 🚀 This website is crafted to elevate your e
 
 I'm thrilled to embark on this next chapter, and I hope you'll find joy and enrichment in exploring these resources. Your support is my motivation—thank you for being a part of this exciting adventure! 🌟
 
+My Last three videos
+
+{{< video https://www.youtube.com/embed/-DrQBPWuz9I?si=sKcnFBYYkKs2Oren width="400" height="300" >}}
+
+{{< video https://www.youtube.com/embed/YtblBrvnqII?si=aMf-eLPHfs1kyUbM width="400" height="300" >}}
+
+{{< video https://www.youtube.com/embed/Pr-qno6m3kA?si=6eFXL5wxPvTRIiDO width="400" height="300" >}}
