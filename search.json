@@ -32,7 +32,7 @@
     "href": "blogs/index.html",
     "title": "My Views and Learnings on AI",
     "section": "",
-    "text": "What metrics to be chosen for classification modelling?\n\n\n\n\n\n\nclassification\n\n\nmodelling\n\n\nmetrics\n\n\n\n\n\n\n\n\n\nApr 5, 2024\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Data Scientists need to learn programming?\n\n\n\n\n\n\nprogramming\n\n\n\n\n\n\n\n\n\nMar 17, 2024\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Data Scientists need to understand Domain Knowledge?\n\n\n\n\n\n\ndomain\n\n\noperations\n\n\n\n\n\n\n\n\n\nJul 25, 2023\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\nNo matching items"
+    "text": "What metrics to be chosen for classification modelling?\n\n\n\n\n\n\nclassification\n\n\nmodelling\n\n\nmetrics\n\n\nbinaryclassifcation\n\n\n\n\n\n\n\n\n\nApr 10, 2024\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Data Scientists need to learn programming?\n\n\n\n\n\n\nprogramming\n\n\n\n\n\n\n\n\n\nMar 17, 2024\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Data Scientists need to understand Domain Knowledge?\n\n\n\n\n\n\ndomain\n\n\noperations\n\n\n\n\n\n\n\n\n\nJul 25, 2023\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blogs/posts/is-domain-knowledge-important/index.html",
@@ -46,42 +46,49 @@
     "href": "blogs/posts/metrics-classification-model/index.html",
     "title": "What metrics to be chosen for classification modelling?",
     "section": "",
-    "text": "This blog is a reponse to my team-mates questions posted on Whatsapp. I’m sharing my learnings and views for her each question in a seperate blog.\nThe biggest problem in classification modelling is to choose to a right metric for our problem at hand. Added to it, confusion matrix creates more confusion to us as it has more metrices that we imagine.\nLets cut-short this Arun. Ask GenAI tools we rely on it.\nGo through this link of ChatGPT response. Definetly it will not help. Why?\nArun!!! prompt has to be more specific.\nOkay! Okay! here it is with a revised prompt response from ChatGPT. Still it doesn’t help. Why?\nIt is because, we have humans need to decide what is the right metric. For this Data Scientists need to step up and do three important things which are usually not in their comfort zone:\nStep three is the recipe of experience i.e.; multiple tries and failures, which will not be discussed in this blog."
+    "text": "This blog is a response to my teammates’ questions on WhatsApp. I’m sharing what I learned and my views on each question in a separate blog.\nThe biggest challenge in classification modelling is choosing the right metric for our problem. Adding to this, the confusion matrix creates more confusion for us as it has more metrics than we imagine.\nLet’s cut short this, Arun. Ask for GenAI tools; we rely on them.\nGo through this ChatGPT link response. It will not help. Why?\nArun! prompt has to be more specific.\nOkay! Okay! Here is a revised prompt response from ChatGPT. Still, It doesn’t help. Why?\nIt is because we, humans, need to decide what the right metric is. For this, Data Scientists need to step up and do three essential things which are usually not in their comfort zone:\nStep three is the recipe for experience, i.e., multiple tries and failures, which this blog will not discuss."
   },
   {
     "objectID": "blogs/posts/metrics-classification-model/index.html#confusion-matrix",
     "href": "blogs/posts/metrics-classification-model/index.html#confusion-matrix",
     "title": "What metrics to be chosen for classification modelling?",
-    "section": "Confusion Matrix",
-    "text": "Confusion Matrix\nUnderstanding details of Confusion Matrix is fundamental.\n\n\n\nSource : https://en.wikipedia.org/wiki/Confusion_matrix\n\n\nTop four boxes is the result of prediction vs actual. Remaining boxes are dervied metrics based on the numbers.\nLets not bog down into these multiple metrices."
+    "section": "1. Confusion Matrix",
+    "text": "1. Confusion Matrix\nUnderstanding the details of the Confusion Matrix is fundamental.\n\n\n\nSource : https://en.wikipedia.org/wiki/Confusion_matrix\n\n\nThe top four boxes are the result of prediction vs actual. The remaining boxes are divided metrics based on the numbers.\nAt this point in this blog, let’s not delve into these multiple metrics, as there are many :)."
   },
   {
     "objectID": "blogs/posts/metrics-classification-model/index.html#simpler-thumb-rules",
     "href": "blogs/posts/metrics-classification-model/index.html#simpler-thumb-rules",
     "title": "What metrics to be chosen for classification modelling?",
-    "section": "Simpler Thumb Rules",
-    "text": "Simpler Thumb Rules\nR"
-  },
-  {
-    "objectID": "blogs/posts/metrics-classification-model/index.html#how-to-choose",
-    "href": "blogs/posts/metrics-classification-model/index.html#how-to-choose",
-    "title": "What metrics to be chosen for classification modelling?",
-    "section": "How to Choose",
-    "text": "How to Choose\nU"
+    "section": "2. Simpler Thumb Rules",
+    "text": "2. Simpler Thumb Rules\nThe more straightforward thumb rule is to print the classification report from sci-kit Learn and use one of these metrics for our classification modelling. This is an excellent place to start, as most of the ML problems we solve commercially fall into these four metrics.\n\n\n\nSource : https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html\n\n\nIn most classification problems, the target class would be either a positive or negative; under this content, let us review the intuition behind these metrics.\n\n2.1. Accuracy\nIn more straightforward English, it is how accurate you are. If there are 50 positive and 50 negative instances, accuracy measures how many times the model is able to predict accurately the right instances out of these 100 original instances.\nIf the model can correctly predict 30 positive and 50 negative instances, it means that the model’s accuracy is 80 correctly predicted instances out of the total 100 cases.\n\n\n\n\n\nUsing this metric is always a problem as there is a high chance of giving more accuracy under imbalanced class scenarios.\nIf there are 5 positive instances and 95 negative instances and model-1 can predict 0 positive instances and 85 negative instances, we say that model-1 has 85% accuracy. While model-2 can predict four positive instances and 79 negative instances, we say that model-2 has 83% accuracy.\n\n\n\n\n\nWhen we look at the accuracy metric without having the context of our data, we may choose a poor model-1, which has higher accuracy.\n\n\n2.2. Recall:\nIn more straightforward English, recall is how much your model can recall the scenario. In a binary classification model, we usually refer to recall to the positive class to ensure that the model recalls the maximum positive instances. It calculates the proportion of true positive predictions among all actual positive instances.\nReturning to our earlier example, which model is better off if there are 5 positive instances and 95 negative instances for model-1 and model-2?\n\n\n\n\n\nHere, if we want to be sure that the number of predicted positive instances upon actual positive instances should be more, we will select model-2 instead of model-1.\nNow, let’s go back to our first example again, which is that there are 50 positive instances and 50 negative instances, and model-1 is able to predict 15 positive instances and 50 negative instances. Here, model 1 has almost 65% accuracy and a recall of 30% for positive instances. Similarly, model 2 can predict 25 positive and 50 negative instances. Here, model 2 has almost 65% accuracy and a recall of 50% for positive cases.\nModel 2 is better when we look into recall metrics. Isn’t it so?\n\n\n\n\n\nBut, when completing the entire confusion matrix, it might look like this: do you see something off? What is the catch?\n\n\n\n\n\nModel-1 doesn’t have any false alarms, which means the model-1 is more precise in predicting positive instances.\n\n\n2.3. Precision:\nIn more straightforward English, precision is the degree to which the model is precise, like hitting a bull’s eye for positive instances. High precision signifies a low false positive rate. Mathemically it is like ratio of true positive predictions to the total positive predictions made by the model.\n\n\n\n\n\nUnder this scenario, model 1 is more precise.\n\n\n2.4. F1-Score:\nF1-Score is the harmonic mean of precision and recall. It provides a balance between precision and recall, making it a useful metric when there’s an uneven class distribution. A high F1-Score indicates both high precision and high recall.\nUsually, while developing model we stick to one metric."
   },
   {
     "objectID": "blogs/posts/metrics-classification-model/index.html#why-stick-to-one-metric",
     "href": "blogs/posts/metrics-classification-model/index.html#why-stick-to-one-metric",
     "title": "What metrics to be chosen for classification modelling?",
-    "section": "Why stick to one metric?",
-    "text": "Why stick to one metric?\nN"
+    "section": "3. Why stick to one metric?",
+    "text": "3. Why stick to one metric?\nOften, rather than sticking to one model, it is wise to prepare multiple models, optimize them using the development dataset, and use the test set for the final performance. So, while optimizing and evaluating the models, it is advisable to stick to one metric because we cannot have different barometers for each model."
+  },
+  {
+    "objectID": "blogs/posts/metrics-classification-model/index.html#how-to-choose",
+    "href": "blogs/posts/metrics-classification-model/index.html#how-to-choose",
+    "title": "What metrics to be chosen for classification modelling?",
+    "section": "4. How to Choose",
+    "text": "4. How to Choose\nThis part of the blog is the prime Purpose, which depends upon the two questions that Data Scientists need to ask the business stakeholders i.e.; Purpose and usage. Purpose gives the revenue for the model, and usage tells us the cost.\nHow come?\nLet’s dwell on some examples.\n\n4.1. Example - Cross-Sell\nPurpose - Identify Customers who can buy Product1. Usage1 - Digital Campaigns ( Machine to Human ) Usage2 - Non-Digital Campaigns ( Human to Human )\nIf we look at the Purpose, we might think accuracy would be sufficient to predict whether a customer will buy a particular product. This is the usual de facto approach we think.\nNow, depending on usage, we need to optimize the metric, as it also tells us the cost of the usage.\n\n\n\n\n\nUsage1 -&gt; Usually, digital campaigns are low-cost. We want to be sure to reach as many right customers as possible at a low cost. So, in this scenario, it is better to optimize the models using recall since we don’t want to miss the right customer.\nUsage2 -&gt; Usually, in non-digital campaigns, the cost is higher, and since the interaction is between humans, we have to ensure the trust chain of the model carries forward to the field team. So, in this scenario, it is better to optimize models using the precision metric.\n\n\n4.2. Example - Customer Attrition\nPurpose - Identify Customers who would stop transacting Usage1 - Carrot Communication in Digital way ( Machine to Human ) - Incentive Usage2 - Carrot Communication in Non-Digital way ( Human to Human ) - Incentive\nIf we look at the Purpose, we might think accuracy would be sufficient as we just want to predict whether a customer would at-rite. This is the usual de facto approach we would think.\nNow, depending on usage, let’s optimize the metric.\n\n\n\n\n\nUsage1 -&gt; Although digital campaigns are low-cost here, we need to ensure we predict all customers who will at-rite and give-away fewer incentives to the customers who actually don’t at-rite. So, in this scenario, it is better to optimize the models using the F1-Score metric.\nUsage2 -&gt; Since trust-chain matters a lot in non-digital campaigns, apart from cost, it is better to optimize models using the precision metric.\n\n\n4.3. Example - Fraudulent Transaction\nPurpose - Identify Customers’ accounts of fraudulent activity. Usage1 - Digital Alarm ( Machine to Human ) Usage2 - Non-Digital Alarm ( Human to Human )\nIf we just look at the Purpose, we might think that by default, we will select the Precision metric to ensure that fraudulent activity is arrested.\nNow, depending on usage, let’s optimize the metric.\n\n\n\n\n\nUsage1 -&gt; Since digital campaigns are low-cost here, we must ensure we predict all fraudulent activities with fewer false alarms. So, it is better to optimize the model with F1-Score.\nUsage2 -&gt; Since cost and trust-chain until customer matters a lot in non-digital campaigns, it is better to optimize models using the precision metric. However, in some scenarios F1-Score can be used if it is digitally assisted.\nSo, to summarize, we need to optimize the model based on the chosen metric of Purpose and usage, which is highly based on the context and business usage."
   },
   {
     "objectID": "blogs/posts/metrics-classification-model/index.html#can-we-change-the-metric-if-model-perform-is-poor",
     "href": "blogs/posts/metrics-classification-model/index.html#can-we-change-the-metric-if-model-perform-is-poor",
     "title": "What metrics to be chosen for classification modelling?",
-    "section": "Can we change the metric if model perform is poor?",
-    "text": "Can we change the metric if model perform is poor?\nK"
+    "section": "5. Can we change the metric if model perform is poor?",
+    "text": "5. Can we change the metric if model perform is poor?\nIf we are unable to make goals, it is never advisable to change our goalpost. We always need to understand whether the goal post design is correct and then practice to make goals."
+  },
+  {
+    "objectID": "blogs/posts/metrics-classification-model/index.html#further-discussions",
+    "href": "blogs/posts/metrics-classification-model/index.html#further-discussions",
+    "title": "What metrics to be chosen for classification modelling?",
+    "section": "6. Further Discussions",
+    "text": "6. Further Discussions\nMacro-average and weighted-average are not discussed here, which are better suited for discussing classification models with multiple class outcomes instead of binary ones."
   },
   {
     "objectID": "blogs/posts/learn-programming/index.html",

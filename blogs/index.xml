@@ -10,7 +10,7 @@
 <atom:link href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/index.xml" rel="self" type="application/rss+xml"/>
 <description>LETS BREATHE DATA</description>
 <generator>quarto-1.4.550</generator>
-<lastBuildDate>Fri, 05 Apr 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 10 Apr 2024 07:00:00 GMT</lastBuildDate>
 <item>
   <title>What metrics to be chosen for classification modelling?</title>
   <dc:creator>Arun Koundinya Parasa</dc:creator>
@@ -21,46 +21,157 @@
 
 
 
-<p>This blog is a reponse to my team-mates questions posted on <code>Whatsapp</code>. I’m sharing my learnings and views for her each question in a seperate blog.</p>
-<p>The biggest problem in classification modelling is to choose to a right metric for our problem at hand. Added to it, confusion matrix creates more confusion to us as it has more metrices that we imagine.</p>
-<p>Lets cut-short this Arun. Ask <code>GenAI</code> tools we rely on it.</p>
-<p>Go through this link of <code>ChatGPT</code> <a href="https://chat.openai.com/share/44e15e4f-ed46-49e4-97c7-232d98a3006c">response</a>. Definetly it will not help. Why?</p>
-<p>Arun!!! prompt has to be more specific.</p>
-<p>Okay! Okay! here it is with a revised prompt <a href="https://chat.openai.com/share/353267af-3dc4-449b-b0a1-2c4124a08ffe">response</a> from <code>ChatGPT</code>. Still it doesn’t help. Why?</p>
-<p>It is because, we have humans need to decide what is the right metric. For this <code>Data Scientists</code> need to step up and do three important things which are usually not in their comfort zone:</p>
+<p>This blog is a response to my teammates’ questions on <code>WhatsApp</code>. I’m sharing what I learned and my views on each question in a separate blog.</p>
+<p>The biggest challenge in classification modelling is choosing the right metric for our problem. Adding to this, the confusion matrix creates more confusion for us as it has more metrics than we imagine.</p>
+<p>Let’s cut short this, Arun. Ask for <code>GenAI</code> tools; we rely on them.</p>
+<p>Go through this <code>ChatGPT</code> link <a href="https://chat.openai.com/share/44e15e4f-ed46-49e4-97c7-232d98a3006c">response</a>. It will not help. Why?</p>
+<p>Arun! prompt has to be more specific.</p>
+<p>Okay! Okay! Here is a revised prompt <a href="https://chat.openai.com/share/353267af-3dc4-449b-b0a1-2c4124a08ffe">response</a> from <code>ChatGPT</code>. Still, It doesn’t help. Why?</p>
+<p>It is because we, humans, need to decide what the right metric is. For this, <code>Data Scientists</code> need to step up and do three essential things which are usually not in their comfort zone:</p>
 <ul>
 <li>Speak to business stakeholders and understand their purpose again.</li>
 <li>Also, understand how they will use our predictions.</li>
-<li>Finally, before jumping into modelling and its coding; step-back and check whether dependant variable is defined as per business purpose and its corresponding usage.</li>
+<li>Finally, before jumping into modelling and its coding, check whether the dependent variable is defined per the business purpose and its corresponding usage.</li>
 </ul>
-<p>Step three is the recipe of experience i.e.; multiple tries and failures, which will not be discussed in this blog.</p>
+<p>Step three is the recipe for experience, i.e., multiple tries and failures, which this blog will not discuss.</p>
 <section id="confusion-matrix" class="level2">
-<h2 class="anchored" data-anchor-id="confusion-matrix">Confusion Matrix</h2>
-<p>Understanding details of <code>Confusion Matrix</code> is fundamental.</p>
+<h2 class="anchored" data-anchor-id="confusion-matrix">1. Confusion Matrix</h2>
+<p>Understanding the details of the <code>Confusion Matrix</code> is fundamental.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/confusion.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="857"></p>
 <figcaption>Source : https://en.wikipedia.org/wiki/Confusion_matrix</figcaption>
 </figure>
 </div>
-<p>Top four boxes is the result of prediction vs actual. Remaining boxes are dervied metrics based on the numbers.</p>
-<p>Lets not bog down into these multiple metrices.</p>
+<p>The top four boxes are the result of prediction vs actual. The remaining boxes are divided metrics based on the numbers.</p>
+<p>At this point in this blog, let’s not delve into these multiple metrics, as there are many :).</p>
 </section>
 <section id="simpler-thumb-rules" class="level2">
-<h2 class="anchored" data-anchor-id="simpler-thumb-rules">Simpler Thumb Rules</h2>
-<p>R</p>
+<h2 class="anchored" data-anchor-id="simpler-thumb-rules">2. Simpler Thumb Rules</h2>
+<p>The more straightforward thumb rule is to print the classification report from sci-kit Learn and use one of these metrics for our classification modelling. This is an excellent place to start, as most of the ML problems we solve commercially fall into these four metrics.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/classification_report_python.png" class="quarto-figure quarto-figure-center figure-img" width="400" height="147"></p>
+<figcaption>Source : https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html</figcaption>
+</figure>
+</div>
+<p>In most classification problems, the <code>target</code> class would be either a <code>positive</code> or <code>negative</code>; under this content, let us review the intuition behind these metrics.</p>
+<section id="accuracy" class="level3">
+<h3 class="anchored" data-anchor-id="accuracy">2.1. Accuracy</h3>
+<p>In more straightforward English, it is how accurate you are. If there are <code>50 positive</code> and <code>50 negative</code> instances, accuracy measures how many times the model is able to predict accurately the right instances out of these 100 original instances.</p>
+<p>If the model can correctly predict <code>30 positive</code> and <code>50 negative</code> instances, it means that the model’s accuracy is 80 correctly predicted instances out of the total 100 cases.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/cm-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Using this metric is always a problem as there is a high chance of giving more accuracy under imbalanced class scenarios.</p>
+<p>If there are <code>5 positive</code> instances and <code>95 negative</code> instances and model-1 can predict <code>0 positive</code> instances and <code>85 negative</code> instances, we say that model-1 has 85% accuracy. While model-2 can predict four positive instances and <code>79 negative</code> instances, we say that model-2 has 83% accuracy.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/cm-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>When we look at the accuracy metric without having the context of our data, we may choose a poor model-1, which has higher accuracy.</p>
 </section>
-<section id="how-to-choose" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-choose">How to Choose</h2>
-<p>U</p>
+<section id="recall" class="level3">
+<h3 class="anchored" data-anchor-id="recall">2.2. Recall:</h3>
+<p>In more straightforward English, recall is how much your model can recall the scenario. In a binary classification model, we usually refer to recall to the positive class to ensure that the model recalls the maximum positive instances. It calculates the proportion of true positive predictions among all actual positive instances.</p>
+<p>Returning to our earlier example, which model is better off if there are <code>5 positive</code> instances and <code>95 negative</code> instances for model-1 and model-2?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/cm-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Here, if we want to be sure that the number of predicted positive instances upon actual positive instances should be more, we will select model-2 instead of model-1.</p>
+<p>Now, let’s go back to our first example again, which is that there are <code>50 positive</code> instances and <code>50 negative</code> instances, and model-1 is able to predict <code>15 positive</code> instances and <code>50 negative</code> instances. Here, model 1 has almost 65% accuracy and a recall of 30% for positive instances. Similarly, model 2 can predict <code>25 positive</code> and <code>50 negative</code> instances. Here, model 2 has almost 65% accuracy and a recall of 50% for positive cases.</p>
+<p>Model 2 is better when we look into recall metrics. Isn’t it so?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/cm-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>But, when completing the entire confusion matrix, it might look like this: do you see something off? What is the catch?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/cm-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Model-1 doesn’t have any false alarms, which means the model-1 is more precise in predicting positive instances.</p>
+</section>
+<section id="precision" class="level3">
+<h3 class="anchored" data-anchor-id="precision">2.3. Precision:</h3>
+<p>In more straightforward English, precision is the degree to which the model is precise, like hitting a bull’s eye for positive instances. High precision signifies a low false positive rate. Mathemically it is like ratio of true positive predictions to the total positive predictions made by the model.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/cm-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Under this scenario, model 1 is more precise.</p>
+</section>
+<section id="f1-score" class="level3">
+<h3 class="anchored" data-anchor-id="f1-score">2.4. F1-Score:</h3>
+<p>F1-Score is the harmonic mean of precision and recall. It provides a balance between precision and recall, making it a useful metric when there’s an uneven class distribution. A high F1-Score indicates both high precision and high recall.</p>
+<p>Usually, while developing model we stick to one metric.</p>
+</section>
 </section>
 <section id="why-stick-to-one-metric" class="level2">
-<h2 class="anchored" data-anchor-id="why-stick-to-one-metric">Why stick to one metric?</h2>
-<p>N</p>
+<h2 class="anchored" data-anchor-id="why-stick-to-one-metric">3. Why stick to one metric?</h2>
+<p>Often, rather than sticking to one model, it is wise to prepare multiple models, optimize them using the development dataset, and use the test set for the final performance. So, while optimizing and evaluating the models, it is advisable to stick to one metric because we cannot have different barometers for each model.</p>
+</section>
+<section id="how-to-choose" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-choose">4. How to Choose</h2>
+<p>This part of the blog is the prime Purpose, which depends upon the two questions that <code>Data Scientists</code> need to ask the business stakeholders i.e.; Purpose and usage. Purpose gives the revenue for the model, and usage tells us the cost.</p>
+<p>How come?</p>
+<p>Let’s dwell on some examples.</p>
+<section id="example---cross-sell" class="level3">
+<h3 class="anchored" data-anchor-id="example---cross-sell">4.1. Example - Cross-Sell</h3>
+<p><strong>Purpose</strong> - Identify Customers who can buy <code>Product1</code>. <strong>Usage1</strong> - Digital Campaigns ( Machine to Human ) <strong>Usage2</strong> - Non-Digital Campaigns ( Human to Human )</p>
+<p>If we look at the Purpose, we might think <code>accuracy</code> would be sufficient to predict whether a customer will buy a particular product. This is the usual de facto approach we think.</p>
+<p>Now, depending on usage, we need to optimize the metric, as it also tells us the cost of the usage.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/Example-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Usage1 -&gt; Usually, digital campaigns are low-cost. We want to be sure to reach as many right customers as possible at a low cost. So, in this scenario, it is better to optimize the models using <code>recall</code> since we don’t want to miss the right customer.</p>
+<p>Usage2 -&gt; Usually, in non-digital campaigns, the cost is higher, and since the interaction is between humans, we have to ensure the trust chain of the model carries forward to the field team. So, in this scenario, it is better to optimize models using the <code>precision</code> metric.</p>
+</section>
+<section id="example---customer-attrition" class="level3">
+<h3 class="anchored" data-anchor-id="example---customer-attrition">4.2. Example - Customer Attrition</h3>
+<p><strong>Purpose</strong> - Identify Customers who would stop transacting <strong>Usage1</strong> - Carrot Communication in Digital way ( Machine to Human ) - Incentive <strong>Usage2</strong> - Carrot Communication in Non-Digital way ( Human to Human ) - Incentive</p>
+<p>If we look at the Purpose, we might think <code>accuracy</code> would be sufficient as we just want to predict whether a customer would at-rite. This is the usual de facto approach we would think.</p>
+<p>Now, depending on usage, let’s optimize the metric.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/Example-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Usage1 -&gt; Although digital campaigns are low-cost here, we need to ensure we predict all customers who will at-rite and give-away fewer incentives to the customers who actually don’t at-rite. So, in this scenario, it is better to optimize the models using the <code>F1-Score</code> metric.</p>
+<p>Usage2 -&gt; Since trust-chain matters a lot in non-digital campaigns, apart from cost, it is better to optimize models using the <code>precision</code> metric.</p>
+</section>
+<section id="example---fraudulent-transaction" class="level3">
+<h3 class="anchored" data-anchor-id="example---fraudulent-transaction">4.3. Example - Fraudulent Transaction</h3>
+<p><strong>Purpose</strong> - Identify Customers’ accounts of fraudulent activity. <strong>Usage1</strong> - Digital Alarm ( Machine to Human ) <strong>Usage2</strong> - Non-Digital Alarm ( Human to Human )</p>
+<p>If we just look at the Purpose, we might think that by default, we will select the <code>Precision</code> metric to ensure that fraudulent activity is arrested.</p>
+<p>Now, depending on usage, let’s optimize the metric.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/Example-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Usage1 -&gt; Since digital campaigns are low-cost here, we must ensure we predict all fraudulent activities with fewer false alarms. So, it is better to optimize the model with <code>F1-Score</code>.</p>
+<p>Usage2 -&gt; Since cost and trust-chain until customer matters a lot in non-digital campaigns, it is better to optimize models using the <code>precision</code> metric. However, in some scenarios <code>F1-Score</code> can be used if it is digitally assisted.</p>
+<p>So, to summarize, we need to optimize the model based on the chosen metric of Purpose and usage, which is highly based on the context and business usage.</p>
+</section>
 </section>
 <section id="can-we-change-the-metric-if-model-perform-is-poor" class="level2">
-<h2 class="anchored" data-anchor-id="can-we-change-the-metric-if-model-perform-is-poor">Can we change the metric if model perform is poor?</h2>
-<p>K</p>
+<h2 class="anchored" data-anchor-id="can-we-change-the-metric-if-model-perform-is-poor">5. Can we change the metric if model perform is poor?</h2>
+<p>If we are unable to make goals, it is never advisable to change our goalpost. We always need to understand whether the goal post design is correct and then practice to make goals.</p>
+</section>
+<section id="further-discussions" class="level2">
+<h2 class="anchored" data-anchor-id="further-discussions">6. Further Discussions</h2>
+<p>Macro-average and weighted-average are not discussed here, which are better suited for discussing classification models with multiple class outcomes instead of binary ones.</p>
 <script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="purple_dark" data-lang="en" crossorigin="anonymous" async="">
 </script>
 
@@ -71,8 +182,9 @@
   <category>classification</category>
   <category>modelling</category>
   <category>metrics</category>
+  <category>binaryclassifcation</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/</guid>
-  <pubDate>Fri, 05 Apr 2024 07:00:00 GMT</pubDate>
+  <pubDate>Wed, 10 Apr 2024 07:00:00 GMT</pubDate>
   <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/confusion.png" medium="image" type="image/png" height="89" width="144"/>
 </item>
 <item>
