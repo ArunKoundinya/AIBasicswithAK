@@ -138,8 +138,8 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Loops and Breaks</td>
 <td><a href="slides/season02/episode07/Loops_Breaks.html" target="_blank">Link</a></td>
 <td><a href="homework/season02/episode07/homework.html" target="_blank">Link</a></td>
-<td><a href="h" target="_blank">Link</a></td>
-<td><a href="" target="_blank">Demo File</a></td>
+<td><a href="https://youtu.be/9T4GwNTjgmo" target="_blank">Link</a></td>
+<td><a href="slides/season02/episode06/epi07demo.py" target="_blank">Demo File</a></td>
 <td>15th April 2024</td>
 </tr>
 
