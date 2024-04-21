@@ -1,0 +1,36 @@
+---
+title: Home Work 08
+subtitle: 22nd April 2024
+format: html
+---
+
+This is our eigth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
+
+#### Question 1 - What is the difference between a list and a tuple in Python?
+
+Use comments in `py` file or markdown in `ipynb` file.
+
+#### Question 2 - Given a list of integers, find the sum of all the elements 
+
+Example [1,2,3,4] answer should be 10
+
+
+------------------------------------------------ Happy Learning -----------------------------------------------------
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="ArunKoundinya/AIBasicswithAK"
+        data-repo-id="R_kgDOLXPVRw"
+        data-category="General"
+        data-category-id="DIC_kwDOLXPVR84CdeVx"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="purple_dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
