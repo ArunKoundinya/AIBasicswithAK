@@ -148,8 +148,8 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Lists & Tuples</td>
 <td><a href="slides/season02/episode08/lists_tuples.html" target="_blank">Link</a></td>
 <td><a href="homework/season02/episode08/homework.html" target="_blank">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
+<td><a href="https://youtu.be/FCYLnHAdO98" target="_blank">Link</a></td>
+<td><a href="slides/season02/episode08/epi08demo.py" target="_blank">Demo File</a></td>
 <td>22nd April 2024</td>
 </tr>
 
