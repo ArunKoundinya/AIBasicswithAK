@@ -1,0 +1,39 @@
+---
+title: Home Work 09
+subtitle: 8th May 2024
+format: html
+---
+
+This is our nineth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
+
+#### Question 1 - Consider a list named 'numbers' containing the elements [1, 2, 3, 4, 5]. Perform the following operations:
+
+-  Append the number 6 to the end of the list using the append() method.
+-  Remove and return the last element of the list using the pop() method.
+
+
+#### Question 2 - Given a list 'original' with elements [1, 2, 3] and another list 'additional' with elements [4, 5, 6], perform the following:
+
+-  Extend the 'original' list by adding all elements from the 'additional' list using the extend() method.
+-  Create a new list named 'squared' containing the squares of all numbers using list comprehensions.
+
+
+------------------------------------------------ Happy Learning -----------------------------------------------------
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="ArunKoundinya/AIBasicswithAK"
+        data-repo-id="R_kgDOLXPVRw"
+        data-category="General"
+        data-category-id="DIC_kwDOLXPVR84CdeVx"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="purple_dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
