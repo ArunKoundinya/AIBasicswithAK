@@ -1,45 +1,45 @@
 [
   {
-    "objectID": "AI_Vlogs/homework/season02/episode03/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode03/homework.html",
-    "title": "Home Work 03",
+    "objectID": "AI_Vlogs/homework/season02/episode10/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode10/homework.html",
+    "title": "Home Work 10",
     "section": "",
-    "text": "This is our third homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create the function for arthimetic operations\nFunction accepts two numbers and perform all the arthimetic operation\nOutput should atleast resemble like this\n\narthimetic_operations(10,3)\n\nAddition:  13\nSubtraction:  7\nMultiplication:  30\nDivision:  3.33\nRemainder:  1\nExponential: 1000\n\n\n\n\nQuestion 2 - What are the mistakes in the following code\nWhat is the reason for that error\n\na = 10\nb = 0\n\nprint(a / b)\n\nprint(a % b)\n\nprint(a = b)\n\nprint(a &gt; b)\n\nnew =  5._23\n\nprint(new + a)\n\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
+    "text": "This is our tenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Given the following dictionary inventory, perform the following operations and print the results:\n\ninventory = {'apples': 20, 'bananas': 15, 'oranges': 30}\n\n\nAdd 10 more apples to the inventory.\nRemove ‘oranges’ from the inventory.\nCheck if ‘bananas’ are present in the inventory.\nPrint the total number of items in the inventory.\nPrint a list of all fruits in the inventory.\n\n\n\nQuestion 2 - Create a dictionary comprehension that counts the occurrences of each letter in the word ‘banana’. Print the resulting dictionary.\n———————————————— Happy Learning —————————————————–"
   },
   {
-    "objectID": "AI_Vlogs/homework/season02/episode05/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode05/homework.html",
-    "title": "Home Work 05",
+    "objectID": "AI_Vlogs/homework/season02/episode04/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode04/homework.html",
+    "title": "Home Work 04",
     "section": "",
-    "text": "This is our fifth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What are the limitations of the string operators that we have learned in this week. Please pick atleast two\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - Complete the following subsquestions.\n\nvariable = \"  Python is a versatile and powerful programming language used for web development, data analysis, artificial intelligence, and much more !:)\"\n\nQuestion 2.1 - Remove the trailing spaces and special characters\n\nQuestion 2.2 - Split the sentences by comma\n\nQuestion 2.3 - Pick one split in the above sentence and replace any text of your choice to your name\n\n———————————————— Happy Learning —————————————————–"
+    "text": "This is our fourth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Why class character is not available in python\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - Performing different creative versions of slicings and indexing.\n———————————————— Happy Learning —————————————————–"
   },
   {
-    "objectID": "AI_Vlogs/homework/season02/episode07/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode07/homework.html",
-    "title": "Home Work 07",
+    "objectID": "AI_Vlogs/homework/season02/episode02/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode02/homework.html",
+    "title": "Home Work 02",
     "section": "",
-    "text": "This is our seventh homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Write a Program that takes integer as input and check if it positive , nevative or zero.\n\n\nQuestion 2 - Create a Factorial Output of same integer using both For Loop and While Loop.\n———————————————— Happy Learning —————————————————–"
+    "text": "This is our second homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What is Syntax Error? Provide some examples of Syntax Error?\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - What is meant by Mutable data type? How is it useful in programming?\nHint: Think from Data Science perspective.\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 3 - Create a function such that you can initialize the variable as zero.\nCheck slides for reference of week1 and week2.\n\n\nQuestion 4 - How to convert from one data type to other data type and store in a variable\nHint: Google how to change the data type of a variable in python\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
   },
   {
-    "objectID": "AI_Vlogs/homework/season02/episode08/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode08/homework.html",
-    "title": "Home Work 08",
+    "objectID": "AI_Vlogs/homework/season02/episode09/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode09/homework.html",
+    "title": "Home Work 09",
     "section": "",
-    "text": "This is our eigth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What is the difference between a list and a tuple in Python?\nUse comments in py file or markdown in ipynb file.\n\n\nQuestion 2 - Given a list of integers, find the sum of all the elements\nExample [1,2,3,4] answer should be 10\n———————————————— Happy Learning —————————————————–"
+    "text": "This is our nineth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Consider a list named ‘numbers’ containing the elements [1, 2, 3, 4, 5]. Perform the following operations:\n\nAppend the number 6 to the end of the list using the append() method.\nRemove and return the last element of the list using the pop() method.\n\n\n\nQuestion 2 - Given a list ‘original’ with elements [1, 2, 3] and another list ‘additional’ with elements [4, 5, 6], perform the following:\n\nExtend the ‘original’ list by adding all elements from the ‘additional’ list using the extend() method.\nCreate a new list named ‘squared’ containing the squares of all numbers using list comprehensions.\n\n———————————————— Happy Learning —————————————————–"
   },
   {
-    "objectID": "AI_Vlogs/homework/season02/episode06/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode06/homework.html",
-    "title": "Home Work 06",
+    "objectID": "AI_Vlogs/homework/season02/episode01/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode01/homework.html",
+    "title": "Home Work 01",
     "section": "",
-    "text": "This is our sixth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What are the limitations of the f-style operators.\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
+    "text": "This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create a Github Account\nRefer to this video if you have doubts.\n\n\n\nQuestion 2 - Install VS Code or Use Google Colab\nRefer to this video for installing VS Code\n\nRefer to this video for Google Colab Python File Creation.\n\n\n\nQuestion 3 - Create a Python File or Jupyter Notebook file that answers the following questions:\n\nCreate a function that adds two numbers.\nCreate a function that subtracts two numbers.\n\nCheck slides for reference.\n\n\nQuestion 3 - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.\n———————————————— Happy Learning —————————————————–"
   },
   {
     "objectID": "AI_Vlogs/index.html",
     "href": "AI_Vlogs/index.html",
     "title": "AI Basics with AK",
     "section": "",
-    "text": "This format is inspired from my data visualization class; So will be sticking to this format.\n\n\n\n\n\n\n    \n    Season-2 : Introduction to Python ProgrammingSeason-2\n    \n\n\n\nEpisode\nEpisode Title\nSlides / Handout\nHome Work\nYouTube Video Link\nYouTube Demo File\nDate of Upload\n\n\nEpisode - 01\nWhy Python?\nLink\nLink\nLink\nNA\n1st March 2024\n\n\nEpisode - 02\nPython Data Types\nLink\nLink\nLink\nDemo File\n8th March 2024\n\n\nEpisode - 03\nNumbers & Booleans\nLink\nLink\nLink\nDemo File\n17th March 2024\n\n\nEpisode - 04\nStrings & Characters - 1\nLink\nLink\nLink\nNo Demo\n24th March 2024\n\n\nEpisode - 05\nStrings & Characters - 2\nLink\nLink\nLink\nNo Demo\n31st March 2024\n\n\nEpisode - 06\nStrings & Characters - 3\nLink\nLink\nLink\nDemo File\n7th April 2024\n\n\nEpisode - 07\nLoops and Breaks\nLink\nLink\nLink\nDemo File\n15th April 2024\n\n\nEpisode - 08\nLists & Tuples\nLink\nLink\nLink\nDemo File\n22nd April 2024\n\n\nEpisode - 09\nList Operations\nLink\nLink\nLink\nDemo File\n11th May 2024\n\n\nEpisode - 10\nDictionaries\nLink\nLink\nLink\n\n13th May 2024\n\n\nEpisode - 11\nFunctions\nLink\nLink\nLink\n\n?th May 2024\n\n\nEpisode - 12\nLambda Functions\nLink\nLink\nLink\n\n\n\n\nEpisode - 13\nClasses & Objects - 1\nLink\nLink\nLink\n\n\n\n\nEpisode - 14\nClasses & Objects - 2\nLink\nLink\nLink\n\n\n\n\nEpisode - 15\nInheritance\nLink\nLink\nLink\n\n\n\n\nEpisode - 16\nMutiple Inheritance\nLink\nLink\nLink\n\n\n\n\nEpisode - 17\nMulti Threading & Multi Processing\nLink\nLink\nLink\n\n\n\n\nEpisode - 18\nDebugging the Code\nLink\nLink\nLink\n\n\n\n\nEpisode - 19\nEnd to End Project\nLink\nLink\nLink\n\n\n\n\nEpisode - 20\nDeployin the Project\nLink\nLink\nLink\n\n\n\n\n\n\n\n\n Season-3Hide\n\n\n\nNot Yet Available\n\n\n\n\n\n\n Season-4Hide\n\n\n\nNot Yet Available"
+    "text": "This format is inspired from my data visualization class; So will be sticking to this format.\n\n\n\n\n\n\n    \n    Season-2 : Introduction to Python ProgrammingSeason-2\n    \n\n\n\nEpisode\nEpisode Title\nSlides / Handout\nHome Work\nYouTube Video Link\nYouTube Demo File\nDate of Upload\n\n\nEpisode - 01\nWhy Python?\nLink\nLink\nLink\nNA\n1st March 2024\n\n\nEpisode - 02\nPython Data Types\nLink\nLink\nLink\nDemo File\n8th March 2024\n\n\nEpisode - 03\nNumbers & Booleans\nLink\nLink\nLink\nDemo File\n17th March 2024\n\n\nEpisode - 04\nStrings & Characters - 1\nLink\nLink\nLink\nNo Demo\n24th March 2024\n\n\nEpisode - 05\nStrings & Characters - 2\nLink\nLink\nLink\nNo Demo\n31st March 2024\n\n\nEpisode - 06\nStrings & Characters - 3\nLink\nLink\nLink\nDemo File\n7th April 2024\n\n\nEpisode - 07\nLoops and Breaks\nLink\nLink\nLink\nDemo File\n15th April 2024\n\n\nEpisode - 08\nLists & Tuples\nLink\nLink\nLink\nDemo File\n22nd April 2024\n\n\nEpisode - 09\nList Operations\nLink\nLink\nLink\nDemo File\n11th May 2024\n\n\nEpisode - 10\nDictionaries\nLink\nLink\nLink\nDemo File\n13th May 2024\n\n\nEpisode - 11\nFunctions\nLink\nLink\nLink\n\n?th May 2024\n\n\nEpisode - 12\nLambda Functions\nLink\nLink\nLink\n\n\n\n\nEpisode - 13\nClasses & Objects - 1\nLink\nLink\nLink\n\n\n\n\nEpisode - 14\nClasses & Objects - 2\nLink\nLink\nLink\n\n\n\n\nEpisode - 15\nInheritance\nLink\nLink\nLink\n\n\n\n\nEpisode - 16\nMutiple Inheritance\nLink\nLink\nLink\n\n\n\n\nEpisode - 17\nMulti Threading & Multi Processing\nLink\nLink\nLink\n\n\n\n\nEpisode - 18\nDebugging the Code\nLink\nLink\nLink\n\n\n\n\nEpisode - 19\nEnd to End Project\nLink\nLink\nLink\n\n\n\n\nEpisode - 20\nDeployin the Project\nLink\nLink\nLink\n\n\n\n\n\n\n\n\n Season-3Hide\n\n\n\nNot Yet Available\n\n\n\n\n\n\n Season-4Hide\n\n\n\nNot Yet Available"
   },
   {
     "objectID": "blogs/index.html",
@@ -119,31 +119,38 @@
     "text": "Welcome to my AI Vlog Series Hub! 🚀 This website is crafted to elevate your experience with my YouTube AI Vlog Series. Let’s dive into the exciting content structured into two sections:\n💻 Notes and Codes: Uncover the magic behind the scenes! Starting from Season-2 onward, immerse yourself in detailed notes and codes. May be presented in markdown files or dynamic presentations.\n📚 Assisted Blogs: Thoughtfully created blogs designed to complement the AI Vlog Series. It has fascinating details that bring the series to life.\nI’m thrilled to embark on this next chapter, and I hope you’ll find joy and enrichment in exploring these resources. Your support is my motivation—thank you for being a part of this exciting adventure! 🌟\nMy Last three videos"
   },
   {
-    "objectID": "AI_Vlogs/homework/season02/episode01/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode01/homework.html",
-    "title": "Home Work 01",
+    "objectID": "AI_Vlogs/homework/season02/episode06/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode06/homework.html",
+    "title": "Home Work 06",
     "section": "",
-    "text": "This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create a Github Account\nRefer to this video if you have doubts.\n\n\n\nQuestion 2 - Install VS Code or Use Google Colab\nRefer to this video for installing VS Code\n\nRefer to this video for Google Colab Python File Creation.\n\n\n\nQuestion 3 - Create a Python File or Jupyter Notebook file that answers the following questions:\n\nCreate a function that adds two numbers.\nCreate a function that subtracts two numbers.\n\nCheck slides for reference.\n\n\nQuestion 3 - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.\n———————————————— Happy Learning —————————————————–"
+    "text": "This is our sixth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What are the limitations of the f-style operators.\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
   },
   {
-    "objectID": "AI_Vlogs/homework/season02/episode09/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode09/homework.html",
-    "title": "Home Work 09",
+    "objectID": "AI_Vlogs/homework/season02/episode08/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode08/homework.html",
+    "title": "Home Work 08",
     "section": "",
-    "text": "This is our nineth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Consider a list named ‘numbers’ containing the elements [1, 2, 3, 4, 5]. Perform the following operations:\n\nAppend the number 6 to the end of the list using the append() method.\nRemove and return the last element of the list using the pop() method.\n\n\n\nQuestion 2 - Given a list ‘original’ with elements [1, 2, 3] and another list ‘additional’ with elements [4, 5, 6], perform the following:\n\nExtend the ‘original’ list by adding all elements from the ‘additional’ list using the extend() method.\nCreate a new list named ‘squared’ containing the squares of all numbers using list comprehensions.\n\n———————————————— Happy Learning —————————————————–"
+    "text": "This is our eigth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What is the difference between a list and a tuple in Python?\nUse comments in py file or markdown in ipynb file.\n\n\nQuestion 2 - Given a list of integers, find the sum of all the elements\nExample [1,2,3,4] answer should be 10\n———————————————— Happy Learning —————————————————–"
   },
   {
-    "objectID": "AI_Vlogs/homework/season02/episode02/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode02/homework.html",
-    "title": "Home Work 02",
+    "objectID": "AI_Vlogs/homework/season02/episode07/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode07/homework.html",
+    "title": "Home Work 07",
     "section": "",
-    "text": "This is our second homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What is Syntax Error? Provide some examples of Syntax Error?\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - What is meant by Mutable data type? How is it useful in programming?\nHint: Think from Data Science perspective.\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 3 - Create a function such that you can initialize the variable as zero.\nCheck slides for reference of week1 and week2.\n\n\nQuestion 4 - How to convert from one data type to other data type and store in a variable\nHint: Google how to change the data type of a variable in python\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
+    "text": "This is our seventh homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Write a Program that takes integer as input and check if it positive , nevative or zero.\n\n\nQuestion 2 - Create a Factorial Output of same integer using both For Loop and While Loop.\n———————————————— Happy Learning —————————————————–"
   },
   {
-    "objectID": "AI_Vlogs/homework/season02/episode04/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode04/homework.html",
-    "title": "Home Work 04",
+    "objectID": "AI_Vlogs/homework/season02/episode05/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode05/homework.html",
+    "title": "Home Work 05",
     "section": "",
-    "text": "This is our fourth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Why class character is not available in python\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - Performing different creative versions of slicings and indexing.\n———————————————— Happy Learning —————————————————–"
+    "text": "This is our fifth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What are the limitations of the string operators that we have learned in this week. Please pick atleast two\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - Complete the following subsquestions.\n\nvariable = \"  Python is a versatile and powerful programming language used for web development, data analysis, artificial intelligence, and much more !:)\"\n\nQuestion 2.1 - Remove the trailing spaces and special characters\n\nQuestion 2.2 - Split the sentences by comma\n\nQuestion 2.3 - Pick one split in the above sentence and replace any text of your choice to your name\n\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode03/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode03/homework.html",
+    "title": "Home Work 03",
+    "section": "",
+    "text": "This is our third homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create the function for arthimetic operations\nFunction accepts two numbers and perform all the arthimetic operation\nOutput should atleast resemble like this\n\narthimetic_operations(10,3)\n\nAddition:  13\nSubtraction:  7\nMultiplication:  30\nDivision:  3.33\nRemainder:  1\nExponential: 1000\n\n\n\n\nQuestion 2 - What are the mistakes in the following code\nWhat is the reason for that error\n\na = 10\nb = 0\n\nprint(a / b)\n\nprint(a % b)\n\nprint(a = b)\n\nprint(a &gt; b)\n\nnew =  5._23\n\nprint(new + a)\n\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
   }
 ]
