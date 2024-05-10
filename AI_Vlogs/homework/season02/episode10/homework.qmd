@@ -1,0 +1,44 @@
+---
+title: Home Work 10
+subtitle: 13th May 2024
+format: html
+---
+
+This is our tenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
+
+#### Question 1 - Given the following dictionary inventory, perform the following operations and print the results:
+
+```{python}
+#| eval: false
+inventory = {'apples': 20, 'bananas': 15, 'oranges': 30}
+```
+
+-  Add 10 more apples to the inventory.
+-  Remove 'oranges' from the inventory.
+-  Check if 'bananas' are present in the inventory.
+-  Print the total number of items in the inventory.
+-  Print a list of all fruits in the inventory.
+
+
+#### Question 2 - Create a dictionary comprehension that counts the occurrences of each letter in the word 'banana'. Print the resulting dictionary.
+
+
+------------------------------------------------ Happy Learning -----------------------------------------------------
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="ArunKoundinya/AIBasicswithAK"
+        data-repo-id="R_kgDOLXPVRw"
+        data-category="General"
+        data-category-id="DIC_kwDOLXPVR84CdeVx"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="purple_dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
