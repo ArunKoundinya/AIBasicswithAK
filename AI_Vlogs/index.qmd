@@ -169,7 +169,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Dictionaries</td>
 <td><a href="slides/season02/episode10/Dictionaries.html" target="_blank">Link</a></td>
 <td><a href="homework/season02/episode10/homework.html" target="_blank">Link</a></td>
-<td><a href="" target="_blank">Link</a></td>
+<td><a href="https://youtu.be/J0KG3TiQ7e4" target="_blank">Link</a></td>
 <td><a href="slides/season02/episode10/epi10demo.py" target="_blank">Demo File</a></td>
 <td>13th May 2024</td>
 </tr>
