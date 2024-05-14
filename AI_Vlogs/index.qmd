@@ -177,11 +177,11 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <tr>
 <td>Episode - 11</td>
 <td>Functions</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td>?th May 2024</td>
+<td><a href="slides/season02/episode11/Functions.html" target="_blank">Link</a></td>
+<td><a href="homework/season02/episode11/homework.html" target="_blank">Link</a></td>
+<td><a href="" target="_blank">Link</a></td>
+<td><a href="slides/season02/episode11/epi11demo.py" target="_blank">Demo File</a></td>
+<td>17th May 2024</td>
 </tr>
 
 <tr>
