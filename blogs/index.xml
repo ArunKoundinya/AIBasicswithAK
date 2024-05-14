@@ -10,7 +10,7 @@
 <atom:link href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/index.xml" rel="self" type="application/rss+xml"/>
 <description>LETS BREATHE DATA</description>
 <generator>quarto-1.4.550</generator>
-<lastBuildDate>Wed, 10 Apr 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 10 Apr 2024 04:00:00 GMT</lastBuildDate>
 <item>
   <title>What metrics to be chosen for classification modelling?</title>
   <dc:creator>Arun Koundinya Parasa</dc:creator>
@@ -184,7 +184,7 @@
   <category>metrics</category>
   <category>binaryclassifcation</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/</guid>
-  <pubDate>Wed, 10 Apr 2024 07:00:00 GMT</pubDate>
+  <pubDate>Wed, 10 Apr 2024 04:00:00 GMT</pubDate>
   <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/confusion.png" medium="image" type="image/png" height="89" width="144"/>
 </item>
 <item>
@@ -246,7 +246,7 @@
  ]]></description>
   <category>programming</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/</guid>
-  <pubDate>Sun, 17 Mar 2024 07:00:00 GMT</pubDate>
+  <pubDate>Sun, 17 Mar 2024 04:00:00 GMT</pubDate>
   <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/image.png" medium="image" type="image/png" height="123" width="144"/>
 </item>
 <item>
@@ -312,7 +312,7 @@
   <category>domain</category>
   <category>operations</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/</guid>
-  <pubDate>Tue, 25 Jul 2023 07:00:00 GMT</pubDate>
+  <pubDate>Tue, 25 Jul 2023 04:00:00 GMT</pubDate>
   <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/image.png" medium="image" type="image/png" height="131" width="144"/>
 </item>
 </channel>
