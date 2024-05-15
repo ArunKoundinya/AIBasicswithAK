@@ -409,26 +409,21 @@ Arun Koundinya Parasa
 <section>
 <section id="episode-11" class="title-slide slide level1 center">
 <h1>Episode 11</h1>
-<p><span style="color:blue;"><strong>FUNCTIONS</strong></span></p>
+<p><span style="color:blue;"><strong>LAMBDA FUNCTIONS</strong></span></p>
 </section>
 <section id="topics-for-this-episode" class="slide level2">
 <h2>Topics for this Episode</h2>
 <ul>
-<li>Defining a function</li>
-<li>Calling Function using a function</li>
-<li>Inner Function</li>
-<li>Generator Function using yield</li>
+<li>Regular Function vs Lambda function</li>
+<li>Use of Lambda Functions</li>
 </ul>
 </section>
-<section id="defining-a-function" class="slide level2">
-<h2>Defining a function</h2>
+<section id="regular-function-vs-lambda" class="slide level2">
+<h2>Regular Function vs Lambda</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<div style="font-size: 60%;">
-<p>Basic rules Function names have the same rules as variable names (they must start with a letter or _ and contain only letters, numbers, or _).</p>
-</div>
-<div id="cell-6" class="cell" data-outputid="2f392146-76f9-46c8-8dfd-c77b4571ab46" data-execution_count="1">
+<div style="font-size: 85%;">
+<div id="cell-5" class="cell" data-outputid="e76856bb-8d41-4c6f-a028-017209c6d35e" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">def</span> my_firstfunction():</span>
 <span id="cb1-2"><a></a>  <span class="bu">print</span>(<span class="st">"My First Function"</span>)</span>
 <span id="cb1-3"><a></a></span>
@@ -438,283 +433,208 @@ Arun Koundinya Parasa
 <pre><code>My First Function</code></pre>
 </div>
 </div>
-<div id="cell-7" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">def</span> my_secondfunction(num):</span>
-<span id="cb3-2"><a></a>  <span class="bu">print</span>(<span class="ss">f"Number called in function is </span><span class="sc">{</span>num<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="font-size: 60%;">
+<p>A Python lambda function is an anonymous function expressed as a single statement. You can use it instead of a normal tiny function.</p>
 </div>
-<div id="cell-8" class="cell" data-outputid="893b92c0-d528-42c1-d81d-2287d0957183" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>my_secondfunction(<span class="dv">1</span>)</span>
-<span id="cb4-2"><a></a>my_secondfunction(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-7" class="cell" data-outputid="be30ab78-3043-46dc-c4a3-fe3b6055189d" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>my_firstfunction <span class="op">=</span> <span class="kw">lambda</span> : <span class="bu">print</span>(<span class="st">"My First Function"</span>)</span>
+<span id="cb3-2"><a></a>my_firstfunction()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Number called in function is 1
-Number called in function is 10</code></pre>
+<pre><code>My First Function</code></pre>
 </div>
 </div>
-<div id="cell-9" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> my_thirdfunction(num1,num2):</span>
-<span id="cb6-2"><a></a>  <span class="bu">print</span>(<span class="ss">f"Numbers called in function is </span><span class="sc">{</span>num1<span class="sc">}</span><span class="ss"> &amp; </span><span class="sc">{</span>num2<span class="sc">}</span><span class="ss">; And their total is </span><span class="sc">{</span>num1<span class="op">+</span>num2<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-8" class="cell" data-outputid="a7f606a4-3244-4eb7-e672-16bd9a71e09c" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">def</span> sum_of_numbers(num1,num2):</span>
+<span id="cb5-2"><a></a>  total <span class="op">=</span> num1 <span class="op">+</span> num2</span>
+<span id="cb5-3"><a></a>  <span class="cf">return</span> total</span>
+<span id="cb5-4"><a></a></span>
+<span id="cb5-5"><a></a>sum_of_numbers(<span class="dv">30</span>,<span class="dv">70</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>100</code></pre>
 </div>
-<div id="cell-10" class="cell" data-outputid="ef3332ad-9ef7-4490-a4ec-b87ae587a3f9" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>my_thirdfunction(<span class="dv">1</span>,<span class="dv">10</span>)</span>
-<span id="cb7-2"><a></a>my_thirdfunction(<span class="dv">30</span>,<span class="dv">70</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Numbers called in function is 1 &amp; 10; And their total is 11
-Numbers called in function is 30 &amp; 70; And their total is 100</code></pre>
+</div>
+<div id="cell-9" class="cell" data-outputid="e129ad18-0543-4750-9072-b96b7206c765" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>sum_of_numbers <span class="op">=</span> <span class="kw">lambda</span> x, y: x <span class="op">+</span> y</span>
+<span id="cb7-2"><a></a>sum_of_numbers(<span class="dv">30</span>,<span class="dv">70</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>100</code></pre>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<div style="font-size: 60%;">
-<p>We can return a value from the function using <code>return</code> keyword.</p>
-</div>
-<div id="cell-14" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="kw">def</span> sum_of_numbers(num1,num2):</span>
-<span id="cb9-2"><a></a>  total <span class="op">=</span> num1 <span class="op">+</span> num2</span>
+<div style="font-size: 85%;">
+<div id="cell-12" class="cell" data-outputid="5f8776c0-d445-4e78-f0ef-c8abff7203bf" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="kw">def</span> area_of_circle(radius):</span>
+<span id="cb9-2"><a></a>  <span class="cf">return</span> <span class="fl">3.14</span> <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span>
 <span id="cb9-3"><a></a></span>
-<span id="cb9-4"><a></a>sum_of_numbers(<span class="dv">30</span>,<span class="dv">70</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-15" class="cell" data-outputid="4acd9d1a-4acf-406f-d523-a6f4d50c88eb" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> sum_of_numbers(num1,num2):</span>
-<span id="cb10-2"><a></a>  total <span class="op">=</span> num1 <span class="op">+</span> num2</span>
-<span id="cb10-3"><a></a>  <span class="cf">return</span> total</span>
-<span id="cb10-4"><a></a></span>
-<span id="cb10-5"><a></a>sum_of_numbers(<span class="dv">30</span>,<span class="dv">70</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>100</code></pre>
-</div>
-</div>
-<div id="cell-16" class="cell" data-outputid="3bc8c3da-44da-4454-8bb1-96b8daf00402" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> sum_of_numbers(num1,num2):</span>
-<span id="cb12-2"><a></a>  <span class="cf">return</span> num1 <span class="op">+</span> num2</span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a>sum_of_numbers(<span class="dv">30</span>,<span class="dv">70</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>100</code></pre>
-</div>
-</div>
-<div id="cell-17" class="cell" data-outputid="de715f48-02ec-4731-cac0-e637ed41f52e" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="kw">def</span> area_of_circle(radius):</span>
-<span id="cb14-2"><a></a>  <span class="cf">return</span> <span class="fl">3.14</span> <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb14-3"><a></a></span>
-<span id="cb14-4"><a></a>area_of_circle(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<span id="cb9-4"><a></a>area_of_circle(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>28.26</code></pre>
 </div>
 </div>
+<div id="cell-13" class="cell" data-outputid="3ba527df-e471-407f-95e4-dde8b3b11320" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>area_of_circle <span class="op">=</span> <span class="kw">lambda</span> radius :  <span class="fl">3.14</span> <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb11-2"><a></a>area_of_circle(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>28.26</code></pre>
 </div>
 </div>
-</div>
-</section>
-<section id="calling-function-inside-a-function" class="slide level2">
-<h2>Calling Function Inside a Function</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 90%;">
-<div id="cell-21" class="cell" data-outputid="49aa8336-79c6-49d9-d83d-6b796f086f88" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="kw">def</span> sum_of_n_numbers(n):</span>
-<span id="cb16-2"><a></a>  total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb16-4"><a></a>    total <span class="op">=</span> total <span class="op">+</span> i</span>
-<span id="cb16-5"><a></a>  <span class="cf">return</span> total</span>
-<span id="cb16-6"><a></a></span>
-<span id="cb16-7"><a></a>sum_of_n_numbers(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div id="cell-14" class="cell" data-outputid="989b1911-486b-47cc-f0e8-6b0eb56553a1" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="kw">def</span> sum_of_n_numbers(n):</span>
+<span id="cb13-2"><a></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb13-3"><a></a>    <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb13-4"><a></a>  <span class="cf">else</span>:</span>
+<span id="cb13-5"><a></a>    <span class="cf">return</span> n <span class="op">+</span> sum_of_n_numbers(n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb13-6"><a></a></span>
+<span id="cb13-7"><a></a>sum_of_n_numbers(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>10</code></pre>
 </div>
 </div>
-<div id="cell-22" class="cell" data-outputid="5377260b-c99e-4d95-d821-5927a4b17e2a" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="kw">def</span> sum_of_n_numbers(n):</span>
-<span id="cb18-2"><a></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb18-3"><a></a>    <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb18-4"><a></a>  <span class="cf">else</span>:</span>
-<span id="cb18-5"><a></a>    <span class="cf">return</span> n <span class="op">+</span> sum_of_n_numbers(n<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb18-6"><a></a></span>
-<span id="cb18-7"><a></a>sum_of_n_numbers(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div id="cell-15" class="cell" data-outputid="f05b882a-9022-4b5c-93ec-31b1126b173e" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>sum_of_n_numbers <span class="op">=</span> <span class="kw">lambda</span> n : <span class="dv">0</span> <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> n <span class="op">+</span> sum_of_n_numbers(n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb15-2"><a></a>sum_of_n_numbers(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>10</code></pre>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<div style="font-size: 90%;">
-<div id="cell-25" class="cell" data-outputid="85d823d7-9a75-4c97-cd93-b55a890caf5d" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="kw">def</span> factorial(num):</span>
-<span id="cb20-2"><a></a>  total <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb20-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, num <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb20-4"><a></a>    total <span class="op">=</span> total <span class="op">*</span> i</span>
-<span id="cb20-5"><a></a>  <span class="cf">return</span> total</span>
-<span id="cb20-6"><a></a></span>
-<span id="cb20-7"><a></a>factorial(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
-<pre><code>120</code></pre>
-</div>
-</div>
-<div id="cell-26" class="cell" data-outputid="b16976ba-c0fb-4d52-a1ff-0d5f6730c33e" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="kw">def</span> factorial(n):</span>
-<span id="cb22-2"><a></a>  <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb22-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb22-4"><a></a>  <span class="cf">else</span>:</span>
-<span id="cb22-5"><a></a>    <span class="cf">return</span> n <span class="op">*</span> factorial(n<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb22-6"><a></a></span>
-<span id="cb22-7"><a></a>factorial(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
-<pre><code>120</code></pre>
-</div>
-</div>
-</div>
 </div>
 </div>
 </section>
-<section id="inner-function" class="slide level2">
-<h2>Inner Function</h2>
-<div style="font-size: 80%;">
-<div id="cell-30" class="cell" data-outputid="4f6d31e8-da94-42ba-aa28-ac501ef47e0d" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="kw">def</span> multiply(num1,num2):</span>
-<span id="cb24-2"><a></a>  <span class="kw">def</span> sum_of_numbers(num3):</span>
-<span id="cb24-3"><a></a>    <span class="cf">return</span> num3 <span class="op">+</span> num3</span>
-<span id="cb24-4"><a></a>  <span class="cf">return</span> sum_of_numbers(num2) <span class="op">*</span> num1</span>
-<span id="cb24-5"><a></a></span>
-<span id="cb24-6"><a></a>multiply(<span class="dv">2</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>12</code></pre>
-</div>
-</div>
-<div id="cell-31" class="cell" data-outputid="44076fb8-7917-4af1-ce92-b9c6667d7e20" data-execution_count="68">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="kw">def</span> multiply(num1<span class="op">=</span><span class="dv">2</span>,num2<span class="op">=</span><span class="dv">3</span>):</span>
-<span id="cb26-2"><a></a>  <span class="kw">def</span> sum_of_numbers(num3):</span>
-<span id="cb26-3"><a></a>    <span class="cf">return</span> num3 <span class="op">+</span> num3</span>
-<span id="cb26-4"><a></a>  <span class="cf">return</span> sum_of_numbers(num2) <span class="op">*</span> num1</span>
-<span id="cb26-5"><a></a></span>
-<span id="cb26-6"><a></a>multiply()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="68">
-<pre><code>12</code></pre>
-</div>
-</div>
-<div id="cell-32" class="cell" data-outputid="ad8c358a-120e-48a3-b852-0789321ca04e" data-execution_count="74">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a><span class="bu">print</span>(multiply(<span class="dv">10</span>))</span>
-<span id="cb28-2"><a></a><span class="bu">print</span>(multiply(num1<span class="op">=</span><span class="dv">10</span>))</span>
-<span id="cb28-3"><a></a><span class="bu">print</span>(multiply(<span class="dv">20</span>,<span class="dv">30</span>))</span>
-<span id="cb28-4"><a></a><span class="bu">print</span>(multiply(num1<span class="op">=</span><span class="dv">20</span>,num2<span class="op">=</span><span class="dv">30</span>))</span>
-<span id="cb28-5"><a></a><span class="bu">print</span>(multiply(<span class="dv">30</span>))</span>
-<span id="cb28-6"><a></a><span class="bu">print</span>(multiply(num2<span class="op">=</span><span class="dv">30</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>60
-60
-1200
-1200
-180
-120</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="generator-function-using-yield" class="slide level2">
-<h2>Generator Function Using Yield</h2>
+<section id="regular-function-vs-lambda---continued" class="slide level2">
+<h2>Regular Function vs Lambda - Continued</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div style="font-size: 70%;">
-<div id="cell-36" class="cell" data-outputid="a5e78e18-eb66-4ec9-e326-598aec7464ae" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a><span class="kw">def</span> my_generator():</span>
-<span id="cb30-2"><a></a>  n <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb30-3"><a></a>  <span class="cf">yield</span> n</span>
-<span id="cb30-4"><a></a>  n <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb30-5"><a></a>  <span class="cf">yield</span> n</span>
-<span id="cb30-6"><a></a>  n <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb30-7"><a></a>  <span class="cf">yield</span> n</span>
-<span id="cb30-8"><a></a></span>
-<span id="cb30-9"><a></a>my_generator()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="38">
-<pre><code>&lt;generator object my_generator at 0x783de8ec80b0&gt;</code></pre>
-</div>
-</div>
-<div id="cell-37" class="cell" data-outputid="84aecc6c-fe6e-4233-c176-7464b950d244" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a><span class="cf">for</span> <span class="bu">range</span> <span class="kw">in</span> my_generator():</span>
-<span id="cb32-2"><a></a>  <span class="bu">print</span>(<span class="bu">range</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="font-size: 85%;">
+<div id="cell-19" class="cell" data-outputid="151ab348-37e4-4318-ec92-6f70fbbdc556" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="kw">def</span> is_even(num):</span>
+<span id="cb17-2"><a></a>  <span class="cf">return</span> num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb17-3"><a></a></span>
+<span id="cb17-4"><a></a><span class="bu">print</span>(<span class="st">"UsingFunction:"</span>,is_even(<span class="dv">4</span>))</span>
+<span id="cb17-5"><a></a>is_even <span class="op">=</span> <span class="kw">lambda</span> num: num <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb17-6"><a></a><span class="bu">print</span>(<span class="st">"Using_LambdaFunction:"</span>,is_even(<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>1
-2
-3</code></pre>
+<pre><code>UsingFunction: True
+Using_LambdaFunction: True</code></pre>
 </div>
 </div>
-<div id="cell-38" class="cell" data-outputid="d12e6d13-dc76-4151-ad31-7f8e39026ba6" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a><span class="bu">next</span>(my_generator())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
-<pre><code>1</code></pre>
-</div>
-</div>
-<div id="cell-39" class="cell" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a>g <span class="op">=</span> my_generator()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-40" class="cell" data-outputid="b63dfc5e-f5c6-4ab7-cf71-452d10e5bf84" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a><span class="bu">next</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="47">
-<pre><code>1</code></pre>
-</div>
-</div>
-<div id="cell-41" class="cell" data-outputid="307b68fd-2b86-4231-f919-aa4ce8f1c95d" data-execution_count="48">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a><span class="bu">next</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="48">
-<pre><code>2</code></pre>
-</div>
-</div>
-<div id="cell-42" class="cell" data-outputid="13063a6a-206b-4272-b78d-0c5017c6a3b3" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a></a><span class="bu">next</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="49">
-<pre><code>3</code></pre>
+<div id="cell-20" class="cell" data-outputid="4c0cb3e0-c394-4de4-a3d4-38e4528b3426" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="kw">def</span> my_sum(<span class="op">*</span>args):</span>
+<span id="cb19-2"><a></a>  total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb19-3"><a></a>  <span class="cf">for</span> num <span class="kw">in</span> args:</span>
+<span id="cb19-4"><a></a>    total <span class="op">=</span> total <span class="op">+</span> num</span>
+<span id="cb19-5"><a></a>  <span class="cf">return</span> total</span>
+<span id="cb19-6"><a></a></span>
+<span id="cb19-7"><a></a><span class="bu">print</span>(my_sum(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>))</span>
+<span id="cb19-8"><a></a><span class="bu">print</span>(my_sum(<span class="dv">30</span>,<span class="dv">60</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>15
+90</code></pre>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div style="font-size: 70%;">
-<div id="cell-45" class="cell" data-outputid="5e76bb5e-22ce-4581-d660-3ed4b9a9a63f" data-execution_count="50">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a><span class="bu">next</span>(g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>StopIteration: </code></pre>
-</div>
-</div>
-<div id="cell-46" class="cell" data-execution_count="51">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a><span class="kw">def</span> my_generator(start,last):</span>
-<span id="cb45-2"><a></a>  n <span class="op">=</span> start</span>
-<span id="cb45-3"><a></a>  <span class="cf">while</span> n <span class="op">&lt;</span> last:</span>
-<span id="cb45-4"><a></a>    <span class="cf">yield</span> n</span>
-<span id="cb45-5"><a></a>    n <span class="op">=</span> n <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-47" class="cell" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a></a>g<span class="op">=</span>my_generator(<span class="dv">1</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-48" class="cell" data-outputid="bc5a79b7-1f84-4d9b-93a9-8c710b641a24" data-execution_count="53">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a></a><span class="cf">for</span> <span class="bu">range</span> <span class="kw">in</span> g:</span>
-<span id="cb47-2"><a></a>  <span class="bu">print</span>(<span class="bu">range</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="font-size: 85%;">
+<div id="cell-23" class="cell" data-outputid="ef06937f-7c6b-47b8-d7ab-6338d775019e" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="kw">def</span> my_sum(num1<span class="op">=</span><span class="dv">2</span>,num2<span class="op">=</span><span class="dv">3</span>,<span class="op">*</span>args):</span>
+<span id="cb21-2"><a></a>  total <span class="op">=</span> num1<span class="op">+</span>num2</span>
+<span id="cb21-3"><a></a>  <span class="cf">for</span> num <span class="kw">in</span> args:</span>
+<span id="cb21-4"><a></a>    total <span class="op">=</span> total <span class="op">+</span> num</span>
+<span id="cb21-5"><a></a>  <span class="cf">return</span> total</span>
+<span id="cb21-6"><a></a></span>
+<span id="cb21-7"><a></a><span class="bu">print</span>(my_sum())</span>
+<span id="cb21-8"><a></a><span class="bu">print</span>(my_sum(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb21-9"><a></a><span class="bu">print</span>(my_sum(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>))</span>
+<span id="cb21-10"><a></a><span class="bu">print</span>(my_sum(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>,<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>1
-2</code></pre>
-</div>
-</div>
-<div id="cell-49" class="cell" data-outputid="4c171e07-61b3-42e0-c6c0-b03fbc953e61" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a></a>g<span class="op">=</span>my_generator(<span class="dv">1</span>,<span class="dv">10</span>)</span>
-<span id="cb49-2"><a></a></span>
-<span id="cb49-3"><a></a><span class="cf">for</span> <span class="bu">range</span> <span class="kw">in</span> g:</span>
-<span id="cb49-4"><a></a>  <span class="bu">print</span>(<span class="bu">range</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1
-2
-3
-4
-5
+<pre><code>5
 6
-7
-8
-9</code></pre>
+33
+30</code></pre>
+</div>
+</div>
+<div id="cell-24" class="cell" data-outputid="dc877412-7c3b-4064-e1d5-74f0f02e5d62" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="kw">def</span> my_sum(num1<span class="op">=</span><span class="dv">2</span>,num2<span class="op">=</span><span class="dv">3</span>,<span class="op">*</span>args):</span>
+<span id="cb23-2"><a></a>  total <span class="op">=</span> num1<span class="op">+</span>num2<span class="op">+</span><span class="bu">sum</span>(args)</span>
+<span id="cb23-3"><a></a>  <span class="cf">return</span> total</span>
+<span id="cb23-4"><a></a></span>
+<span id="cb23-5"><a></a><span class="bu">print</span>(my_sum())</span>
+<span id="cb23-6"><a></a><span class="bu">print</span>(my_sum(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb23-7"><a></a><span class="bu">print</span>(my_sum(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>))</span>
+<span id="cb23-8"><a></a><span class="bu">print</span>(my_sum(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>,<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5
+6
+33
+30</code></pre>
 </div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="regular-function-vs-lambda---continued-1" class="slide level2">
+<h2>Regular Function vs Lambda - Continued</h2>
+<div style="font-size: 85%;">
+<div id="cell-28" class="cell" data-outputid="34e8ed15-5766-430a-eb7e-9bd321af4dfe" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>my_sum <span class="op">=</span> <span class="kw">lambda</span> num1<span class="op">=</span><span class="dv">2</span>,num2<span class="op">=</span><span class="dv">3</span>,<span class="op">*</span>args: num1<span class="op">+</span>num2<span class="op">+</span><span class="bu">sum</span>(args)</span>
+<span id="cb25-2"><a></a><span class="bu">print</span>(my_sum())</span>
+<span id="cb25-3"><a></a><span class="bu">print</span>(my_sum(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb25-4"><a></a><span class="bu">print</span>(my_sum(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>))</span>
+<span id="cb25-5"><a></a><span class="bu">print</span>(my_sum(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>,<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5
+6
+33
+30</code></pre>
+</div>
+</div>
+<div id="cell-29" class="cell" data-outputid="99be1bd6-1c6f-4749-9c88-ae26a0ab1426" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="kw">def</span> squared(numbers):</span>
+<span id="cb27-2"><a></a>  squared_list <span class="op">=</span> []</span>
+<span id="cb27-3"><a></a>  <span class="cf">for</span> num <span class="kw">in</span> numbers:</span>
+<span id="cb27-4"><a></a>    squared_list.append(num <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb27-5"><a></a>  <span class="cf">return</span> squared_list</span>
+<span id="cb27-6"><a></a></span>
+<span id="cb27-7"><a></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb27-8"><a></a><span class="bu">print</span>(squared(numbers))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 4, 9, 16, 25]</code></pre>
+</div>
+</div>
+<div id="cell-30" class="cell" data-outputid="11daa5d1-bf35-4044-fc65-6e2447d4ed81" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>[num<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> num <span class="kw">in</span> numbers]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<pre><code>[1, 4, 9, 16, 25]</code></pre>
+</div>
+</div>
+<div id="cell-31" class="cell" data-outputid="9360691e-40fa-437d-bad5-7dd1a4dc07c2" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a>squared <span class="op">=</span> <span class="kw">lambda</span> numbers: [num <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> num <span class="kw">in</span> numbers]</span>
+<span id="cb31-2"><a></a><span class="bu">print</span>(squared(numbers))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 4, 9, 16, 25]</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="lambda-functions" class="slide level2">
+<h2>Lambda Functions</h2>
+<div style="font-size: 85%;">
+<ul>
+<li><p>Syntax: lambda arguments: expression</p></li>
+<li><p>No Explicit Return Statements</p></li>
+<li><p>Limitation : Logic/Control Statement often has to be simple i.e.; one line.</p></li>
+<li><p>How often used:</p>
+<pre><code>- Very Often used especially while performing data manipulation activations. Especially using higher order functions like `map`,`filter` and `reduce`. { Which we will learn in next episode}
+
+- When there are multiple rows while performing data manipulation we can use lambda functions instead of creating explicit functions.</code></pre></li>
+</ul>
 </div>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 center">
 <h1>Thank You</h1>
-<p><a href="https://colab.research.google.com/github/ArunKoundinya/AIBasicswithAK/blob/master/AI_Vlogs/slides/season02/episode11/Functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<p><a href="https://colab.research.google.com/github/ArunKoundinya/AIBasicswithAK/blob/master/AI_Vlogs/slides/season02/episode12/Lamba_Functions.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../../../logo.png" class="slide-logo"></p>
