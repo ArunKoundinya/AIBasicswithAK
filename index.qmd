@@ -12,10 +12,10 @@ I'm thrilled to embark on this next chapter, and I hope you'll find joy and enri
 
 My Last three videos
 
+{{< video https://www.youtube.com/embed/d_foHhfc8Bw?si=8IbFM-q_6IPy3kFJ width="400" height="300" >}}
 
 {{< video https://www.youtube.com/embed/w-019_VLkNs?si=cY-iS0bgyTJYOyXh width="400" height="300" >}}
 
 {{< video https://www.youtube.com/embed/J0KG3TiQ7e4?si=AGCTtt9u3l_Yoshs width="400" height="300" >}}
 
-{{< video https://www.youtube.com/embed/OF_nlGYck_0?si=8IbFM-q_6IPy3kFJ width="400" height="300" >}}
 
