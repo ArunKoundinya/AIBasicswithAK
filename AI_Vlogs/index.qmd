@@ -196,6 +196,16 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 
 <tr>
 <td>Episode - 13</td>
+<td>Lambda Functions with Map,Reduce & Filter</td>
+<td><a href="slides/season02/episode13/Lambda_map_filter_reduce.html" target="_blank">Link</a></td>
+<td><a href="" target="_blank">No Home Work</a></td>
+<td><a href="" target="_blank">Link</a></td>
+<td><a href="slides/season02/episode13/epi13demo.py" target="_blank">Demo File</a></td>
+<td>17th June 2024</td>
+</tr>
+
+<tr>
+<td>Episode - 14</td>
 <td>Classes & Objects - 1</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
@@ -205,7 +215,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 </tr>
 
 <tr>
-<td>Episode - 14</td>
+<td>Episode - 15</td>
 <td>Classes & Objects - 2</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
@@ -215,7 +225,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 </tr>        
 
 <tr>
-<td>Episode - 15</td>
+<td>Episode - 16</td>
 <td>Inheritance</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
@@ -225,7 +235,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 </tr>    
 
 <tr>
-<td>Episode - 16</td>
+<td>Episode - 17</td>
 <td>Mutiple Inheritance</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
@@ -235,7 +245,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 </tr>  
 
 <tr>
-<td>Episode - 17</td>
+<td>Episode - 18</td>
 <td>Multi Threading & Multi Processing</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
@@ -245,7 +255,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 </tr>  
 
 <tr>
-<td>Episode - 18</td>
+<td>Episode - 19</td>
 <td>Debugging the Code</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
@@ -255,7 +265,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 </tr>         
 
 <tr>
-<td>Episode - 19</td>
+<td>Episode - 20</td>
 <td>End to End Project</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
@@ -265,7 +275,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 </tr>     
 
 <tr>
-<td>Episode - 20</td>
+<td>Episode - 21</td>
 <td>Deployin the Project</td>
 <td><a href="">Link</a></td>
 <td><a href="">Link</a></td>
