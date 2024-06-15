@@ -199,7 +199,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Lambda Functions with Map,Reduce & Filter</td>
 <td><a href="slides/season02/episode13/Lambda_map_filter_reduce.html" target="_blank">Link</a></td>
 <td>NA</td>
-<td><a href="" target="_blank">Link</a></td>
+<td><a href="https://youtu.be/973XwAKfTsc" target="_blank">Link</a></td>
 <td><a href="slides/season02/episode13/epi13demo.py" target="_blank">Demo File</a></td>
 <td>17th June 2024</td>
 </tr>
