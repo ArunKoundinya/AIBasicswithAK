@@ -1,0 +1,87 @@
+---
+title: AI Basics with AK 
+subtitle: Season 02 - Introduction to Python Programming
+title-slide-attributes:
+  data-slide-number: none
+format: 
+  revealjs:
+    incremental: true
+auto-stretch: true
+---
+
+# Episode 14
+
+Object Oriented Programming
+
+## Agenda
+
+-   OOP Definition
+-   Why OOPs
+-   OOPs Structure
+-   Key Principles
+-   OOPs in Python
+
+## OOPs Definition
+
+The object-oriented programming is basically a computer programming design philosophy or methodology that organizes/ models software design around data, or objects rather than functions and logic.
+
+![](images/oops_concept.png){fig-align="center" width="658"}
+
+[Reference](https://www.javatpoint.com/what-is-object-oriented-programming)
+
+## Why OOPs?
+
+-   Easy to Understand
+-   Re-Use the Code
+-   Keeping it Organized
+-   Protecting data
+-   Flexible 
+-   Fun/Cool
+
+## OOPs Structure
+
+![](images/OOP_Structure.png){width="463"}![](images/OOPs2.png){width="455"}
+
+## Key Principles
+
+Four Important Pillars of OOPs
+
+::: {style="font-size: 85%;"}
+
+-   Inheritance :  Child classes inherit data and behaviors from the parent class
+-   Encapsulation: Containing information in an object, exposing only selected information
+-   Abstraction: Only exposing high-level public methods for accessing an object
+-   Polymorphism: Many methods can do the same task
+
+[Reference](https://www.educative.io/blog/object-oriented-programming)
+
+:::
+
+## OOPs in Python
+
+```{python}
+class Dog:
+    def __init__(self, name, breed, age):
+        self.name = name
+        self.breed = breed
+        self.age = age
+    
+    def bark(self):
+        print(f"{self.name} is barking!")
+    
+    def sit(self):
+        print(f"{self.name} is now sitting.")
+    
+    def display_info(self):
+        print(f"Dog Info: Name: {self.name}, Breed: {self.breed}, Age: {self.age}")
+
+# Creating an instance of the Dog class
+my_dog = Dog("Buddy", "Golden Retriever", 3)
+
+# Using the methods
+my_dog.display_info()
+my_dog.bark()
+my_dog.sit()
+```
+
+# Thank You
