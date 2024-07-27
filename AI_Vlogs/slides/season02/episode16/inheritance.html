@@ -407,387 +407,145 @@ Arun Koundinya Parasa
 
 </section>
 <section>
-<section id="episode-03" class="title-slide slide level1 center">
-<h1>Episode 03</h1>
-<p>Numbers &amp; Booleans</p>
+<section id="episode-16" class="title-slide slide level1 center">
+<h1>Episode 16</h1>
+<p>Inheritance</p>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ul>
-<li>Booleans</li>
-<li>Integers</li>
-<li>Floats</li>
-<li>Type Casting</li>
-<li>Arthimetic Operators</li>
-<li>Comparison Operators</li>
+<li class="fragment">Inheritance</li>
+<li class="fragment">Multiple Inheritances ( Next Episode )</li>
 </ul>
 </section>
-<section id="booleans" class="slide level2">
-<h2>Booleans</h2>
+<section id="re-cap-of-previous-episode" class="slide level2">
+<h2>Re-Cap of Previous Episode</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="images/OOP_Structure.png" width="463"></p>
+</div><div class="column" style="width:60%;">
+<div style="font-size: 75%;">
+<div id="method-creation" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Car:</span>
+<span id="cb1-2"><a></a>  <span class="co"># Initializting Attributes of Class Car</span></span>
+<span id="cb1-3"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, color, brand, model):</span>
+<span id="cb1-4"><a></a>    <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb1-5"><a></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
+<span id="cb1-6"><a></a>    <span class="va">self</span>.model <span class="op">=</span> model</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a>  <span class="kw">def</span> repaint(<span class="va">self</span>, new_color):</span>
+<span id="cb1-9"><a></a>    <span class="va">self</span>.color <span class="op">=</span> new_color</span>
+<span id="cb1-10"><a></a></span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a><span class="co"># Creating Object called "MyCar" along with attributes</span></span>
+<span id="cb1-13"><a></a>MyCar <span class="op">=</span> Car(<span class="st">"OrchidWhite"</span>, <span class="st">"Honda"</span>, <span class="st">"Amaze"</span>)</span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a><span class="co"># Extracting Information from the "My Car" Object</span></span>
+<span id="cb1-16"><a></a><span class="bu">print</span>(<span class="ss">f"My Car is a </span><span class="sc">{</span>MyCar<span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>MyCar<span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>MyCar<span class="sc">.</span>model<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-17"><a></a></span>
+<span id="cb1-18"><a></a><span class="co"># My Car Repatined with Metallic Blue</span></span>
+<span id="cb1-19"><a></a>MyCar.repaint(<span class="st">"MetallicBlue"</span>)</span>
+<span id="cb1-20"><a></a></span>
+<span id="cb1-21"><a></a><span class="co"># Extracting Information from the "My Car" Object</span></span>
+<span id="cb1-22"><a></a><span class="bu">print</span>(<span class="ss">f"After Repaint My Car is a </span><span class="sc">{</span>MyCar<span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>MyCar<span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>MyCar<span class="sc">.</span>model<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>My Car is a OrchidWhite Honda Amaze
+After Repaint My Car is a MetallicBlue Honda Amaze</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="inheritance" class="slide level2">
+<h2>Inheritance</h2>
+
+<img data-src="images/inheritance.png" class="r-stretch"></section>
+<section id="inheritance-implementation" class="slide level2">
+<h2>Inheritance Implementation</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="images/inheritance.png" height="463"></p>
+</div><div class="column" style="width:60%;">
+<div style="font-size: 75%;">
+<h3 id="electric-car">Electric Car</h3>
+<div id="inheritance-creation1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> ElectricCar(Car):</span>
+<span id="cb3-2"><a></a>  <span class="co"># Initializting Attributes of Class Eletric Car</span></span>
+<span id="cb3-3"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, color, brand, model,battery_capacity<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb3-4"><a></a>    <span class="bu">super</span>().<span class="fu">__init__</span>(color,brand,model)</span>
+<span id="cb3-5"><a></a>    <span class="va">self</span>.battery_capacity <span class="op">=</span> battery_capacity</span>
+<span id="cb3-6"><a></a>  </span>
+<span id="cb3-7"><a></a>  <span class="kw">def</span> charge_battery(<span class="va">self</span>, charge_amount):</span>
+<span id="cb3-8"><a></a>    <span class="va">self</span>.battery_capacity <span class="op">+=</span> charge_amount</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h3 id="fuel-car">Fuel Car</h3>
+<div id="inheritance-creation2" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">class</span> FuelCar(Car):</span>
+<span id="cb4-2"><a></a>  <span class="co"># Initializting Attributes of Class Fuel Car</span></span>
+<span id="cb4-3"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, color, brand, model,TankSize<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb4-4"><a></a>    <span class="bu">super</span>().<span class="fu">__init__</span>(color,brand,model)</span>
+<span id="cb4-5"><a></a>    <span class="va">self</span>.TankSize <span class="op">=</span> TankSize</span>
+<span id="cb4-6"><a></a>    <span class="va">self</span>.fuel_level <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-7"><a></a>  </span>
+<span id="cb4-8"><a></a>  <span class="kw">def</span> RefuelTank(<span class="va">self</span>, fuel_amount):</span>
+<span id="cb4-9"><a></a>   <span class="cf">if</span> <span class="va">self</span>.fuel_level <span class="op">+</span> fuel_amount <span class="op">&gt;</span> <span class="va">self</span>.TankSize:</span>
+<span id="cb4-10"><a></a>      <span class="bu">print</span>(<span class="st">"Cannot refuel beyond tank capacity."</span>)</span>
+<span id="cb4-11"><a></a>   <span class="cf">else</span>:</span>
+<span id="cb4-12"><a></a>      <span class="va">self</span>.fuel_level <span class="op">+=</span> fuel_amount</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="inheritance-implementation-output" class="slide level2">
+<h2>Inheritance Implementation Output</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<div id="16666a0b" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>var <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb1-2"><a></a><span class="bu">type</span>(var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>bool</code></pre>
-</div>
-</div>
-<div id="820fb1bb" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>var1 <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb3-2"><a></a><span class="bu">type</span>(var1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>bool</code></pre>
-</div>
-</div>
-<div id="1faffe44" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="bu">print</span>(var <span class="op">+</span> var1)</span>
-<span id="cb5-2"><a></a><span class="bu">print</span>(var <span class="op">*</span> var1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="electric-car-1" style="font-size: 75%;">
+<h3>Electric Car</h3>
+<div id="inheritance-output1" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>PriyasCar <span class="op">=</span> ElectricCar(<span class="st">"Red"</span>, <span class="st">"Tesla"</span>, <span class="st">"Model 3"</span>, battery_capacity<span class="op">=</span><span class="dv">75</span>)</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a><span class="co"># Extracting Information from the "Priyas Car" Object</span></span>
+<span id="cb5-4"><a></a><span class="bu">print</span>(<span class="ss">f"Priyas Car is a </span><span class="sc">{</span>PriyasCar<span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>PriyasCar<span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>PriyasCar<span class="sc">.</span>model<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a><span class="co"># My Car Repatined with Metallic Blue and Charged to 25%</span></span>
+<span id="cb5-7"><a></a>PriyasCar.repaint(<span class="st">"MetallicBlue"</span>)</span>
+<span id="cb5-8"><a></a>PriyasCar.charge_battery(<span class="dv">25</span>)</span>
+<span id="cb5-9"><a></a></span>
+<span id="cb5-10"><a></a><span class="co"># Extracting Information from the "Priyas Car" Object</span></span>
+<span id="cb5-11"><a></a><span class="bu">print</span>(<span class="ss">f"After Repaint Priyas Car is a </span><span class="sc">{</span>PriyasCar<span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>PriyasCar<span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>PriyasCar<span class="sc">.</span>model<span class="sc">}</span><span class="ss">. Having Current Capacity </span><span class="sc">{</span>PriyasCar<span class="sc">.</span>battery_capacity<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>1
-0</code></pre>
+<pre><code>Priyas Car is a Red Tesla Model 3
+After Repaint Priyas Car is a MetallicBlue Tesla Model 3. Having Current Capacity 100</code></pre>
 </div>
 </div>
-</div>
+</section>
 </div><div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<div id="cfe56845" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(var <span class="kw">and</span> var1)</span>
-<span id="cb7-2"><a></a><span class="bu">print</span>(var <span class="kw">or</span> var1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="fuel-car-1" style="font-size: 75%;">
+<h3>Fuel Car</h3>
+<div id="inheritance-output2" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>MyCar <span class="op">=</span> FuelCar(<span class="st">"OrchidWhite"</span>, <span class="st">"Honda"</span>, <span class="st">"Amaze"</span>, TankSize<span class="op">=</span><span class="dv">40</span>)</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="co"># Extracting Information from the "My Car" Object</span></span>
+<span id="cb7-4"><a></a><span class="bu">print</span>(<span class="ss">f"My Car is a </span><span class="sc">{</span>MyCar<span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>MyCar<span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>MyCar<span class="sc">.</span>model<span class="sc">}</span><span class="ss"> with TankSize </span><span class="sc">{</span>MyCar<span class="sc">.</span>TankSize<span class="sc">}</span><span class="ss"> Ltrs"</span>)</span>
+<span id="cb7-5"><a></a></span>
+<span id="cb7-6"><a></a>MyCar.RefuelTank(<span class="dv">30</span>)</span>
+<span id="cb7-7"><a></a></span>
+<span id="cb7-8"><a></a><span class="bu">print</span>(<span class="ss">f"My Car is a </span><span class="sc">{</span>MyCar<span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>MyCar<span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>MyCar<span class="sc">.</span>model<span class="sc">}</span><span class="ss"> with TankSize </span><span class="sc">{</span>MyCar<span class="sc">.</span>TankSize<span class="sc">}</span><span class="ss"> Ltrs. </span><span class="ch">\n</span><span class="ss"> Current Fuel Level is </span><span class="sc">{</span>MyCar<span class="sc">.</span>fuel_level<span class="sc">}</span><span class="ss"> "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>False
-True</code></pre>
-</div>
-</div>
-<div id="d7887ba7" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span>)</span>
-<span id="cb9-2"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">&lt;</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>True
-False</code></pre>
-</div>
-</div>
-<div id="534f54e7" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="bu">print</span>((<span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span>) <span class="kw">and</span> (<span class="dv">2</span> <span class="op">&lt;</span> var1))</span>
-<span id="cb11-2"><a></a><span class="bu">print</span>((<span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span>) <span class="kw">or</span> (<span class="dv">2</span> <span class="op">&lt;</span> var1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>False
-True</code></pre>
-</div>
-</div>
-</div>
+<pre><code>My Car is a OrchidWhite Honda Amaze with TankSize 40 Ltrs
+My Car is a OrchidWhite Honda Amaze with TankSize 40 Ltrs. 
+ Current Fuel Level is 30 </code></pre>
 </div>
 </div>
 </section>
-<section id="integers" class="slide level2">
-<h2>Integers</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<div id="548b5d34" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>var <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb13-2"><a></a><span class="bu">type</span>(var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>int</code></pre>
 </div>
-</div>
-<div id="eb4ca0a1" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>var1 <span class="op">=</span> <span class="op">-</span><span class="dv">100</span></span>
-<span id="cb15-2"><a></a><span class="bu">type</span>(var1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>int</code></pre>
-</div>
-</div>
-<div id="d500fd4a" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="bu">print</span>(var <span class="op">+</span> var1)</span>
-<span id="cb17-2"><a></a><span class="bu">print</span>(var <span class="op">-</span> var1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>0
-200</code></pre>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<div id="769ac7b6" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="bu">print</span>(<span class="dv">1</span>,<span class="dv">000</span>,<span class="dv">000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1 0 0</code></pre>
-</div>
-</div>
-<div id="a981a195" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="bu">print</span>(<span class="dv">10_11_12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>101112</code></pre>
-</div>
-</div>
-<div style="font-size: 50%;">
-<ul>
-<li><code>_1</code> can we do this ?</li>
-</ul>
-</div>
-<div id="ba68f9d5" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>_1 <span class="op">=</span> <span class="dv">1_3_4</span></span>
-<span id="cb23-2"><a></a><span class="bu">type</span>(_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>int</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="floats" class="slide level2">
-<h2>Floats</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<div id="d53faf0d" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>var <span class="op">=</span> <span class="fl">5.</span></span>
-<span id="cb25-2"><a></a><span class="bu">type</span>(var)</span>
-<span id="cb25-3"><a></a><span class="bu">print</span>(var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5.0</code></pre>
-</div>
-</div>
-<div id="04b59ccb" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="bu">print</span>(<span class="fl">5.0</span>)</span>
-<span id="cb27-2"><a></a><span class="bu">print</span>(<span class="fl">05.</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5.0
-5.0</code></pre>
-</div>
-</div>
-<div id="5edea11e" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="bu">print</span>(var <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb29-2"><a></a><span class="bu">print</span>(var <span class="op">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>6.0
-4.0</code></pre>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<div id="cc05afd7" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a><span class="bu">print</span>(<span class="fl">5e0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5.0</code></pre>
-</div>
-</div>
-<div id="f0e47ac3" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a><span class="bu">print</span>(<span class="fl">5e1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>50.0</code></pre>
-</div>
-</div>
-<div style="font-size: 50%;">
-<ul>
-<li><code>1.01_1</code> can we do this ?</li>
-<li><code>1_.01_1</code> can we do this ?</li>
-</ul>
-</div>
-<div id="fd252072" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a>pi <span class="op">=</span> <span class="fl">3.141_592_654</span></span>
-<span id="cb35-2"><a></a><span class="bu">print</span>(pi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3.141592654</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="type-casting" class="slide level2">
-<h2>Type Casting</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<div id="70f99256" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a><span class="bu">print</span>(<span class="bu">float</span>(<span class="va">True</span>))</span>
-<span id="cb37-2"><a></a><span class="bu">print</span>(<span class="bu">float</span>(<span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1.0
-0.0</code></pre>
-</div>
-</div>
-<div id="918b37fa" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a><span class="bu">print</span>(<span class="bu">int</span>(<span class="fl">2.9</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2</code></pre>
-</div>
-</div>
-<div id="642ac873" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="dv">100</span>))</span>
-<span id="cb41-2"><a></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="op">-</span><span class="dv">100</span>))</span>
-<span id="cb41-3"><a></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>True
-True
-False</code></pre>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div style="font-size: 80%;">
-<div id="ad5c50af" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a><span class="bu">print</span>(<span class="fl">1.0</span> <span class="op">+</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2.0</code></pre>
-</div>
-</div>
-<div id="613db43f" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a><span class="bu">print</span>(<span class="fl">5e1</span> <span class="op">+</span> <span class="bu">bool</span>(<span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>51.0</code></pre>
-</div>
-</div>
-<div id="29cc1916" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a></a>pi <span class="op">=</span> <span class="fl">3.141_592</span></span>
-<span id="cb47-2"><a></a><span class="bu">int</span>(pi) <span class="op">+</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
-<pre><code>4</code></pre>
-</div>
-</div>
-<div id="039f2d75" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a></a><span class="bu">print</span>(pi <span class="op">*</span> <span class="va">True</span>)</span>
-<span id="cb49-2"><a></a><span class="bu">print</span>(pi <span class="op">*</span> <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3.141592
-0.0</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="arthimetic-operators" class="slide level2">
-<h2>Arthimetic Operators</h2>
-<div style="font-size: 70%;">
-<table>
-<colgroup>
-<col style="width: 23%">
-<col style="width: 30%">
-<col style="width: 23%">
-<col style="width: 23%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"><strong>Operator</strong></th>
-<th style="text-align: center;"><strong>Description</strong></th>
-<th style="text-align: center;"><strong>Example</strong></th>
-<th style="text-align: center;"><strong>Result</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong><code>+</code></strong></td>
-<td style="text-align: center;"><strong>Addition</strong></td>
-<td style="text-align: center;"><strong><code>100 + 100</code></strong></td>
-<td style="text-align: center;"><strong><code>200</code></strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong><code>-</code></strong></td>
-<td style="text-align: center;"><strong>Subtraction</strong></td>
-<td style="text-align: center;"><strong><code>20 - 10</code></strong></td>
-<td style="text-align: center;"><strong><code>10</code></strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong><code>*</code></strong></td>
-<td style="text-align: center;"><strong>Multiplication</strong></td>
-<td style="text-align: center;"><strong><code>5 * 5</code></strong></td>
-<td style="text-align: center;"><strong><code>25</code></strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong><code>/</code></strong></td>
-<td style="text-align: center;"><strong>Floating-point division</strong></td>
-<td style="text-align: center;"><strong><code>5 / 2</code></strong></td>
-<td style="text-align: center;"><strong><code>2.5</code></strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong><code>//</code></strong></td>
-<td style="text-align: center;"><strong>Integer (truncating) division</strong></td>
-<td style="text-align: center;"><strong><code>5 // 2</code></strong></td>
-<td style="text-align: center;"><strong><code>2</code></strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong><code>%</code></strong></td>
-<td style="text-align: center;"><strong>Modulus (remainder)</strong></td>
-<td style="text-align: center;"><strong><code>5 % 2</code></strong></td>
-<td style="text-align: center;"><strong><code>1</code></strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong><code>**</code></strong></td>
-<td style="text-align: center;"><strong>Exponentiation</strong></td>
-<td style="text-align: center;"><strong><code>5 ** 2</code></strong></td>
-<td style="text-align: center;"><strong><code>25</code></strong></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="comparison-operators" class="slide level2">
-<h2>Comparison Operators</h2>
-<div style="font-size: 70%;">
-<table style="width:100%;">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 42%">
-<col style="width: 19%">
-<col style="width: 18%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"><strong>Operator</strong></th>
-<th style="text-align: center;"><strong>Description</strong></th>
-<th style="text-align: center;"><strong>Example</strong></th>
-<th style="text-align: center;"><strong>Result</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong><code>==</code></strong></td>
-<td style="text-align: center;"><strong>Equal to</strong></td>
-<td style="text-align: center;"><strong><code>5 == 5</code></strong></td>
-<td style="text-align: center;"><strong><code>True</code></strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong><code>!=</code></strong></td>
-<td style="text-align: center;"><strong>Not equal to</strong></td>
-<td style="text-align: center;"><strong><code>5 != 5</code></strong></td>
-<td style="text-align: center;"><strong><code>False</code></strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong><code>&lt;</code></strong></td>
-<td style="text-align: center;"><strong>Less than</strong></td>
-<td style="text-align: center;"><strong><code>4 &lt; 5</code></strong></td>
-<td style="text-align: center;"><strong><code>True</code></strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong><code>&gt;=</code></strong></td>
-<td style="text-align: center;"><strong>Greater than or equal to</strong></td>
-<td style="text-align: center;"><strong><code>5 &gt;= 5</code></strong></td>
-<td style="text-align: center;"><strong><code>True</code></strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong><code>&lt;=</code></strong></td>
-<td style="text-align: center;"><strong>Less than or equal to</strong></td>
-<td style="text-align: center;"><strong><code>4 &lt;= 5</code></strong></td>
-<td style="text-align: center;"><strong><code>True</code></strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong><code>&gt;</code></strong></td>
-<td style="text-align: center;"><strong>Greater than</strong></td>
-<td style="text-align: center;"><strong><code>5 &gt; 4</code></strong></td>
-<td style="text-align: center;"><strong><code>True</code></strong></td>
-</tr>
-</tbody>
-</table>
 </div>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 center">
-<h1>Thank You</h1>
+<h1>THANK YOU</h1>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../../../logo.png" class="slide-logo"></p>
