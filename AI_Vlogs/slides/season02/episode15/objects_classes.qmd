@@ -1,0 +1,255 @@
+---
+title: AI Basics with AK 
+subtitle: Season 02 - Introduction to Python Programming
+title-slide-attributes:
+  data-slide-number: none
+format: 
+  revealjs:
+    incremental: true
+auto-stretch: true
+---
+
+# Episode 15
+
+Classes & Objects
+
+## Agenda
+
+-   Initializing Attributes
+-   Initializing Attributes with __init__
+-   Creating Objects
+-   Defining Methods
+-   Objects Calling the Class Methods
+
+## Initializing the attributes
+
+::: columns
+::: {.column width="40%"}
+
+![](images/OOP_Structure.png){width="463"}
+
+:::
+
+::: {.column width="60%"}
+
+::: {style="font-size: 75%;"}
+
+```{python}
+#| warning: false
+#| label: Initializing_Attributes
+
+class Car:
+  # Initializting Attributes of Class Car
+  def initializeAttribute(self, color, brand, model):
+    self.color = color
+    self.brand = brand
+    self.model = model
+
+# Creating Object called "MyCar"
+MyCar = Car()
+
+# Initializing Attributes of "MyCar"
+MyCar.initializeAttribute("OrchidWhite", "Honda", "Amaze")
+
+# Extracting Information from the "My Car" Object
+print(MyCar.color)
+print(MyCar.brand)
+print(MyCar.model)
+
+```
+
+:::
+:::
+:::
+
+
+## Initializing the attributes with __init__
+
+::: columns
+::: {.column width="40%"}
+
+![](images/OOP_Structure.png){width="463"}
+
+:::
+
+::: {.column width="60%"}
+
+::: {style="font-size: 75%;"}
+
+```{python}
+#| warning: false
+#| label: Initializing_Attributes_With_Init
+
+class Car:
+  # Initializting Attributes of Class Car
+  def __init__(self, color, brand, model):
+    self.color = color
+    self.brand = brand
+    self.model = model
+
+# Creating Object called "MyCar" along with attributes
+MyCar = Car("OrchidWhite", "Honda", "Amaze")
+
+# Creating Object called "HelensCar" along with attributes
+HelensCar = Car("Silver", "Tata", "Nano")
+
+# Extracting Information from the "My Car" Object
+print(f"My Car is a {MyCar.color} {MyCar.brand} {MyCar.model}")
+
+# Extracting Information from the "Helen's Car" Object
+print(f"Helen's Car is a {HelensCar.color} {HelensCar.brand} {HelensCar.model}")
+
+```
+
+:::
+:::
+:::
+
+
+## Creation of Methods
+
+::: columns
+::: {.column width="40%"}
+
+![](images/OOP_Structure.png){width="463"}
+
+:::
+
+::: {.column width="60%"}
+
+::: {style="font-size: 75%;"}
+
+```{python}
+#| warning: false
+#| label: Method Creation
+
+class Car:
+  # Initializting Attributes of Class Car
+  def __init__(self, color, brand, model):
+    self.color = color
+    self.brand = brand
+    self.model = model
+
+  def repaint(self, new_color):
+    self.color = new_color
+
+
+# Creating Object called "MyCar" along with attributes
+MyCar = Car("OrchidWhite", "Honda", "Amaze")
+
+# Extracting Information from the "My Car" Object
+print(f"My Car is a {MyCar.color} {MyCar.brand} {MyCar.model}")
+
+# My Car Repatined with Metallic Blue
+MyCar.repaint("MetallicBlue")
+
+# Extracting Information from the "My Car" Object
+print(f"After Repaint My Car is a {MyCar.color} {MyCar.brand} {MyCar.model}")
+
+```
+
+:::
+:::
+:::
+
+
+## Adding More Variation
+
+::: columns
+::: {.column width="50%"}
+
+::: {style="font-size: 75%;"}
+
+
+```{python}
+#| warning: false
+#| label: Variation_1
+
+class Car:
+  # Initializting Attributes of Class Car
+  def __init__(self, color, brand, model, mileage=0):
+    self.color = color
+    self.brand = brand
+    self.model = model
+    self.mileage = mileage
+
+  def repaint(self, new_color):
+    self.color = new_color
+
+  def add_mileage(self, miles_driven):
+    self.mileage = self.mileage + miles_driven
+
+# Creating Object called "MyCar" along with attributes
+MyCar = Car("OrchidWhite", "Honda", "Amaze")
+
+# My Car Repatined with Metallic Blue
+MyCar.repaint("MetallicBlue")
+MyCar.add_mileage(100)
+
+# Creating Object called "MyCar" along with attributes
+HelensCar = Car("Silver", "Tata", "Nano", 100)
+
+# Helens Car Repatined with Red
+HelensCar.repaint("Red")
+HelensCar.add_mileage(100)
+
+# Extracting Information from the "My Car" Object
+print(f"Current Mileage of My Car is {MyCar.mileage}")
+
+# Extracting Information from the "Helens Car" Object
+print(f"Current Mileage of Helens Car is {HelensCar.mileage}")
+
+```
+
+
+:::
+:::
+
+::: {.column width="50%"}
+
+::: {style="font-size: 75%;"}
+
+```{python}
+#| warning: false
+#| label: Variation_2
+
+class Car:
+  # Initializting Attributes of Class Car
+  def __init__(self, color, brand, model, mileage=0, fuel_type="Petrol"):
+    self.color = color
+    self.brand = brand
+    self.model = model
+    self.mileage = mileage
+    self.fuel_type = fuel_type
+
+  def repaint(self, new_color):
+    self.color = new_color
+
+  def add_mileage(self, miles_driven):
+    self.mileage += miles_driven
+
+  def describe_car(self):
+    print(f"This car is a {self.color} {self.brand} {self.model} with {self.mileage} miles on it. It runs on {self.fuel_type}.")
+
+# Creating Object called "MyCar" along with attributes
+MyCar = Car("OrchidWhite", "Honda", "Amaze", fuel_type="Diesel")
+
+# Creating Object called "HelensCar" along with attributes
+HelensCar = Car("Silver", "Tata", "Nano", 100, "Electric")
+
+# Using the new methods
+MyCar.repaint("MetallicBlue")
+MyCar.add_mileage(1500)
+HelensCar.add_mileage(500)
+
+# Describe cars again after updates
+MyCar.describe_car()
+HelensCar.describe_car()
+
+```
+
+:::
+:::
+:::
+
+# THANK YOU
