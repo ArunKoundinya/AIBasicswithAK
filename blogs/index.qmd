@@ -1,5 +1,5 @@
 ---
-title: "My Views and Learnings on AI"
+title: "My Views and learnings on AI"
 subtitle: "Having AI for breakfast"
 listing:
   contents: posts
