@@ -1,0 +1,190 @@
+---
+title: AI Basics with AK 
+subtitle: Season 02 - Introduction to Python Programming
+title-slide-attributes:
+  data-slide-number: none
+format: 
+  revealjs:
+    incremental: true
+auto-stretch: true
+---
+
+# Episode 16
+
+Inheritance
+
+## Agenda
+
+-   Inheritance
+-   Multiple Inheritances ( Next Episode )
+
+## Re-Cap of Previous Episode
+
+::: columns
+::: {.column width="40%"}
+
+![](images/OOP_Structure.png){width="463"}
+
+:::
+
+::: {.column width="60%"}
+
+::: {style="font-size: 75%;"}
+
+```{python}
+#| warning: false
+#| label: Method Creation
+
+class Car:
+  # Initializting Attributes of Class Car
+  def __init__(self, color, brand, model):
+    self.color = color
+    self.brand = brand
+    self.model = model
+
+  def repaint(self, new_color):
+    self.color = new_color
+
+
+# Creating Object called "MyCar" along with attributes
+MyCar = Car("OrchidWhite", "Honda", "Amaze")
+
+# Extracting Information from the "My Car" Object
+print(f"My Car is a {MyCar.color} {MyCar.brand} {MyCar.model}")
+
+# My Car Repatined with Metallic Blue
+MyCar.repaint("MetallicBlue")
+
+# Extracting Information from the "My Car" Object
+print(f"After Repaint My Car is a {MyCar.color} {MyCar.brand} {MyCar.model}")
+
+```
+
+:::
+:::
+:::
+
+
+## Inheritance
+
+![](images/inheritance.png)
+
+## Inheritance Implementation
+
+::: columns
+::: {.column width="40%"}
+
+![](images/inheritance.png){height="463"}
+
+:::
+
+::: {.column width="60%"}
+
+::: {style="font-size: 75%;"}
+
+### Electric Car
+
+```{python}
+#| warning: false
+#| label: Inheritance Creation1
+
+class ElectricCar(Car):
+  # Initializting Attributes of Class Eletric Car
+  def __init__(self, color, brand, model,battery_capacity=0):
+    super().__init__(color,brand,model)
+    self.battery_capacity = battery_capacity
+  
+  def charge_battery(self, charge_amount):
+    self.battery_capacity += charge_amount
+
+```
+
+
+### Fuel Car
+
+```{python}
+#| warning: false
+#| label: Inheritance Creation2
+
+class FuelCar(Car):
+  # Initializting Attributes of Class Fuel Car
+  def __init__(self, color, brand, model,TankSize=0):
+    super().__init__(color,brand,model)
+    self.TankSize = TankSize
+    self.fuel_level = 0
+  
+  def RefuelTank(self, fuel_amount):
+   if self.fuel_level + fuel_amount > self.TankSize:
+      print("Cannot refuel beyond tank capacity.")
+   else:
+      self.fuel_level += fuel_amount
+```
+
+
+:::
+:::
+:::
+
+
+
+## Inheritance Implementation  Output
+
+::: columns
+::: {.column width="50%"}
+
+::: {style="font-size: 75%;"}
+
+
+### Electric Car
+
+```{python}
+#| warning: false
+#| label: Inheritance Output1
+PriyasCar = ElectricCar("Red", "Tesla", "Model 3", battery_capacity=75)
+
+# Extracting Information from the "Priyas Car" Object
+print(f"Priyas Car is a {PriyasCar.color} {PriyasCar.brand} {PriyasCar.model}")
+
+# My Car Repatined with Metallic Blue and Charged to 25%
+PriyasCar.repaint("MetallicBlue")
+PriyasCar.charge_battery(25)
+
+# Extracting Information from the "Priyas Car" Object
+print(f"After Repaint Priyas Car is a {PriyasCar.color} {PriyasCar.brand} {PriyasCar.model}. Having Current Capacity {PriyasCar.battery_capacity}")
+
+```
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {style="font-size: 75%;"}
+
+
+
+### Fuel Car
+
+```{python}
+#| warning: false
+#| label: Inheritance Output2
+
+MyCar = FuelCar("OrchidWhite", "Honda", "Amaze", TankSize=40)
+
+# Extracting Information from the "My Car" Object
+print(f"My Car is a {MyCar.color} {MyCar.brand} {MyCar.model} with TankSize {MyCar.TankSize} Ltrs")
+
+MyCar.RefuelTank(30)
+
+print(f"My Car is a {MyCar.color} {MyCar.brand} {MyCar.model} with TankSize {MyCar.TankSize} Ltrs. \n Current Fuel Level is {MyCar.fuel_level} ")
+
+
+```
+
+
+:::
+:::
+:::
+
+# THANK YOU

@@ -1,16 +1,16 @@
 ---
-title: Home Work 13
-subtitle: 26th July 2024
+title: Home Work 14
+subtitle: 30th July 2024
 format: html
 ---
 
-This is our thirteenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
+This is our fourteenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
 
-#### Question 1 Replicate the below figure 
+#### Question 2 Replicate the below figure 
 
-![](geeksforgeeks.png){fig-align="center" width="846"}
+![](animal.png){fig-align="center" width="846"}
 
-{ Referred from https://www.geeksforgeeks.org/python-classes-and-objects/ }
+{ Referred from https://www.linkedin.com/pulse/data-science-interview-question-oop-inheritance-onyshchenko-phd }
 
 ------------------------------------------------ Happy Learning -----------------------------------------------------
 
