@@ -209,19 +209,19 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Object Orientied Programming</td>
 <td><a href="slides/season02/episode14/object_oriented.html" target="_blank">Link</a></td>
 <td>NA</td>
-<td><a href="" target="_blank">Link</a></td>
+<td><a href="https://youtu.be/7hP2vN3yZZc" target="_blank">Link</a></td>
 <td>NA</td>
-<td>21th June 2024</td>
+<td>21st July 2024</td>
 </tr>
 
 <tr>
 <td>Episode - 15</td>
 <td>Classes & Objects</td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
+<td><a href="slides/season02/episode15/objects_classes.html" target="_blank">Link</a></td>
+<td><a href="homework/season02/episode15/homework.html" target="_blank">Link</a></td>
+<td><a href="" target="_blank">Link</a></td>
+<td><a href="slides/season02/episode15/epi15demo.py" target="_blank">Demo File</a></td>
+<td>26th July 2024</td>
 </tr>        
 
 <tr>
