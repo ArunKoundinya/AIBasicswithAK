@@ -1,0 +1,347 @@
+---
+title: AI Basics with AK 
+subtitle: Season 02 - Introduction to Python Programming
+title-slide-attributes:
+  data-slide-number: none
+format: 
+  revealjs:
+    incremental: true
+auto-stretch: true
+---
+
+# Episode 17
+
+Multiple Inheritance
+
+## Agenda
+
+-   Inheritance { Previous Episode }
+-   Multiple Inheritances
+
+## Re-Cap of Previous Episode
+
+::: columns
+::: {.column width="40%"}
+
+![](images/OOP_Structure.png){width="463"}
+
+:::
+
+::: {.column width="60%"}
+
+::: {style="font-size: 75%;"}
+
+```{python}
+#| warning: false
+#| label: Method Creation
+
+class Car:
+  # Initializting Attributes of Class Car
+  def __init__(self, color, brand, model):
+    self.color = color
+    self.brand = brand
+    self.model = model
+
+  def repaint(self, new_color):
+    self.color = new_color
+
+
+# Creating Object called "MyCar" along with attributes
+MyCar = Car("OrchidWhite", "Honda", "Amaze")
+
+# Extracting Information from the "My Car" Object
+print(f"My Car is a {MyCar.color} {MyCar.brand} {MyCar.model}")
+
+# My Car Repatined with Metallic Blue
+MyCar.repaint("MetallicBlue")
+
+# Extracting Information from the "My Car" Object
+print(f"After Repaint My Car is a {MyCar.color} {MyCar.brand} {MyCar.model}")
+
+```
+
+:::
+:::
+:::
+
+
+## Inheritance - Recap
+
+![](images/inheritance.png)
+
+## Inheritance Implementation - Recap
+
+::: columns
+::: {.column width="40%"}
+
+![](images/inheritance.png){height="463"}
+
+:::
+
+::: {.column width="60%"}
+
+::: {style="font-size: 75%;"}
+
+### Electric Car
+
+```{python}
+#| warning: false
+#| label: Inheritance Creation1
+
+class ElectricCar(Car):
+  # Initializting Attributes of Class Eletric Car
+  def __init__(self, color, brand, model,battery_capacity=0):
+    super().__init__(color,brand,model)
+    self.battery_capacity = battery_capacity
+  
+  def charge_battery(self, charge_amount):
+    self.battery_capacity += charge_amount
+
+```
+
+
+### Fuel Car
+
+```{python}
+#| warning: false
+#| label: Inheritance Creation2
+
+class FuelCar(Car):
+  # Initializting Attributes of Class Fuel Car
+  def __init__(self, color, brand, model,TankSize=0):
+    super().__init__(color,brand,model)
+    self.TankSize = TankSize
+    self.fuel_level = 0
+  
+  def RefuelTank(self, fuel_amount):
+   if self.fuel_level + fuel_amount > self.TankSize:
+      print("Cannot refuel beyond tank capacity.")
+   else:
+      self.fuel_level += fuel_amount
+```
+
+
+:::
+:::
+:::
+
+
+
+## Inheritance Implementation  Output - Recap
+
+::: columns
+::: {.column width="50%"}
+
+::: {style="font-size: 75%;"}
+
+
+### Electric Car
+
+```{python}
+#| warning: false
+#| label: Inheritance Output1
+PriyasCar = ElectricCar("Red", "Tesla", "Model 3", battery_capacity=75)
+
+# Extracting Information from the "Priyas Car" Object
+print(f"Priyas Car is a {PriyasCar.color} {PriyasCar.brand} {PriyasCar.model}")
+
+# My Car Repatined with Metallic Blue and Charged to 25%
+PriyasCar.repaint("MetallicBlue")
+PriyasCar.charge_battery(25)
+
+# Extracting Information from the "Priyas Car" Object
+print(f"After Repaint Priyas Car is a {PriyasCar.color} {PriyasCar.brand} {PriyasCar.model}. Having Current Capacity {PriyasCar.battery_capacity}")
+
+```
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {style="font-size: 75%;"}
+
+
+
+### Fuel Car
+
+```{python}
+#| warning: false
+#| label: Inheritance Output2
+
+MyCar = FuelCar("OrchidWhite", "Honda", "Amaze", TankSize=40)
+
+# Extracting Information from the "My Car" Object
+print(f"My Car is a {MyCar.color} {MyCar.brand} {MyCar.model} with TankSize {MyCar.TankSize} Ltrs")
+
+MyCar.RefuelTank(30)
+
+print(f"My Car is a {MyCar.color} {MyCar.brand} {MyCar.model} with TankSize {MyCar.TankSize} Ltrs. \n Current Fuel Level is {MyCar.fuel_level} ")
+
+
+```
+
+
+:::
+:::
+:::
+
+# Episode 17
+
+Multiple Inheritance
+
+## Multiple Inheritance
+
+![](images/multi-inheritance.png)
+
+## Multiple Inheritance - Implementation
+
+
+::: columns
+::: {.column width="40%"}
+
+::: {style="font-size: 80%;"}
+
+### Basic Smart System
+
+
+```{python}
+#| warning: false
+#| label: Multiple Inheritance Creation1
+
+class SmartFeatures():
+  # Initializting Attributes of Smart Features
+  def __init__(self, autopilot=False,
+   parking_assist=False, 
+   lane_keep_assist=False):
+    self.autopilot = autopilot
+    self.parking_assist = parking_assist
+    self.lane_keep_assist =  lane_keep_assist
+
+```
+
+:::
+
+:::
+
+::: {.column width="60%"}
+
+::: {style="font-size: 70%;"}
+
+
+### Smart Electric Car
+
+```{python}
+#| warning: false
+#| label: Multiple Inheritance Creation2
+
+class SmartElectricCar(ElectricCar, SmartFeatures):
+  # Initializting Attributes of Class Eletric Car
+  def __init__(self, color, brand, model,battery_capacity=0,autopilot=False, parking_assist=False, lane_keep_assist=False):
+    ElectricCar.__init__(self,color,brand,model,battery_capacity)
+    SmartFeatures.__init__(self,autopilot, parking_assist, lane_keep_assist)
+  
+  def describe_car(self):
+    print(f"Car is a {self.color} {self.brand} {self.model}. Having Current Capacity {self.battery_capacity}")
+    if self.autopilot == True:
+        print(f"Car has Auto Pilot System too!!!!")
+
+
+```
+
+
+### Smart Fuel Car
+
+```{python}
+#| warning: false
+#| label: Multiple Inheritance Creation3
+
+class SmartFuelCar(FuelCar, SmartFeatures):
+  # Initializting Attributes of Class Fuel Car
+  def __init__(self, color, brand, model,TankSize=0,autopilot=False, parking_assist=False, lane_keep_assist=False):
+    FuelCar.__init__(self,color,brand,model,TankSize)
+    SmartFeatures.__init__(self,autopilot, parking_assist, lane_keep_assist)
+
+  def describe_car(self):
+    print(f"My Car is a {self.color} {self.brand} {self.model} with TankSize {self.TankSize} Ltrs. \n Current Fuel Level is {self.fuel_level} ")
+    if self.autopilot == True:
+        print(f"Car has Auto Pilot System too!!!!")
+```
+
+
+:::
+:::
+:::
+
+# Multiple Inheritance verification
+
+![](images/multi-inheritance.png)
+
+
+## Multiple Inheritance  Output
+
+::: columns
+::: {.column width="50%"}
+
+::: {style="font-size: 70%;"}
+
+
+### Electric Car
+
+```{python}
+#| warning: false
+#| label: Multiple Inheritance Output1
+PriyasCar = SmartElectricCar("Red", "Tesla", "Model 3", 
+battery_capacity=75,autopilot=True, parking_assist=True,
+lane_keep_assist=False)
+
+# Extracting Information from the "Priyas Car" Object
+PriyasCar.describe_car()
+
+# My Car Repatined with Metallic Blue and Charged to 25%
+PriyasCar.repaint("MetallicBlue")
+PriyasCar.charge_battery(25)
+
+# Extracting Information from the "Priyas Car" Object
+PriyasCar.describe_car()
+
+```
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {style="font-size: 70%;"}
+
+
+
+### Fuel Car
+
+```{python}
+#| warning: false
+#| label:  MultipleInheritance Output2
+
+MyCar = SmartFuelCar("OrchidWhite", "Honda", "Amaze", 
+TankSize=40, autopilot=False, parking_assist=True, 
+lane_keep_assist=False)
+
+# Extracting Information from the "My Car" Object
+MyCar.describe_car()
+
+MyCar.RefuelTank(30)
+
+MyCar.describe_car()
+
+
+```
+
+
+:::
+:::
+:::
+
+# THANK YOU
+ :)
