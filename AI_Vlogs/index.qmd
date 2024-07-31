@@ -229,7 +229,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Inheritance</td>
 <td><a href="slides/season02/episode16/inheritance.html" target="_blank">Link</a></td>
 <td><a href="homework/season02/episode16/homework.html" target="_blank">Link</a></td>
-<td><a href="" target="_blank">Link</a></td>
+<td><a href="https://youtu.be/3k_oiIbtotY" target="_blank">Link</a></td>
 <td><a href="slides/season02/episode16/epi16demo.py" target="_blank">Demo File</a></td>
 <td>31st July 2024</td>
 </tr>    
