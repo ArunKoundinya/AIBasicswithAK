@@ -2,6 +2,7 @@
   {
     "listing": "/blogs/index.html",
     "items": [
+      "/blogs/posts/foundation-models-llm/index.html",
       "/blogs/posts/metrics-classification-model/index.html",
       "/blogs/posts/learn-programming/index.html",
       "/blogs/posts/is-domain-knowledge-important/index.html"

@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Arun Koundinya Parasa">
-<meta name="dcterms.date" content="2023-07-25">
+<meta name="dcterms.date" content="2025-02-15">
 
-<title> AI Basics with AK - Does Data Scientists need to understand Domain Knowledge?</title>
+<title>Foundation Models - LLMs –  AI Basics with AK</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-2f6844b3748638c5738d4cf93630e566.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -131,10 +131,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Does Data Scientists need to understand Domain Knowledge?</h1>
+      <h1 class="title">Foundation Models - LLMs</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">domain</div>
-                <div class="quarto-category">operations</div>
+                <div class="quarto-category">nlp</div>
+                <div class="quarto-category">llm</div>
+                <div class="quarto-category">deeplearning</div>
               </div>
                   </div>
   </div>
@@ -152,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 25, 2023</p>
+        <p class="date">February 15, 2025</p>
       </div>
     </div>
     
@@ -164,7 +165,18 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-are-foundation-models" id="toc-what-are-foundation-models" class="nav-link active" data-scroll-target="#what-are-foundation-models">What are Foundation Models?</a></li>
+  <li><a href="#what-are-large-language-models" id="toc-what-are-large-language-models" class="nav-link" data-scroll-target="#what-are-large-language-models">What are Large Language Models?</a></li>
+  <li><a href="#fundamental-architecture-inside-llm" id="toc-fundamental-architecture-inside-llm" class="nav-link" data-scroll-target="#fundamental-architecture-inside-llm">Fundamental Architecture inside LLM?</a></li>
+  <li><a href="#types-of-llms" id="toc-types-of-llms" class="nav-link" data-scroll-target="#types-of-llms">Types of LLMs?</a></li>
+  <li><a href="#use-cases." id="toc-use-cases." class="nav-link" data-scroll-target="#use-cases.">Use Cases.</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -173,54 +185,97 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p>In an era of chatgpt-enabled applications, most of us would have come across a term called as <code>foundation model</code>. In this article we will go through the basics of <code>foundation model</code> with respect to <code>Large Language Models</code></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="image.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="439"></p>
+<p><img src="image.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="568"></p>
 </figure>
 </div>
-<p>This article intends to explain domain knowledge’s importance to freshers. The example provided below is from my own experience.</p>
-<p>Businesses, by nature, want to earn profits, and why is it needed to make profits? From an employee perspective, the company gives salary and growth; from a company perspective, it intends to stay long, live and fresh as it grows.</p>
-<p>Profit = Revenue - Cost</p>
-<p>If the business needs to stay longer, the profit has to be on the positive side. It means either the revenue should increase or the cost should decrease; also, both can happen.</p>
-<p>Let us explore simple business case scenarios that will help us learn why understanding the business comes first before we solutionize.</p>
-<p>Case { Retail Store Business }</p>
-<p>Assume that a data scientist was tasked to help the retail store stock the “right” quantity. By intuition, most “data scientists” consider the last X years of data for prediction. They may take various models from “simple averages” to “ARIMA” to “LSTM” and choose the best model based on the evaluation metrics like AIC or BIC, or MAPE. { Classic Time series modelling algorithms }</p>
-<p>After this exercise, we will determine the quantity that could sell for the next period. Does it end here?</p>
-<p>It would not, because we haven’t answered the business question of what should be the stock holding for the next period. i.e., how many goods should be stocked in the store?</p>
-<p>Say, if we want to proceed with the model’s output itself. Since the model has inherent bias and variance, certain goods might get stocked out sooner, and others will not sell as predicted. { Alternatively, at times, the business could not procure the goods as indicated due to the cash flow constraint. Which we will discuss in other cases}</p>
-<p>What happens if there is stock out; revenue drops. Alternatively, what happens if there is excess stock; cost increases. In both of these cases, the profit decreases.</p>
-<p>Should we conclude that data science is not helping in this scenario? No, it isn’t.</p>
-<p>It is just that it has not been adequately solutionized. So far, we have put the hat of “Machine Learning”, which needs to be started with the “Traditional Research” cap.</p>
-<p>Under Traditional research, we may learn the following things: - Stock will come from warehouses every two days, for which the indent has to be shared a day earlier.</p>
+<p>In this article we will go through these topics in simple language:</p>
 <ul>
-<li>In all case scenarios, a buffer or safety stock should be kept in the store for fast-moving items to avoid supply chain shocks.</li>
-<li>Evading bull-whip effect, the probable forecast for certain goods must be shared with vendors for effective coordination.</li>
-<li>A simulation must be constructed such that the stock at the store is not too high to avoid high business costs. Also, the store needs to maintain sufficient service levels(of the goods, i.e., stock availability) so the customer doesn’t face a bad experience.</li>
+<li>What are Foundation Models?</li>
+<li>What are Large Language Models?</li>
+<li>Fundamental Architecture inside LLM?</li>
+<li>Types of LLMs.</li>
 </ul>
-<p>Based on these learnings, we will research any existing methodologies available to address these questions. Bingo!!</p>
-<p>We would crack the solution by browsing the topics of Supply Chain Analytics or Operations Optimization.</p>
-<p>Which will provide methods to arrive at Safety Stock, Re-order Level, Re-order Quantity and Service Levels.</p>
+<section id="what-are-foundation-models" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-foundation-models">What are Foundation Models?</h3>
+<p>If you go to any <code>Indian restaurant</code> and order <code>Chicken Tikka Masala</code>, it arrives at your table in no time. But if you were to make the same dish from scratch, it would take much longer. Most people assume that restaurants prepare curries in advance and simply reheat them when an order comes in. However, that would be a waste of resources if there aren’t any orders for that particular dish.</p>
+<p>Instead, restaurants use a common base gravy for a wide range of curries—such as <code>Onion-Tomato Gravy</code> or <code>Onion-Spinach-Ginger Gravy</code>. When an order hits the kitchen, chefs take this foundation gravy, add the required proteins, herbs, and veggies, and create a distinct curry as per the order. This approach saves time, ensures consistency, and allows for quick adaptation to different recipes.</p>
+<p>Now, we can apply this analogy to our <code>AI models</code>.</p>
+<p><code>Foundation Models</code> are like these base gravies. They are trained on vast amounts of data and serve as a starting point for a range of applications. Unlike a base gravy, where we choose common ingredients, foundation models are built by training on diverse and extensive datasets.</p>
+<p>For example, in <code>Natural Language Processing</code> (NLP), which deals with human language and conversation, a foundation model is trained on massive amounts of text data available on the internet (while ensuring ethical considerations). The resulting model acts as a foundation for various NLP tasks, such as <code>chatbots</code>, <code>translations</code>, and <code>text generation</code>.</p>
+<p>Just like chefs fine-tune a <code>base gravy</code> to create <code>different dishes</code>, developers <code>fine-tune foundation models</code> to adapt them for <code>specific use cases</code>.</p>
+</section>
+<section id="what-are-large-language-models" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-large-language-models">What are Large Language Models?</h3>
+<p><code>Large Language Models</code> is one such <code>foundation model</code> that is trained on vast textual data using <code>Deep Learning</code> to understand and generate human type of language.</p>
+<p>Much like our <code>foundation gravy</code>, <code>LLMs</code> act as a foundation for language-based applications. Instead of training a model from scratch for every NLP task, we build on this pre-trained foundation model and fine-tune them for specific purposes.</p>
+</section>
+<section id="fundamental-architecture-inside-llm" class="level3">
+<h3 class="anchored" data-anchor-id="fundamental-architecture-inside-llm">Fundamental Architecture inside LLM?</h3>
+<p>At the heart of <code>LLMs</code> lies the <code>Transformer architecture</code>, introduced in the groundbreaking paper <code>"Attention is All You Need"</code> by Vaswani et al.&nbsp;This architecture revolutionized NLP as this model helps to understand context and relationships between words more effectively.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="safety_stock.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="437"></p>
+<p><img src="transformer.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="371"></p>
 </figure>
 </div>
-<p>From here, we can use ML ( Time Series Modelling ) to arrive at tomorrow’s prediction and perform a simulation ( Monte Carlo Simulation ) to arrive at service levels for different clusters ( K-Means Clustering ) of products. These outputs are fed into the above solution we saw in “Traditional Research”.</p>
-<p>Later we wear the “Software Development” hat to fine-tune the coding and keep the end-to-end pieces in hands-off mode.</p>
-<p>In this way, Data Scientists must change hats to complete the work.</p>
-<p>In this case, we can clearly see that the “Traditional Research” hat is hugely needed to understand the “lay of the land”. Else the entire modelling effort would have faced an identity crisis.</p>
-<p>Is there any defined prescription or rules to understand the lay of the land? The answer is NO. The long answer is</p>
+<p>The original paper was developed for a <code>language translation</code> use case. The input is in one language, say English, and the output is in another language, say Hindi. The blue section represents the <code>Encoder</code>, while the red section represents the <code>Decoder</code>.</p>
+<ol type="1">
+<li>The <code>Encoder</code> is responsible for understanding the input language.</li>
+<li>The <code>Decoder</code> then generates the output language by interpreting the encoded information.</li>
+</ol>
+<p>This encoder-decoder framework laid the foundation for many modern NLP models, enabling efficient translation, text generation, and other complex language tasks.</p>
+</section>
+<section id="types-of-llms" class="level3">
+<h3 class="anchored" data-anchor-id="types-of-llms">Types of LLMs?</h3>
+<p>Since the original encoder-decoder architecture was designed for translation tasks, it is not ideally suited for other tasks like text classification, topic selection, generative tasks, and more.</p>
+<section id="encoder-only-llm---representation-models" class="level4">
+<h4 class="anchored" data-anchor-id="encoder-only-llm---representation-models">Encoder Only LLM - Representation Models</h4>
+<p>To address this, a general-purpose model was introduced in 2018: <code>Bidirectional Encoder Representations from Transformers</code> (BERT). This model served as a foundational architecture for Language AI in the years to come.</p>
 <ul>
-<li>Curiosity to learn about the domain.</li>
-<li>Asking the business the right questions.</li>
-<li>Doing personal research as, at times, business is driven by perceptions or experience. { Only a “fresh eye” brings a new perspective } - Learning what others have done already. There would have been plenty of research already available. <span style="font-size: small;">{ There is no need for new IP in most of the scenarios }</span></li>
-<li>Learning Consultant frameworks like BCG Matrix, Product Life Cycle, Customer Life Cycle, etc., will help us think on alternative perspectives.</li>
+<li>The <code>Encoder-only</code> architecture focuses on understanding and representing language rather than generating it.</li>
+<li>It learns the nuances and contextual <code>representations of language</code> effectively.</li>
+<li>Ideal for tasks that require deep language comprehension.</li>
 </ul>
-<p>There are several examples that I have faced personally in my early data science career, which told me the hard way about the importance of domain knowledge. The above example is one such classic. Stay tuned for more Data science news.</p>
+</section>
+<section id="decoder-only-llm---generative-models" class="level4">
+<h4 class="anchored" data-anchor-id="decoder-only-llm---generative-models">Decoder Only LLM - Generative Models</h4>
+<p>Similar to the <code>Encoder-only</code> architecture, a <code>Decoder-only</code> architecture was proposed in 2018 for generative tasks. This model is known as <code>Generative Pre-trained Transformer</code> (GPT).</p>
+<ul>
+<li>The <code>Decoder-only</code> architecture is designed to generate text based on a given prompt or input.</li>
+<li>It is widely used for conversational AI, creative writing, and content generation.</li>
+</ul>
+<p>Thus, these two foundational LLM architectures are broadly used for a variety of applications today.</p>
+</section>
+</section>
+<section id="use-cases." class="level3">
+<h3 class="anchored" data-anchor-id="use-cases.">Use Cases.</h3>
+<p>Encoder-Only LLMs (BERT and similar models):</p>
+<ul>
+<li>Text classification</li>
+<li>Sentiment analysis</li>
+<li>Information retrieval</li>
+<li>Question answering</li>
+</ul>
+<p>Decoder-Only LLMs (GPT and similar models):</p>
+<ul>
+<li>Text generation</li>
+<li>Conversational AI (chatbots, virtual assistants)</li>
+<li>Summarization</li>
+</ul>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Foundation_model">Foundation_model - Wiki Page</a></li>
+<li><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/">Hands-On Large Language Models by Jay Alammar, Maarten Grootendorst</a></li>
+</ul>
 <script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="purple_dark" data-lang="en" crossorigin="anonymous" async="">
 </script>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -258,18 +313,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -301,7 +345,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/arunkoundinya\.github\.io\/AIBasicswithAK\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -336,7 +418,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -384,7 +470,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
