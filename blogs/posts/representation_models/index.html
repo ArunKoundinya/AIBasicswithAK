@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Arun Koundinya Parasa">
-<meta name="dcterms.date" content="2025-02-15">
+<meta name="dcterms.date" content="2025-02-23">
 
-<title>Foundation Models - LLMs –  AI Basics with AK</title>
+<title>Representation Models - Text Classification – &lt;img src='https://arunkoundinya.github.io/AIBasicswithAK/logo.png' style='width: 2.2em; height: 2.2em; border-radius: 30%;'&gt; &lt;b&gt;AI Basics with AK&lt;/b&gt;</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Foundation Models - LLMs</h1>
+      <h1 class="title">Representation Models - Text Classification</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">nlp</div>
                 <div class="quarto-category">llm</div>
@@ -153,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 15, 2025</p>
+        <p class="date">February 23, 2025</p>
       </div>
     </div>
     
@@ -169,11 +169,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-are-foundation-models" id="toc-what-are-foundation-models" class="nav-link active" data-scroll-target="#what-are-foundation-models">What are Foundation Models?</a></li>
-  <li><a href="#what-are-large-language-models" id="toc-what-are-large-language-models" class="nav-link" data-scroll-target="#what-are-large-language-models">What are Large Language Models?</a></li>
-  <li><a href="#fundamental-architecture-inside-llm" id="toc-fundamental-architecture-inside-llm" class="nav-link" data-scroll-target="#fundamental-architecture-inside-llm">Fundamental Architecture inside LLM?</a></li>
-  <li><a href="#types-of-llms" id="toc-types-of-llms" class="nav-link" data-scroll-target="#types-of-llms">Types of LLMs?</a></li>
-  <li><a href="#use-cases." id="toc-use-cases." class="nav-link" data-scroll-target="#use-cases.">Use Cases.</a></li>
+  <li><a href="#what-are-representation-models" id="toc-what-are-representation-models" class="nav-link active" data-scroll-target="#what-are-representation-models">What are Representation Models?</a></li>
+  <li><a href="#what-is-bert" id="toc-what-is-bert" class="nav-link" data-scroll-target="#what-is-bert">What is BERT?</a></li>
+  <li><a href="#what-is-sentence-transformers" id="toc-what-is-sentence-transformers" class="nav-link" data-scroll-target="#what-is-sentence-transformers">What is Sentence Transformers?</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -185,91 +184,73 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>In an era of chatgpt-enabled applications, most of us would have come across a term called as <code>foundation model</code>. In this article we will go through the basics of <code>foundation model</code> with respect to <code>Large Language Models</code></p>
+<p>In the previous article, we explored the <code>master chef</code> analogy for foundation models. We also discussed how <code>transformers</code> serve as the basic architecture for <code>large language models</code>. Depending on which part of the transformer model is used — <code>encoder</code> or <code>decoder</code>— we have two types of LLMs: <code>representation models</code>, which represent words as numbers, and <code>generative models</code>, which generate text.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="image.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="568"></p>
+<p><img src="image.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="568"></p>
 </figure>
 </div>
-<p>In this article we will go through these topics in simple language:</p>
+<p>In this article we will go through these topics in simpler language:</p>
 <ul>
-<li>What are Foundation Models?</li>
-<li>What are Large Language Models?</li>
-<li>Fundamental Architecture inside LLM?</li>
-<li>Types of LLMs.</li>
+<li>What are Reprensentation Models?</li>
+<li>What is BERT ?</li>
+<li>What is Sentence Transformers?</li>
 </ul>
-<section id="what-are-foundation-models" class="level3">
-<h3 class="anchored" data-anchor-id="what-are-foundation-models">What are Foundation Models?</h3>
-<p>If you go to any <code>Indian restaurant</code> and order <code>Chicken Tikka Masala</code>, it arrives at your table in no time. But if you were to make the same dish from scratch, it would take much longer. Most people assume that restaurants prepare curries in advance and simply reheat them when an order comes in. However, that would be a waste of resources if there aren’t any orders for that particular dish.</p>
-<p>Instead, restaurants use a common base gravy for a wide range of curries—such as <code>Onion-Tomato Gravy</code> or <code>Onion-Spinach-Ginger Gravy</code>. When an order hits the kitchen, chefs take this foundation gravy, add the required proteins, herbs, and veggies, and create a distinct curry as per the order. This approach saves time, ensures consistency, and allows for quick adaptation to different recipes.</p>
-<p>Now, we can apply this analogy to our <code>AI models</code>.</p>
-<p><code>Foundation Models</code> are like these base gravies. They are trained on vast amounts of data and serve as a starting point for a range of applications. Unlike a base gravy, where we choose common ingredients, foundation models are built by training on diverse and extensive datasets.</p>
-<p>For example, in <code>Natural Language Processing</code> (NLP), which deals with human language and conversation, a foundation model is trained on massive amounts of text data available on the internet (while ensuring ethical considerations). The resulting model acts as a foundation for various NLP tasks, such as <code>chatbots</code>, <code>translations</code>, and <code>text generation</code>.</p>
-<p>Just like chefs fine-tune a <code>base gravy</code> to create <code>different dishes</code>, developers <code>fine-tune foundation models</code> to adapt them for <code>specific use cases</code>.</p>
+<section id="what-are-representation-models" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-representation-models">What are Representation Models?</h3>
+<p>Imagine stepping into a vast library where every book is catalogued not just by its title but by the essence of its content. Representation models work in a similar way. They convert text—be it a word, a sentence, or a whole document—into a series of numbers, often referred to as vectors. These vectors serve as unique fingerprints, capturing the context, sentiment, and meaning embedded within the text.</p>
+<p>By transforming text into these numerical fingerprints, representation models empower machines to perform tasks like text classification, sentiment analysis, and topic detection without needing to understand language in the traditional sense. In short, they provide a foundational layer that bridges raw text and actionable insights.</p>
 </section>
-<section id="what-are-large-language-models" class="level3">
-<h3 class="anchored" data-anchor-id="what-are-large-language-models">What are Large Language Models?</h3>
-<p><code>Large Language Models</code> is one such <code>foundation model</code> that is trained on vast textual data using <code>Deep Learning</code> to understand and generate human type of language.</p>
-<p>Much like our <code>foundation gravy</code>, <code>LLMs</code> act as a foundation for language-based applications. Instead of training a model from scratch for every NLP task, we build on this pre-trained foundation model and fine-tune them for specific purposes.</p>
-</section>
-<section id="fundamental-architecture-inside-llm" class="level3">
-<h3 class="anchored" data-anchor-id="fundamental-architecture-inside-llm">Fundamental Architecture inside LLM?</h3>
-<p>At the heart of <code>LLMs</code> lies the <code>Transformer architecture</code>, introduced in the groundbreaking paper <code>"Attention is All You Need"</code> by Vaswani et al.&nbsp;This architecture revolutionized NLP as this model helps to understand context and relationships between words more effectively.</p>
+<section id="what-is-bert" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-bert">What is BERT?</h3>
+<p>BERT, which stands for <strong>Bidirectional Encoder Representations from Transformers</strong>, is one of the most influential models in NLP. Developed by Google, BERT revolutionized language understanding by taking context into account from both directions—left and right of each word.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="transformer.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="371"></p>
+<p><img src="NSP.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="617"></p>
 </figure>
 </div>
-<p>The original paper was developed for a <code>language translation</code> use case. The input is in one language, say English, and the output is in another language, say Hindi. The blue section represents the <code>Encoder</code>, while the red section represents the <code>Decoder</code>.</p>
-<ol type="1">
-<li>The <code>Encoder</code> is responsible for understanding the input language.</li>
-<li>The <code>Decoder</code> then generates the output language by interpreting the encoded information.</li>
-</ol>
-<p>This encoder-decoder framework laid the foundation for many modern NLP models, enabling efficient translation, text generation, and other complex language tasks.</p>
-</section>
-<section id="types-of-llms" class="level3">
-<h3 class="anchored" data-anchor-id="types-of-llms">Types of LLMs?</h3>
-<p>Since the original encoder-decoder architecture was designed for translation tasks, it is not ideally suited for other tasks like text classification, topic selection, generative tasks, and more.</p>
-<section id="encoder-only-llm---representation-models" class="level4">
-<h4 class="anchored" data-anchor-id="encoder-only-llm---representation-models">Encoder Only LLM - Representation Models</h4>
-<p>To address this, a general-purpose model was introduced in 2018: <code>Bidirectional Encoder Representations from Transformers</code> (BERT). This model served as a foundational architecture for Language AI in the years to come.</p>
+<p>Here’s what makes BERT stand out:</p>
 <ul>
-<li>The <code>Encoder-only</code> architecture focuses on understanding and representing language rather than generating it.</li>
-<li>It learns the nuances and contextual <code>representations of language</code> effectively.</li>
-<li>Ideal for tasks that require deep language comprehension.</li>
+<li><strong>Bidirectional Context:</strong> Unlike earlier models that read text in a single direction, BERT examines the entire sentence simultaneously, ensuring a richer and more nuanced understanding of word meanings.</li>
+<li><strong>Massive Pre-training:</strong> BERT is trained on extensive datasets using innovative tasks like Masked Language Modeling (MLM) and Next Sentence Prediction (NSP), which allow it to learn intricate language patterns.</li>
+<li><strong>Versatility:</strong> From text classification and sentiment analysis to question answering, BERT’s robust representations make it adaptable to a wide range of NLP tasks.</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="MLM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="611"></p>
+</figure>
+</div>
+<p>Think of BERT as a master chef who not only knows every ingredient (word) in a recipe (sentence) but also understands how they all interact to create the perfect flavor (meaning).</p>
 </section>
-<section id="decoder-only-llm---generative-models" class="level4">
-<h4 class="anchored" data-anchor-id="decoder-only-llm---generative-models">Decoder Only LLM - Generative Models</h4>
-<p>Similar to the <code>Encoder-only</code> architecture, a <code>Decoder-only</code> architecture was proposed in 2018 for generative tasks. This model is known as <code>Generative Pre-trained Transformer</code> (GPT).</p>
+<section id="what-is-sentence-transformers" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-sentence-transformers">What is Sentence Transformers?</h3>
+<p>While BERT provides deep contextual understanding at the word and sentence level, Sentence Transformers are tailored to generate fixed-size embeddings for entire sentences. These embeddings make it easier to compare, cluster, and classify text based on semantic similarity.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ST.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+<p>Key aspects of Sentence Transformers include:</p>
 <ul>
-<li>The <code>Decoder-only</code> architecture is designed to generate text based on a given prompt or input.</li>
-<li>It is widely used for conversational AI, creative writing, and content generation.</li>
+<li><strong>Pre-Training:</strong> Sentence Transformers are also called as SBERT is fine-tuned on sentence pairs using siamese architecture as show in above image.</li>
+<li><strong>Efficient Semantic Comparison:</strong> By mapping sentences to a common vector space, these models enable quick and accurate comparisons—essential for tasks like semantic search and clustering.</li>
+<li><strong>Enhanced Text Classification:</strong> Converting sentences into embeddings simplifies the process of sorting texts into categories, as similar sentences will have similar vector representations.</li>
+<li><strong>Real-World Applications:</strong> From grouping similar customer reviews to organizing news articles, Sentence Transformers provide a robust framework for handling diverse text classification challenges.</li>
 </ul>
-<p>Thus, these two foundational LLM architectures are broadly used for a variety of applications today.</p>
+<p>Imagine Sentence Transformers as a refined culinary tool that not only identifies each ingredient but also captures the overall recipe. Ideally, Sentence Transformers create better embeddings since it captures the context of overall recipe rather than at ingredient levels.</p>
 </section>
-</section>
-<section id="use-cases." class="level3">
-<h3 class="anchored" data-anchor-id="use-cases.">Use Cases.</h3>
-<p>Encoder-Only LLMs (BERT and similar models):</p>
-<ul>
-<li>Text classification</li>
-<li>Sentiment analysis</li>
-<li>Information retrieval</li>
-<li>Question answering</li>
-</ul>
-<p>Decoder-Only LLMs (GPT and similar models):</p>
-<ul>
-<li>Text generation</li>
-<li>Conversational AI (chatbots, virtual assistants)</li>
-<li>Summarization</li>
-</ul>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>Representation models are the unsung heroes behind many NLP applications, transforming raw text into meaningful data that machines can understand. BERT and Sentence Transformers exemplify how far we’ve come—each offering unique advantages in capturing the subtle nuances of language. Whether it’s for text classification or broader language understanding tasks, these models continue to push the boundaries of what’s possible in AI.</p>
 </section>
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references">References</h3>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Foundation_model">Foundation_model - Wiki Page</a></li>
+<li><a href="https://medium.com/@mroko001/transformers-in-nlp-bert-and-sentence-transformers-3faab61918ea">Transformers in NLP: BERT and Sentence Transformers</a></li>
 <li><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/">Hands-On Large Language Models by Jay Alammar, Maarten Grootendorst</a></li>
+<li>ChatGPT For Refining Language.</li>
+<li><a href="https://swatimeena989.medium.com/bert-text-classification-using-keras-903671e0207d">BERT Text Classification using Keras</a></li>
+<li><a href="https://www.marqo.ai/course/introduction-to-sentence-transformers#3-sentence-transformers">Introduction to Sentence Transformers</a></li>
 </ul>
 <script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="purple_dark" data-lang="en" crossorigin="anonymous" async="">
 </script>

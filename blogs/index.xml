@@ -9,8 +9,100 @@
 <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/</link>
 <atom:link href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/index.xml" rel="self" type="application/rss+xml"/>
 <description>LETS BREATHE DATA</description>
-<generator>quarto-1.6.40</generator>
-<lastBuildDate>Sat, 15 Feb 2025 07:00:00 GMT</lastBuildDate>
+<generator>quarto-1.5.57</generator>
+<lastBuildDate>Sun, 23 Feb 2025 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Representation Models - Text Classification</title>
+  <dc:creator>Arun Koundinya Parasa</dc:creator>
+  <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/representation_models/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>In the previous article, we explored the <code>master chef</code> analogy for foundation models. We also discussed how <code>transformers</code> serve as the basic architecture for <code>large language models</code>. Depending on which part of the transformer model is used — <code>encoder</code> or <code>decoder</code>— we have two types of LLMs: <code>representation models</code>, which represent words as numbers, and <code>generative models</code>, which generate text.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/representation_models/image.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="568"></p>
+</figure>
+</div>
+<p>In this article we will go through these topics in simpler language:</p>
+<ul>
+<li>What are Reprensentation Models?</li>
+<li>What is BERT ?</li>
+<li>What is Sentence Transformers?</li>
+</ul>
+<section id="what-are-representation-models" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-representation-models">What are Representation Models?</h3>
+<p>Imagine stepping into a vast library where every book is catalogued not just by its title but by the essence of its content. Representation models work in a similar way. They convert text—be it a word, a sentence, or a whole document—into a series of numbers, often referred to as vectors. These vectors serve as unique fingerprints, capturing the context, sentiment, and meaning embedded within the text.</p>
+<p>By transforming text into these numerical fingerprints, representation models empower machines to perform tasks like text classification, sentiment analysis, and topic detection without needing to understand language in the traditional sense. In short, they provide a foundational layer that bridges raw text and actionable insights.</p>
+</section>
+<section id="what-is-bert" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-bert">What is BERT?</h3>
+<p>BERT, which stands for <strong>Bidirectional Encoder Representations from Transformers</strong>, is one of the most influential models in NLP. Developed by Google, BERT revolutionized language understanding by taking context into account from both directions—left and right of each word.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/representation_models/NSP.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="617"></p>
+</figure>
+</div>
+<p>Here’s what makes BERT stand out:</p>
+<ul>
+<li><strong>Bidirectional Context:</strong> Unlike earlier models that read text in a single direction, BERT examines the entire sentence simultaneously, ensuring a richer and more nuanced understanding of word meanings.</li>
+<li><strong>Massive Pre-training:</strong> BERT is trained on extensive datasets using innovative tasks like Masked Language Modeling (MLM) and Next Sentence Prediction (NSP), which allow it to learn intricate language patterns.</li>
+<li><strong>Versatility:</strong> From text classification and sentiment analysis to question answering, BERT’s robust representations make it adaptable to a wide range of NLP tasks.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/representation_models/MLM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="611"></p>
+</figure>
+</div>
+<p>Think of BERT as a master chef who not only knows every ingredient (word) in a recipe (sentence) but also understands how they all interact to create the perfect flavor (meaning).</p>
+</section>
+<section id="what-is-sentence-transformers" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-sentence-transformers">What is Sentence Transformers?</h3>
+<p>While BERT provides deep contextual understanding at the word and sentence level, Sentence Transformers are tailored to generate fixed-size embeddings for entire sentences. These embeddings make it easier to compare, cluster, and classify text based on semantic similarity.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/representation_models/ST.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+<p>Key aspects of Sentence Transformers include:</p>
+<ul>
+<li><strong>Pre-Training:</strong> Sentence Transformers are also called as SBERT is fine-tuned on sentence pairs using siamese architecture as show in above image.</li>
+<li><strong>Efficient Semantic Comparison:</strong> By mapping sentences to a common vector space, these models enable quick and accurate comparisons—essential for tasks like semantic search and clustering.</li>
+<li><strong>Enhanced Text Classification:</strong> Converting sentences into embeddings simplifies the process of sorting texts into categories, as similar sentences will have similar vector representations.</li>
+<li><strong>Real-World Applications:</strong> From grouping similar customer reviews to organizing news articles, Sentence Transformers provide a robust framework for handling diverse text classification challenges.</li>
+</ul>
+<p>Imagine Sentence Transformers as a refined culinary tool that not only identifies each ingredient but also captures the overall recipe. Ideally, Sentence Transformers create better embeddings since it captures the context of overall recipe rather than at ingredient levels.</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>Representation models are the unsung heroes behind many NLP applications, transforming raw text into meaningful data that machines can understand. BERT and Sentence Transformers exemplify how far we’ve come—each offering unique advantages in capturing the subtle nuances of language. Whether it’s for text classification or broader language understanding tasks, these models continue to push the boundaries of what’s possible in AI.</p>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ul>
+<li><a href="https://medium.com/@mroko001/transformers-in-nlp-bert-and-sentence-transformers-3faab61918ea">Transformers in NLP: BERT and Sentence Transformers</a></li>
+<li><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/">Hands-On Large Language Models by Jay Alammar, Maarten Grootendorst</a></li>
+<li>ChatGPT For Refining Language.</li>
+<li><a href="https://swatimeena989.medium.com/bert-text-classification-using-keras-903671e0207d">BERT Text Classification using Keras</a></li>
+<li><a href="https://www.marqo.ai/course/introduction-to-sentence-transformers#3-sentence-transformers">Introduction to Sentence Transformers</a></li>
+</ul>
+<script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="purple_dark" data-lang="en" crossorigin="anonymous" async="">
+</script>
+
+
+</section>
+
+ ]]></description>
+  <category>nlp</category>
+  <category>llm</category>
+  <category>deeplearning</category>
+  <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/representation_models/</guid>
+  <pubDate>Sun, 23 Feb 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/representation_models/image.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Foundation Models - LLMs</title>
   <dc:creator>Arun Koundinya Parasa</dc:creator>
