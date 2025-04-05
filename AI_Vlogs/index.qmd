@@ -239,9 +239,9 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Mutiple Inheritance</td>
 <td><a href="slides/season02/episode17/multi-inheritance.html" target="_blank">Link</a></td>
 <td><a href="homework/season02/episode17/homework.html" target="_blank">Link</a></td>
-<td><a href="" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode17/epi17demo.py" target="_blank">Demo File</a></td>
-<td>9th August 2024</td>
+<td><a href="https://youtu.be/zLKdAo2BCRE" target="_blank">Link</a></td>
+<td><a href="" target="_blank">No Demo</a></td>
+<td>6th April 2025</td>
 </tr>    
 
 <tr>
