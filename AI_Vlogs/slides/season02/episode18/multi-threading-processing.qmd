@@ -1,0 +1,75 @@
+---
+title: AI Basics with AK 
+subtitle: Season 02 - Introduction to Python Programming
+title-slide-attributes:
+  data-slide-number: none
+format: 
+  revealjs:
+    incremental: true
+auto-stretch: true
+---
+
+# Episode 18
+
+Multi Threading & Multi Processing! ( Conceptual & Coding - In Demo)
+
+## Agenda
+
+-   Multi Threading
+-   Multi Processing
+
+## Multi Threading & Multi Processing
+
+:::::: columns
+::: {.column width="40%"}
+<br>
+<br>
+![](image.jpeg){width="463"}
+:::
+
+:::: {.column width="60%"}
+::: {style="font-size: 75%;"}
+#### Multi Threading
+
+-   Multi Threading involves executing multiple threads within a single process.
+-   Threads share the same memory space, making communication between them efficient.
+
+#### Multi Processing
+
+-   Multi Processing involves running multiple processes, each with its own memory space.
+-   Processes do not share memory space, which enhances stability but makes communication more complex.
+:::
+::::
+::::::
+
+## Multi Threading & Multi Processing
+
+![](multithreadingprocessing.png)
+
+## Multi Threading & Multi Processing
+::: {style="font-size: 60%;"}
+
+| Aspect | Multi Threading | Multi Processing |
+|------------------------|------------------------|------------------------|
+| **Execution Model** | Multiple threads within a single process | Multiple processes, each with its own memory |
+| **Memory Sharing** | Shared memory space | Separate memory spaces |
+| **Overhead** | Lower | Higher |
+| **Communication** | Easier (shared memory) | More complex (inter-process communication) |
+| **Use Case** | I/O-bound tasks | CPU-bound tasks |
+| **Stability** | Less Stable ( shared memory risks ) | More Stable (isolated processes) |
+| **Performance** | Efficient for tasks requiring shared data | Efficient for parallel processing tasks |
+
+: Comparison Table
+::: 
+## When to Choose which ?
+<br>
+<br>
+- Scraping 100 websites in one go!
+<br>
+<br>
+<br>
+- Computing square-root for 10000000000 numbers!
+
+# THANK YOU
+
+:)
