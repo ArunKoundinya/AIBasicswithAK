@@ -249,8 +249,8 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Multi Threading & Multi Processing</td>
 <td><a href="slides/season02/episode18/multi-threading-processing.html" target="_blank">Link</a></td>
 <td>NA</td>
-<td><a href="">Link</a></td>
-<td></td>
+<td><a href="https://youtu.be/vxwTvnnoNS8" target="_blank">Link</a></td>
+<td><a href="slides/season02/episode18/epidemo18.py" target="_blank">Demo File</a></td>
 <td>13th April 2025</td>
 </tr>  
 
