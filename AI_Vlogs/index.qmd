@@ -257,11 +257,11 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <tr>
 <td>Episode - 19</td>
 <td>Debugging the Code</td>
+<td><a href="slides/season02/episode19/python_debugging.html" target="_blank">Link</a></td>
+<td>NA</td>
 <td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td><a href="">Link</a></td>
-<td></td>
-<td></td>
+<td><a href="slides/season02/episode19/epidemo19.py" target="_blank">Demo File</a></td>
+<td>20th April 2025</td>
 </tr>         
 
 <tr>
