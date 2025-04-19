@@ -1,3 +1,29 @@
+##### Simple Threading
+import time
+import threading
+
+def Task1():
+    time.sleep(4)
+    print("Task1 Complete")
+    
+def Task2():
+    time.sleep(6)
+    print("Task2 Complete")
+    
+# Create Thread objects with the target functions
+thread1 = threading.Thread(target=Task1)
+thread2 = threading.Thread(target=Task2)
+
+# Start the threads
+thread1.start()
+thread2.start()
+
+# Wait for both threads to complete
+thread1.join()
+thread2.join()
+
+
+### Multi Processing CPU Bound Example
 import multiprocessing
 import time
 
