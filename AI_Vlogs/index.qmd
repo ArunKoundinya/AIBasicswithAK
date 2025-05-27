@@ -288,12 +288,28 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 </div>
 
 <div class="tb">
-    <input type="checkbox"/>
-    <span>Season-3</span><span>Hide</span>
+    <input type="checkbox" data-toggle="toggle"/>
+    <span>Season 03 - Introduction to Statistics</span><span>Season-3</span>
     <table class="collapsible" id="season03">
 <tr>
-<td>Not Yet Available</td>
+<td style="background-color: #3498db; color: white;"><b>Episode</b></td>
+<td style="background-color: #3498db; color: white;"><b>Episode Title</b></td>
+<td style="background-color: #3498db; color: white;"><b>Slides / Handout</b></td>
+<td style="background-color: #3498db; color: white;"><b>Home Work</b></td>
+<td style="background-color: #3498db; color: white;"><b>YouTube Video Link</b></td>
+<td style="background-color: #3498db; color: white;"><b>YouTube Demo File</b></td>
+<td style="background-color: #3498db; color: white;"><b>Date of Upload</b></td>
 </tr>
+<tr>
+<td>Episode - 01</td>
+<td>Why Python?</td>
+<td><a href="slides/season03/episode01/statistics_episode01.html" target="_blank">Link</a></td>
+<td>NA</td>
+<td><a href="" target="_blank">Link</a></td>
+<td>NA</td>
+<td>30th May 2025</td>
+</tr>
+
 </table>
 </div>
 

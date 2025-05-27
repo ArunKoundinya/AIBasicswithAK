@@ -1,0 +1,178 @@
+---
+title: AI Basics with AK
+subtitle: Season 03 - Introduction to Statistics
+title-slide-attributes:
+  data-slide-number: none
+format:
+  revealjs:
+    incremental: false
+auto-stretch: true
+---
+
+# Episode 01
+
+What Is Statistics, Really?
+
+## Agenda
+
+::: {style="font-size: 70%;"}
+
+-   What is Statistics?
+-   Descriptive vs Inferential Statistics
+-   Why AI Needs Statistics
+-   Real-Life Examples
+-   Use Cases in Business & Government
+-   Visual Demo with Simple Data
+-   Key Takeaways
+
+:::
+
+## What is Statistics?
+
+::: {style="font-size: 70%;"}
+
+Statistics is the **science of learning from data**.
+
+-   It helps us make **sense** of numbers.
+-   It reveals **patterns** hidden in the chaos.
+-   It supports **better decisions** in uncertain conditions.
+
+🧠 Think of it as: \> “A flashlight in the dark cave of data.”
+
+:::
+
+## Descriptive vs Inferential Statistics
+
+::: columns
+::: {.column width="50%"}
+
+
+### Descriptive
+
+::: {style="font-size: 70%;"}
+
+-   Summarizes what we *already know*
+-   Mean, median, mode, standard deviation
+-   Charts, graphs
+
+🧊 Like describing the ice cube you’re holding.
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+### Inferential
+
+::: {style="font-size: 70%;"}
+
+
+-   Makes predictions from *samples*
+-   Confidence intervals, hypothesis tests
+
+🔮 Like guessing how cold the whole freezer is from just a few cubes.
+:::
+
+:::
+
+:::
+
+
+## Why AI Needs Statistics
+
+::: {style="font-size: 70%;"}
+
+-   Models learn from **data patterns**
+-   Evaluation depends on **accuracy, error, variation**
+-   Sampling & generalization are core to **ML algorithms**
+
+📌 No statistics → No insight.
+
+:::
+
+## Real-Life Examples
+
+::: {style="font-size: 70%;"}
+
+-   Health: What’s the average heart rate for a 30-year-old?
+-   Education: Do students who sleep more perform better?
+-   Sports: How consistent is a cricketer’s performance?
+
+💡 In every case, we need: 1. **Data** 2. **Understanding** 3. **Decision**
+
+:::
+
+## Use Case: Business Decisions
+
+::: {style="font-size: 70%;"}
+
+
+-   Understanding customer trends
+-   Improving marketing with A/B testing
+-   Forecasting inventory needs
+
+![](A_B%20Testing%20Comparison%20Infographic.png){width="51%"}
+
+📈 Businesses thrive on informed decisions.
+
+:::
+
+## Use Case: Government Planning
+
+::: {style="font-size: 70%;"}
+
+-   Planning hospitals and schools using census data
+-   Tracking population and regional needs
+-   Allocating resources effectively
+
+![](Census%20Data%20Planning%20Insights.png){width="52%"}
+
+🧮 Policies backed by real numbers.
+:::
+
+## Visual Demo
+
+::: {style="font-size: 70%;"}
+
+
+| Student | Sleep Hours | Exam Score |
+|---------|-------------|------------|
+| A       | 6           | 72         |
+| B       | 8           | 85         |
+| C       | 5           | 65         |
+| D       | 7           | 78         |
+| E       | 4           | 60         |
+
+🧠 What patterns do you notice?
+
+-   Is more sleep associated with better scores?
+-   What’s the average score?
+
+:::
+
+## Key Takeaways
+
+::: {style="font-size: 70%;"}
+
+-   Statistics helps us **understand** and **predict**.
+-   Descriptive = summarize; Inferential = generalize.
+-   AI is built on statistical reasoning.
+-   You're already using stats in everyday life!
+:::
+
+## Coming Up Next
+
+::: {style="font-size: 70%;"}
+
+
+Episode 02: **Types of Data**\
+🔹 Categorical vs Numerical\
+🔹 Structured vs Unstructured\
+🔹 Why data type matters in analysis
+
+Stay curious! 🧠✨
+
+:::
+
+# Thank You
