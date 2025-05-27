@@ -42,20 +42,20 @@ Why Python ?
 
 ## Use Cases and Popular Libraries
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
+### Use Cases
 
-###  Use Cases
-- Web Development
+-   Web Development
 -   Data Science
 -   Artificial Intelligence
 -   Automation & Scripting
 -   Cloud Computing
-
 :::
 
 ::: {.column width="50%"}
-###  Popular Libraries
+### Popular Libraries
+
 -   Pandas
 -   Numpy
 -   Scikit-learn
@@ -63,14 +63,13 @@ Why Python ?
 -   Tensorflow
 -   Boto3
 :::
-:::
+:::::
 
 ## Simple 'Hello World' Program
 
 ```{python}
 print("Hello, World!")
 ```
-
 
 ```{python}
 def hello_world():
@@ -87,12 +86,10 @@ hello_world()
 100+100
 ```
 
-
 ```{python}
 x = 9 * 9
 print(x)
 ```
-
 
 ```{python}
 x = 300 - x
@@ -105,7 +102,6 @@ print(x)
 for countdown in 5, 4, 3, 2, 1, "0":
     print(countdown)
 ```
-
 
 ```{python}
 for countdown in 5, 4, 3, 2, 1, "0":
