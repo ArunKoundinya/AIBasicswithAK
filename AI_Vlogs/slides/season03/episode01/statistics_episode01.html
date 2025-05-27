@@ -29,72 +29,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-c86fbdc6338551b27483b26316adf3b5.css">
   <link href="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -197,7 +131,7 @@
 
 <section id="title-slide" data-slide-number="none" class="quarto-title-block center">
   <h1 class="title">AI Basics with AK</h1>
-  <p class="subtitle">Season 02 - Introduction to Python Programming</p>
+  <p class="subtitle">Season 03 - Introduction to Statistics</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -209,84 +143,171 @@ Arun Koundinya Parasa
 
 </section>
 <section>
-<section id="episode-14" class="title-slide slide level1 center">
-<h1>Episode 14</h1>
-<p>Object Oriented Programming</p>
+<section id="episode-01" class="title-slide slide level1 center">
+<h1>Episode 01</h1>
+<p>What Is Statistics, Really?</p>
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
+<div style="font-size: 70%;">
 <ul>
-<li class="fragment">OOP Definition</li>
-<li class="fragment">Why OOPs</li>
-<li class="fragment">OOPs Structure</li>
-<li class="fragment">Key Principles</li>
-<li class="fragment">OOPs in Python</li>
+<li>What is Statistics?</li>
+<li>Descriptive vs Inferential Statistics</li>
+<li>Why AI Needs Statistics</li>
+<li>Real-Life Examples</li>
+<li>Use Cases in Business &amp; Government</li>
+<li>Visual Demo with Simple Data</li>
+<li>Key Takeaways</li>
 </ul>
-</section>
-<section id="oops-definition" class="slide level2">
-<h2>OOPs Definition</h2>
-<p>The object-oriented programming is basically a computer programming design philosophy or methodology that organizes/ models software design around data, or objects rather than functions and logic.</p>
-
-<img data-src="images/oops_concept.png" class="quarto-figure quarto-figure-center r-stretch" width="658"><p><a href="https://www.javatpoint.com/what-is-object-oriented-programming">Reference</a></p>
-</section>
-<section id="why-oops" class="slide level2">
-<h2>Why OOPs?</h2>
-<ul>
-<li class="fragment">Easy to Understand</li>
-<li class="fragment">Re-Use the Code</li>
-<li class="fragment">Keeping it Organized</li>
-<li class="fragment">Protecting data</li>
-<li class="fragment">Flexible</li>
-<li class="fragment">Fun/Cool</li>
-</ul>
-</section>
-<section id="oops-structure" class="slide level2">
-<h2>OOPs Structure</h2>
-<p><img data-src="images/OOP_Structure.png" width="463"><img data-src="images/OOPs2.png" width="455"></p>
-</section>
-<section id="key-principles" class="slide level2">
-<h2>Key Principles</h2>
-<p>Four Important Pillars of OOPs</p>
-<div style="font-size: 85%;">
-<ul>
-<li class="fragment">Inheritance : Child classes inherit data and behaviors from the parent class</li>
-<li class="fragment">Encapsulation: Containing information in an object, exposing only selected information</li>
-<li class="fragment">Abstraction: Only exposing high-level public methods for accessing an object</li>
-<li class="fragment">Polymorphism: Many methods can do the same task</li>
-</ul>
-<p><a href="https://www.educative.io/blog/object-oriented-programming">Reference</a></p>
 </div>
 </section>
-<section id="oops-in-python" class="slide level2">
-<h2>OOPs in Python</h2>
-<div id="97914ee8" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Dog:</span>
-<span id="cb1-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, breed, age):</span>
-<span id="cb1-3"><a></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
-<span id="cb1-4"><a></a>        <span class="va">self</span>.breed <span class="op">=</span> breed</span>
-<span id="cb1-5"><a></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb1-6"><a></a>    </span>
-<span id="cb1-7"><a></a>    <span class="kw">def</span> bark(<span class="va">self</span>):</span>
-<span id="cb1-8"><a></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is barking!"</span>)</span>
-<span id="cb1-9"><a></a>    </span>
-<span id="cb1-10"><a></a>    <span class="kw">def</span> sit(<span class="va">self</span>):</span>
-<span id="cb1-11"><a></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is now sitting."</span>)</span>
-<span id="cb1-12"><a></a>    </span>
-<span id="cb1-13"><a></a>    <span class="kw">def</span> display_info(<span class="va">self</span>):</span>
-<span id="cb1-14"><a></a>        <span class="bu">print</span>(<span class="ss">f"Dog Info: Name: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, Breed: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>breed<span class="sc">}</span><span class="ss">, Age: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>age<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-15"><a></a></span>
-<span id="cb1-16"><a></a><span class="co"># Creating an instance of the Dog class</span></span>
-<span id="cb1-17"><a></a>my_dog <span class="op">=</span> Dog(<span class="st">"Buddy"</span>, <span class="st">"Golden Retriever"</span>, <span class="dv">3</span>)</span>
-<span id="cb1-18"><a></a></span>
-<span id="cb1-19"><a></a><span class="co"># Using the methods</span></span>
-<span id="cb1-20"><a></a>my_dog.display_info()</span>
-<span id="cb1-21"><a></a>my_dog.bark()</span>
-<span id="cb1-22"><a></a>my_dog.sit()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Dog Info: Name: Buddy, Breed: Golden Retriever, Age: 3
-Buddy is barking!
-Buddy is now sitting.</code></pre>
+<section id="what-is-statistics" class="slide level2">
+<h2>What is Statistics?</h2>
+<div style="font-size: 70%;">
+<p>Statistics is the <strong>science of learning from data</strong>.</p>
+<ul>
+<li>It helps us make <strong>sense</strong> of numbers.</li>
+<li>It reveals <strong>patterns</strong> hidden in the chaos.</li>
+<li>It supports <strong>better decisions</strong> in uncertain conditions.</li>
+</ul>
+<p>🧠 Think of it as: &gt; “A flashlight in the dark cave of data.”</p>
 </div>
+</section>
+<section id="descriptive-vs-inferential-statistics" class="slide level2">
+<h2>Descriptive vs Inferential Statistics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="descriptive">Descriptive</h3>
+<div style="font-size: 70%;">
+<ul>
+<li>Summarizes what we <em>already know</em></li>
+<li>Mean, median, mode, standard deviation</li>
+<li>Charts, graphs</li>
+</ul>
+<p>🧊 Like describing the ice cube you’re holding.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<h3 id="inferential">Inferential</h3>
+<div style="font-size: 70%;">
+<ul>
+<li>Makes predictions from <em>samples</em></li>
+<li>Confidence intervals, hypothesis tests</li>
+</ul>
+<p>🔮 Like guessing how cold the whole freezer is from just a few cubes.</p>
+</div>
+</div></div>
+</section>
+<section id="why-ai-needs-statistics" class="slide level2">
+<h2>Why AI Needs Statistics</h2>
+<div style="font-size: 70%;">
+<ul>
+<li>Models learn from <strong>data patterns</strong></li>
+<li>Evaluation depends on <strong>accuracy, error, variation</strong></li>
+<li>Sampling &amp; generalization are core to <strong>ML algorithms</strong></li>
+</ul>
+<p>📌 No statistics → No insight.</p>
+</div>
+</section>
+<section id="real-life-examples" class="slide level2">
+<h2>Real-Life Examples</h2>
+<div style="font-size: 70%;">
+<ul>
+<li>Health: What’s the average heart rate for a 30-year-old?</li>
+<li>Education: Do students who sleep more perform better?</li>
+<li>Sports: How consistent is a cricketer’s performance?</li>
+</ul>
+<p>💡 In every case, we need: 1. <strong>Data</strong> 2. <strong>Understanding</strong> 3. <strong>Decision</strong></p>
+</div>
+</section>
+<section id="use-case-business-decisions" class="slide level2">
+<h2>Use Case: Business Decisions</h2>
+<div style="font-size: 70%;">
+<ul>
+<li>Understanding customer trends</li>
+<li>Improving marketing with A/B testing</li>
+<li>Forecasting inventory needs</li>
+</ul>
+<p><img data-src="A_B Testing Comparison Infographic.png" style="width:51.0%"></p>
+<p>📈 Businesses thrive on informed decisions.</p>
+</div>
+</section>
+<section id="use-case-government-planning" class="slide level2">
+<h2>Use Case: Government Planning</h2>
+<div style="font-size: 70%;">
+<ul>
+<li>Planning hospitals and schools using census data</li>
+<li>Tracking population and regional needs</li>
+<li>Allocating resources effectively</li>
+</ul>
+<p><img data-src="Census Data Planning Insights.png" style="width:52.0%"></p>
+<p>🧮 Policies backed by real numbers.</p>
+</div>
+</section>
+<section id="visual-demo" class="slide level2">
+<h2>Visual Demo</h2>
+<div style="font-size: 70%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Student</th>
+<th>Sleep Hours</th>
+<th>Exam Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>6</td>
+<td>72</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>8</td>
+<td>85</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>5</td>
+<td>65</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>7</td>
+<td>78</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>4</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<p>🧠 What patterns do you notice?</p>
+<ul>
+<li>Is more sleep associated with better scores?</li>
+<li>What’s the average score?</li>
+</ul>
+</div>
+</section>
+<section id="key-takeaways" class="slide level2">
+<h2>Key Takeaways</h2>
+<div style="font-size: 70%;">
+<ul>
+<li>Statistics helps us <strong>understand</strong> and <strong>predict</strong>.</li>
+<li>Descriptive = summarize; Inferential = generalize.</li>
+<li>AI is built on statistical reasoning.</li>
+<li>You’re already using stats in everyday life!</li>
+</ul>
+</div>
+</section>
+<section id="coming-up-next" class="slide level2">
+<h2>Coming Up Next</h2>
+<div style="font-size: 70%;">
+<p>Episode 02: <strong>Types of Data</strong><br>
+🔹 Categorical vs Numerical<br>
+🔹 Structured vs Unstructured<br>
+🔹 Why data type matters in analysis</p>
+<p>Stay curious! 🧠✨</p>
 </div>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 center">
