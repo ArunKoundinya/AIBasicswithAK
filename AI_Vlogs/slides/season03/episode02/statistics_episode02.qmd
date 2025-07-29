@@ -1,0 +1,141 @@
+---
+title: AI Basics with AK
+subtitle: Season 03 - Introduction to Statistics
+title-slide-attributes:
+  data-slide-number: none
+format:
+  revealjs:
+    incremental: false
+auto-stretch: true
+---
+
+# Episode 02
+
+**Types of Data: The Foundation of Statistics** 🌊
+
+## Agenda
+
+::: {style="font-size: 80%;"}
+
+-   What are Data Types?
+-   Categorical vs Numerical Data
+-   Structured vs Unstructured Data
+-   Why Data Type Matters in Analysis
+-   Real-Life Examples & Visual Demo
+-   Key Takeaways 
+
+::: 
+
+
+## What Are Data Types?
+
+::: {style="font-size: 80%;"}
+
+Data is the **raw material** for statistics and AI.
+
+-   Different types of data require different tools.
+-   Understanding data types helps us **choose the right methods**.
+-   Think of data types as the **language of information**. 🧠 *Imagine data types as different kinds of ingredients in a kitchen.*
+
+::: 
+
+
+## Categorical vs Numerical Data
+
+::: {style="font-size: 80%;"}
+
+### Categorical Data
+
+-   Represents **categories or groups**.
+-   Examples: Colors (Red, Blue), Types of fruit, Yes/No answers.
+-   Can be **nominal** (no order) or **ordinal** (with order). *Like sorting fruits by color or type.* 
+
+### Numerical Data
+
+-   Represents **quantities or measurements**.
+-   Examples: Height, Age, Temperature, Scores.
+-   Can be **discrete** (countable, e.g., number of apples) or **continuous** (any value, e.g., weight). *Like measuring the length of a table.*
+
+::: 
+
+## Structured vs Unstructured Data
+
+::: {style="font-size: 80%;"}
+
+
+### Structured Data
+
+-   Organized in rows and columns.
+-   Easy to store and analyze.
+-   Examples: Excel spreadsheets, databases. *Like a neatly arranged filing cabinet.* 
+
+### Unstructured Data
+
+-   Not organized in a predefined way.
+-   Harder to analyze directly.
+-   Examples: Images, text, videos, audio.  *Like a messy desk with papers everywhere.*
+
+::: 
+
+
+## Why Data Type Matters in Analysis
+
+-   Determines **which statistical methods** apply.
+-   Impacts **data visualization choices**.
+-   Influences **machine learning algorithms**. 📌 *Choosing the wrong approach can lead to **wrong conclusions***.
+
+## Real-Life Examples
+
+::: {style="font-size: 80%;"}
+
+
+| Data Type    | Example                       | Use in AI/Stats              |
+|------------------------|------------------------|------------------------|
+| Categorical  | Customer Gender (Male/Female) | Grouping, classification     |
+| Numerical    | Daily Temperature (°C)        | Trend analysis, forecasting  |
+| Structured   | Sales Data in Excel           | Easy querying and statistics |
+| Unstructured | Customer Reviews (Text)       | Sentiment analysis, NLP      |
+
+:::
+
+## Identifying Data Types
+
+::: {style="font-size: 80%;"}
+
+🧠 *Try classifying items around you by these types!*
+
+| Feature           | Sample Values                 | Data Type    |
+|-------------------|-------------------------------|--------------|
+| Favorite Color    | Red, Blue, Green              | Categorical  |
+| Age               | 25, 30, 22, 28                | Numerical    |
+| Customer Feedback | "Great service", "Too slow"   | Unstructured |
+| Sales Records     | Rows of date, amount, product | Structured   |
+
+:::
+
+
+## Key Takeaways
+
+
+::: {style="font-size: 80%;"}
+
+
+-   Data types are the **building blocks** of analysis.
+-   Categorical vs Numerical: groups vs quantities.
+-   Structured data is organized; unstructured is raw and complex.
+-   Knowing your data type helps you **make smarter decisions**. \## ✨ Coming Up Next
+
+:::
+
+
+## Next Episode 03: **Descriptive Statistics**
+
+🔹 Mean, Median, Mode
+
+🔹 Range, Variance, Standard Deviation
+
+🔹 Summarizing Data Effectively
+
+Stay curious! 🧠✨
+
+# Thank You

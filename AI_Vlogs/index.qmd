@@ -310,6 +310,17 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>30th May 2025</td>
 </tr>
 
+
+<tr>
+<td>Episode - 02</td>
+<td>Types of Data?</td>
+<td><a href="slides/season03/episode02/statistics_episode02.html" target="_blank">Link</a></td>
+<td>NA</td>
+<td><a href="https://youtu.be/xMrkHjzACNI" target="_blank">Link</a></td>
+<td>NA</td>
+<td>28th July 2025</td>
+</tr>
+
 </table>
 </div>
 
