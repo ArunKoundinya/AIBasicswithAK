@@ -321,6 +321,18 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>28th July 2025</td>
 </tr>
 
+
+<tr>
+<td>Episode - 03</td>
+<td>Descriptive Statistics</td>
+<td><a href="slides/season03/episode03/statistics_episode03.html" target="_blank">Link</a></td>
+<td>NA</td>
+<td><a href="" target="_blank">Link</a></td>
+<td>NA</td>
+<td>3rd August 2025</td>
+</tr>
+
+
 </table>
 </div>
 

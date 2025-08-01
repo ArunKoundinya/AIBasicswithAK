@@ -1,0 +1,369 @@
+---
+title: AI Basics with AK
+subtitle: Season 03 - Introduction to Statistics
+title-slide-attributes:
+  data-slide-number: none
+format:
+  revealjs:
+    incremental: false
+echo: False
+auto-stretch: true
+---
+
+# Episode 03
+
+Descriptive Statistics — Mean, Median, Mode, Range, Variance, Standard Deviation
+
+## Agenda
+
+::: {style="font-size: 80%;"}
+
+-   What are Descriptive Statistics?
+-   Understanding Mean, Median, Mode
+-   Exploring Range, Variance, and Standard Deviation
+
+:::
+
+## What are Descriptive Statistics?
+
+::: {style="font-size: 80%;"}
+
+Descriptive statistics **summarize and describe** the main features of a dataset.
+
+-   They give us a **snapshot** of the data.
+-   Help us **understand distribution and spread**.
+-   Are the foundation for all data analysis. 🧠 *Think of them as the **storytellers** of your data.* ✨
+
+:::
+
+## Measures of Central Tendency
+
+::: {style="font-size: 60%;"}
+
+::: columns
+
+::: {.column width="50%"}
+
+### Mean
+
+-   The *average* value.
+
+-   Sum of all values divided by count.
+
+-   Sensitive to outliers. 
+
+### Median
+
+-   The *middle* value in ordered data.
+
+-   Not affected by extreme values.
+
+-   Splits data into two halves. 
+
+### Mode
+
+-   The most *frequently occurring* value.
+
+-   Can be more than one mode.
+
+-   Useful for categorical data. \## Measures of Spread (Variability)
+
+:::
+
+::: {.column width="50%"}
+
+### Range
+
+-   Difference between max and min.
+
+-   Simplest measure of spread.
+
+-   Doesn’t capture distribution well. 
+
+### Variance & Standard Deviation
+
+-   Variance: average squared deviation from mean.
+
+-   Standard Deviation: square root of variance.
+
+-   Both measure how data **spreads** around the mean. 
+
+:::
+
+:::
+
+:::
+
+
+## Interactive Example Dataset & Visualizations
+
+```{python}
+import plotly.graph_objects as go
+import numpy as np
+from collections import Counter
+
+# Sample data: exam scores
+scores = np.array([56, 70, 75, 80, 85, 90, 95, 100, 100, 65])
+
+mean_val = np.mean(scores)
+median_val = np.median(scores)
+mode_val = Counter(scores).most_common(1)[0][0]
+
+fig = go.Figure()
+
+# Add jitter to y-axis so overlapping points can be seen
+y_jitter = 1 + 0.05 * np.random.randn(len(scores))
+
+# Scores points
+fig.add_trace(go.Scatter(
+    x=scores,
+    y=y_jitter,
+    mode='markers',
+    marker=dict(size=12, color='rgba(0, 123, 255, 0.8)'),
+    name='Scores'
+))
+
+# Mean line
+fig.add_trace(go.Scatter(
+    x=[mean_val, mean_val],
+    y=[0.8, 1.2],
+    mode='lines',
+    line=dict(color='red', dash='dash'),
+    name='Mean'
+))
+
+# Median line
+fig.add_trace(go.Scatter(
+    x=[median_val, median_val],
+    y=[0.8, 1.2],
+    mode='lines',
+    line=dict(color='green', dash='dot'),
+    name='Median'
+))
+
+# Mode line
+fig.add_trace(go.Scatter(
+    x=[mode_val, mode_val],
+    y=[0.8, 1.2],
+    mode='lines',
+    line=dict(color='orange', dash='solid'),
+    name='Mode'
+))
+
+fig.update_layout(
+    title='Exam Scores with Mean (Red), Median (Green), Mode (Orange)',
+    yaxis=dict(showticklabels=False),
+    xaxis=dict(title='Scores')
+)
+
+fig.show()
+
+```
+
+## Mean, Median & Mode Concept
+
+::: columns
+
+::: {.column width="33%"}
+
+#### Mean
+
+```{mermaid}
+graph TD
+  A[Add All Numbers] --> B[Count How Many Numbers]
+  B --> C[Divide Total by How Many]
+  C --> D[That's the Mean!]
+```
+
+:::
+
+::: {.column width="33%"}
+
+#### Median
+
+```{mermaid}
+graph TD
+  A[Put Numbers in Order] --> B[Find the Middle One]
+  B --> C[That's the Median!]
+```
+
+:::
+
+::: {.column width="33%"}
+
+#### Mode
+
+```{mermaid}
+graph TD
+  A[Look at All Numbers] --> B[Find the Number That Shows Up the Most]
+  B --> C[That's the Mode!]
+```
+
+:::
+
+:::
+
+## Visualizing Range
+
+Highlighting minimum and maximum scores to demonstrate range.
+
+```{python}
+fig_range = go.Figure()
+
+# Sample data: exam scores
+scores = np.array([56, 70, 75, 80, 85, 90, 95, 100, 100, 65])
+
+# Add jitter to y-axis so overlapping points can be seen
+y_jitter = 1 + 0.05 * np.random.randn(len(scores))
+
+# Plot points
+fig_range.add_trace(go.Scatter(
+    x=scores,
+    y=y_jitter,
+    mode='markers',
+    marker=dict(size=12, color='rgba(0, 123, 255, 0.8)'),
+    name='Scores'
+))
+
+range_min, range_max = np.min(scores), np.max(scores)
+
+# Min line
+fig_range.add_trace(go.Scatter(
+    x=[range_min, range_min],
+    y=[0.8, 1.2],
+    mode='lines',
+    line=dict(color='purple', dash='dot'),
+    name='Min'
+))
+
+# Max line
+fig_range.add_trace(go.Scatter(
+    x=[range_max, range_max],
+    y=[0.8, 1.2],
+    mode='lines',
+    line=dict(color='purple', dash='dash'),
+    name='Max'
+))
+
+fig_range.update_layout(
+    title=f'Range: Max ({range_max}) - Min ({range_min}) = {range_max - range_min}',
+    yaxis=dict(showticklabels=False, range=[0.5, 1.5]),
+    xaxis=dict(title='Scores')
+)
+
+fig_range.show()
+```
+
+
+## Range Concept
+
+```{mermaid}
+graph TD
+  A[Look at All Numbers] --> B[Find the Smallest Number]
+  A --> C[Find the Biggest Number]
+  B --> D[Subtract Smallest from Biggest]
+  C --> D
+  D --> E[That's the Range!]
+```
+
+## Visualizing Variance and Standard Deviation
+
+```{python}
+import plotly.graph_objects as go
+import numpy as np
+from collections import Counter
+
+# Sample data: exam scores
+scores = np.array([56, 70, 75, 80, 85, 90, 95, 100, 100, 65])
+
+mean_val = np.mean(scores)
+deviations = scores - mean_val
+squared_devs = deviations**2
+variance_val = np.var(scores, ddof=1)
+std_dev_val = np.std(scores, ddof=1)
+
+fig_var2 = go.Figure()
+
+# Scores points (at y=0 for clarity)
+fig_var2.add_trace(go.Scatter(
+    x=scores,
+    y=[0]*len(scores),
+    mode='markers',
+    marker=dict(size=12, color='rgba(0, 123, 255, 0.8)'),
+    name='Scores'
+))
+
+# Mean line
+fig_var2.add_trace(go.Scatter(
+    x=[mean_val, mean_val],
+    y=[-1, max(squared_devs)+5],
+    mode='lines',
+    line=dict(color='red', dash='dash'),
+    name='Mean'
+))
+
+# Bars showing squared deviations
+fig_var2.add_trace(go.Bar(
+    x=scores,
+    y=squared_devs,
+    marker=dict(color='rgba(255, 100, 100, 0.7)'),
+    name='Squared Deviations'
+))
+
+fig_var2.update_layout(
+    title=f'Variance = {variance_val:.2f}, Std Dev = {std_dev_val:.2f}',
+    yaxis=dict(title='Squared Deviations'),
+    xaxis=dict(title='Scores'),
+    barmode='overlay'
+)
+
+fig_var2.show()
+
+```
+
+## Variance & Standard Deviation Concept
+
+
+::: {style="font-size: 80%;"}
+
+```{mermaid}
+graph TD
+    B[Calculate Mean] --> C[For Each Data Point:<br>Deviation = Data Point - Mean]
+    C --> D[Square Each Deviation]
+    D --> E[Average of Squared Deviations = <br> Variance]
+    E --> F[Square Root of Variance = <br> Standard Deviation]
+```
+
+:::
+
+## Why Variance and Std Dev Matter?
+
+::: {style="font-size: 80%;"}
+
+-   They tell us if data points are **close or spread out**.
+
+-   Smaller std dev → data tightly clustered.
+
+-   Larger std dev → data more spread, more variability.
+
+-   Crucial for **risk assessment**, **quality control**, and **AI model evaluation**.
+
+:::
+
+
+## Summary
+
+::: {style="font-size: 80%;"}
+
+-   Mean, median, and mode are ways to find the “center” of data.
+
+-   Range, variance, and standard deviation describe data spread.
+
+-   These basics are building blocks for deeper statistics and AI.
+
+:::
+
+
+# Thank You
+
+Thank you for joining this episode on Descriptive Statistics.

@@ -22,9 +22,7 @@ Multi Threading & Multi Processing! ( Conceptual & Coding - In Demo)
 
 :::::: columns
 ::: {.column width="40%"}
-<br>
-<br>
-![](image.jpeg){width="463"}
+<br> <br> ![](image.jpeg){width="463"}
 :::
 
 :::: {.column width="60%"}
@@ -47,8 +45,8 @@ Multi Threading & Multi Processing! ( Conceptual & Coding - In Demo)
 ![](multithreadingprocessing.png)
 
 ## Multi Threading & Multi Processing
-::: {style="font-size: 60%;"}
 
+::: {style="font-size: 60%;"}
 | Aspect | Multi Threading | Multi Processing |
 |------------------------|------------------------|------------------------|
 | **Execution Model** | Multiple threads within a single process | Multiple processes, each with its own memory |
@@ -60,15 +58,11 @@ Multi Threading & Multi Processing! ( Conceptual & Coding - In Demo)
 | **Performance** | Efficient for tasks requiring shared data | Efficient for parallel processing tasks |
 
 : Comparison Table
-::: 
+:::
+
 ## When to Choose which ?
-<br>
-<br>
-- Scraping 100 websites in one go!
-<br>
-<br>
-<br>
-- Computing square-root for 10000000000 numbers!
+
+<br> <br> - Scraping 100 websites in one go! <br> <br> <br> - Computing square-root for 10000000000 numbers!
 
 # THANK YOU
 
