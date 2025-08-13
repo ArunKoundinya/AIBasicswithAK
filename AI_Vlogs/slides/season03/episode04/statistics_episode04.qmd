@@ -1,0 +1,194 @@
+---
+title: AI Basics with AK
+subtitle: Season 03 - Introduction to Statistics
+title-slide-attributes:
+  data-slide-number: none
+format:
+  revealjs:
+    incremental: false
+echo: False
+auto-stretch: true
+---
+
+# Episode 04
+
+
+Data Visualization for Statistics — Histograms, Box Plots and Scatter Plots
+
+## Agenda
+
+::: {style="font-size: 80%;"}
+
+- Why Visualize Data?
+- Histograms to Understand Distribution
+- Box Plots for Spread & Outliers
+- Scatter Plots to Explore Relationships
+
+In last class we learned about mean, median, mode and etc;
+
+:::
+
+## Why Visualize Data?
+
+::: {style="font-size: 80%;"}
+
+Visualizations are the **windows into data** — they help us:
+
+- See patterns, trends, and outliers.
+- Understand distributions beyond numbers.
+- Communicate insights clearly.
+- Build intuition for statistical concepts.
+<br>
+<br>
+✨ *A picture is worth a thousand data points.* ✨
+
+:::
+
+## Understanding Histogram to Learn Distributions
+
+```{python}
+import numpy as np
+import pandas as pd
+import plotly.express as px
+
+np.random.seed(42)
+scores = np.concatenate([np.random.normal(75, 10, 80), np.random.normal(90, 5, 20)])
+
+# Create a DataFrame for clarity
+df = pd.DataFrame({'Score': scores})
+
+fig = px.histogram(df, x='Score', nbins=15,
+                   title='Histogram: Distribution of Exam Scores',
+                   labels={'Score': 'Score', 'count': 'Frequency'},
+                   color_discrete_sequence=['#0073C2'])  # fixed hex color
+
+fig.update_layout(bargap=0.1)
+fig.update_layout(width=600, height=400)
+fig.show()
+```
+
+::: {style="font-size: 60%;"}
+
+Histograms group data into bins to show frequency distribution.
+
+- Helps identify shape: symmetric, skewed, uniform, bimodal.
+- Reveals where data clusters or thins out.
+
+::: 
+
+## Box Plots: Visualizing Spread and Outliers
+
+::: {style="font-size: 80%;"}
+
+Box plots summarize data using:
+
+- Median (center line)
+- Interquartile Range (box)
+- Whiskers (range without outliers)
+- Outliers (dots outside whiskers)
+<br>
+<br>
+Great for comparing groups!
+
+::: 
+
+## Box Plot Example
+
+```{python}
+import plotly.express as px
+import pandas as pd
+import numpy as np
+
+# Sample data: scores by two classes
+np.random.seed(42)
+class_a = np.random.normal(75, 8, 50)
+class_b = np.random.normal(80, 12, 50)
+
+df = pd.DataFrame({
+    'Score': np.concatenate([class_a, class_b]),
+    'Class': ['A']*50 + ['B']*50
+})
+
+fig = px.box(df, x='Class', y='Score', points='outliers',
+             title='Box Plot: Exam Scores by Class',
+             color='Class',
+             color_discrete_map={'A':'#FF7F0E', 'B':'#1F77B4'})
+
+fig.show()
+```
+
+
+## Scatter Plot Example
+
+```{python}
+import plotly.express as px
+import pandas as pd
+import numpy as np
+
+# Sample data: study hours vs exam scores
+np.random.seed(42)
+study_hours = np.random.uniform(1, 10, 50)
+noise = np.random.normal(0, 5, 50)
+scores = 50 + 5 * study_hours + noise
+
+df_scatter = pd.DataFrame({
+    'Study Hours': study_hours,
+    'Exam Scores': scores
+})
+
+fig = px.scatter(df_scatter, x='Study Hours', y='Exam Scores',
+                 trendline='ols',
+                 title='Scatter Plot: Study Hours vs Exam Scores',
+                 labels={'Study Hours': 'Hours Studied', 'Exam Scores': 'Score'},
+                 color_discrete_sequence=['#2ca02c'])
+
+fig.show()
+```
+
+## Visualizing Skewness and Outliers
+
+```{python}
+import plotly.graph_objects as go
+import numpy as np
+
+# Skewed data example
+np.random.seed(42)
+skewed_data = np.random.exponential(scale=2, size=100)
+
+fig = go.Figure()
+fig.add_trace(go.Histogram(x=skewed_data, nbinsx=20, name='Skewed Data',
+                           marker_color='orange'))
+
+fig.update_layout(
+    title='Histogram Showing Skewed Distribution',
+    xaxis_title='Value',
+    yaxis_title='Frequency'
+)
+
+fig.show()
+```
+
+## Summary
+
+::: {style="font-size: 80%;"}
+
+
+- Visualizations reveal **shape, spread, and relationships** in data.
+- Histograms and box plots help us understand **distribution and outliers**.
+- Scatter plots show **how variables relate**.
+- Box Plot compares the two categories.
+
+::: 
+
+# Thank You
+
+::: {style="font-size: 80%;"}
+
+Thank you for joining this episode on Data Visualization.
+
+Next up: 
+
+- Episode 05 - Probability Fundamentals 
+- Episode 06: Introduction to Probability Distributions
+
+::: 
