@@ -334,12 +334,22 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 
 <tr>
 <td>Episode - 04</td>
-<td>Descriptive Statistics</td>
+<td>Data Visualization</td>
 <td><a href="slides/season03/episode04/statistics_episode04.html" target="_blank">Link</a></td>
 <td>NA</td>
 <td><a href="" target="_blank">Link</a></td>
 <td>NA</td>
 <td>17th August 2025</td>
+</tr>
+
+<tr>
+<td>Episode - 05</td>
+<td>Basics of Probability</td>
+<td><a href="slides/season03/episode05/statistics_episode05.html" target="_blank">Link</a></td>
+<td>NA</td>
+<td><a href="" target="_blank">Link</a></td>
+<td>NA</td>
+<td>31st August 2025</td>
 </tr>
 
 </table>
