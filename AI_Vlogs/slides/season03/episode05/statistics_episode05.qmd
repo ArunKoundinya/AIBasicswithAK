@@ -1,0 +1,120 @@
+---
+title: AI Basics with AK
+subtitle: Season 03 - Introduction to Statistics
+title-slide-attributes:
+  data-slide-number: none
+format:
+  revealjs:
+    incremental: false
+echo: False
+auto-stretch: true
+---
+
+# Episode 05 - Probability Fundamentals
+
+Today, we unravel the basics of probability.
+
+## What is Probability?
+
+::: {style="font-size: 80%;"}
+
+**Probability** measures *how likely* an event is to happen.
+
+Values between **0** (impossible) and **1** (certain).
+
+Expressed often as fractions, decimals, or percentages.
+
+> *Intuition:* If you toss a fair coin, probability of Heads = 0.5.
+
+::: 
+
+## Key Terms
+
+::: {style="font-size: 80%;"}
+
+
+| Term | Meaning |
+| --- | --- |
+| **Sample Space (S)** | Set of all possible outcomes |
+| **Event (E)** | A subset of the sample space |
+| **Outcome** | A single result from the sample space |
+
+
+
+### Probability of an Event
+
+
+P(E) = Number of favorable outcomes / Total number of outcomes
+
+*Example:* Probability of getting Heads when tossing a coin:
+
+P(Heads) = 1/2 = 0.5
+
+::: 
+
+## Probability Rules — The Basics
+
+::: {style="font-size: 80%;"}
+
+
+**Rule 1:** 0 ≤ P(E) ≤ 1
+
+**Rule 2:** P(S) = 1 (Probability of entire sample space is 1)
+
+**Rule 3:** P(E^c) = 1 - P(E) (Complement rule)
+
+:::
+
+## Complement Rule Example
+
+::: {style="font-size: 80%;"}
+
+
+If probability of rain tomorrow is 0.3, then probability of no rain is:
+
+P(No Rain) = 1 - 0.3 = 0.7
+
+:::
+
+
+## Addition Rule for Mutually Exclusive Events
+
+::: {style="font-size: 80%;"}
+
+
+P(A ∪ B) = P(A) + P(B)
+
+*Example:* Probability of rolling a 1 or 2 on a die:
+
+P(1 or 2) = 1/6 + 1/6 = 2/6 = 1/3
+
+::: 
+
+## Conditional Probability Introduction
+
+::: {style="font-size: 80%;"}
+
+Probability of event A *given* event B has occurred: P(A|B)
+
+Formula:
+
+P(A|B) = P(A ∩ B) / P(B)
+
+### Conditional Probability Example
+
+If a card is red, probability it is a heart:
+
+P(Heart) = 13/52
+
+P(Red) = 26/52
+
+So,
+
+P(Heart | Red) = P(Heart ∩ Red) / P(Red) = (13/52) / (26/52) = 1/2
+
+
+::: 
+
+# Thank You
+
+Next episode, we dive into **Probability Distributions** — how probabilities spread over many outcomes, both discrete and continuous.

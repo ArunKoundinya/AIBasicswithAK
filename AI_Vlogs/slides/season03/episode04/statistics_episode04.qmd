@@ -12,36 +12,28 @@ auto-stretch: true
 
 # Episode 04
 
-
 Data Visualization for Statistics — Histograms, Box Plots and Scatter Plots
 
 ## Agenda
 
 ::: {style="font-size: 80%;"}
-
-- Why Visualize Data?
-- Histograms to Understand Distribution
-- Box Plots for Spread & Outliers
-- Scatter Plots to Explore Relationships
+-   Why Visualize Data?
+-   Histograms to Understand Distribution
+-   Box Plots for Spread & Outliers
+-   Scatter Plots to Explore Relationships
 
 In last class we learned about mean, median, mode and etc;
-
 :::
 
 ## Why Visualize Data?
 
 ::: {style="font-size: 80%;"}
-
 Visualizations are the **windows into data** — they help us:
 
-- See patterns, trends, and outliers.
-- Understand distributions beyond numbers.
-- Communicate insights clearly.
-- Build intuition for statistical concepts.
-<br>
-<br>
-✨ *A picture is worth a thousand data points.* ✨
-
+-   See patterns, trends, and outliers.
+-   Understand distributions beyond numbers.
+-   Communicate insights clearly.
+-   Build intuition for statistical concepts. <br> <br> ✨ *A picture is worth a thousand data points.* ✨
 :::
 
 ## Understanding Histogram to Learn Distributions
@@ -68,29 +60,22 @@ fig.show()
 ```
 
 ::: {style="font-size: 60%;"}
-
 Histograms group data into bins to show frequency distribution.
 
-- Helps identify shape: symmetric, skewed, uniform, bimodal.
-- Reveals where data clusters or thins out.
-
-::: 
+-   Helps identify shape: symmetric, skewed, uniform, bimodal.
+-   Reveals where data clusters or thins out.
+:::
 
 ## Box Plots: Visualizing Spread and Outliers
 
 ::: {style="font-size: 80%;"}
-
 Box plots summarize data using:
 
-- Median (center line)
-- Interquartile Range (box)
-- Whiskers (range without outliers)
-- Outliers (dots outside whiskers)
-<br>
-<br>
-Great for comparing groups!
-
-::: 
+-   Median (center line)
+-   Interquartile Range (box)
+-   Whiskers (range without outliers)
+-   Outliers (dots outside whiskers) <br> <br> Great for comparing groups!
+:::
 
 ## Box Plot Example
 
@@ -116,7 +101,6 @@ fig = px.box(df, x='Class', y='Score', points='outliers',
 
 fig.show()
 ```
-
 
 ## Scatter Plot Example
 
@@ -171,24 +155,19 @@ fig.show()
 ## Summary
 
 ::: {style="font-size: 80%;"}
-
-
-- Visualizations reveal **shape, spread, and relationships** in data.
-- Histograms and box plots help us understand **distribution and outliers**.
-- Scatter plots show **how variables relate**.
-- Box Plot compares the two categories.
-
-::: 
+-   Visualizations reveal **shape, spread, and relationships** in data.
+-   Histograms and box plots help us understand **distribution and outliers**.
+-   Scatter plots show **how variables relate**.
+-   Box Plot compares the two categories.
+:::
 
 # Thank You
 
 ::: {style="font-size: 80%;"}
-
 Thank you for joining this episode on Data Visualization.
 
-Next up: 
+Next up:
 
-- Episode 05 - Probability Fundamentals 
-- Episode 06: Introduction to Probability Distributions
-
-::: 
+-   Episode 05 - Probability Fundamentals
+-   Episode 06: Introduction to Probability Distributions
+:::
