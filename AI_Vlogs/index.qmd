@@ -352,6 +352,16 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>31st August 2025</td>
 </tr>
 
+<tr>
+<td>Episode - 06</td>
+<td>Probability Distributions</td>
+<td><a href="slides/season03/episode06/statistics_episode06.html" target="_blank">Link</a></td>
+<td>NA</td>
+<td><a href="" target="_blank">Link</a></td>
+<td>NA</td>
+<td>2nd November 2025</td>
+</tr>
+
 </table>
 </div>
 

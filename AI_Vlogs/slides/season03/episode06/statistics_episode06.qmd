@@ -1,0 +1,235 @@
+---
+title: "AI Basics with AK"
+subtitle: "Season 03 - Introduction to Statistics"
+format:
+  revealjs:
+    incremental: false
+    auto-stretch: true
+    slide-number: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Episode 06 - Probability Distributions
+
+## Re-Cap of Episode -05
+
+::: {style="font-size: 70%;"}
+| Term                 | Meaning                               |
+|----------------------|---------------------------------------|
+| **Sample Space (S)** | Set of all possible outcomes          |
+| **Event (E)**        | A subset of the sample space          |
+| **Outcome**          | A single result from the sample space |
+
+### Probability of an Event
+
+P(E) = Number of favorable outcomes / Total number of outcomes
+
+*Example:* Probability of getting Heads when tossing a coin:
+
+P(Heads) = 1/2 = 0.5
+:::
+
+## Single Trial -\> Many Trials
+
+::: {style="font-size: 70%;"}
+-   What if we roll many times? -\> After enough rolls -\> There is a pattern
+:::
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+
+np.random.seed(42)
+
+# Define number of rolls for the slider
+roll_sizes = [10, 50, 100, 500, 1000]
+
+# Pre-generate die rolls for all sample sizes
+die_rolls_dict = {n: np.random.randint(1, 7, n) for n in roll_sizes}
+
+# Create figure
+fig = go.Figure()
+
+# Add traces for all roll sizes (initially only show default size, e.g., 100)
+for i, n in enumerate(roll_sizes):
+    visible = True if n == 100 else False
+    fig.add_trace(go.Histogram(
+        x=die_rolls_dict[n],
+        xbins=dict(start=0.5, end=6.5, size=1),
+        marker_color='skyblue',
+        name=f'{n} rolls',
+        visible=visible
+    ))
+
+# Create slider steps
+steps = []
+for i, n in enumerate(roll_sizes):
+    step = dict(
+        method="update",
+        args=[{"visible": [False]*len(roll_sizes)}],
+        label=f"{n} rolls"
+    )
+    step["args"][0]["visible"][i] = True
+    steps.append(step)
+
+sliders = [dict(
+    active=2,  # default: 100 rolls
+    currentvalue={"prefix": "Number of Rolls: "},
+    pad={"t": 50},
+    steps=steps
+)]
+
+# Update layout with slider
+fig.update_layout(
+    title="Rolling a Die: Frequency Histogram",
+    xaxis_title="Die Face",
+    yaxis_title="Frequency",
+    xaxis=dict(tickmode='linear', tick0=1, dtick=1),
+    sliders=sliders,
+    showlegend=False
+)
+
+fig.show()
+
+
+```
+
+## What is a Probability Distribution?
+
+::: {style="font-size: 70%;"}
+A **Probability Distribution** shows how probabilities are assigned to all possible outcomes.
+:::
+
+### Types of Probability Distributions
+
+::: {style="font-size: 70%;"}
+| Distribution Type        | Description                    | Examples         |
+|--------------------------------|----------------------|------------------|
+| Discrete Distributions   | Finite/countable outcomes      | Dice, Coin Flips |
+| Continuous Distributions | Infinite outcomes over a range | Height, Weight   |
+:::
+
+## Types of Important Distributions
+
+::: {style="font-size: 70%;"}
+| Distribution | Type | Example | Shape / Key Feature |
+|---------------|---------------|-------------------|-------------------------|
+| Uniform | Discrete / Continuous | Rolling a die, random pick | All outcomes equally likely; flat histogram |
+| Normal | Continuous | Heights, exam scores | Bell-shaped; most outcomes near the mean |
+| Binomial | Discrete | Coin flips (count successes) | Counts of successes; hill-shaped at discrete points |
+:::
+
+## Understanding Distribution Names
+
+::: {style="font-size: 60%;"}
+| Distribution | Why It’s Called That | Key Idea |
+|----------------------|---------------------------------|------------------|
+| **Uniform** | “Uniform” means all the same | All outcomes equally likely -\> flat histogram |
+| **Normal** | Called “normal” because it’s the common pattern in nature | Most values cluster near the mean -\> bell-shaped curve |
+| **Binomial** | Comes from “bi” (two outcomes) and “nomial” (counting formula) | Counts successes/failures in repeated yes/no trials -\> hill at discrete points |
+
+**Key Takeaways:**
+
+-   Uniform -\> everything is equal (e.g., dice roll)\
+-   Normal -\> most things cluster around average (e.g., heights, scores)\
+-   Binomial -\> counting yes/no outcomes repeatedly (e.g., coin flips)
+:::
+
+## Visualizing Distributions
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+
+np.random.seed(42)
+
+# Sample sizes and distributions
+sample_sizes = [100, 500, 1000, 5000]
+distributions = {
+    "Normal": lambda n: np.random.normal(0, 1, n),
+    "Uniform": lambda n: np.random.uniform(1, 6, n),
+    "Binomial": lambda n: np.random.binomial(10, 0.5, n),
+    }
+
+# Create figure
+fig = go.Figure()
+
+# Generate all traces: distribution x sample_size
+trace_indices = {}  # for dropdown visibility
+for i, (dist_name, func) in enumerate(distributions.items()):
+    trace_indices[dist_name] = []
+    for j, size in enumerate(sample_sizes):
+        visible = True if (dist_name == "Normal" and size == 1000) else False  # default selection
+        fig.add_trace(go.Histogram(
+            x=func(size),
+            nbinsx=30,
+            name=f"{dist_name} n={size}",
+            histnorm="probability density",
+            visible=visible
+        ))
+        trace_indices[dist_name].append(i * len(sample_sizes) + j)
+
+# Create slider steps (sample sizes)
+steps = []
+for si, size in enumerate(sample_sizes):
+    step = dict(
+        method="update",
+        args=[{"visible": [False]*len(fig.data)}],
+        label=f"n={size}"
+    )
+    # Set visible True for the default distribution (Normal)
+    for idx in trace_indices["Normal"]:
+        if idx % len(sample_sizes) == si:
+            step["args"][0]["visible"][idx] = True
+    steps.append(step)
+
+sliders = [dict(
+    active=2,  # default n=1000
+    currentvalue={"prefix": "Sample Size: "},
+    pad={"t": 50},
+    steps=steps
+)]
+
+# Create dropdown buttons for distributions
+dropdown_buttons = []
+for dist_name in distributions.keys():
+    visibility = [False]*len(fig.data)
+    for idx in trace_indices[dist_name]:
+        # Set default visible sample_size=1000 (index 2)
+        if idx % len(sample_sizes) == 2:
+            visibility[idx] = True
+    button = dict(
+        label=dist_name,
+        method="update",
+        args=[{"visible": visibility}],
+    )
+    dropdown_buttons.append(button)
+
+fig.update_layout(
+    title="Probability Distribution",
+    xaxis_title="Value",
+    yaxis_title="Probability Density",
+    showlegend=True,
+    sliders=sliders,
+    updatemenus=[dict(
+        buttons=dropdown_buttons,
+        direction="down",
+        x=0.05,
+        xanchor="left",
+        y=1.15,
+        yanchor="top"
+    )]
+)
+
+fig.show()
+
+
+
+```
+
+# Thank You
+
+Next episode, we dive into **Central Limit Theorem**
