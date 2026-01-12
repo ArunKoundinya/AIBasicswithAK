@@ -1,0 +1,455 @@
+---
+title: "AI Basics with AK"
+subtitle: "Season 03 - Introduction to Statistics"
+format:
+  revealjs:
+    incremental: false
+    auto-stretch: true
+    slide-number: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Episode 07 - Central Limit Theorem
+
+## Re-Cap of Episode -05
+
+::: {style="font-size: 70%;"}
+| Term                 | Meaning                               |
+|----------------------|---------------------------------------|
+| **Sample Space (S)** | Set of all possible outcomes          |
+| **Event (E)**        | A subset of the sample space          |
+| **Outcome**          | A single result from the sample space |
+:::
+
+## Re-Cap of Episode -06
+
+::: {style="font-size: 70%;"}
+-   What if we roll many times? -\> After enough rolls -\> There is a pattern
+:::
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+
+np.random.seed(42)
+
+# Define number of rolls for the slider
+roll_sizes = [10, 50, 100, 500, 1000]
+
+# Pre-generate die rolls for all sample sizes
+die_rolls_dict = {n: np.random.randint(1, 7, n) for n in roll_sizes}
+
+# Create figure
+fig = go.Figure()
+
+# Add traces for all roll sizes (initially only show default size, e.g., 100)
+for i, n in enumerate(roll_sizes):
+    visible = True if n == 100 else False
+    fig.add_trace(go.Histogram(
+        x=die_rolls_dict[n],
+        xbins=dict(start=0.5, end=6.5, size=1),
+        marker_color='skyblue',
+        name=f'{n} rolls',
+        visible=visible
+    ))
+
+# Create slider steps
+steps = []
+for i, n in enumerate(roll_sizes):
+    step = dict(
+        method="update",
+        args=[{"visible": [False]*len(roll_sizes)}],
+        label=f"{n} rolls"
+    )
+    step["args"][0]["visible"][i] = True
+    steps.append(step)
+
+sliders = [dict(
+    active=2,  # default: 100 rolls
+    currentvalue={"prefix": "Number of Rolls: "},
+    pad={"t": 50},
+    steps=steps
+)]
+
+# Update layout with slider
+fig.update_layout(
+    title="Rolling a Die: Frequency Histogram",
+    xaxis_title="Die Face",
+    yaxis_title="Frequency",
+    xaxis=dict(tickmode='linear', tick0=1, dtick=1),
+    sliders=sliders,
+    showlegend=False
+)
+
+fig.show()
+
+
+```
+
+## Re-Cap of Episode -06
+
+::: {style="font-size: 70%;"}
+| Distribution | Type | Example | Shape / Key Feature |
+|-----------------|-----------------|-----------------|---------------------|
+| Uniform | Discrete / Continuous | Rolling a die, random pick | All outcomes equally likely; flat histogram |
+| Normal | Continuous | Heights, exam scores | Bell-shaped; most outcomes near the mean |
+| Binomial | Discrete | Coin flips (count successes) | Counts of successes; hill-shaped at discrete points |
+:::
+
+## Re-Cap of Episode -06
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+
+np.random.seed(42)
+
+# Sample sizes and distributions
+sample_sizes = [100, 500, 1000, 5000]
+distributions = {
+    "Normal": lambda n: np.random.normal(0, 1, n),
+    "Uniform": lambda n: np.random.uniform(1, 6, n),
+    "Binomial": lambda n: np.random.binomial(10, 0.5, n),
+    }
+
+# Create figure
+fig = go.Figure()
+
+# Generate all traces: distribution x sample_size
+trace_indices = {}  # for dropdown visibility
+for i, (dist_name, func) in enumerate(distributions.items()):
+    trace_indices[dist_name] = []
+    for j, size in enumerate(sample_sizes):
+        visible = True if (dist_name == "Normal" and size == 1000) else False  # default selection
+        fig.add_trace(go.Histogram(
+            x=func(size),
+            nbinsx=30,
+            name=f"{dist_name} n={size}",
+            histnorm="probability density",
+            visible=visible
+        ))
+        trace_indices[dist_name].append(i * len(sample_sizes) + j)
+
+# Create slider steps (sample sizes)
+steps = []
+for si, size in enumerate(sample_sizes):
+    step = dict(
+        method="update",
+        args=[{"visible": [False]*len(fig.data)}],
+        label=f"n={size}"
+    )
+    # Set visible True for the default distribution (Normal)
+    for idx in trace_indices["Normal"]:
+        if idx % len(sample_sizes) == si:
+            step["args"][0]["visible"][idx] = True
+    steps.append(step)
+
+sliders = [dict(
+    active=2,  # default n=1000
+    currentvalue={"prefix": "Sample Size: "},
+    pad={"t": 50},
+    steps=steps
+)]
+
+# Create dropdown buttons for distributions
+dropdown_buttons = []
+for dist_name in distributions.keys():
+    visibility = [False]*len(fig.data)
+    for idx in trace_indices[dist_name]:
+        # Set default visible sample_size=1000 (index 2)
+        if idx % len(sample_sizes) == 2:
+            visibility[idx] = True
+    button = dict(
+        label=dist_name,
+        method="update",
+        args=[{"visible": visibility}],
+    )
+    dropdown_buttons.append(button)
+
+fig.update_layout(
+    title="Probability Distribution",
+    xaxis_title="Value",
+    yaxis_title="Probability Density",
+    showlegend=True,
+    sliders=sliders,
+    updatemenus=[dict(
+        buttons=dropdown_buttons,
+        direction="down",
+        x=0.05,
+        xanchor="left",
+        y=1.15,
+        yanchor="top"
+    )]
+)
+
+fig.show()
+
+
+
+```
+
+## What did we see so far?
+
+::::::: columns
+:::: {.column width="50%"}
+### A Very Natural Question
+
+::: {style="font-size: 85%;"}
+-   We saw Uniform distributions
+-   We saw Binomial distributions
+-   We saw Normal distributions
+
+But real-world data is rarely perfectly normal
+
+So why do statisticians keep using Gaussian assumptions?
+
+This episode answers that exact question.
+:::
+::::
+
+:::: {.column width="50%"}
+### Important Clarification
+
+::: {style="font-size: 85%;"}
+-   If data is Uniform, it stays Uniform
+-   If data is Skewed, it stays Skewed
+-   Taking more samples does not change the population
+
+Uniform data does NOT magically become normal.
+
+This is critical to understand before CLT.
+:::
+::::
+:::::::
+
+## Population vs Sample & Usage in Practice
+
+::::::: columns
+:::: {.column width="50%"}
+### Reality vs What We Actually Observe
+
+::: {style="font-size: 75%;"}
+-   Population → the true data-generating process
+-   Sample → what we actually observe
+-   Statistics → summaries we compute from samples
+
+In practice:
+
+-   We never see the full population
+-   We rely on sample-based summaries
+:::
+::::
+
+:::: {.column width="50%"}
+### Central Tendency Metrics
+
+::: {style="font-size: 75%;"}
+In real analysis, we rarely use raw data directly.
+
+We use:
+
+-   Mean
+-   Sum
+-   Average score
+-   Average loss
+-   etc.;
+
+These are aggregates, not raw observations.
+:::
+::::
+:::::::
+
+## CLT Is NOT About the Data - Instead it is a Statistic
+
+::: {style="font-size: 90%;"}
+-   CLT does not talk about individual data points
+
+-   CLT talks about the distribution of the mean
+
+Data can be Uniform. Mean of the data behaves differently
+
+This distinction removes most confusion.
+:::
+
+## CLT Theorem
+
+### Central Limit Theorem (Intuition)
+
+::: {style="font-size: 85%;"}
+If we:
+
+-   Take independent samples
+
+-   From any distribution (Uniform, Binomial, etc.)
+
+-   With finite variance
+
+Then:
+
+> The distribution of the sample mean becomes approximately\
+> Normal as sample size increases.
+:::
+
+## How CLT changes the behavior of aggregates
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+
+np.random.seed(42)
+
+# Parameters
+n_samples = [1, 2, 5, 10, 30, 100]
+num_experiments = 5000
+
+fig = go.Figure()
+
+# Store traces per n
+trace_indices = []
+
+for i, n in enumerate(n_samples):
+    means = [
+        np.random.uniform(1, 6, n).mean()
+        for _ in range(num_experiments)
+    ]
+
+    fig.add_trace(go.Histogram(
+        x=means,
+        histnorm="probability density",
+        nbinsx=40,
+        visible=True if n == 1 else False,
+        name=f"Mean of {n} Uniform Samples"
+    ))
+    trace_indices.append(i)
+
+# Dropdown menu
+dropdown_buttons = []
+for i, n in enumerate(n_samples):
+    visibility = [False] * len(n_samples)
+    visibility[i] = True
+
+    dropdown_buttons.append(dict(
+        label=f"n = {n}",
+        method="update",
+        args=[
+            {"visible": visibility},
+            {"title": f"CLT Demo: Distribution of Mean (n = {n})"}
+        ]
+    ))
+
+fig.update_layout(
+    title="CLT Demo: Distribution of Mean (n = 1)",
+    xaxis_title="Sample Mean",
+    yaxis_title="Probability Density",
+    updatemenus=[dict(
+        buttons=dropdown_buttons,
+        direction="down",
+        x=0.02,
+        y=1.15,
+        xanchor="left",
+        yanchor="top"
+    )],
+    showlegend=False
+)
+
+fig.show()
+
+```
+
+::: {style="font-size: 50%;"}
+> “The data itself is always Uniform.\
+> What changes here is what we measure the average.”
+:::
+
+## To Keep in Mind
+
+::::::: columns
+:::: {.column width="50%"}
+### What CLT Doesn't say
+
+::: {style="font-size: 85%;"}
+-   ❌ The population is normal
+
+-   ❌ Individual observations are normal
+
+-   ❌ Small samples are safe
+
+-   ❌ Tails are well-behaved
+
+-   CLT is not a claim about reality.
+:::
+::::
+
+:::: {.column width="50%"}
+### CLT as a Modeling Comfort
+
+::: {style="font-size: 85%;"}
+CLT gives us permission:
+
+-   To model means as Gaussian
+
+-   To compute confidence intervals
+
+-   To quantify uncertainty
+
+-   To reason mathematically
+
+Even when underlying structure is different.
+:::
+::::
+:::::::
+
+## Gaussian Appears Everywhere
+
+::::::: columns
+:::: {.column width="50%"}
+### Gaussian Is the Shape of Aggregation
+
+::: {style="font-size: 85%;"}
+-   Gaussian is stable under addition
+
+-   Gaussian emerges from summing randomness
+
+-   Gaussian is mathematically tractable
+:::
+::::
+
+:::: {.column width="50%"}
+### Reality Is Messy & Statistics Is Structured
+
+::: {style="font-size: 85%;"}
+-   Reality → messy, irregular, asymmetric
+
+-   Statistics → summaries, averages, aggregates
+
+-   CLT explains **why**: *Messy reality → clean statistical behavior*
+:::
+::::
+:::::::
+
+## When CLT Can Mislead You?
+
+::: {style="font-size: 85%;"}
+CLT breaks when:
+
+-   Data is heavy-tailed
+
+-   Strong dependence exists
+
+-   Sample size is small
+
+-   You care about extremes, not averages
+
+**Gaussian comfort ≠ guaranteed safety.**
+:::
+
+# Thank You
+
+## In Future Seasons we will Discuss Why?
+
+-   Why `n=30` is a myth
+
+-   Why CLT fails in business & ML

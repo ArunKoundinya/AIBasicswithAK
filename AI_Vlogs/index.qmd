@@ -279,7 +279,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Deploying the Project</td>
 <td>NA</td>
 <td>NA</td>
-<td><a href="https://youtu.be/c6foBK39eSQ" target="_blank">Link</a></td><td><a href="">Link</a></td>
+<td><a href="https://youtu.be/c6foBK39eSQ" target="_blank">Link</a></td>
 <td><a href="slides/season02/episode21/deploying.py" target="_blank">Demo File</a></td>
 <td>4th May 2025</td>
 </tr>
@@ -310,7 +310,6 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>30th May 2025</td>
 </tr>
 
-
 <tr>
 <td>Episode - 02</td>
 <td>Types of Data?</td>
@@ -320,7 +319,6 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>NA</td>
 <td>28th July 2025</td>
 </tr>
-
 
 <tr>
 <td>Episode - 03</td>
@@ -360,6 +358,16 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="" target="_blank">Link</a></td>
 <td>NA</td>
 <td>2nd November 2025</td>
+</tr>
+
+<tr>
+<td>Episode - 07</td>
+<td>Central Limit Theorem</td>
+<td><a href="slides/season03/episode07/statistics_episode07.html" target="_blank">Link</a></td>
+<td>NA</td>
+<td><a href="" target="_blank">Link</a></td>
+<td>NA</td>
+<td>13th Jan 2026</td>
 </tr>
 
 </table>
