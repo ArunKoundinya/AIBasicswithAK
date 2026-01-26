@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../../../../logo.png" rel="icon" type="image/png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <meta name="author" content="Arun Koundinya Parasa">
+  <title>&lt;img src='https://arunkoundinya.github.io/AIBasicswithAK/logo.png' style='width: 2.2em; height: 2.2em; border-radius: 30%;'&gt; &lt;b&gt;AI Basics with AK&lt;/b&gt; – AI Basics with AK</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-c86fbdc6338551b27483b26316adf3b5.css">
+  <link href="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">AI Basics with AK</h1>
+  <p class="subtitle">Season 03 - Introduction to Statistics</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Arun Koundinya Parasa 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="episode-08---confidence-intervals" class="title-slide slide level1 center">
+<h1>Episode 08 - Confidence Intervals</h1>
+
+</section>
+<section id="central-limit-theorem-recap" class="slide level2">
+<h2>Central Limit Theorem Recap</h2>
+<h3 id="central-limit-theorem-intuition">Central Limit Theorem (Intuition)</h3>
+<div style="font-size: 70%;">
+<p>If we:</p>
+<ul>
+<li><p>Take independent samples</p></li>
+<li><p>From any distribution (Uniform, Binomial, etc.)</p></li>
+<li><p>With finite variance</p></li>
+</ul>
+<p>Then:</p>
+<blockquote>
+<p>The distribution of the sample mean becomes approximately<br>
+Normal as sample size increases.</p>
+</blockquote>
+<p>This property is fundamental when constructing confidence intervals, especially for large samples.</p>
+</div>
+</section>
+<section id="why-clt-matters-for-confidence-intervals" class="slide level2">
+<h2>Why CLT Matters for Confidence Intervals</h2>
+<div style="font-size: 70%;">
+<ul>
+<li><p>Normal Approximation: Due to the CLT, we can use the normal distribution to approximate the sampling distribution of the sample mean.</p></li>
+<li><p>Foundation for Inference: CLT provides the basis for making inferences about the population from the sample.</p></li>
+<li><p>Confidence Intervals for Means: The normality assumption (thanks to CLT) allows us to calculate confidence intervals for the sample mean, even if the population distribution is unknown.</p></li>
+<li><p>Sample Size Impact: Larger samples yield more reliable confidence intervals, aligning with the CLT’s implication of normality.</p></li>
+</ul>
+</div>
+</section>
+<section id="visualizing-the-transition" class="slide level2">
+<h2>Visualizing the Transition</h2>
+
+<img data-src="statistics_episode08_files/figure-revealjs/cell-2-output-1.png" class="r-stretch"></section>
+<section id="introduction-to-confidence-intervals" class="slide level2">
+<h2>Introduction to Confidence Intervals</h2>
+<p><em>Confidence intervals (CIs) provide a range of plausible values for an unknown population parameter.</em></p>
+<p>They <em>quantify the uncertainty</em> around the sample estimate. <br><br><br> In this episode, we’ll explore how to <strong>calculate</strong>, <strong>interpret</strong>, and <strong>visualize</strong> confidence intervals.</p>
+</section>
+<section id="what-is-a-confidence-interval" class="slide level2">
+<h2>What is a Confidence Interval?</h2>
+<blockquote>
+<p>A confidence interval gives an estimated range of values likely to include an unknown population parameter.</p>
+</blockquote>
+<p>For example, a <strong>95% confidence interval</strong> means that if we repeated the sampling many times, about 95% of those intervals would contain the true parameter.</p>
+</section>
+<section id="components-of-a-confidence-interval" class="slide level2">
+<h2>Components of a Confidence Interval</h2>
+<ul>
+<li><strong>Point Estimate:</strong> Usually the sample mean or proportion.</li>
+<li><strong>Margin of Error:</strong> Reflects variability and the confidence level.</li>
+<li><strong>Confidence Level:</strong> Commonly 90%, 95%, or 99%. <span class="math display">\[\text{CI} = \text{Point Estimate} \pm \text{Margin of Error}\]</span></li>
+</ul>
+</section>
+<section id="calculating-confidence-intervals-for-the-mean" class="slide level2">
+<h2>Calculating Confidence Intervals for the Mean</h2>
+<p><em>When population standard deviation (<span class="math inline">\(\sigma\)</span>) is known,</em> use the normal distribution.</p>
+<p><em>When <span class="math inline">\(\sigma\)</span> is unknown and sample size is small,</em> use the t-distribution.</p>
+<p><span class="math display">\[\text{Margin of Error} = z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}} \quad \text{or} \quad t_{\alpha/2, df} \times \frac{s}{\sqrt{n}}\]</span></p>
+</section>
+<section id="visualizing-confidence-intervals" class="slide level2">
+<h2>Visualizing Confidence Intervals</h2>
+<div id="97c9f682" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.1.0.min"</script>
+        
+</div>
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.0.min.js" integrity="sha256-Ei4740bWZhaUTQuD6q9yQlgVCMPBz6CZWhevDYPv93A=" crossorigin="anonymous"></script>                <div id="d1b31900-d0b5-4ed8-9e5e-f2989d17e1da" class="plotly-graph-div" style="height:500px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("d1b31900-d0b5-4ed8-9e5e-f2989d17e1da")) {                    Plotly.newPlot(                        "d1b31900-d0b5-4ed8-9e5e-f2989d17e1da",                        [{"line":{"color":"blue","width":3},"mode":"lines","name":"Normal (n=5): Mean=0.459","visible":true,"x":[1,2,3],"y":[0.45900297432508597,0.45900297432508597,0.45900297432508597],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Normal (n=5): CI=[-0.420,1.338]","showlegend":false,"visible":true,"x":[1,2,3,3,2,1],"y":[-0.4203834742122581,-0.4203834742122581,-0.4203834742122581,1.33838942286243,1.33838942286243,1.33838942286243],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Normal (n=10): Mean=0.448","visible":false,"x":[1,2,3],"y":[0.44806111169875623,0.44806111169875623,0.44806111169875623],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Normal (n=10): CI=[-0.069,0.965]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.06914789270839644,-0.06914789270839644,-0.06914789270839644,0.965270116105909,0.965270116105909,0.965270116105909],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Normal (n=20): Mean=-0.171","visible":false,"x":[1,2,3],"y":[-0.17129856144182892,-0.17129856144182892,-0.17129856144182892],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Normal (n=20): CI=[-0.621,0.278]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.6206056932478674,-0.6206056932478674,-0.6206056932478674,0.27800857036420956,0.27800857036420956,0.27800857036420956],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Normal (n=30): Mean=-0.188","visible":false,"x":[1,2,3],"y":[-0.18814689585103744,-0.18814689585103744,-0.18814689585103744],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Normal (n=30): CI=[-0.524,0.148]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.5242148189648311,-0.5242148189648311,-0.5242148189648311,0.14792102726275624,0.14792102726275624,0.14792102726275624],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Normal (n=50): Mean=-0.225","visible":false,"x":[1,2,3],"y":[-0.22547390525614014,-0.22547390525614014,-0.22547390525614014],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Normal (n=50): CI=[-0.491,0.040]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.49081963714184895,-0.49081963714184895,-0.49081963714184895,0.039871826629568674,0.039871826629568674,0.039871826629568674],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Normal (n=100): Mean=-0.104","visible":false,"x":[1,2,3],"y":[-0.10384651739409384,-0.10384651739409384,-0.10384651739409384],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Normal (n=100): CI=[-0.284,0.076]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.28404683636896055,-0.28404683636896055,-0.28404683636896055,0.07635380158077287,0.07635380158077287,0.07635380158077287],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Normal (n=200): Mean=-0.041","visible":false,"x":[1,2,3],"y":[-0.04077096517208498,-0.04077096517208498,-0.04077096517208498],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Normal (n=200): CI=[-0.171,0.089]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.1705886470387299,-0.1705886470387299,-0.1705886470387299,0.08904671669455994,0.08904671669455994,0.08904671669455994],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Uniform (n=5): Mean=0.125","visible":false,"x":[1,2,3],"y":[0.12477019668326275,0.12477019668326275,0.12477019668326275],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Uniform (n=5): CI=[-0.642,0.891]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.6419529754364806,-0.6419529754364806,-0.6419529754364806,0.891493368803006,0.891493368803006,0.891493368803006],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Uniform (n=10): Mean=0.040","visible":false,"x":[1,2,3],"y":[0.04027347190534969,0.04027347190534969,0.04027347190534969],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Uniform (n=10): CI=[-0.412,0.492]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.41163983723482034,-0.41163983723482034,-0.41163983723482034,0.4921867810455197,0.4921867810455197,0.4921867810455197],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Uniform (n=20): Mean=-0.085","visible":false,"x":[1,2,3],"y":[-0.08459542320442892,-0.08459542320442892,-0.08459542320442892],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Uniform (n=20): CI=[-0.373,0.203]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.37259919644399403,-0.37259919644399403,-0.37259919644399403,0.2034083500351362,0.2034083500351362,0.2034083500351362],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Uniform (n=30): Mean=-0.123","visible":false,"x":[1,2,3],"y":[-0.12280545580512643,-0.12280545580512643,-0.12280545580512643],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Uniform (n=30): CI=[-0.334,0.088]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.3337108527351035,-0.3337108527351035,-0.3337108527351035,0.08809994112485063,0.08809994112485063,0.08809994112485063],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Uniform (n=50): Mean=-0.108","visible":false,"x":[1,2,3],"y":[-0.10815219121547774,-0.10815219121547774,-0.10815219121547774],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Uniform (n=50): CI=[-0.272,0.056]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.27235158586339764,-0.27235158586339764,-0.27235158586339764,0.05604720343244214,0.05604720343244214,0.05604720343244214],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Uniform (n=100): Mean=-0.060","visible":false,"x":[1,2,3],"y":[-0.05963851324358131,-0.05963851324358131,-0.05963851324358131],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Uniform (n=100): CI=[-0.178,0.058]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.17769521969439245,-0.17769521969439245,-0.17769521969439245,0.05841819320722981,0.05841819320722981,0.05841819320722981],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Uniform (n=200): Mean=-0.032","visible":false,"x":[1,2,3],"y":[-0.03198753346676774,-0.03198753346676774,-0.03198753346676774],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Uniform (n=200): CI=[-0.114,0.050]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.1142259029775613,-0.1142259029775613,-0.1142259029775613,0.05025083604402581,0.05025083604402581,0.05025083604402581],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Exponential (n=5): Mean=1.176","visible":false,"x":[1,2,3],"y":[1.1757405277356259,1.1757405277356259,1.1757405277356259],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Exponential (n=5): CI=[-0.208,2.559]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[-0.2076524033084337,-0.2076524033084337,-0.2076524033084337,2.5591334587796855,2.5591334587796855,2.5591334587796855],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Exponential (n=10): Mean=1.027","visible":false,"x":[1,2,3],"y":[1.026970077901321,1.026970077901321,1.026970077901321],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Exponential (n=10): CI=[0.362,1.692]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[0.36235487494115537,0.36235487494115537,0.36235487494115537,1.6915852808614869,1.6915852808614869,1.6915852808614869],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Exponential (n=20): Mean=0.912","visible":false,"x":[1,2,3],"y":[0.9119453381005906,0.9119453381005906,0.9119453381005906],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Exponential (n=20): CI=[0.451,1.373]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[0.451247152794086,0.451247152794086,0.451247152794086,1.3726435234070953,1.3726435234070953,1.3726435234070953],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Exponential (n=30): Mean=0.806","visible":false,"x":[1,2,3],"y":[0.8058003060660291,0.8058003060660291,0.8058003060660291],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Exponential (n=30): CI=[0.489,1.123]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[0.4886165369111972,0.4886165369111972,0.4886165369111972,1.122984075220861,1.122984075220861,1.122984075220861],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Exponential (n=50): Mean=0.846","visible":false,"x":[1,2,3],"y":[0.8459444679262168,0.8459444679262168,0.8459444679262168],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Exponential (n=50): CI=[0.592,1.100]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[0.591937204874198,0.591937204874198,0.591937204874198,1.0999517309782356,1.0999517309782356,1.0999517309782356],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Exponential (n=100): Mean=0.915","visible":false,"x":[1,2,3],"y":[0.9147480390388715,0.9147480390388715,0.9147480390388715],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Exponential (n=100): CI=[0.732,1.097]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[0.7322426208391752,0.7322426208391752,0.7322426208391752,1.0972534572385677,1.0972534572385677,1.0972534572385677],"type":"scatter"},{"line":{"color":"blue","width":3},"mode":"lines","name":"Exponential (n=200): Mean=0.945","visible":false,"x":[1,2,3],"y":[0.9454864772837493,0.9454864772837493,0.9454864772837493],"type":"scatter"},{"fill":"toself","fillcolor":"rgba(0, 100, 255, 0.3)","hoverinfo":"skip","line":{"color":"rgba(255,255,255,0)"},"name":"Exponential (n=200): CI=[0.818,1.073]","showlegend":false,"visible":false,"x":[1,2,3,3,2,1],"y":[0.8182967337372413,0.8182967337372413,0.8182967337372413,1.0726762208302574,1.0726762208302574,1.0726762208302574],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"visible":false,"range":[0.5,3.5]},"yaxis":{"title":{"text":"Value"},"range":[-2,2]},"legend":{"x":0.02,"y":0.98,"bgcolor":"rgba(255,255,255,0.8)"},"title":{"text":"95% Confidence Interval: Normal Distribution, n=5"},"height":500,"showlegend":true,"updatemenus":[{"buttons":[{"args":[{"visible":[true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Normal Distribution, n=5","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":true}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true}]}],"label":"Normal (n=5)","method":"update"},{"args":[{"visible":[false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Normal Distribution, n=10","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":true}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true}]}],"label":"Normal (n=10)","method":"update"},{"args":[{"visible":[false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Normal Distribution, n=20","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":true}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true}]}],"label":"Normal (n=20)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Normal Distribution, n=30","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":true}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true}]}],"label":"Normal (n=30)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Normal Distribution, n=50","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":true}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true}]}],"label":"Normal (n=50)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Normal Distribution, n=100","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":true}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true}]}],"label":"Normal (n=100)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Normal Distribution, n=200","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":true},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":true}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":true}]}],"label":"Normal (n=200)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Uniform Distribution, n=5","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Uniform (n=5)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Uniform Distribution, n=10","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Uniform (n=10)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Uniform Distribution, n=20","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Uniform (n=20)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Uniform Distribution, n=30","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Uniform (n=30)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Uniform Distribution, n=50","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Uniform (n=50)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Uniform Distribution, n=100","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Uniform (n=100)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Uniform Distribution, n=200","yaxis.range":[-2,2],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Uniform (n=200)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Exponential Distribution, n=5","yaxis.range":[0,4],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Exponential (n=5)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Exponential Distribution, n=10","yaxis.range":[0,4],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Exponential (n=10)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Exponential Distribution, n=20","yaxis.range":[0,4],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Exponential (n=20)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false]},{"title":"95% Confidence Interval: Exponential Distribution, n=30","yaxis.range":[0,4],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Exponential (n=30)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false]},{"title":"95% Confidence Interval: Exponential Distribution, n=50","yaxis.range":[0,4],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Exponential (n=50)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false]},{"title":"95% Confidence Interval: Exponential Distribution, n=100","yaxis.range":[0,4],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Exponential (n=100)","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true]},{"title":"95% Confidence Interval: Exponential Distribution, n=200","yaxis.range":[0,4],"shapes":[{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":0,"y1":0,"line":{"color":"red","dash":"dash"},"visible":false},{"type":"line","x0":0.5,"x1":3.5,"y0":1,"y1":1,"line":{"color":"red","dash":"dash"},"visible":false}],"annotations":[{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":0,"text":"True Mean = 0","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false},{"x":3.5,"y":1,"text":"True Mean = 1","showarrow":false,"xanchor":"left","font":{"color":"red"},"visible":false}]}],"label":"Exponential (n=200)","method":"update"}],"direction":"down","x":0.02,"xanchor":"left","y":1.15,"yanchor":"top"}],"shapes":[{"line":{"color":"red","dash":"dash"},"type":"line","visible":true,"x0":0.5,"x1":3.5,"y0":0,"y1":0},{"line":{"color":"red","dash":"dash"},"type":"line","visible":false,"x0":0.5,"x1":3.5,"y0":0,"y1":0},{"line":{"color":"red","dash":"dash"},"type":"line","visible":false,"x0":0.5,"x1":3.5,"y0":1,"y1":1}],"annotations":[{"font":{"color":"red"},"showarrow":false,"text":"True Mean = 0","visible":true,"x":3.5,"xanchor":"left","y":0},{"font":{"color":"red"},"showarrow":false,"text":"True Mean = 0","visible":false,"x":3.5,"xanchor":"left","y":0},{"font":{"color":"red"},"showarrow":false,"text":"True Mean = 1","visible":false,"x":3.5,"xanchor":"left","y":1}]},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('d1b31900-d0b5-4ed8-9e5e-f2989d17e1da');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+</section>
+<section id="final-reflection" class="slide level2">
+<h2>Final Reflection</h2>
+<p>Confidence intervals are more than just ranges.</p>
+<p>They embody our <strong>uncertainty</strong>, <strong>variability</strong>, and <strong>trust</strong> in data.</p>
+<p>Larger samples lead to <strong>narrower</strong> intervals, revealing more precision.</p>
+<p>The shape of data influences the <em>width</em>—a subtle dance of variability and confidence.</p>
+<p><strong>Deepen your intuition</strong> through visualization, and let these concepts guide your understanding.</p>
+</section></section>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>Thank You 🌊</h1>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../../../../logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/">🔗 VlogsPage</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: false,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/arunkoundinya\.github\.io\/AIBasicswithAK\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
