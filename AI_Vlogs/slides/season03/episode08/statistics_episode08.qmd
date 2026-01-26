@@ -1,0 +1,294 @@
+---
+title: "AI Basics with AK"
+subtitle: "Season 03 - Introduction to Statistics"
+format:
+  revealjs:
+    incremental: false
+    auto-stretch: true
+    slide-number: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Episode 08 - Confidence Intervals
+
+## Central Limit Theorem Recap
+
+### Central Limit Theorem (Intuition)
+
+::: {style="font-size: 70%;"}
+
+If we:
+
+-   Take independent samples
+
+-   From any distribution (Uniform, Binomial, etc.)
+
+-   With finite variance
+
+Then:
+
+> The distribution of the sample mean becomes approximately\
+> Normal as sample size increases.
+
+This property is fundamental when constructing confidence intervals, especially for large samples.
+
+:::
+
+
+## Why CLT Matters for Confidence Intervals
+
+::: {style="font-size: 70%;"}
+
+
+- Normal Approximation: Due to the CLT, we can use the normal distribution to approximate the sampling distribution of the sample mean.
+- Foundation for Inference: CLT provides the basis for making inferences about the population from the sample.
+
+- Confidence Intervals for Means: The normality assumption (thanks to CLT) allows us to calculate confidence intervals for the sample mean, even if the population distribution is unknown.
+- Sample Size Impact: Larger samples yield more reliable confidence intervals, aligning with the CLT's implication of normality.
+
+:::
+
+## Visualizing the Transition
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Simulate sampling distribution
+np.random.seed(0)
+n = 30
+population = np.random.exponential(scale=1, size=1000)
+sample_means = [np.mean(np.random.choice(population, n)) for _ in range(1000)]
+
+# Plot
+sns.histplot(sample_means, kde=True)
+plt.title("Sampling Distribution of the Sample Mean (n=30)")
+plt.xlabel("Sample Mean")
+plt.ylabel("Frequency")
+plt.show()
+```
+
+## Introduction to Confidence Intervals
+
+*Confidence intervals (CIs) provide a range of plausible values for an unknown population parameter.*
+
+They *quantify the uncertainty* around the sample estimate.
+<br><br><br>
+In this episode, we'll explore how to **calculate**, **interpret**, and **visualize** confidence intervals.
+
+## What is a Confidence Interval?
+
+> A confidence interval gives an estimated range of values likely to include an unknown population parameter.
+
+For example, a **95% confidence interval** means that if we repeated the sampling many times, about 95% of those intervals would contain the true parameter.
+
+## Components of a Confidence Interval
+
+- **Point Estimate:** Usually the sample mean or proportion.
+- **Margin of Error:** Reflects variability and the confidence level.
+- **Confidence Level:** Commonly 90%, 95%, or 99%.
+$$\text{CI} = \text{Point Estimate} \pm \text{Margin of Error}$$
+
+## Calculating Confidence Intervals for the Mean
+
+*When population standard deviation ($\sigma$) is known,* use the normal distribution.
+
+*When $\sigma$ is unknown and sample size is small,* use the t-distribution.
+
+$$\text{Margin of Error} = z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}} \quad \text{or} \quad t_{\alpha/2, df} \times \frac{s}{\sqrt{n}}$$
+
+
+## Visualizing Confidence Intervals
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+import scipy.stats as stats
+np.random.seed(42)
+
+def generate_data(dist_type, n, seed=42):
+    np.random.seed(seed)
+    if dist_type == "Normal":
+        return np.random.normal(loc=0, scale=1, size=n)
+    elif dist_type == "Uniform":
+        return np.random.uniform(low=-1, high=1, size=n)
+    elif dist_type == "Exponential":
+        return np.random.exponential(scale=1, size=n)
+    else:
+        return np.random.normal(loc=0, scale=1, size=n)
+
+def calc_ci(data, confidence=0.95):
+    n = len(data)
+    mean = np.mean(data)
+    sem = stats.sem(data)
+    h = sem * stats.t.ppf((1 + confidence) / 2., n-1)
+    return mean, mean - h, mean + h
+
+# Sample sizes to precompute
+sample_sizes = [5, 10, 20, 30, 50, 100, 200]
+distributions = ['Normal', 'Uniform', 'Exponential']
+
+fig = go.Figure()
+
+# Store which trace indices correspond to which parameters
+trace_info = []
+trace_counter = 0
+
+for dist in distributions:
+    for n in sample_sizes:
+        data = generate_data(dist, n)
+        mean, lower, upper = calc_ci(data)
+        
+        # True mean for each distribution
+        true_mean = 0 if dist != 'Exponential' else 1
+        
+        # Add CI trace
+        fig.add_trace(go.Scatter(
+            x=[1, 2, 3],
+            y=[mean, mean, mean],
+            mode='lines',
+            line=dict(color='blue', width=3),
+            name=f'{dist} (n={n}): Mean={mean:.3f}',
+            visible=(dist == 'Normal' and n == 5)
+        ))
+        
+        # Add CI area trace
+        fig.add_trace(go.Scatter(
+            x=[1, 2, 3, 3, 2, 1],
+            y=[lower, lower, lower, upper, upper, upper],
+            fill='toself',
+            fillcolor='rgba(0, 100, 255, 0.3)',
+            line=dict(color='rgba(255,255,255,0)'),
+            hoverinfo='skip',
+            name=f'{dist} (n={n}): CI=[{lower:.3f},{upper:.3f}]',
+            visible=(dist == 'Normal' and n == 5),
+            showlegend=False
+        ))
+        
+        trace_info.append({
+            'dist': dist,
+            'n': n,
+            'mean_idx': trace_counter,
+            'ci_idx': trace_counter + 1
+        })
+        trace_counter += 2
+
+# Create dropdown menu options
+dropdown_buttons = []
+for dist in distributions:
+    for n in sample_sizes:
+        # Create visibility array
+        visibility = [False] * len(fig.data)
+        
+        # Find the indices for this combination
+        for info in trace_info:
+            if info['dist'] == dist and info['n'] == n:
+                visibility[info['mean_idx']] = True
+                visibility[info['ci_idx']] = True
+                break
+        
+        dropdown_buttons.append(dict(
+            label=f"{dist} (n={n})",
+            method="update",
+            args=[
+                {"visible": visibility},
+                {
+                    "title": f"95% Confidence Interval: {dist} Distribution, n={n}",
+                    "yaxis.range": [true_mean - 2, true_mean + 2] if dist != 'Exponential' else [0, 4]
+                }
+            ]
+        ))
+
+# Add true mean lines as shapes
+shapes = []
+annotations = []
+for dist in distributions:
+    true_mean = 0 if dist != 'Exponential' else 1
+    shapes.append(dict(
+        type="line",
+        x0=0.5, x1=3.5,
+        y0=true_mean, y1=true_mean,
+        line=dict(color="red", dash="dash"),
+        visible=(dist == 'Normal')
+    ))
+    annotations.append(dict(
+        x=3.5, y=true_mean,
+        text=f"True Mean = {true_mean}",
+        showarrow=False,
+        xanchor="left",
+        font=dict(color="red"),
+        visible=(dist == 'Normal')
+    ))
+
+fig.update_layout(
+    title="95% Confidence Interval: Normal Distribution, n=5",
+    xaxis=dict(
+        visible=False,
+        range=[0.5, 3.5]
+    ),
+    yaxis_title="Value",
+    yaxis_range=[-2, 2],
+    height=500,
+    showlegend=True,
+    legend=dict(x=0.02, y=0.98, bgcolor='rgba(255,255,255,0.8)'),
+    updatemenus=[dict(
+        buttons=dropdown_buttons,
+        direction="down",
+        x=0.02,
+        y=1.15,
+        xanchor="left",
+        yanchor="top"
+    )],
+    shapes=shapes,
+    annotations=annotations
+)
+
+# Update layout to manage shape/annotation visibility in dropdown
+for i, button in enumerate(fig.layout.updatemenus[0].buttons):
+    # Get the distribution from the button label
+    dist = button.label.split(' (')[0]
+    true_mean = 0 if dist != 'Exponential' else 1
+    
+    # Update the args to include shape and annotation visibility
+    new_shapes = []
+    new_annotations = []
+    
+    for shape in shapes:
+        new_shape = shape.copy()
+        new_shape['visible'] = (dist == shape.get('_dist', 'Normal'))
+        new_shapes.append(new_shape)
+    
+    for ann in annotations:
+        new_ann = ann.copy()
+        new_ann['visible'] = (dist == ann.get('_dist', 'Normal'))
+        new_annotations.append(new_ann)
+    
+    # Add yaxis range adjustment based on distribution
+    y_range = [true_mean - 2, true_mean + 2] if dist != 'Exponential' else [0, 4]
+    
+    button.args[1].update({
+        "shapes": new_shapes,
+        "annotations": new_annotations,
+        "yaxis.range": y_range
+    })
+
+fig.show()
+```
+
+## Final Reflection
+
+Confidence intervals are more than just ranges.
+
+They embody our **uncertainty**, **variability**, and **trust** in data.
+
+Larger samples lead to **narrower** intervals, revealing more precision.
+
+The shape of data influences the *width*—a subtle dance of variability and confidence.
+
+**Deepen your intuition** through visualization, and let these concepts guide your understanding.
+
+# Thank You 🌊

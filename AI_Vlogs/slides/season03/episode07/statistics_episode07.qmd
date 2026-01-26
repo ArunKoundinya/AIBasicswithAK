@@ -93,7 +93,7 @@ fig.show()
 
 ::: {style="font-size: 70%;"}
 | Distribution | Type | Example | Shape / Key Feature |
-|-----------------|-----------------|-----------------|---------------------|
+|------------------|------------------|------------------|-------------------|
 | Uniform | Discrete / Continuous | Rolling a die, random pick | All outcomes equally likely; flat histogram |
 | Normal | Continuous | Heights, exam scores | Bell-shaped; most outcomes near the mean |
 | Binomial | Discrete | Coin flips (count successes) | Counts of successes; hill-shaped at discrete points |
@@ -197,7 +197,7 @@ fig.show()
 :::: {.column width="50%"}
 ### A Very Natural Question
 
-::: {style="font-size: 85%;"}
+::: {style="font-size: 70%;"}
 -   We saw Uniform distributions
 -   We saw Binomial distributions
 -   We saw Normal distributions
@@ -213,7 +213,7 @@ This episode answers that exact question.
 :::: {.column width="50%"}
 ### Important Clarification
 
-::: {style="font-size: 85%;"}
+::: {style="font-size: 70%;"}
 -   If data is Uniform, it stays Uniform
 -   If data is Skewed, it stays Skewed
 -   Taking more samples does not change the population
@@ -231,7 +231,8 @@ This is critical to understand before CLT.
 :::: {.column width="50%"}
 ### Reality vs What We Actually Observe
 
-::: {style="font-size: 75%;"}
+::: {style="font-size: 70%;"}
+
 -   Population → the true data-generating process
 -   Sample → what we actually observe
 -   Statistics → summaries we compute from samples
@@ -246,7 +247,8 @@ In practice:
 :::: {.column width="50%"}
 ### Central Tendency Metrics
 
-::: {style="font-size: 75%;"}
+::: {style="font-size: 70%;"}
+
 In real analysis, we rarely use raw data directly.
 
 We use:
@@ -264,7 +266,8 @@ These are aggregates, not raw observations.
 
 ## CLT Is NOT About the Data - Instead it is a Statistic
 
-::: {style="font-size: 90%;"}
+::: {style="font-size: 70%;"}
+
 -   CLT does not talk about individual data points
 
 -   CLT talks about the distribution of the mean
@@ -278,7 +281,8 @@ This distinction removes most confusion.
 
 ### Central Limit Theorem (Intuition)
 
-::: {style="font-size: 85%;"}
+::: {style="font-size: 70%;"}
+
 If we:
 
 -   Take independent samples
@@ -298,52 +302,134 @@ Then:
 ```{python}
 import numpy as np
 import plotly.graph_objects as go
-
+import scipy.stats as stats
 np.random.seed(42)
 
-# Parameters
-n_samples = [1, 2, 5, 10, 30, 100]
-num_experiments = 5000
+def generate_data(dist_type, n, seed=42):
+    np.random.seed(seed)
+    if dist_type == "Normal":
+        return np.random.normal(loc=0, scale=1, size=n)
+    elif dist_type == "Uniform":
+        return np.random.uniform(low=-1, high=1, size=n)
+    elif dist_type == "Exponential":
+        return np.random.exponential(scale=1, size=n)
+    else:
+        return np.random.normal(loc=0, scale=1, size=n)
+
+def calc_ci(data, confidence=0.95):
+    n = len(data)
+    mean = np.mean(data)
+    sem = stats.sem(data)
+    h = sem * stats.t.ppf((1 + confidence) / 2., n-1)
+    return mean, mean - h, mean + h
+
+# Sample sizes to precompute
+sample_sizes = [5, 10, 20, 30, 50, 100, 200]
+distributions = ['Normal', 'Uniform', 'Exponential']
 
 fig = go.Figure()
 
-# Store traces per n
-trace_indices = []
+# Store which trace indices correspond to which parameters
+trace_info = []
+trace_counter = 0
 
-for i, n in enumerate(n_samples):
-    means = [
-        np.random.uniform(1, 6, n).mean()
-        for _ in range(num_experiments)
-    ]
+for dist in distributions:
+    for n in sample_sizes:
+        data = generate_data(dist, n)
+        mean, lower, upper = calc_ci(data)
+        
+        # True mean for each distribution
+        true_mean = 0 if dist != 'Exponential' else 1
+        
+        # Add CI trace
+        fig.add_trace(go.Scatter(
+            x=[1, 2, 3],
+            y=[mean, mean, mean],
+            mode='lines',
+            line=dict(color='blue', width=3),
+            name=f'{dist} (n={n}): Mean={mean:.3f}',
+            visible=(dist == 'Normal' and n == 5)
+        ))
+        
+        # Add CI area trace
+        fig.add_trace(go.Scatter(
+            x=[1, 2, 3, 3, 2, 1],
+            y=[lower, lower, lower, upper, upper, upper],
+            fill='toself',
+            fillcolor='rgba(0, 100, 255, 0.3)',
+            line=dict(color='rgba(255,255,255,0)'),
+            hoverinfo='skip',
+            name=f'{dist} (n={n}): CI=[{lower:.3f},{upper:.3f}]',
+            visible=(dist == 'Normal' and n == 5),
+            showlegend=False
+        ))
+        
+        trace_info.append({
+            'dist': dist,
+            'n': n,
+            'mean_idx': trace_counter,
+            'ci_idx': trace_counter + 1
+        })
+        trace_counter += 2
 
-    fig.add_trace(go.Histogram(
-        x=means,
-        histnorm="probability density",
-        nbinsx=40,
-        visible=True if n == 1 else False,
-        name=f"Mean of {n} Uniform Samples"
-    ))
-    trace_indices.append(i)
-
-# Dropdown menu
+# Create dropdown menu options
 dropdown_buttons = []
-for i, n in enumerate(n_samples):
-    visibility = [False] * len(n_samples)
-    visibility[i] = True
+for dist in distributions:
+    for n in sample_sizes:
+        # Create visibility array
+        visibility = [False] * len(fig.data)
+        
+        # Find the indices for this combination
+        for info in trace_info:
+            if info['dist'] == dist and info['n'] == n:
+                visibility[info['mean_idx']] = True
+                visibility[info['ci_idx']] = True
+                break
+        
+        dropdown_buttons.append(dict(
+            label=f"{dist} (n={n})",
+            method="update",
+            args=[
+                {"visible": visibility},
+                {
+                    "title": f"95% Confidence Interval: {dist} Distribution, n={n}",
+                    "yaxis.range": [true_mean - 2, true_mean + 2] if dist != 'Exponential' else [0, 4]
+                }
+            ]
+        ))
 
-    dropdown_buttons.append(dict(
-        label=f"n = {n}",
-        method="update",
-        args=[
-            {"visible": visibility},
-            {"title": f"CLT Demo: Distribution of Mean (n = {n})"}
-        ]
+# Add true mean lines as shapes
+shapes = []
+annotations = []
+for dist in distributions:
+    true_mean = 0 if dist != 'Exponential' else 1
+    shapes.append(dict(
+        type="line",
+        x0=0.5, x1=3.5,
+        y0=true_mean, y1=true_mean,
+        line=dict(color="red", dash="dash"),
+        visible=(dist == 'Normal')
+    ))
+    annotations.append(dict(
+        x=3.5, y=true_mean,
+        text=f"True Mean = {true_mean}",
+        showarrow=False,
+        xanchor="left",
+        font=dict(color="red"),
+        visible=(dist == 'Normal')
     ))
 
 fig.update_layout(
-    title="CLT Demo: Distribution of Mean (n = 1)",
-    xaxis_title="Sample Mean",
-    yaxis_title="Probability Density",
+    title="95% Confidence Interval: Normal Distribution, n=5",
+    xaxis=dict(
+        visible=False,
+        range=[0.5, 3.5]
+    ),
+    yaxis_title="Value",
+    yaxis_range=[-2, 2],
+    height=500,
+    showlegend=True,
+    legend=dict(x=0.02, y=0.98, bgcolor='rgba(255,255,255,0.8)'),
     updatemenus=[dict(
         buttons=dropdown_buttons,
         direction="down",
@@ -352,8 +438,38 @@ fig.update_layout(
         xanchor="left",
         yanchor="top"
     )],
-    showlegend=False
+    shapes=shapes,
+    annotations=annotations
 )
+
+# Update layout to manage shape/annotation visibility in dropdown
+for i, button in enumerate(fig.layout.updatemenus[0].buttons):
+    # Get the distribution from the button label
+    dist = button.label.split(' (')[0]
+    true_mean = 0 if dist != 'Exponential' else 1
+    
+    # Update the args to include shape and annotation visibility
+    new_shapes = []
+    new_annotations = []
+    
+    for shape in shapes:
+        new_shape = shape.copy()
+        new_shape['visible'] = (dist == shape.get('_dist', 'Normal'))
+        new_shapes.append(new_shape)
+    
+    for ann in annotations:
+        new_ann = ann.copy()
+        new_ann['visible'] = (dist == ann.get('_dist', 'Normal'))
+        new_annotations.append(new_ann)
+    
+    # Add yaxis range adjustment based on distribution
+    y_range = [true_mean - 2, true_mean + 2] if dist != 'Exponential' else [0, 4]
+    
+    button.args[1].update({
+        "shapes": new_shapes,
+        "annotations": new_annotations,
+        "yaxis.range": y_range
+    })
 
 fig.show()
 
@@ -370,7 +486,8 @@ fig.show()
 :::: {.column width="50%"}
 ### What CLT Doesn't say
 
-::: {style="font-size: 85%;"}
+::: {style="font-size: 70%;"}
+
 -   ❌ The population is normal
 
 -   ❌ Individual observations are normal
@@ -386,7 +503,8 @@ fig.show()
 :::: {.column width="50%"}
 ### CLT as a Modeling Comfort
 
-::: {style="font-size: 85%;"}
+::: {style="font-size: 70%;"}
+
 CLT gives us permission:
 
 -   To model means as Gaussian
@@ -408,7 +526,8 @@ Even when underlying structure is different.
 :::: {.column width="50%"}
 ### Gaussian Is the Shape of Aggregation
 
-::: {style="font-size: 85%;"}
+::: {style="font-size: 70%;"}
+
 -   Gaussian is stable under addition
 
 -   Gaussian emerges from summing randomness
@@ -420,7 +539,8 @@ Even when underlying structure is different.
 :::: {.column width="50%"}
 ### Reality Is Messy & Statistics Is Structured
 
-::: {style="font-size: 85%;"}
+::: {style="font-size: 70%;"}
+
 -   Reality → messy, irregular, asymmetric
 
 -   Statistics → summaries, averages, aggregates
@@ -432,7 +552,8 @@ Even when underlying structure is different.
 
 ## When CLT Can Mislead You?
 
-::: {style="font-size: 85%;"}
+::: {style="font-size: 70%;"}
+
 CLT breaks when:
 
 -   Data is heavy-tailed
