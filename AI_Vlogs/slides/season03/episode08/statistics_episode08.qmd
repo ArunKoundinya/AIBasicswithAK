@@ -19,7 +19,6 @@ execute:
 ### Central Limit Theorem (Intuition)
 
 ::: {style="font-size: 70%;"}
-
 If we:
 
 -   Take independent samples
@@ -34,21 +33,18 @@ Then:
 > Normal as sample size increases.
 
 This property is fundamental when constructing confidence intervals, especially for large samples.
-
 :::
-
 
 ## Why CLT Matters for Confidence Intervals
 
 ::: {style="font-size: 70%;"}
+-   Normal Approximation: Due to the CLT, we can use the normal distribution to approximate the sampling distribution of the sample mean.
 
+-   Foundation for Inference: CLT provides the basis for making inferences about the population from the sample.
 
-- Normal Approximation: Due to the CLT, we can use the normal distribution to approximate the sampling distribution of the sample mean.
-- Foundation for Inference: CLT provides the basis for making inferences about the population from the sample.
+-   Confidence Intervals for Means: The normality assumption (thanks to CLT) allows us to calculate confidence intervals for the sample mean, even if the population distribution is unknown.
 
-- Confidence Intervals for Means: The normality assumption (thanks to CLT) allows us to calculate confidence intervals for the sample mean, even if the population distribution is unknown.
-- Sample Size Impact: Larger samples yield more reliable confidence intervals, aligning with the CLT's implication of normality.
-
+-   Sample Size Impact: Larger samples yield more reliable confidence intervals, aligning with the CLT's implication of normality.
 :::
 
 ## Visualizing the Transition
@@ -76,9 +72,7 @@ plt.show()
 
 *Confidence intervals (CIs) provide a range of plausible values for an unknown population parameter.*
 
-They *quantify the uncertainty* around the sample estimate.
-<br><br><br>
-In this episode, we'll explore how to **calculate**, **interpret**, and **visualize** confidence intervals.
+They *quantify the uncertainty* around the sample estimate. <br><br><br> In this episode, we'll explore how to **calculate**, **interpret**, and **visualize** confidence intervals.
 
 ## What is a Confidence Interval?
 
@@ -88,19 +82,17 @@ For example, a **95% confidence interval** means that if we repeated the samplin
 
 ## Components of a Confidence Interval
 
-- **Point Estimate:** Usually the sample mean or proportion.
-- **Margin of Error:** Reflects variability and the confidence level.
-- **Confidence Level:** Commonly 90%, 95%, or 99%.
-$$\text{CI} = \text{Point Estimate} \pm \text{Margin of Error}$$
+-   **Point Estimate:** Usually the sample mean or proportion.
+-   **Margin of Error:** Reflects variability and the confidence level.
+-   **Confidence Level:** Commonly 90%, 95%, or 99%. $$\text{CI} = \text{Point Estimate} \pm \text{Margin of Error}$$
 
 ## Calculating Confidence Intervals for the Mean
 
-*When population standard deviation ($\sigma$) is known,* use the normal distribution.
+*When population standard deviation (*$\sigma$) is known, use the normal distribution.
 
-*When $\sigma$ is unknown and sample size is small,* use the t-distribution.
+*When* $\sigma$ is unknown and sample size is small, use the t-distribution.
 
 $$\text{Margin of Error} = z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}} \quad \text{or} \quad t_{\alpha/2, df} \times \frac{s}{\sqrt{n}}$$
-
 
 ## Visualizing Confidence Intervals
 
