@@ -1,0 +1,529 @@
+---
+title: "AI Basics with AK"
+subtitle: "Season 03 - Introduction to Statistics"
+format:
+  revealjs:
+    incremental: false
+    auto-stretch: true
+    slide-number: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Episode 10 - Hypothesis Testing
+
+## Recap: What We've Covered So Far
+
+::: {style="font-size: 70%;"}
+| Episode | Topic                 | Key Takeaway                              |
+|----------------------|------------------|--------------------------------|
+| **07**  | Central Limit Theorem | Sample means become Normal as n grows     |
+| **08**  | Confidence Intervals  | A range of plausible values for the truth |
+| **09**  | T-Distribution        | When σ is unknown, tails get heavier      |
+
+This episode ties everything together.
+
+> We've been estimating. Now we ask: **Can we make a decision?**
+:::
+
+## The Human Problem Behind Hypothesis Testing
+
+::::::: columns
+:::: {.column width="50%"}
+### A Story We All Relate To
+
+::: {style="font-size: 55%;"}
+A company claims their new drug reduces blood pressure.
+
+You test it on 40 patients.
+
+The average blood pressure **did drop**.
+
+But wait — is that because the drug worked?
+
+Or just... random chance?
+
+**How do you decide?**
+:::
+::::
+
+:::: {.column width="50%"}
+### This Is Exactly What Hypothesis Testing Solves
+
+::: {style="font-size: 55%;"}
+-   We observe something in a sample
+-   We ask: *"Could this have happened by chance?"*
+-   We use math to answer that question
+
+This is the backbone of:
+
+-   Medical trials 💊
+-   A/B testing 🖥️
+-   Quality control 🏭
+-   Policy decisions 🏛️
+:::
+::::
+:::::::
+
+## Setting Up the Question
+
+::: {style="font-size: 70%;"}
+Before running any test, we must define **two competing claims**:
+
+> **Null Hypothesis (H₀):** The "boring" claim. Nothing happened. No effect. No difference.
+
+> **Alternative Hypothesis (H₁ or Hₐ):** The "interesting" claim. Something changed. There is an effect.
+
+**The game:**
+
+We start by *assuming H₀ is true* — and then ask:
+
+*"If H₀ were true, how surprising is what we observed?"*
+
+If it's surprising enough → we reject H₀.
+:::
+
+## Real World Examples
+
+::: {style="font-size: 70%;"}
+| Situation | H₀ (Null) | H₁ (Alternative) |
+|--------------------|--------------------|--------------------------------|
+| Drug trial | Drug has no effect | Drug reduces blood pressure |
+| Website A/B test | Both versions perform equally | Version B gets more clicks |
+| Coin fairness | Coin is fair (p = 0.5) | Coin is biased (p ≠ 0.5) |
+| Manufacturing | Machine produces 500g on average | Machine is off — mean ≠ 500g |
+
+**Notice:** H₀ always represents the *status quo* or *no change*.
+:::
+
+## The Core Logic: Innocent Until Proven Guilty
+
+::::::: columns
+:::: {.column width="50%"}
+### Think of It Like a Trial
+
+::: {style="font-size: 70%;"}
+-   Defendant = H₀
+-   Evidence = your data
+-   Verdict = reject or fail to reject H₀
+
+**We never say H₀ is "proven true."**
+
+We either:
+
+-   Reject H₀ (evidence is strong enough)
+-   Fail to reject H₀ (not enough evidence)
+:::
+::::
+
+:::: {.column width="50%"}
+### Important Mindset Shift
+
+::: {style="font-size: 70%;"}
+❌ We do NOT prove H₁ is true
+
+❌ We do NOT prove H₀ is false
+
+✅ We measure how *inconsistent* the data is with H₀
+
+> The strength of evidence is what drives the conclusion.
+:::
+::::
+:::::::
+
+## Introducing the p-value
+
+::: {style="font-size: 70%;"}
+The **p-value** is the probability of seeing results *as extreme or more extreme* than what we observed — **assuming H₀ is true.**
+
+> "If the null hypothesis were true, how often would we see data like this?"
+
+-   **Small p-value** → Our data is very unlikely under H₀ → Evidence against H₀
+-   **Large p-value** → Our data is quite plausible under H₀ → No strong evidence against H₀
+
+**The threshold (significance level α):**
+
+Most commonly α = 0.05
+
+If p-value \< α → Reject H₀
+:::
+
+## Visualizing the p-value
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+from scipy import stats
+
+np.random.seed(42)
+
+# Setup
+x = np.linspace(-4, 4, 500)
+y = stats.norm.pdf(x)
+
+# Observed test statistic
+test_stats = [1.2, 2.0, 2.8]
+labels = ["Weak evidence (z=1.2)", "Moderate evidence (z=2.0)", "Strong evidence (z=2.8)"]
+colors = ["#f0a500", "#e05c00", "#cc0000"]
+
+fig = go.Figure()
+
+# Base normal curve - always visible
+fig.add_trace(go.Scatter(
+    x=x, y=y,
+    mode='lines',
+    line=dict(color='steelblue', width=2.5),
+    name='Null Distribution (H₀)',
+    visible=True
+))
+
+for i, (z, label, color) in enumerate(zip(test_stats, labels, colors)):
+    visible = (i == 0)
+    
+    # Right tail fill
+    x_tail = x[x >= z]
+    y_tail = stats.norm.pdf(x_tail)
+    pval = round(2 * (1 - stats.norm.cdf(abs(z))), 4)  # two-tailed
+
+    fig.add_trace(go.Scatter(
+        x=np.concatenate([[x_tail[0]], x_tail, [x_tail[-1]]]),
+        y=np.concatenate([[0], y_tail, [0]]),
+        fill='toself',
+        fillcolor=color,
+        opacity=0.4,
+        line=dict(color=color),
+        name=f'Right tail (p/2)',
+        visible=visible,
+        showlegend=False
+    ))
+
+    # Left tail fill
+    x_left = x[x <= -z]
+    y_left = stats.norm.pdf(x_left)
+
+    fig.add_trace(go.Scatter(
+        x=np.concatenate([[x_left[0]], x_left, [x_left[-1]]]),
+        y=np.concatenate([[0], y_left, [0]]),
+        fill='toself',
+        fillcolor=color,
+        opacity=0.4,
+        line=dict(color=color),
+        name=f'Left tail (p/2)',
+        visible=visible,
+        showlegend=False
+    ))
+
+    # Vertical line at test stat
+    fig.add_trace(go.Scatter(
+        x=[z, z],
+        y=[0, stats.norm.pdf(z)],
+        mode='lines',
+        line=dict(color=color, dash='dash', width=2),
+        name=f'z = {z}',
+        visible=visible
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=[-z, -z],
+        y=[0, stats.norm.pdf(-z)],
+        mode='lines',
+        line=dict(color=color, dash='dash', width=2),
+        name=f'z = -{z}',
+        visible=visible,
+        showlegend=False
+    ))
+
+# Dropdown buttons
+n_traces_per = 4  # tail_right, tail_left, vline_right, vline_left
+base = 1  # after the base normal curve
+
+buttons = []
+for i, (z, label, color) in enumerate(zip(test_stats, labels, colors)):
+    vis = [True]  # base curve always visible
+    for j in range(3):
+        for k in range(n_traces_per):
+            vis.append(j == i)
+    pval = round(2 * (1 - stats.norm.cdf(abs(z))), 4)
+    buttons.append(dict(
+        label=label,
+        method='update',
+        args=[
+            {'visible': vis},
+            {'title': f'p-value Visualization | z = {z} | p-value = {pval} (two-tailed)'}
+        ]
+    ))
+
+fig.update_layout(
+    title='p-value Visualization | z = 1.2 | p-value = 0.2301 (two-tailed)',
+    xaxis_title='Test Statistic (z)',
+    yaxis_title='Probability Density',
+    height=480,
+    updatemenus=[dict(
+        buttons=buttons,
+        direction='down',
+        x=0.01,
+        y=1.18,
+        xanchor='left',
+        yanchor='top'
+    )],
+    showlegend=True
+)
+
+fig.show()
+```
+
+::: {style="font-size: 50%;"}
+> The shaded area is the p-value. Smaller shaded area = stronger evidence against H₀.
+:::
+
+## The 5-Step Framework for Hypothesis Testing
+
+::: {style="font-size: 68%;"}
+Every hypothesis test follows the same recipe:
+
+**Step 1 — State H₀ and H₁** Define your null and alternative hypotheses clearly.
+
+**Step 2 — Choose significance level α** Usually 0.05. This is your "how surprised must I be?" threshold.
+
+**Step 3 — Compute the test statistic** Standardize your observed result (z-score or t-score).
+
+**Step 4 — Find the p-value** How likely is your result if H₀ were true?
+
+**Step 5 — Make a decision** p-value \< α → Reject H₀ p-value ≥ α → Fail to reject H₀
+:::
+
+## One-Tailed vs Two-Tailed Tests
+
+::::::: columns
+:::: {.column width="50%"}
+### Two-Tailed Test
+
+::: {style="font-size: 65%;"}
+Use when H₁ says: *"different from"*
+
+Example: \> H₀: μ = 500g \> H₁: μ **≠** 500g
+
+You care if the machine is **over or under** producing.
+
+Critical region is split — both tails.
+
+α = 0.05 → each tail gets 0.025
+:::
+::::
+
+:::: {.column width="50%"}
+### One-Tailed Test
+
+::: {style="font-size: 65%;"}
+Use when H₁ says: *"greater than"* or *"less than"*
+
+Example: \> H₀: μ = 500g \> H₁: μ **\>** 500g
+
+You only care if it's producing **too much**.
+
+Critical region is on one side only.
+
+α = 0.05 → entire 0.05 goes to one tail
+:::
+::::
+:::::::
+
+## Visualizing One-Tailed vs Two-Tailed
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+from scipy import stats
+
+x = np.linspace(-4, 4, 500)
+y = stats.norm.pdf(x)
+alpha = 0.05
+
+# Critical values
+z_two = stats.norm.ppf(1 - alpha / 2)   # 1.96
+z_one_right = stats.norm.ppf(1 - alpha)  # 1.645
+
+fig = go.Figure()
+
+# Normal curve
+fig.add_trace(go.Scatter(
+    x=x, y=y, mode='lines',
+    line=dict(color='steelblue', width=2.5),
+    name='Null Distribution'
+))
+
+# Two-tailed: both tails
+for sign, label in [(-1, 'Left rejection zone'), (1, 'Right rejection zone')]:
+    x_tail = x[x * sign >= z_two] if sign == 1 else x[x <= -z_two]
+    y_tail = stats.norm.pdf(x_tail)
+    fig.add_trace(go.Scatter(
+        x=np.concatenate([[x_tail[0]], x_tail, [x_tail[-1]]]),
+        y=np.concatenate([[0], y_tail, [0]]),
+        fill='toself', fillcolor='rgba(220, 50, 50, 0.4)',
+        line=dict(color='rgba(220,50,50,0)'),
+        name=label, visible=True
+    ))
+
+# One-tailed: right tail only
+x_right = x[x >= z_one_right]
+y_right = stats.norm.pdf(x_right)
+fig.add_trace(go.Scatter(
+    x=np.concatenate([[x_right[0]], x_right, [x_right[-1]]]),
+    y=np.concatenate([[0], y_right, [0]]),
+    fill='toself', fillcolor='rgba(50, 180, 50, 0.4)',
+    line=dict(color='rgba(50,180,50,0)'),
+    name='Right rejection zone (one-tailed)', visible=False
+))
+
+buttons = [
+    dict(
+        label='Two-Tailed Test (H₁: μ ≠ μ₀)',
+        method='update',
+        args=[{'visible': [True, True, True, False]},
+              {'title': 'Two-Tailed Test | α = 0.05 | Critical values: ±1.96'}]
+    ),
+    dict(
+        label='One-Tailed Test (H₁: μ > μ₀)',
+        method='update',
+        args=[{'visible': [True, False, False, True]},
+              {'title': 'One-Tailed Test (Right) | α = 0.05 | Critical value: 1.645'}]
+    )
+]
+
+fig.update_layout(
+    title='Two-Tailed Test | α = 0.05 | Critical values: ±1.96',
+    xaxis_title='Test Statistic',
+    yaxis_title='Probability Density',
+    height=450,
+    updatemenus=[dict(
+        buttons=buttons, direction='down',
+        x=0.01, y=1.18,
+        xanchor='left', yanchor='top'
+    )],
+    showlegend=True
+)
+
+fig.show()
+```
+
+## Worked Example: Coin Fairness Test
+
+::: {style="font-size: 68%;"}
+**The Setup:** You suspect a coin is biased. You flip it 100 times and get **62 heads**.
+
+Is the coin fair?
+
+**Step 1:** H₀: p = 0.5 \| H₁: p ≠ 0.5 (two-tailed)
+
+**Step 2:** α = 0.05
+
+**Step 3:** Compute z-score:
+
+$$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} = \frac{0.62 - 0.5}{\sqrt{\frac{0.5 \times 0.5}{100}}} = \frac{0.12}{0.05} = 2.4$$
+
+**Step 4:** p-value = 2 × P(Z \> 2.4) ≈ 0.016
+
+**Step 5:** 0.016 \< 0.05 → **Reject H₀**
+
+Conclusion: Evidence suggests the coin is biased.
+:::
+
+## Let's See It Interactively
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+from scipy import stats
+
+np.random.seed(42)
+
+# Simulate coin flip experiments
+n_flips = 100
+p_true = 0.5
+n_simulations = 1000
+
+results = []
+for heads in [45, 52, 62, 70]:
+    p_hat = heads / n_flips
+    z = (p_hat - p_true) / np.sqrt(p_true * (1 - p_true) / n_flips)
+    p_val = 2 * (1 - stats.norm.cdf(abs(z)))
+    decision = "Reject H₀ ❌" if p_val < 0.05 else "Fail to Reject H₀ ✅"
+    results.append((heads, p_hat, round(z, 3), round(p_val, 4), decision))
+
+x = np.linspace(-4, 4, 500)
+y_norm = stats.norm.pdf(x)
+
+fig = go.Figure()
+
+# Base curve always visible
+fig.add_trace(go.Scatter(
+    x=x, y=y_norm, mode='lines',
+    line=dict(color='steelblue', width=2.5),
+    name='Null Distribution'
+))
+
+# Critical region (alpha=0.05, two-tailed)
+for sign in [1, -1]:
+    x_crit = x[x * sign >= 1.96] if sign == 1 else x[x <= -1.96]
+    y_crit = stats.norm.pdf(x_crit)
+    fig.add_trace(go.Scatter(
+        x=np.concatenate([[x_crit[0]], x_crit, [x_crit[-1]]]),
+        y=np.concatenate([[0], y_crit, [0]]),
+        fill='toself', fillcolor='rgba(220,50,50,0.2)',
+        line=dict(color='rgba(220,50,50,0)'),
+        name='Rejection region (α=0.05)',
+        showlegend=(sign == 1)
+    ))
+
+# Per scenario vertical lines (hidden initially, shown via dropdown)
+for i, (heads, p_hat, z_val, p_val, decision) in enumerate(results):
+    vis = (i == 0)
+    color = '#cc0000' if 'Reject' in decision else '#228B22'
+    fig.add_trace(go.Scatter(
+        x=[z_val, z_val], y=[0, stats.norm.pdf(z_val)],
+        mode='lines+text',
+        line=dict(color=color, width=2.5, dash='dash'),
+        text=['', f'z={z_val}'],
+        textposition='top center',
+        name=f'{heads} heads → {decision}',
+        visible=vis
+    ))
+
+# Build dropdown
+buttons = []
+for i, (heads, p_hat, z_val, p_val, decision) in enumerate(results):
+    vis = [True, True, True]  # base curve + 2 critical regions
+    for j in range(len(results)):
+        vis.append(j == i)
+    buttons.append(dict(
+        label=f'{heads} heads out of 100',
+        method='update',
+        args=[
+            {'visible': vis},
+            {'title': f'{heads} heads | z = {z_val} | p-value = {p_val} | {decision}'}
+        ]
+    ))
+
+fig.update_layout(
+    title=f'{results[0][0]} heads | z = {results[0][2]} | p-value = {results[0][3]} | {results[0][4]}',
+    xaxis_title='Test Statistic (z)',
+    yaxis_title='Probability Density',
+    height=470,
+    updatemenus=[dict(
+        buttons=buttons, direction='down',
+        x=0.01, y=1.18,
+        xanchor='left', yanchor='top'
+    )],
+    showlegend=True
+)
+
+fig.show()
+```
+
+::: {style="font-size: 50%;"}
+> Select different coin flip outcomes to see how the evidence changes.
+:::
+
+# Thank You
