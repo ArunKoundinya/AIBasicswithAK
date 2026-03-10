@@ -395,7 +395,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Hypothesis Testing</td>
 <td><a href="slides/season03/episode10/statistics_episode10.html" target="_blank">Link</a></td>
 <td><a href="homework/season03/episode10/homework.html" target="_blank">Link</a></td>
-<td><a href="" target="_blank">Link</a></td>
+<td><a href="https://youtu.be/Gv6ZR9ThmPo" target="_blank">Link</a></td>
 <td>NA</td>
 <td>10th Mar 2026</td>
 </tr>
