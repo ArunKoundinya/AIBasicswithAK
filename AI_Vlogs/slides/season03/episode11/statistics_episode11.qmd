@@ -1,0 +1,276 @@
+---
+title: "AI Basics with AK"
+subtitle: "Season 03 - Introduction to Statistics"
+format:
+  revealjs:
+    incremental: false
+    auto-stretch: true
+    slide-number: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Episode 11 - Type I & Type II Errors and One-Sample Tests
+
+## Recap: Episode 10 — Hypothesis Testing
+
+::: {style="font-size: 70%;"}
+| Concept | What It Means |
+|---|---|
+| **H₀ (Null Hypothesis)** | The default claim — nothing changed |
+| **H₁ (Alternative)** | The interesting claim — something did change |
+| **p-value** | Probability of seeing this data *if H₀ were true* |
+| **α (significance level)** | Our threshold — usually 0.05 |
+| **Decision Rule** | p < α → Reject H₀ |
+
+> Last episode we learned *how* to test.
+> This episode we ask: **what if we got it wrong?**
+:::
+
+## Every Decision Has a Risk
+
+::::::: columns
+:::: {.column width="50%"}
+### The Problem
+
+::: {style="font-size: 65%;"}
+When we reject or fail to reject H₀ —
+
+we are making a **decision under uncertainty.**
+
+We never see the full truth.
+
+We only see a sample.
+
+And samples can mislead us.
+
+So two kinds of mistakes are always possible.
+:::
+::::
+
+:::: {.column width="50%"}
+### The Two Mistakes
+
+::: {style="font-size: 65%;"}
+**Type I Error**
+Rejecting H₀ when it is actually true.
+
+*A false alarm.*
+
+**Type II Error**
+Failing to reject H₀ when it is actually false.
+
+*A missed signal.*
+
+Both are costly — just in different ways.
+:::
+::::
+:::::::
+
+## The Error Matrix
+
+::: {style="font-size: 70%;"}
+
+|  | **H₀ is True** | **H₀ is False** |
+|---|---|---|
+| **Reject H₀** | ❌ Type I Error (α) | ✅ Correct — True Positive |
+| **Fail to Reject H₀** | ✅ Correct — True Negative | ❌ Type II Error (β) |
+
+- **α** = P(Type I Error) = significance level you chose
+- **β** = P(Type II Error) = depends on effect size, sample size, α
+
+> You control α directly.
+> β is influenced — not directly set.
+
+:::
+
+## Real World Cost of Each Error
+
+::::::: columns
+:::: {.column width="50%"}
+### Type I Error — False Alarm
+
+::: {style="font-size: 65%;"}
+**Medical trial:**
+Drug actually does nothing — but your test says it works.
+
+→ Patients receive an ineffective drug
+
+**Quality control:**
+Machine is fine — but test flags it as faulty.
+
+→ Production shuts down unnecessarily
+
+**Cost:** Acting on something that isn't real.
+:::
+::::
+
+:::: {.column width="50%"}
+### Type II Error — Missed Signal
+
+::: {style="font-size: 65%;"}
+**Medical trial:**
+Drug actually works — but your test misses it.
+
+→ A beneficial treatment is never approved
+
+**Quality control:**
+Machine is broken — but test says it's fine.
+
+→ Defective products reach customers
+
+**Cost:** Failing to act when you should have.
+:::
+::::
+:::::::
+
+## Visualizing the Two Errors
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+from scipy import stats
+
+x = np.linspace(-5, 9, 1000)
+
+# Null and alternative distributions
+mu0, mu1, sigma = 0, 3, 1.5
+alpha = 0.05
+z_crit = mu0 + stats.norm.ppf(1 - alpha) * sigma  # one-tailed critical value
+
+y_null = stats.norm.pdf(x, mu0, sigma)
+y_alt  = stats.norm.pdf(x, mu1, sigma)
+
+fig = go.Figure()
+
+# Null distribution
+fig.add_trace(go.Scatter(
+    x=x, y=y_null, mode='lines',
+    line=dict(color='steelblue', width=2.5),
+    name='H₀ Distribution (μ=0)'
+))
+
+# Alternative distribution
+fig.add_trace(go.Scatter(
+    x=x, y=y_alt, mode='lines',
+    line=dict(color='darkorange', width=2.5),
+    name='H₁ Distribution (μ=3)'
+))
+
+# Type I Error — right tail of null beyond critical value
+x_t1 = x[x >= z_crit]
+fig.add_trace(go.Scatter(
+    x=np.concatenate([[x_t1[0]], x_t1, [x_t1[-1]]]),
+    y=np.concatenate([[0], stats.norm.pdf(x_t1, mu0, sigma), [0]]),
+    fill='toself', fillcolor='rgba(220,50,50,0.4)',
+    line=dict(color='rgba(0,0,0,0)'),
+    name='Type I Error (α)'
+))
+
+# Type II Error — left tail of alternative before critical value
+x_t2 = x[x <= z_crit]
+fig.add_trace(go.Scatter(
+    x=np.concatenate([[x_t2[0]], x_t2, [x_t2[-1]]]),
+    y=np.concatenate([[0], stats.norm.pdf(x_t2, mu1, sigma), [0]]),
+    fill='toself', fillcolor='rgba(100,100,220,0.4)',
+    line=dict(color='rgba(0,0,0,0)'),
+    name='Type II Error (β)'
+))
+
+# Critical value line
+fig.add_vline(x=z_crit, line_dash='dash', line_color='black',
+              annotation_text=f'Critical Value = {z_crit:.2f}',
+              annotation_position='top right')
+
+fig.update_layout(
+    title='Type I (α) and Type II (β) Errors',
+    xaxis_title='Test Statistic',
+    yaxis_title='Probability Density',
+    height=460,
+    showlegend=True
+)
+
+fig.show()
+```
+
+::: {style="font-size: 50%;"}
+> Red = Type I Error (false alarm). Blue = Type II Error (missed signal). The critical value separates the two decision zones.
+:::
+
+## The Trade-Off Between α and β
+
+::::::: columns
+:::: {.column width="50%"}
+### Lowering α (e.g., 0.01)
+
+::: {style="font-size: 65%;"}
+- Fewer false alarms ✅
+- Harder to reject H₀
+- More missed signals ❌
+- β increases
+
+**Use when:**
+False alarms are very costly.
+
+*Example: Approving a dangerous drug.*
+:::
+::::
+
+:::: {.column width="50%"}
+### Raising α (e.g., 0.10)
+
+::: {style="font-size: 65%;"}
+- More false alarms ❌
+- Easier to reject H₀
+- Fewer missed signals ✅
+- β decreases
+
+**Use when:**
+Missing a real effect is very costly.
+
+*Example: Cancer screening.*
+:::
+::::
+:::::::
+
+## Now We Test — One-Sample Tests
+
+::: {style="font-size: 70%;"}
+
+A **one-sample test** answers a simple question:
+
+> *"Is the mean of my sample significantly different from a known or claimed value?"*
+
+**Two tools depending on what you know:**
+
+| Situation | Test to Use |
+|---|---|
+| σ (population std dev) is **known** | One-sample **z-test** |
+| σ is **unknown** (use sample std dev s) | One-sample **t-test** |
+
+In practice, σ is almost never known.
+
+→ **t-test is what you'll use most of the time.**
+
+:::
+
+## z-test vs t-test — Quick Decision Guide
+
+::: {style="font-size: 70%;"}
+
+| Question | Answer | Use |
+|---|---|---|
+| Is σ known? | Yes | z-test |
+| Is σ known? | No | t-test |
+| Is n large (≥ 30) and σ unknown? | Yes | t-test (z ≈ t at large n anyway) |
+| Is n small and σ unknown? | Yes | t-test — especially important |
+| Not sure? | Always | **Default to t-test** |
+
+> The t-test was invented *specifically* because we rarely know σ in practice.
+> It is the workhorse of one-sample testing.
+
+:::
+
+# Thank You 🌊

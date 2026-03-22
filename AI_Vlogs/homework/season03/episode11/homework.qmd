@@ -1,0 +1,39 @@
+---
+title: Home Work 1
+subtitle: 22nd March 2026
+format: html
+---
+
+This is our second homework assignment for this season where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file
+
+#### Question 1:
+
+A researcher sets α = 0.01 instead of 0.05 for a medical study. How does this affect Type I error? Type II error? Power?
+Explain the trade-off in plain language.
+
+
+#### Question 2:
+
+Simulate 500 one-sample t-tests where H₀ is actually true (μ = μ₀).
+What fraction of tests falsely reject H₀ at α = 0.05?
+What does this confirm about Type I error?
+
+------------------------------------------------ Happy Learning -----------------------------------------------------
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="ArunKoundinya/AIBasicswithAK"
+        data-repo-id="R_kgDOLXPVRw"
+        data-category="General"
+        data-category-id="DIC_kwDOLXPVR84CdeVx"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="purple_dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
