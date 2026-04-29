@@ -1,0 +1,270 @@
+---
+title: "AI Basics with AK"
+subtitle: "Season 03 - Introduction to Statistics"
+format:
+  revealjs:
+    incremental: false
+    auto-stretch: true
+    slide-number: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Episode 12 - Two-Sample Tests
+
+## Recap: Episode 11 — Errors and One-Sample Tests
+
+::: {style="font-size: 70%;"}
+| Concept               | What It Means                                      |
+|------------------------------------|------------------------------------|
+| **Type I Error (α)**  | Rejecting H₀ when it's actually true — false alarm |
+| **Type II Error (β)** | Missing a real effect — false negative             |
+| **z-test**            | One sample, σ known                                |
+| **t-test**            | One sample, σ unknown — the real-world default     |
+
+> Last episode: *"Did this one group differ from a known value?"* This episode: **"Do these two groups actually differ from each other?"**
+:::
+
+## The Natural Next Question
+
+::::::: columns
+:::: {.column width="50%"}
+### One Sample Was About This
+
+::: {style="font-size: 65%;"}
+A coffee shop claims wait time = 5 min.
+
+You measured one group of customers.
+
+You compared their mean to a **fixed claimed value.**
+
+→ One reference point. One group.
+:::
+::::
+
+:::: {.column width="50%"}
+### Two Samples Is About This
+
+::: {style="font-size: 65%;"}
+Branch A vs Branch B — which is faster?
+
+New drug vs placebo — which works better?
+
+Before training vs after training — did it help?
+
+→ **Two groups. Two means. One question:**
+
+*Is the difference real — or just noise?*
+:::
+::::
+:::::::
+
+## Test 1 — Independent Samples t-test
+
+::::::: columns
+:::: {.column width="50%"}
+### When to Use
+
+::: {style="font-size: 50%;"}
+-   Two **separate, unrelated** groups
+-   Both groups are approximately normal
+-   Variances are **assumed equal**
+
+**H₀:** μ₁ = μ₂ (no difference between groups)
+
+**H₁:** μ₁ ≠ μ₂ (or one-tailed variant)
+
+**Test Statistic:**
+
+$$t = \frac{\bar{X}_1 - \bar{X}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$$
+
+where $s_p$ is the **pooled standard deviation.**
+:::
+::::
+
+:::: {.column width="50%"}
+### Pooled Standard Deviation
+
+::: {style="font-size: 50%;"}
+$$s_p = \sqrt{\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}}$$
+
+Degrees of freedom:
+
+$$df = n_1 + n_2 - 2$$
+
+**Key assumption:**
+
+The two groups have *roughly equal* population variances.
+
+If that assumption is doubtful → use Welch's t-test instead.
+:::
+::::
+:::::::
+
+## Worked Example: Independent t-test
+
+::: {style="font-size: 50%;"}
+**Scenario:** Two teaching methods are tested on different student groups.
+
+-   **Method A** (n=12): mean score = 72, s = 8
+-   **Method B** (n=12): mean score = 78, s = 7
+
+At α = 0.05 — is there a significant difference?
+
+**H₀:** μ_A = μ_B \| **H₁:** μ_A ≠ μ_B (two-tailed)
+
+$$s_p = \sqrt{\frac{11 \times 64 + 11 \times 49}{22}} = \sqrt{56.5} \approx 7.52$$
+
+$$t = \frac{72 - 78}{7.52 \times \sqrt{\frac{1}{12}+\frac{1}{12}}} = \frac{-6}{3.07} \approx -1.95$$
+
+df = 22 \| p-value ≈ 0.063
+
+**0.063 \> 0.05 → Fail to Reject H₀**
+
+No significant difference detected at this sample size.
+:::
+
+## Test 2 — Welch's t-test
+
+::::::: columns
+:::: {.column width="50%"}
+### When to Use
+
+::: {style="font-size: 50%;"}
+-   Two **separate, unrelated** groups
+-   Variances are **unequal** or unknown
+-   The safer, more robust default
+
+**Same hypotheses as independent t-test.**
+
+**Test Statistic:**
+
+$$t = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
+
+No pooling of variances — each group uses its own.
+:::
+::::
+
+:::: {.column width="50%"}
+### Welch-Satterthwaite df
+
+::: {style="font-size: 50%;"}
+Degrees of freedom are **approximated:**
+
+$$df \approx \frac{\left(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}\right)^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_2^2/n_2)^2}{n_2-1}}$$
+
+This gives a **non-integer df** — that's normal.
+
+**Why prefer Welch's?**
+
+When variances differ, pooling them distorts the test. Welch's adjusts for this — at no real cost.
+
+> In practice: **default to Welch's** unless you have strong reason to pool.
+:::
+::::
+:::::::
+
+## Worked Example: Welch's t-test
+
+::: {style="font-size: 50%;"}
+**Scenario:** Two factories produce the same component. We check consistency:
+
+-   **Factory A** (n=10): mean = 50.2mm, s = 0.4mm
+-   **Factory B** (n=10): mean = 49.7mm, s = 1.8mm
+
+Variances look very different — use Welch's. (α = 0.05, two-tailed)
+
+**H₀:** μ_A = μ_B \| **H₁:** μ_A ≠ μ_B
+
+$$t = \frac{50.2 - 49.7}{\sqrt{\frac{0.16}{10}+\frac{3.24}{10}}} = \frac{0.5}{\sqrt{0.34}} = \frac{0.5}{0.583} \approx 0.858$$
+
+Welch df ≈ 9.8 \| p-value ≈ 0.412
+
+**0.412 \> 0.05 → Fail to Reject H₀**
+
+No significant difference in means — but Factory B is far more variable.
+:::
+
+## Test 3 — Mann-Whitney U Test
+
+::::::: columns
+:::: {.column width="50%"}
+### When to Use
+
+::: {style="font-size: 50%;"}
+-   Two **independent** groups
+-   Data is **not normally distributed**
+-   Ordinal data or small samples with skew
+
+**Non-parametric** — makes no assumptions about the distribution shape.
+
+**H₀:** The two groups have the same distribution
+
+**H₁:** One group tends to have higher/lower values
+
+Instead of means — it compares **ranks.**
+:::
+::::
+
+:::: {.column width="50%"}
+### How It Works
+
+::: {style="font-size: 50%;"}
+1.  Combine all values from both groups
+2.  Rank them from smallest to largest
+3.  Sum the ranks for each group
+4.  Compute U statistic — measures how often Group 1 outranks Group 2
+
+**Intuition:**
+
+If Group 1 consistently has higher ranks → its values tend to be larger → groups are different.
+
+No means. No variances. Just **ordering.**
+
+> Think of it as: *"which group wins more head-to-head comparisons?"*
+:::
+::::
+:::::::
+
+## Worked Example: Mann-Whitney U
+
+::: {style="font-size: 50%;"}
+**Scenario:** Customer satisfaction scores (1–10) from two store branches:
+
+-   **Store A:** 7, 8, 6, 9, 7 → n₁ = 5
+-   **Store B:** 4, 5, 6, 5, 3 → n₂ = 5
+
+Data is ordinal and skewed — Mann-Whitney is appropriate.
+
+**Combined ranks:** 3(1), 4(2), 5(3.5), 5(3.5), 6(5.5), 6(5.5), 7(7.5), 7(7.5), 8(9), 9(10)
+
+**Rank sum Store A:** 5.5 + 7.5 + 7.5 + 9 + 10 = **39.5**
+
+**Rank sum Store B:** 1 + 2 + 3.5 + 3.5 + 5.5 = **15.5**
+
+U_A = 39.5 − 5(6)/2 = 24.5 \| U_B = 5×5 − 24.5 = 0.5
+
+p-value \< 0.05 → **Reject H₀** ✅
+
+Store A customers are significantly more satisfied.
+:::
+
+
+## Prediction Check 🔍
+
+::: {style="font-size: 70%;"}
+Before Episode 13 — think through these:
+
+**Q1:** You measure the blood pressure of 20 patients before and after a medication. Which test is most appropriate? Why?
+
+**Q2:** Two independent groups. Group 1 has s = 2. Group 2 has s = 15. Independent t-test or Welch's? Why?
+
+**Q3:** You have customer ratings (1–5 stars) from two stores. Why might Mann-Whitney be better than a t-test here?
+
+:::
+
+
+
+# Thank You 🌊

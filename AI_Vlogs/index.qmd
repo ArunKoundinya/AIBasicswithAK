@@ -405,9 +405,20 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Type I & Type II Errors</td>
 <td><a href="slides/season03/episode11/statistics_episode11.html" target="_blank">Link</a></td>
 <td><a href="homework/season03/episode11/homework.html" target="_blank">Link</a></td>
-<td><a href=" target="_blank">Link</a></td>
+<td><a href="https://youtu.be/bEx6OrVw86Y" target="_blank">Link</a></td>
 <td>NA</td>
 <td>22nd Mar 2026</td>
+</tr>
+
+
+<tr>
+<td>Episode - 12</td>
+<td>Two-Sample Tests</td>
+<td><a href="slides/season03/episode12/statistics_episode12.html" target="_blank">Link</a></td>
+<td><a href="homework/season03/episode12/homework.html" target="_blank">Link</a></td>
+<td><a href="" target="_blank">Link</a></td>
+<td>NA</td>
+<td>16th Apr 2026</td>
 </tr>
 
 

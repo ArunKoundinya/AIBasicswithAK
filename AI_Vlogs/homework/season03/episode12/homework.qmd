@@ -1,0 +1,37 @@
+---
+title: Home Work 2
+subtitle: 16th April 2026
+format: html
+---
+
+
+
+#### Question 1:
+
+**Q1 — Independent t-test:** Two diets are tested on separate groups. Diet X (n=15): mean weight loss = 4.2kg, s = 1.1kg Diet Y (n=15): mean weight loss = 5.1kg, s = 1.3kg At α = 0.05, is there a significant difference? Assume equal variances.
+
+------------------------------------------------------------------------
+
+#### Question 2:
+
+**Q2 — Welch's vs Independent:** Same data as Q1, but Diet Y has s = 3.8kg instead. Should you use independent t-test or Welch's now? Why? Recompute using Welch's and compare the result.
+
+------------------------------------------------ Happy Learning -----------------------------------------------------
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="ArunKoundinya/AIBasicswithAK"
+        data-repo-id="R_kgDOLXPVRw"
+        data-category="General"
+        data-category-id="DIC_kwDOLXPVR84CdeVx"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="purple_dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+```
