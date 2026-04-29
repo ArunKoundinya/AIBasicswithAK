@@ -429,7 +429,7 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td><a href="" target="_blank">Link</a></td>
 <td>NA</td>
 <td>29th Apr 2026</td>
-
+</tr>
 
 </table>
 </div>
