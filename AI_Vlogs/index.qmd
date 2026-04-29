@@ -416,10 +416,19 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>Two-Sample Tests</td>
 <td><a href="slides/season03/episode12/statistics_episode12.html" target="_blank">Link</a></td>
 <td><a href="homework/season03/episode12/homework.html" target="_blank">Link</a></td>
-<td><a href="" target="_blank">Link</a></td>
+<td><a href="https://www.youtube.com/watch?v=KW4ttIE7Jhk" target="_blank">Link</a></td>
 <td>NA</td>
 <td>16th Apr 2026</td>
 </tr>
+
+<tr>
+<td>Episode - 13</td>
+<td>Chi-Square Tests</td>
+<td><a href="slides/season03/episode13/statistics_episode13.html" target="_blank">Link</a></td>
+<td>NA</td>
+<td><a href="" target="_blank">Link</a></td>
+<td>NA</td>
+<td>29th Apr 2026</td>
 
 
 </table>
