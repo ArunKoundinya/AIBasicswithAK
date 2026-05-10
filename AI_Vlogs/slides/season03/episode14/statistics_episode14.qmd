@@ -1,0 +1,197 @@
+---
+title: "AI Basics with AK"
+subtitle: "Season 03 - Introduction to Statistics"
+format:
+  revealjs:
+    incremental: false
+    auto-stretch: true
+    slide-number: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Episode 14 - Degrees of Freedom
+
+## Recap: Where We've Seen df Already
+
+::: {style="font-size: 70%;"}
+| Episode | Test                    | Degrees of Freedom |
+|---------|-------------------------|--------------------|
+| **09**  | T-Distribution          | df = n − 1         |
+| **11**  | One-sample t-test       | df = n − 1         |
+| **12**  | Independent t-test      | df = n₁ + n₂ − 2   |
+| **12**  | Paired t-test           | df = n − 1         |
+| **13**  | Chi-Square GoF          | df = k − 1         |
+| **13**  | Chi-Square Independence | df = (r−1)(c−1)    |
+
+:::
+
+## Degrees of Freedom - Intuition
+
+::: {style="font-size: 70%;"}
+Imagine 5 friends at a dinner table with 5 fixed seats.
+
+**Question:** How many friends can choose their seat freely?
+
+-   Friend 1 sits anywhere → **free choice**
+-   Friend 2 sits anywhere remaining → **free choice**
+-   Friend 3 sits anywhere remaining → **free choice**
+-   Friend 4 sits anywhere remaining → **free choice**
+-   Friend 5 has only **one seat left** → **no choice**
+
+**4 friends had freedom. 1 did not.**
+
+> When you have n items and one constraint (the total is fixed) means we have n−1 free choices.
+
+This is the core of df = n − 1.
+
+:::
+
+## A More Statistical Version
+
+::: {style="font-size: 70%;"}
+You have 5 numbers. Their mean is **10**.
+
+$$x_1, x_2, x_3, x_4, x_5 \quad \text{with} \quad \bar{X} = 10$$
+
+**How many values can you choose freely?**
+
+Say you pick: x₁ = 8, x₂ = 12, x₃ = 9, x₄ = 11
+
+Now the sum must equal 50 (since mean = 10, n = 5).
+
+$$x_5 = 50 - (8+12+9+11) = 50 - 40 = \mathbf{10}$$
+
+x₅ is **locked in.** You had no choice.
+
+> 4 values were free. 1 was constrained by the mean. **df = n − 1 = 4**
+
+Why Estimating the Mean Costs One df
+:::
+
+
+## df in Each Test We've Covered
+
+```{python}
+import plotly.graph_objects as go
+
+tests = [
+    "One-sample t-test",
+    "Independent t-test",
+    "Welch's t-test",
+    "Paired t-test",
+    "Chi-Square GoF",
+    "Chi-Square Independence",
+]
+
+formulas = [
+    "n − 1",
+    "n₁ + n₂ − 2",
+    "Welch-Satterthwaite approximation",
+    "n − 1  (n = number of pairs)",
+    "k − 1  (k = number of categories)",
+    "(r − 1)(c − 1)",
+]
+
+what_is_estimated = [
+    "Population mean μ from sample",
+    "Common pooled variance from two groups",
+    "Each group's variance separately",
+    "Mean difference from paired observations",
+    "Expected frequencies under H₀",
+    "Expected cell counts from row/col totals",
+]
+
+why_lost = [
+    "Using x̄ to compute deviations costs 1",
+    "Using x̄₁ and x̄₂ costs 1 each → 2 total",
+    "Degrees adjusted for unequal variance estimation",
+    "Using d̄ (mean difference) costs 1",
+    "Total n is fixed → k−1 free categories",
+    "Row & column totals fixed → (r−1)(c−1) free cells",
+]
+
+fig = go.Figure(data=[go.Table(
+    columnwidth=[170, 150, 200, 220],
+    header=dict(
+        values=["<b>Test</b>", "<b>df Formula</b>",
+                "<b>What Was Estimated</b>", "<b>Why df Was Lost</b>"],
+        fill_color='steelblue',
+        font=dict(color='white', size=12),
+        align='left',
+        height=36
+    ),
+    cells=dict(
+        values=[tests, formulas, what_is_estimated, why_lost],
+        fill_color=[['#f0f4f8', '#e8f0fe'] * 4],
+        font=dict(size=11),
+        align='left',
+        height=34
+    )
+)])
+
+fig.update_layout(height=340, margin=dict(t=10, b=10))
+fig.show()
+```
+
+::: {style="font-size: 50%;"}
+> Every df formula reflects the same logic — how many free pieces of information remain after estimation.
+:::
+
+## The General Rule
+
+::: {style="font-size: 70%;"}
+> **df = (number of observations) − (number of parameters estimated from the data)**
+
+Every time you estimate something — you spend one degree of freedom.
+
+| What You Estimate                         | df Cost                 |
+|-------------------------------------------|-------------------------|
+| One mean (x̄)                              | −1                      |
+| Two means (x̄₁ and x̄₂)                     | −2                      |
+| One proportion                            | −1                      |
+| k category frequencies (with fixed total) | −1 (not −k)             |
+| Row totals + column totals in a table     | −(r−1) − (c−1) = −r−c+2 |
+
+> The more you estimate — the less freedom remains. Less freedom = more uncertainty = heavier tails = harder tests.
+:::
+
+## A Common Misconception
+
+::::::: columns
+:::: {.column width="50%"}
+### What People Think df Means
+
+::: {style="font-size: 65%;"}
+❌ *"It's just a number you plug into a formula."*
+
+❌ *"Bigger df is always better."*
+
+❌ *"df only matters for t-tests."*
+
+❌ *"It's the sample size minus one — always."*
+
+These are all incomplete or wrong.
+:::
+::::
+
+:::: {.column width="50%"}
+### What df Actually Means
+
+::: {style="font-size: 65%;"}
+✅ It measures **how much independent information** your data carries after accounting for what you've already used to estimate.
+
+✅ It controls **how conservative** your test is.
+
+✅ It shapes **which distribution** you compare against.
+
+✅ It changes for **every test** depending on structure.
+
+> df is a measure of remaining statistical information.
+:::
+::::
+:::::::
+
+# Thank You 🌊
