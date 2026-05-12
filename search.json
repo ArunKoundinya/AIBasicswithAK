@@ -56,144 +56,18 @@
     "text": "In an era of chatgpt-enabled applications, most of us would have come across a term called as foundation model. In this article we will go through the basics of foundation model with respect to Large Language Models\n\n\n\n\n\nIn this article we will go through these topics in simple language:\n\nWhat are Foundation Models?\nWhat are Large Language Models?\nFundamental Architecture inside LLM?\nTypes of LLMs.\n\n\nWhat are Foundation Models?\nIf you go to any Indian restaurant and order Chicken Tikka Masala, it arrives at your table in no time. But if you were to make the same dish from scratch, it would take much longer. Most people assume that restaurants prepare curries in advance and simply reheat them when an order comes in. However, that would be a waste of resources if there aren’t any orders for that particular dish.\nInstead, restaurants use a common base gravy for a wide range of curries—such as Onion-Tomato Gravy or Onion-Spinach-Ginger Gravy. When an order hits the kitchen, chefs take this foundation gravy, add the required proteins, herbs, and veggies, and create a distinct curry as per the order. This approach saves time, ensures consistency, and allows for quick adaptation to different recipes.\nNow, we can apply this analogy to our AI models.\nFoundation Models are like these base gravies. They are trained on vast amounts of data and serve as a starting point for a range of applications. Unlike a base gravy, where we choose common ingredients, foundation models are built by training on diverse and extensive datasets.\nFor example, in Natural Language Processing (NLP), which deals with human language and conversation, a foundation model is trained on massive amounts of text data available on the internet (while ensuring ethical considerations). The resulting model acts as a foundation for various NLP tasks, such as chatbots, translations, and text generation.\nJust like chefs fine-tune a base gravy to create different dishes, developers fine-tune foundation models to adapt them for specific use cases.\n\n\nWhat are Large Language Models?\nLarge Language Models is one such foundation model that is trained on vast textual data using Deep Learning to understand and generate human type of language.\nMuch like our foundation gravy, LLMs act as a foundation for language-based applications. Instead of training a model from scratch for every NLP task, we build on this pre-trained foundation model and fine-tune them for specific purposes.\n\n\nFundamental Architecture inside LLM?\nAt the heart of LLMs lies the Transformer architecture, introduced in the groundbreaking paper \"Attention is All You Need\" by Vaswani et al. This architecture revolutionized NLP as this model helps to understand context and relationships between words more effectively.\n\n\n\n\n\nThe original paper was developed for a language translation use case. The input is in one language, say English, and the output is in another language, say Hindi. The blue section represents the Encoder, while the red section represents the Decoder.\n\nThe Encoder is responsible for understanding the input language.\nThe Decoder then generates the output language by interpreting the encoded information.\n\nThis encoder-decoder framework laid the foundation for many modern NLP models, enabling efficient translation, text generation, and other complex language tasks.\n\n\nTypes of LLMs?\nSince the original encoder-decoder architecture was designed for translation tasks, it is not ideally suited for other tasks like text classification, topic selection, generative tasks, and more.\n\nEncoder Only LLM - Representation Models\nTo address this, a general-purpose model was introduced in 2018: Bidirectional Encoder Representations from Transformers (BERT). This model served as a foundational architecture for Language AI in the years to come.\n\nThe Encoder-only architecture focuses on understanding and representing language rather than generating it.\nIt learns the nuances and contextual representations of language effectively.\nIdeal for tasks that require deep language comprehension.\n\n\n\nDecoder Only LLM - Generative Models\nSimilar to the Encoder-only architecture, a Decoder-only architecture was proposed in 2018 for generative tasks. This model is known as Generative Pre-trained Transformer (GPT).\n\nThe Decoder-only architecture is designed to generate text based on a given prompt or input.\nIt is widely used for conversational AI, creative writing, and content generation.\n\nThus, these two foundational LLM architectures are broadly used for a variety of applications today.\n\n\n\nUse Cases.\nEncoder-Only LLMs (BERT and similar models):\n\nText classification\nSentiment analysis\nInformation retrieval\nQuestion answering\n\nDecoder-Only LLMs (GPT and similar models):\n\nText generation\nConversational AI (chatbots, virtual assistants)\nSummarization\n\n\n\nReferences\n\nFoundation_model - Wiki Page\nHands-On Large Language Models by Jay Alammar, Maarten Grootendorst"
   },
   {
-    "objectID": "blogs/posts/is-domain-knowledge-important/index.html",
-    "href": "blogs/posts/is-domain-knowledge-important/index.html",
-    "title": "Does Data Scientists need to understand Domain Knowledge?",
+    "objectID": "blogs/posts/learn-programming/index.html",
+    "href": "blogs/posts/learn-programming/index.html",
+    "title": "Does Data Scientists need to learn programming?",
     "section": "",
-    "text": "This article intends to explain domain knowledge’s importance to freshers. The example provided below is from my own experience.\nBusinesses, by nature, want to earn profits, and why is it needed to make profits? From an employee perspective, the company gives salary and growth; from a company perspective, it intends to stay long, live and fresh as it grows.\nProfit = Revenue - Cost\nIf the business needs to stay longer, the profit has to be on the positive side. It means either the revenue should increase or the cost should decrease; also, both can happen.\nLet us explore simple business case scenarios that will help us learn why understanding the business comes first before we solutionize.\nCase { Retail Store Business }\nAssume that a data scientist was tasked to help the retail store stock the “right” quantity. By intuition, most “data scientists” consider the last X years of data for prediction. They may take various models from “simple averages” to “ARIMA” to “LSTM” and choose the best model based on the evaluation metrics like AIC or BIC, or MAPE. { Classic Time series modelling algorithms }\nAfter this exercise, we will determine the quantity that could sell for the next period. Does it end here?\nIt would not, because we haven’t answered the business question of what should be the stock holding for the next period. i.e., how many goods should be stocked in the store?\nSay, if we want to proceed with the model’s output itself. Since the model has inherent bias and variance, certain goods might get stocked out sooner, and others will not sell as predicted. { Alternatively, at times, the business could not procure the goods as indicated due to the cash flow constraint. Which we will discuss in other cases}\nWhat happens if there is stock out; revenue drops. Alternatively, what happens if there is excess stock; cost increases. In both of these cases, the profit decreases.\nShould we conclude that data science is not helping in this scenario? No, it isn’t.\nIt is just that it has not been adequately solutionized. So far, we have put the hat of “Machine Learning”, which needs to be started with the “Traditional Research” cap.\nUnder Traditional research, we may learn the following things: - Stock will come from warehouses every two days, for which the indent has to be shared a day earlier.\n\nIn all case scenarios, a buffer or safety stock should be kept in the store for fast-moving items to avoid supply chain shocks.\nEvading bull-whip effect, the probable forecast for certain goods must be shared with vendors for effective coordination.\nA simulation must be constructed such that the stock at the store is not too high to avoid high business costs. Also, the store needs to maintain sufficient service levels(of the goods, i.e., stock availability) so the customer doesn’t face a bad experience.\n\nBased on these learnings, we will research any existing methodologies available to address these questions. Bingo!!\nWe would crack the solution by browsing the topics of Supply Chain Analytics or Operations Optimization.\nWhich will provide methods to arrive at Safety Stock, Re-order Level, Re-order Quantity and Service Levels.\n\n\n\n\n\nFrom here, we can use ML ( Time Series Modelling ) to arrive at tomorrow’s prediction and perform a simulation ( Monte Carlo Simulation ) to arrive at service levels for different clusters ( K-Means Clustering ) of products. These outputs are fed into the above solution we saw in “Traditional Research”.\nLater we wear the “Software Development” hat to fine-tune the coding and keep the end-to-end pieces in hands-off mode.\nIn this way, Data Scientists must change hats to complete the work.\nIn this case, we can clearly see that the “Traditional Research” hat is hugely needed to understand the “lay of the land”. Else the entire modelling effort would have faced an identity crisis.\nIs there any defined prescription or rules to understand the lay of the land? The answer is NO. The long answer is\n\nCuriosity to learn about the domain.\nAsking the business the right questions.\nDoing personal research as, at times, business is driven by perceptions or experience. { Only a “fresh eye” brings a new perspective } - Learning what others have done already. There would have been plenty of research already available. { There is no need for new IP in most of the scenarios }\nLearning Consultant frameworks like BCG Matrix, Product Life Cycle, Customer Life Cycle, etc., will help us think on alternative perspectives.\n\nThere are several examples that I have faced personally in my early data science career, which told me the hard way about the importance of domain knowledge. The above example is one such classic. Stay tuned for more Data science news."
+    "text": "In an era of AI-enabled applications, chats, and programming (now with Devin), many youngsters and new entrants in the data science field assume that learning programming isn’t needed as almost all codes are available either on stack overflow or ChatGPT.\n\n\n\n\n\nHowever, programming is not just a copy-and-paste activity. But it is an iterative process of four pieces:\n\nWhat to Code?\nHow to Code?\nTest the Code?\nCoding with-in limitations.\n\nHere, What to Code can be comprehended as an Ideaation/Requirement Gathering and Planning stage. Ideas can be either intrinsic or extrinsic, but the primary reward goes to both, i.e., the idea and proper planning. This is itself an intensive area where the know-how of coding is required; otherwise, the entire planning and further execution would fall into a fallacy.\nHow to Code involves the Coding the requirement, unit-testing and documentation stage. Coding becomes an iterative step along with unit testing since our code changes should not hamper that part of the unit.\nTest the Code involves Reviewing the code and completing the system-testing stage. After we complete our code, it needs to be reviewed and refined by a senior programmer, ideally with an intention to optimize its performance and ensure that this particular fix will not hamper other units in the system.\nCoding within limitation involves the Deployment and Maintenance stage. After the entire coding, testing, and documentation are completed, Deployment becomes a central learning as initial programming doesn’t involve physical limitations. Deployment limitations, becomes an iterative process to enhance our coding.\nIf we understand this complete cycle of programming, we will learn that coding is not just a copy-paste job but often requires a thought process for maintenance of the code for long-term usage. However, there might be some applications ( we can term such applications as AI-assisted programming applications ) in the future that would help automate some of these. Still, it would require a keen human eye and thought process for thorough Deployment.\nIf you heard about Scrum masters or Scrum certification it is good else google it. These people are often valued because they are aware of the fundamentals of agile methodological practices, which involve iterative steps of planning, coding, testing, and maintenance.\n\nSome Future or Current Technologies\n\nCoding Assistant:\n\nCode Autocompletion ; Example: Github Copilot\nAI Driven Automation Testing; Example: Testim\n\nMinimal Coding:\n\nLow-Code Platform ; Example: Microsoft Power Apps\nNo-Code Platform; Example: Bubble, Google AppSheet\n\nPower Computing:\n\nServerless Computing ; Example: AWS Lambda\nEdge Computing; Example: AWS IoT\nQuantum Computing; Example: IBM Quantum\n\n\nView them as assistants that will fasten our process such that a particular idea’s “time to market” will come down exponentially."
   },
   {
-    "objectID": "AI_Vlogs/homework/season02/episode04/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode04/homework.html",
-    "title": "Home Work 04",
+    "objectID": "blogs/index.html",
+    "href": "blogs/index.html",
+    "title": "My Views and learnings on AI",
     "section": "",
-    "text": "This is our fourth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Why class character is not available in python\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - Performing different creative versions of slicings and indexing.\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode12/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode12/homework.html",
-    "title": "Home Work 12",
-    "section": "",
-    "text": "This is our twelveth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Rewrite the following function using a lambda function to make it more concise:\n\ndef multiply_by_two(x):\n    return x * 2\n\n\n\nQuestion 2\nConsider the list numbers = [1, 2, 3, 4, 5]. Using Lambda functions cube of squareroot of these numbers to a list.\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode05/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode05/homework.html",
-    "title": "Home Work 05",
-    "section": "",
-    "text": "This is our fifth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What are the limitations of the string operators that we have learned in this week. Please pick atleast two\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - Complete the following subsquestions.\n\nvariable = \"  Python is a versatile and powerful programming language used for web development, data analysis, artificial intelligence, and much more !:)\"\n\nQuestion 2.1 - Remove the trailing spaces and special characters\n\nQuestion 2.2 - Split the sentences by comma\n\nQuestion 2.3 - Pick one split in the above sentence and replace any text of your choice to your name\n\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode02/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode02/homework.html",
-    "title": "Home Work 02",
-    "section": "",
-    "text": "This is our second homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What is Syntax Error? Provide some examples of Syntax Error?\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - What is meant by Mutable data type? How is it useful in programming?\nHint: Think from Data Science perspective.\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 3 - Create a function such that you can initialize the variable as zero.\nCheck slides for reference of week1 and week2.\n\n\nQuestion 4 - How to convert from one data type to other data type and store in a variable\nHint: Google how to change the data type of a variable in python\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode16/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode16/homework.html",
-    "title": "Home Work 14",
-    "section": "",
-    "text": "This is our fourteenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 2 Replicate the below figure\n\n\n\n\n\n{ Referred from https://www.linkedin.com/pulse/data-science-interview-question-oop-inheritance-onyshchenko-phd }\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode11/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode11/homework.html",
-    "title": "Home Work 11",
-    "section": "",
-    "text": "This is our eleventh homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 -\nWrite a Python function called calculate_discount_price that takes two parameters: price and discount_rate. The function should calculate the discounted price based on the given price and discount rate, and return the discounted price.\n\n\nQuestion 2\nCreate a Python function called generate_operations that takes two numbers a and b as parameters. Inside generate_operations, define an inner function called perform_operations that takes the same parameters a and b, and returns the result of three operations: addition, subtraction, and multiplication of a and b. Finally, the generate_operations function should return the result obtained from the perform_operations function.\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode01/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode01/homework.html",
-    "title": "Home Work 01",
-    "section": "",
-    "text": "This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create a Github Account\nRefer to this video if you have doubts.\n\n\n\nQuestion 2 - Install VS Code or Use Google Colab\nRefer to this video for installing VS Code\n\nRefer to this video for Google Colab Python File Creation.\n\n\n\nQuestion 3 - Create a Python File or Jupyter Notebook file that answers the following questions:\n\nCreate a function that adds two numbers.\nCreate a function that subtracts two numbers.\n\nCheck slides for reference.\n\n\nQuestion 3 - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode15/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode15/homework.html",
-    "title": "Home Work 13",
-    "section": "",
-    "text": "This is our thirteenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 Replicate the below figure\n\n\n\n\n\n{ Referred from https://www.geeksforgeeks.org/python-classes-and-objects/ }\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season03/episode10/homework.html",
-    "href": "AI_Vlogs/homework/season03/episode10/homework.html",
-    "title": "Home Work 1",
-    "section": "",
-    "text": "This is our first homework assignment for this season where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - A factory claims their machines fill bags with exactly 200g of rice. You sample 36 bags and find a mean of 197g with a standard deviation of 12g. At α = 0.05, is there evidence the machine is underfilling?\nSet up H₀ and H₁. Compute the test statistic. Make a decision.\n\n\nQuestion 2 - Your friend says “a p-value of 0.001 means there’s a 0.1% chance the null hypothesis is true.”\nIs your friend correct? Explain in your own words.\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/index.html",
-    "href": "AI_Vlogs/index.html",
-    "title": "AI Basics with AK",
-    "section": "",
-    "text": "This format is inspired from my data visualization class; So will be sticking to this format.\n\n\n\n\n\n    \n    Season-2 : Introduction to Python ProgrammingSeason-2\n    \n\n\n\nEpisode\nEpisode Title\nSlides / Handout\nHome Work\nYouTube Video Link\nYouTube Demo File\nDate of Upload\n\n\nEpisode - 01\nWhy Python?\nLink\nLink\nLink\nNA\n1st March 2024\n\n\nEpisode - 02\nPython Data Types\nLink\nLink\nLink\nDemo File\n8th March 2024\n\n\nEpisode - 03\nNumbers & Booleans\nLink\nLink\nLink\nDemo File\n17th March 2024\n\n\nEpisode - 04\nStrings & Characters - 1\nLink\nLink\nLink\nNA\n24th March 2024\n\n\nEpisode - 05\nStrings & Characters - 2\nLink\nLink\nLink\nNA\n31st March 2024\n\n\nEpisode - 06\nStrings & Characters - 3\nLink\nLink\nLink\nDemo File\n7th April 2024\n\n\nEpisode - 07\nLoops and Breaks\nLink\nLink\nLink\nDemo File\n15th April 2024\n\n\nEpisode - 08\nLists & Tuples\nLink\nLink\nLink\nDemo File\n22nd April 2024\n\n\nEpisode - 09\nList Operations\nLink\nLink\nLink\nDemo File\n11th May 2024\n\n\nEpisode - 10\nDictionaries\nLink\nLink\nLink\nDemo File\n13th May 2024\n\n\nEpisode - 11\nFunctions\nLink\nLink\nLink\nDemo File\n17th May 2024\n\n\nEpisode - 12\nLambda Functions\nLink\nLink\nLink\nNA\n31st May 2024\n\n\nEpisode - 13\nLambda Functions with Map,Reduce & Filter\nLink\nNA\nLink\nDemo File\n17th June 2024\n\n\nEpisode - 14\nObject Orientied Programming\nLink\nNA\nLink\nNA\n21st July 2024\n\n\nEpisode - 15\nClasses & Objects\nLink\nLink\nLink\nDemo File\n28th July 2024\n\n\nEpisode - 16\nInheritance\nLink\nLink\nLink\nDemo File\n31st July 2024\n\n\nEpisode - 17\nMutiple Inheritance\nLink\nLink\nLink\nNA\n6th April 2025\n\n\nEpisode - 18\nMulti Threading & Multi Processing\nLink\nNA\nLink\nDemo File\n13th April 2025\n\n\nEpisode - 19\nDebugging the Code\nLink\nNA\nLink\nDemo File\n20th April 2025\n\n\nEpisode - 20\nEnd to End Project\nNA\nNA\nLink\nLink\n27th April 2025\n\n\nEpisode - 21\nDeploying the Project\nNA\nNA\nLink\nDemo File\n4th May 2025\n\n\n\n\n\n\n\n    \n    Season 03 - Introduction to StatisticsSeason-3\n    \n\n\n\nEpisode\nEpisode Title\nSlides / Handout\nHome Work\nYouTube Video Link\nYouTube Demo File\nDate of Upload\n\n\nEpisode - 01\nWhat is Statistics?\nLink\nNA\nLink\nNA\n30th May 2025\n\n\nEpisode - 02\nTypes of Data?\nLink\nNA\nLink\nNA\n28th July 2025\n\n\nEpisode - 03\nDescriptive Statistics\nLink\nNA\nLink\nNA\n4th August 2025\n\n\nEpisode - 04\nData Visualization\nLink\nNA\nLink\nNA\n24th August 2025\n\n\nEpisode - 05\nBasics of Probability\nLink\nNA\nLink\nNA\n8th September 2025\n\n\nEpisode - 06\nProbability Distributions\nLink\nNA\nLink\nNA\n8th November 2025\n\n\nEpisode - 07\nCentral Limit Theorem\nLink\nNA\nLink\nNA\n12th Jan 2026\n\n\nEpisode - 08\nConfidence Intervals\nLink\nNA\nLink\nNA\n3rd Feb 2026\n\n\nEpisode - 09\nT-Distribution\nLink\nNA\nLink\nNA\n7th Mar 2026\n\n\nEpisode - 10\nHypothesis Testing\nLink\nLink\nLink\nNA\n10th Mar 2026\n\n\nEpisode - 11\nType I & Type II Errors\nLink\nLink\nLink\nNA\n22nd Mar 2026\n\n\nEpisode - 12\nTwo-Sample Tests\nLink\nLink\nLink\nNA\n16th Apr 2026\n\n\nEpisode - 13\nChi-Square Tests\nLink\nNA\nLink\nNA\n29th Apr 2026\n\n\nEpisode - 14\nDegrees of Freedom\nLink\nNA\nLink\nNA\n10th May 2026\n\n\n\n\n\n\n\n    \n    Season-4Hide\n    \n\n\n\nNot Yet Available"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "AI Basics with AK",
-    "section": "",
-    "text": "Welcome to my AI Vlog Series Hub! 🚀 This website is crafted to elevate your experience with my YouTube AI Vlog Series. Let’s dive into the exciting content structured into two sections:\n💻 Notes and Codes: Uncover the magic behind the scenes! Starting from Season-2 onward, immerse yourself in detailed notes and codes. May be presented in markdown files or dynamic presentations.\n📚 Assisted Blogs: Thoughtfully created blogs designed to complement the AI Vlog Series. It has fascinating details that bring the series to life.\nI’m thrilled to embark on this next chapter, and I hope you’ll find joy and enrichment in exploring these resources. Your support is my motivation—thank you for being a part of this exciting adventure! 🌟\nMy Last three videos"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season03/episode11/homework.html",
-    "href": "AI_Vlogs/homework/season03/episode11/homework.html",
-    "title": "Home Work 1",
-    "section": "",
-    "text": "This is our second homework assignment for this season where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1:\nA researcher sets α = 0.01 instead of 0.05 for a medical study. How does this affect Type I error? Type II error? Power? Explain the trade-off in plain language.\n\n\nQuestion 2:\nSimulate 500 one-sample t-tests where H₀ is actually true (μ = μ₀). What fraction of tests falsely reject H₀ at α = 0.05? What does this confirm about Type I error?\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season03/episode12/homework.html",
-    "href": "AI_Vlogs/homework/season03/episode12/homework.html",
-    "title": "Home Work 2",
-    "section": "",
-    "text": "Question 1:\nQ1 — Independent t-test: Two diets are tested on separate groups. Diet X (n=15): mean weight loss = 4.2kg, s = 1.1kg Diet Y (n=15): mean weight loss = 5.1kg, s = 1.3kg At α = 0.05, is there a significant difference? Assume equal variances.\n\n\n\nQuestion 2:\nQ2 — Welch’s vs Independent: Same data as Q1, but Diet Y has s = 3.8kg instead. Should you use independent t-test or Welch’s now? Why? Recompute using Welch’s and compare the result.\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode17/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode17/homework.html",
-    "title": "Home Work 15",
-    "section": "",
-    "text": "This is our fifteenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nWhat is the difference between Single Inheritance, Multi-Level Inheritance, Multiple Inheritance and Multi-Path Inheritance?\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode09/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode09/homework.html",
-    "title": "Home Work 09",
-    "section": "",
-    "text": "This is our nineth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Consider a list named ‘numbers’ containing the elements [1, 2, 3, 4, 5]. Perform the following operations:\n\nAppend the number 6 to the end of the list using the append() method.\nRemove and return the last element of the list using the pop() method.\n\n\n\nQuestion 2 - Given a list ‘original’ with elements [1, 2, 3] and another list ‘additional’ with elements [4, 5, 6], perform the following:\n\nExtend the ‘original’ list by adding all elements from the ‘additional’ list using the extend() method.\nCreate a new list named ‘squared’ containing the squares of all numbers using list comprehensions.\n\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode07/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode07/homework.html",
-    "title": "Home Work 07",
-    "section": "",
-    "text": "This is our seventh homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Write a Program that takes integer as input and check if it positive , nevative or zero.\n\n\nQuestion 2 - Create a Factorial Output of same integer using both For Loop and While Loop.\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode06/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode06/homework.html",
-    "title": "Home Work 06",
-    "section": "",
-    "text": "This is our sixth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What are the limitations of the f-style operators.\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode10/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode10/homework.html",
-    "title": "Home Work 10",
-    "section": "",
-    "text": "This is our tenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Given the following dictionary inventory, perform the following operations and print the results:\n\ninventory = {'apples': 20, 'bananas': 15, 'oranges': 30}\n\n\nAdd 10 more apples to the inventory.\nRemove ‘oranges’ from the inventory.\nCheck if ‘bananas’ are present in the inventory.\nPrint the total number of items in the inventory.\nPrint a list of all fruits in the inventory.\n\n\n\nQuestion 2 - Create a dictionary comprehension that counts the occurrences of each letter in the word ‘banana’. Print the resulting dictionary.\n———————————————— Happy Learning —————————————————–"
-  },
-  {
-    "objectID": "AI_Vlogs/homework/season02/episode03/homework.html",
-    "href": "AI_Vlogs/homework/season02/episode03/homework.html",
-    "title": "Home Work 03",
-    "section": "",
-    "text": "This is our third homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create the function for arthimetic operations\nFunction accepts two numbers and perform all the arthimetic operation\nOutput should atleast resemble like this\n\narthimetic_operations(10,3)\n\nAddition:  13\nSubtraction:  7\nMultiplication:  30\nDivision:  3.33\nRemainder:  1\nExponential: 1000\n\n\n\n\nQuestion 2 - What are the mistakes in the following code\nWhat is the reason for that error\n\na = 10\nb = 0\n\nprint(a / b)\n\nprint(a % b)\n\nprint(a = b)\n\nprint(a &gt; b)\n\nnew =  5._23\n\nprint(new + a)\n\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
+    "text": "What Is Left for a Data Scientist When AI Writes the Code?\n\n\n\ndata science\n\nAI\n\nconsulting\n\nbusiness analytics\n\n\n\n\n\n\n\n\n\nMay 11, 2026\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nRepresentation Models - Text Classification\n\n\n\nnlp\n\nllm\n\ndeeplearning\n\n\n\n\n\n\n\n\n\nFeb 23, 2025\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nFoundation Models - LLMs\n\n\n\nnlp\n\nllm\n\ndeeplearning\n\n\n\n\n\n\n\n\n\nFeb 15, 2025\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nWhat metrics to be chosen for classification modelling?\n\n\n\nclassification\n\nmodelling\n\nmetrics\n\nbinaryclassifcation\n\n\n\n\n\n\n\n\n\nApr 10, 2024\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Data Scientists need to learn programming?\n\n\n\nprogramming\n\n\n\n\n\n\n\n\n\nMar 17, 2024\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Data Scientists need to understand Domain Knowledge?\n\n\n\ndomain\n\noperations\n\n\n\n\n\n\n\n\n\nJul 25, 2023\n\n\nArun Koundinya Parasa\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "AI_Vlogs/homework/season02/episode08/homework.html",
@@ -203,18 +77,207 @@
     "text": "This is our eigth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What is the difference between a list and a tuple in Python?\nUse comments in py file or markdown in ipynb file.\n\n\nQuestion 2 - Given a list of integers, find the sum of all the elements\nExample [1,2,3,4] answer should be 10\n———————————————— Happy Learning —————————————————–"
   },
   {
-    "objectID": "blogs/index.html",
-    "href": "blogs/index.html",
-    "title": "My Views and learnings on AI",
+    "objectID": "AI_Vlogs/homework/season02/episode03/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode03/homework.html",
+    "title": "Home Work 03",
     "section": "",
-    "text": "Representation Models - Text Classification\n\n\n\nnlp\n\nllm\n\ndeeplearning\n\n\n\n\n\n\n\n\n\nFeb 23, 2025\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nFoundation Models - LLMs\n\n\n\nnlp\n\nllm\n\ndeeplearning\n\n\n\n\n\n\n\n\n\nFeb 15, 2025\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nWhat metrics to be chosen for classification modelling?\n\n\n\nclassification\n\nmodelling\n\nmetrics\n\nbinaryclassifcation\n\n\n\n\n\n\n\n\n\nApr 10, 2024\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Data Scientists need to learn programming?\n\n\n\nprogramming\n\n\n\n\n\n\n\n\n\nMar 17, 2024\n\n\nArun Koundinya Parasa\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Data Scientists need to understand Domain Knowledge?\n\n\n\ndomain\n\noperations\n\n\n\n\n\n\n\n\n\nJul 25, 2023\n\n\nArun Koundinya Parasa\n\n\n\n\n\nNo matching items"
+    "text": "This is our third homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create the function for arthimetic operations\nFunction accepts two numbers and perform all the arthimetic operation\nOutput should atleast resemble like this\n\narthimetic_operations(10,3)\n\nAddition:  13\nSubtraction:  7\nMultiplication:  30\nDivision:  3.33\nRemainder:  1\nExponential: 1000\n\n\n\n\nQuestion 2 - What are the mistakes in the following code\nWhat is the reason for that error\n\na = 10\nb = 0\n\nprint(a / b)\n\nprint(a % b)\n\nprint(a = b)\n\nprint(a &gt; b)\n\nnew =  5._23\n\nprint(new + a)\n\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
   },
   {
-    "objectID": "blogs/posts/learn-programming/index.html",
-    "href": "blogs/posts/learn-programming/index.html",
-    "title": "Does Data Scientists need to learn programming?",
+    "objectID": "AI_Vlogs/homework/season02/episode10/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode10/homework.html",
+    "title": "Home Work 10",
     "section": "",
-    "text": "In an era of AI-enabled applications, chats, and programming (now with Devin), many youngsters and new entrants in the data science field assume that learning programming isn’t needed as almost all codes are available either on stack overflow or ChatGPT.\n\n\n\n\n\nHowever, programming is not just a copy-and-paste activity. But it is an iterative process of four pieces:\n\nWhat to Code?\nHow to Code?\nTest the Code?\nCoding with-in limitations.\n\nHere, What to Code can be comprehended as an Ideaation/Requirement Gathering and Planning stage. Ideas can be either intrinsic or extrinsic, but the primary reward goes to both, i.e., the idea and proper planning. This is itself an intensive area where the know-how of coding is required; otherwise, the entire planning and further execution would fall into a fallacy.\nHow to Code involves the Coding the requirement, unit-testing and documentation stage. Coding becomes an iterative step along with unit testing since our code changes should not hamper that part of the unit.\nTest the Code involves Reviewing the code and completing the system-testing stage. After we complete our code, it needs to be reviewed and refined by a senior programmer, ideally with an intention to optimize its performance and ensure that this particular fix will not hamper other units in the system.\nCoding within limitation involves the Deployment and Maintenance stage. After the entire coding, testing, and documentation are completed, Deployment becomes a central learning as initial programming doesn’t involve physical limitations. Deployment limitations, becomes an iterative process to enhance our coding.\nIf we understand this complete cycle of programming, we will learn that coding is not just a copy-paste job but often requires a thought process for maintenance of the code for long-term usage. However, there might be some applications ( we can term such applications as AI-assisted programming applications ) in the future that would help automate some of these. Still, it would require a keen human eye and thought process for thorough Deployment.\nIf you heard about Scrum masters or Scrum certification it is good else google it. These people are often valued because they are aware of the fundamentals of agile methodological practices, which involve iterative steps of planning, coding, testing, and maintenance.\n\nSome Future or Current Technologies\n\nCoding Assistant:\n\nCode Autocompletion ; Example: Github Copilot\nAI Driven Automation Testing; Example: Testim\n\nMinimal Coding:\n\nLow-Code Platform ; Example: Microsoft Power Apps\nNo-Code Platform; Example: Bubble, Google AppSheet\n\nPower Computing:\n\nServerless Computing ; Example: AWS Lambda\nEdge Computing; Example: AWS IoT\nQuantum Computing; Example: IBM Quantum\n\n\nView them as assistants that will fasten our process such that a particular idea’s “time to market” will come down exponentially."
+    "text": "This is our tenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Given the following dictionary inventory, perform the following operations and print the results:\n\ninventory = {'apples': 20, 'bananas': 15, 'oranges': 30}\n\n\nAdd 10 more apples to the inventory.\nRemove ‘oranges’ from the inventory.\nCheck if ‘bananas’ are present in the inventory.\nPrint the total number of items in the inventory.\nPrint a list of all fruits in the inventory.\n\n\n\nQuestion 2 - Create a dictionary comprehension that counts the occurrences of each letter in the word ‘banana’. Print the resulting dictionary.\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode06/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode06/homework.html",
+    "title": "Home Work 06",
+    "section": "",
+    "text": "This is our sixth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What are the limitations of the f-style operators.\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode07/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode07/homework.html",
+    "title": "Home Work 07",
+    "section": "",
+    "text": "This is our seventh homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Write a Program that takes integer as input and check if it positive , nevative or zero.\n\n\nQuestion 2 - Create a Factorial Output of same integer using both For Loop and While Loop.\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode09/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode09/homework.html",
+    "title": "Home Work 09",
+    "section": "",
+    "text": "This is our nineth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Consider a list named ‘numbers’ containing the elements [1, 2, 3, 4, 5]. Perform the following operations:\n\nAppend the number 6 to the end of the list using the append() method.\nRemove and return the last element of the list using the pop() method.\n\n\n\nQuestion 2 - Given a list ‘original’ with elements [1, 2, 3] and another list ‘additional’ with elements [4, 5, 6], perform the following:\n\nExtend the ‘original’ list by adding all elements from the ‘additional’ list using the extend() method.\nCreate a new list named ‘squared’ containing the squares of all numbers using list comprehensions.\n\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode17/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode17/homework.html",
+    "title": "Home Work 15",
+    "section": "",
+    "text": "This is our fifteenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nWhat is the difference between Single Inheritance, Multi-Level Inheritance, Multiple Inheritance and Multi-Path Inheritance?\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season03/episode12/homework.html",
+    "href": "AI_Vlogs/homework/season03/episode12/homework.html",
+    "title": "Home Work 2",
+    "section": "",
+    "text": "Question 1:\nQ1 — Independent t-test: Two diets are tested on separate groups. Diet X (n=15): mean weight loss = 4.2kg, s = 1.1kg Diet Y (n=15): mean weight loss = 5.1kg, s = 1.3kg At α = 0.05, is there a significant difference? Assume equal variances.\n\n\n\nQuestion 2:\nQ2 — Welch’s vs Independent: Same data as Q1, but Diet Y has s = 3.8kg instead. Should you use independent t-test or Welch’s now? Why? Recompute using Welch’s and compare the result.\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season03/episode11/homework.html",
+    "href": "AI_Vlogs/homework/season03/episode11/homework.html",
+    "title": "Home Work 1",
+    "section": "",
+    "text": "This is our second homework assignment for this season where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1:\nA researcher sets α = 0.01 instead of 0.05 for a medical study. How does this affect Type I error? Type II error? Power? Explain the trade-off in plain language.\n\n\nQuestion 2:\nSimulate 500 one-sample t-tests where H₀ is actually true (μ = μ₀). What fraction of tests falsely reject H₀ at α = 0.05? What does this confirm about Type I error?\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AI Basics with AK",
+    "section": "",
+    "text": "Welcome to my AI Vlog Series Hub! 🚀 This website is crafted to elevate your experience with my YouTube AI Vlog Series. Let’s dive into the exciting content structured into two sections:\n💻 Notes and Codes: Uncover the magic behind the scenes! Starting from Season-2 onward, immerse yourself in detailed notes and codes. May be presented in markdown files or dynamic presentations.\n📚 Assisted Blogs: Thoughtfully created blogs designed to complement the AI Vlog Series. It has fascinating details that bring the series to life.\nI’m thrilled to embark on this next chapter, and I hope you’ll find joy and enrichment in exploring these resources. Your support is my motivation—thank you for being a part of this exciting adventure! 🌟\nMy Last three videos"
+  },
+  {
+    "objectID": "AI_Vlogs/index.html",
+    "href": "AI_Vlogs/index.html",
+    "title": "AI Basics with AK",
+    "section": "",
+    "text": "This format is inspired from my data visualization class; So will be sticking to this format.\n\n\n\n\n\n    \n    Season-2 : Introduction to Python ProgrammingSeason-2\n    \n\n\n\nEpisode\nEpisode Title\nSlides / Handout\nHome Work\nYouTube Video Link\nYouTube Demo File\nDate of Upload\n\n\nEpisode - 01\nWhy Python?\nLink\nLink\nLink\nNA\n1st March 2024\n\n\nEpisode - 02\nPython Data Types\nLink\nLink\nLink\nDemo File\n8th March 2024\n\n\nEpisode - 03\nNumbers & Booleans\nLink\nLink\nLink\nDemo File\n17th March 2024\n\n\nEpisode - 04\nStrings & Characters - 1\nLink\nLink\nLink\nNA\n24th March 2024\n\n\nEpisode - 05\nStrings & Characters - 2\nLink\nLink\nLink\nNA\n31st March 2024\n\n\nEpisode - 06\nStrings & Characters - 3\nLink\nLink\nLink\nDemo File\n7th April 2024\n\n\nEpisode - 07\nLoops and Breaks\nLink\nLink\nLink\nDemo File\n15th April 2024\n\n\nEpisode - 08\nLists & Tuples\nLink\nLink\nLink\nDemo File\n22nd April 2024\n\n\nEpisode - 09\nList Operations\nLink\nLink\nLink\nDemo File\n11th May 2024\n\n\nEpisode - 10\nDictionaries\nLink\nLink\nLink\nDemo File\n13th May 2024\n\n\nEpisode - 11\nFunctions\nLink\nLink\nLink\nDemo File\n17th May 2024\n\n\nEpisode - 12\nLambda Functions\nLink\nLink\nLink\nNA\n31st May 2024\n\n\nEpisode - 13\nLambda Functions with Map,Reduce & Filter\nLink\nNA\nLink\nDemo File\n17th June 2024\n\n\nEpisode - 14\nObject Orientied Programming\nLink\nNA\nLink\nNA\n21st July 2024\n\n\nEpisode - 15\nClasses & Objects\nLink\nLink\nLink\nDemo File\n28th July 2024\n\n\nEpisode - 16\nInheritance\nLink\nLink\nLink\nDemo File\n31st July 2024\n\n\nEpisode - 17\nMutiple Inheritance\nLink\nLink\nLink\nNA\n6th April 2025\n\n\nEpisode - 18\nMulti Threading & Multi Processing\nLink\nNA\nLink\nDemo File\n13th April 2025\n\n\nEpisode - 19\nDebugging the Code\nLink\nNA\nLink\nDemo File\n20th April 2025\n\n\nEpisode - 20\nEnd to End Project\nNA\nNA\nLink\nLink\n27th April 2025\n\n\nEpisode - 21\nDeploying the Project\nNA\nNA\nLink\nDemo File\n4th May 2025\n\n\n\n\n\n\n\n    \n    Season 03 - Introduction to StatisticsSeason-3\n    \n\n\n\nEpisode\nEpisode Title\nSlides / Handout\nHome Work\nYouTube Video Link\nYouTube Demo File\nDate of Upload\n\n\nEpisode - 01\nWhat is Statistics?\nLink\nNA\nLink\nNA\n30th May 2025\n\n\nEpisode - 02\nTypes of Data?\nLink\nNA\nLink\nNA\n28th July 2025\n\n\nEpisode - 03\nDescriptive Statistics\nLink\nNA\nLink\nNA\n4th August 2025\n\n\nEpisode - 04\nData Visualization\nLink\nNA\nLink\nNA\n24th August 2025\n\n\nEpisode - 05\nBasics of Probability\nLink\nNA\nLink\nNA\n8th September 2025\n\n\nEpisode - 06\nProbability Distributions\nLink\nNA\nLink\nNA\n8th November 2025\n\n\nEpisode - 07\nCentral Limit Theorem\nLink\nNA\nLink\nNA\n12th Jan 2026\n\n\nEpisode - 08\nConfidence Intervals\nLink\nNA\nLink\nNA\n3rd Feb 2026\n\n\nEpisode - 09\nT-Distribution\nLink\nNA\nLink\nNA\n7th Mar 2026\n\n\nEpisode - 10\nHypothesis Testing\nLink\nLink\nLink\nNA\n10th Mar 2026\n\n\nEpisode - 11\nType I & Type II Errors\nLink\nLink\nLink\nNA\n22nd Mar 2026\n\n\nEpisode - 12\nTwo-Sample Tests\nLink\nLink\nLink\nNA\n16th Apr 2026\n\n\nEpisode - 13\nChi-Square Tests\nLink\nNA\nLink\nNA\n29th Apr 2026\n\n\nEpisode - 14\nDegrees of Freedom\nLink\nNA\nLink\nNA\n10th May 2026\n\n\n\n\n\n\n\n    \n    Season-4Hide\n    \n\n\n\nNot Yet Available"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season03/episode10/homework.html",
+    "href": "AI_Vlogs/homework/season03/episode10/homework.html",
+    "title": "Home Work 1",
+    "section": "",
+    "text": "This is our first homework assignment for this season where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - A factory claims their machines fill bags with exactly 200g of rice. You sample 36 bags and find a mean of 197g with a standard deviation of 12g. At α = 0.05, is there evidence the machine is underfilling?\nSet up H₀ and H₁. Compute the test statistic. Make a decision.\n\n\nQuestion 2 - Your friend says “a p-value of 0.001 means there’s a 0.1% chance the null hypothesis is true.”\nIs your friend correct? Explain in your own words.\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode15/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode15/homework.html",
+    "title": "Home Work 13",
+    "section": "",
+    "text": "This is our thirteenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 Replicate the below figure\n\n\n\n\n\n{ Referred from https://www.geeksforgeeks.org/python-classes-and-objects/ }\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode01/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode01/homework.html",
+    "title": "Home Work 01",
+    "section": "",
+    "text": "This is an introductory homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Create a Github Account\nRefer to this video if you have doubts.\n\n\n\nQuestion 2 - Install VS Code or Use Google Colab\nRefer to this video for installing VS Code\n\nRefer to this video for Google Colab Python File Creation.\n\n\n\nQuestion 3 - Create a Python File or Jupyter Notebook file that answers the following questions:\n\nCreate a function that adds two numbers.\nCreate a function that subtracts two numbers.\n\nCheck slides for reference.\n\n\nQuestion 3 - Create a GitHub Repository, upload the file, and share the link in the comment box for my review.\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode11/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode11/homework.html",
+    "title": "Home Work 11",
+    "section": "",
+    "text": "This is our eleventh homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 -\nWrite a Python function called calculate_discount_price that takes two parameters: price and discount_rate. The function should calculate the discounted price based on the given price and discount rate, and return the discounted price.\n\n\nQuestion 2\nCreate a Python function called generate_operations that takes two numbers a and b as parameters. Inside generate_operations, define an inner function called perform_operations that takes the same parameters a and b, and returns the result of three operations: addition, subtraction, and multiplication of a and b. Finally, the generate_operations function should return the result obtained from the perform_operations function.\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode16/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode16/homework.html",
+    "title": "Home Work 14",
+    "section": "",
+    "text": "This is our fourteenth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 2 Replicate the below figure\n\n\n\n\n\n{ Referred from https://www.linkedin.com/pulse/data-science-interview-question-oop-inheritance-onyshchenko-phd }\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode02/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode02/homework.html",
+    "title": "Home Work 02",
+    "section": "",
+    "text": "This is our second homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What is Syntax Error? Provide some examples of Syntax Error?\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - What is meant by Mutable data type? How is it useful in programming?\nHint: Think from Data Science perspective.\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 3 - Create a function such that you can initialize the variable as zero.\nCheck slides for reference of week1 and week2.\n\n\nQuestion 4 - How to convert from one data type to other data type and store in a variable\nHint: Google how to change the data type of a variable in python\nUse comments in py file or markdown in ipynb file to provide the answer\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode05/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode05/homework.html",
+    "title": "Home Work 05",
+    "section": "",
+    "text": "This is our fifth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - What are the limitations of the string operators that we have learned in this week. Please pick atleast two\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - Complete the following subsquestions.\n\nvariable = \"  Python is a versatile and powerful programming language used for web development, data analysis, artificial intelligence, and much more !:)\"\n\nQuestion 2.1 - Remove the trailing spaces and special characters\n\nQuestion 2.2 - Split the sentences by comma\n\nQuestion 2.3 - Pick one split in the above sentence and replace any text of your choice to your name\n\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode12/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode12/homework.html",
+    "title": "Home Work 12",
+    "section": "",
+    "text": "This is our twelveth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Rewrite the following function using a lambda function to make it more concise:\n\ndef multiply_by_two(x):\n    return x * 2\n\n\n\nQuestion 2\nConsider the list numbers = [1, 2, 3, 4, 5]. Using Lambda functions cube of squareroot of these numbers to a list.\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "AI_Vlogs/homework/season02/episode04/homework.html",
+    "href": "AI_Vlogs/homework/season02/episode04/homework.html",
+    "title": "Home Work 04",
+    "section": "",
+    "text": "This is our fourth homework assignment where you will address the following questions and submit your GitHub link containing either a Jupyter Notebook or a Python file\n\nQuestion 1 - Why class character is not available in python\nUse comments in py file or markdown in ipynb file to provide the answer\n\n\nQuestion 2 - Performing different creative versions of slicings and indexing.\n———————————————— Happy Learning —————————————————–"
+  },
+  {
+    "objectID": "blogs/posts/is-domain-knowledge-important/index.html",
+    "href": "blogs/posts/is-domain-knowledge-important/index.html",
+    "title": "Does Data Scientists need to understand Domain Knowledge?",
+    "section": "",
+    "text": "This article intends to explain domain knowledge’s importance to freshers. The example provided below is from my own experience.\nBusinesses, by nature, want to earn profits, and why is it needed to make profits? From an employee perspective, the company gives salary and growth; from a company perspective, it intends to stay long, live and fresh as it grows.\nProfit = Revenue - Cost\nIf the business needs to stay longer, the profit has to be on the positive side. It means either the revenue should increase or the cost should decrease; also, both can happen.\nLet us explore simple business case scenarios that will help us learn why understanding the business comes first before we solutionize.\nCase { Retail Store Business }\nAssume that a data scientist was tasked to help the retail store stock the “right” quantity. By intuition, most “data scientists” consider the last X years of data for prediction. They may take various models from “simple averages” to “ARIMA” to “LSTM” and choose the best model based on the evaluation metrics like AIC or BIC, or MAPE. { Classic Time series modelling algorithms }\nAfter this exercise, we will determine the quantity that could sell for the next period. Does it end here?\nIt would not, because we haven’t answered the business question of what should be the stock holding for the next period. i.e., how many goods should be stocked in the store?\nSay, if we want to proceed with the model’s output itself. Since the model has inherent bias and variance, certain goods might get stocked out sooner, and others will not sell as predicted. { Alternatively, at times, the business could not procure the goods as indicated due to the cash flow constraint. Which we will discuss in other cases}\nWhat happens if there is stock out; revenue drops. Alternatively, what happens if there is excess stock; cost increases. In both of these cases, the profit decreases.\nShould we conclude that data science is not helping in this scenario? No, it isn’t.\nIt is just that it has not been adequately solutionized. So far, we have put the hat of “Machine Learning”, which needs to be started with the “Traditional Research” cap.\nUnder Traditional research, we may learn the following things: - Stock will come from warehouses every two days, for which the indent has to be shared a day earlier.\n\nIn all case scenarios, a buffer or safety stock should be kept in the store for fast-moving items to avoid supply chain shocks.\nEvading bull-whip effect, the probable forecast for certain goods must be shared with vendors for effective coordination.\nA simulation must be constructed such that the stock at the store is not too high to avoid high business costs. Also, the store needs to maintain sufficient service levels(of the goods, i.e., stock availability) so the customer doesn’t face a bad experience.\n\nBased on these learnings, we will research any existing methodologies available to address these questions. Bingo!!\nWe would crack the solution by browsing the topics of Supply Chain Analytics or Operations Optimization.\nWhich will provide methods to arrive at Safety Stock, Re-order Level, Re-order Quantity and Service Levels.\n\n\n\n\n\nFrom here, we can use ML ( Time Series Modelling ) to arrive at tomorrow’s prediction and perform a simulation ( Monte Carlo Simulation ) to arrive at service levels for different clusters ( K-Means Clustering ) of products. These outputs are fed into the above solution we saw in “Traditional Research”.\nLater we wear the “Software Development” hat to fine-tune the coding and keep the end-to-end pieces in hands-off mode.\nIn this way, Data Scientists must change hats to complete the work.\nIn this case, we can clearly see that the “Traditional Research” hat is hugely needed to understand the “lay of the land”. Else the entire modelling effort would have faced an identity crisis.\nIs there any defined prescription or rules to understand the lay of the land? The answer is NO. The long answer is\n\nCuriosity to learn about the domain.\nAsking the business the right questions.\nDoing personal research as, at times, business is driven by perceptions or experience. { Only a “fresh eye” brings a new perspective } - Learning what others have done already. There would have been plenty of research already available. { There is no need for new IP in most of the scenarios }\nLearning Consultant frameworks like BCG Matrix, Product Life Cycle, Customer Life Cycle, etc., will help us think on alternative perspectives.\n\nThere are several examples that I have faced personally in my early data science career, which told me the hard way about the importance of domain knowledge. The above example is one such classic. Stay tuned for more Data science news."
+  },
+  {
+    "objectID": "blogs/posts/what-is-left-for-data-scientists/index.html",
+    "href": "blogs/posts/what-is-left-for-data-scientists/index.html",
+    "title": "What Is Left for a Data Scientist When AI Writes the Code?",
+    "section": "",
+    "text": "Something is changing. Not just the tools. The entire job description of a data scientist is being quietly rewritten.\nLet us look at what is going away, what is staying, and honestly, what we should have been doing all along."
+  },
+  {
+    "objectID": "blogs/posts/what-is-left-for-data-scientists/index.html#the-code-is-getting-automated",
+    "href": "blogs/posts/what-is-left-for-data-scientists/index.html#the-code-is-getting-automated",
+    "title": "What Is Left for a Data Scientist When AI Writes the Code?",
+    "section": "The Code Is Getting Automated",
+    "text": "The Code Is Getting Automated\nA few years ago, writing a proper modular Python project needed real software engineering discipline. A clean src/ folder, CI/CD pipelines, experiment tracking, versioned model artifacts. It took months to learn. More months to practice.\nToday, the same project can be produced in a weekend with just three prompts. { This is not speculation. It has been done. My personal project. Look at the video below. }\n\nThe numbers back this up. GitHub Copilot alone now generates 46% of all code written by its users. { Up from 27% at launch in 2022. Source: GitHub Statistics, 2025 } Developers using AI tools complete coding tasks 55% faster on average. { Research across 4,800 developers by GitHub and Accenture. Source: Second Talent, 2026 } And as of 2025, 41% of all code worldwide is AI-generated or AI-assisted. { Source: Second Talent, 2026 }\nThis is not a future prediction. This is today.\n\n\n\n\n\nRed gets automated. Blue stays human. The judgment of what to build and why; that still needs a person."
+  },
+  {
+    "objectID": "blogs/posts/what-is-left-for-data-scientists/index.html#the-model-is-getting-automated-too",
+    "href": "blogs/posts/what-is-left-for-data-scientists/index.html#the-model-is-getting-automated-too",
+    "title": "What Is Left for a Data Scientist When AI Writes the Code?",
+    "section": "The Model Is Getting Automated Too",
+    "text": "The Model Is Getting Automated Too\nIf code automation was the first wave, ML automation is the second.\nAutoML platforms like Vertex AI, SageMaker Autopilot, and H2O Driverless AI take a CSV, try multiple algorithms, tune hyperparameters, and return a ranked leaderboard. Feature engineering assistance, SHAP explanations, and drift monitoring dashboards are all available out of the box.\n\n\n\n\n\nRed is largely automated. Yellow is partially automated and moving fast. Blue remains human.\nThat last blue box is the most important one in the entire chart. No tool answers it."
+  },
+  {
+    "objectID": "blogs/posts/what-is-left-for-data-scientists/index.html#data-science-is-a-confluence-of-three-worlds",
+    "href": "blogs/posts/what-is-left-for-data-scientists/index.html#data-science-is-a-confluence-of-three-worlds",
+    "title": "What Is Left for a Data Scientist When AI Writes the Code?",
+    "section": "Data Science Is a Confluence of Three Worlds",
+    "text": "Data Science Is a Confluence of Three Worlds\nBefore we ask what is left, we need to understand what data science actually is. It sits at the intersection of three worlds.\n\n\n\n\n\nBusiness and Mathematics together is Traditional Research. Think Supply Chain Analytics, Operations Research, simulation and modelling. This is the “lay of the land” layer. { I wrote about this earlier in my domain knowledge post }\nMathematics and Technology together is Machine Learning. Algorithms, statistical learning, model training.\nBusiness and Technology together is Software Engineering. Building systems that actually work in the real world.\nData Science sits at the center where all three meet.\nHere is the honest observation. AI is eating the Machine Learning automation and Software Engineering automation. What it is not eating is the Business layer, and the Traditional Research that connects to it."
+  },
+  {
+    "objectID": "blogs/posts/what-is-left-for-data-scientists/index.html#what-is-traditional-research-in-non-tech-companies",
+    "href": "blogs/posts/what-is-left-for-data-scientists/index.html#what-is-traditional-research-in-non-tech-companies",
+    "title": "What Is Left for a Data Scientist When AI Writes the Code?",
+    "section": "What Is Traditional Research in Non-Tech Companies?",
+    "text": "What Is Traditional Research in Non-Tech Companies?\nIn non-tech companies, Traditional Research does not mean academic journals. It means understanding the real problem before opening a laptop.\nIn Supply Chain Analytics, it means knowing safety stock formulas, reorder levels, service levels, and the bullwhip effect before writing a single line of forecasting code.\nIn HR Analytics, it means understanding attrition drivers, compensation bands, and what management actually decides on before building a retention model.\nIn Operations Analytics, it means knowing process flow, bottleneck theory, and cost per unit before running an optimization.\nIn Customer Analytics, it means understanding the Customer Lifecycle, the difference between retention and win-back, and what “loyalty” actually means for that specific business.\nIn Marketing Analytics, it means knowing media mix constraints, the seasonality of the business, and what a 1% lift in conversion actually translates to in revenue.\nNone of this knowledge comes from a dataset. It comes from curiosity, asking the right questions, and sometimes just sitting with a business head long enough to understand how they think.\nThis is the layer AI cannot replace. Not because AI lacks computation power. But because this layer requires knowing the problem before you define the data."
+  },
+  {
+    "objectID": "blogs/posts/what-is-left-for-data-scientists/index.html#so-what-is-left-the-dikw-answer.",
+    "href": "blogs/posts/what-is-left-for-data-scientists/index.html#so-what-is-left-the-dikw-answer.",
+    "title": "What Is Left for a Data Scientist When AI Writes the Code?",
+    "section": "So What Is Left? The DIKW Answer.",
+    "text": "So What Is Left? The DIKW Answer.\nThe DIKW pyramid { Data, Information, Knowledge, Wisdom } has been in information science literature since the 1980s. It is simple. And it maps precisely onto what is happening today.\n\n\n\n\n\nRed is AI’s territory today. Green is contested and AI is moving into it quickly. Blue is where humans own the outcome.\nMost data science teams today operate in red. They hand the output to a business head who needs blue. The gap in between is not a tools problem. It is a translation problem.\nThe person who can translate is the most valuable person in the room."
+  },
+  {
+    "objectID": "blogs/posts/what-is-left-for-data-scientists/index.html#the-consulting-layer-where-dmaic-lives",
+    "href": "blogs/posts/what-is-left-for-data-scientists/index.html#the-consulting-layer-where-dmaic-lives",
+    "title": "What Is Left for a Data Scientist When AI Writes the Code?",
+    "section": "The Consulting Layer: Where DMAIC Lives",
+    "text": "The Consulting Layer: Where DMAIC Lives\nThat translation has a name. And it is older than most data scientists realize.\nDMAIC. Define. Measure. Analyze. Improve. Control.\nSix Sigma was developed by Bill Smith at Motorola in 1986 to reduce manufacturing defects through statistical discipline. { Source: Six Sigma History, sixsigmaonline.org } By the late 1990s, nearly two thirds of Fortune 500 companies were running Six Sigma programs. The DMAIC framework was its core contribution: a disciplined, repeatable way to move from a business problem to a proven, measurable solution.\n\nAI handles Measure and Analyze well. Improve is shared. But Define and Control remain human.\nData scientists jumped straight to Measure and Analyze. They assumed someone else had already framed the problem correctly. Often nobody had.\nThat is precisely why business leaders say “there are no actionable insights from the team.” The team answered a question the business was not asking.\nSMART goal framing, process mapping, scope definition, root cause thinking. These were dismissed as old-fashioned consulting tools not worthy of a data scientist’s attention. They are the Define phase. And the Define phase is what makes everything else matter."
+  },
+  {
+    "objectID": "blogs/posts/what-is-left-for-data-scientists/index.html#what-technical-skills-are-still-needed",
+    "href": "blogs/posts/what-is-left-for-data-scientists/index.html#what-technical-skills-are-still-needed",
+    "title": "What Is Left for a Data Scientist When AI Writes the Code?",
+    "section": "What Technical Skills Are Still Needed?",
+    "text": "What Technical Skills Are Still Needed?\nTechnical skills still matter. Just fewer of them, and different ones.\nPython and SQL remain foundational. R, SAS, and SAP are declining in job postings. { Source: StrataScratch, 2024 } This is observable in the market today and is not disputed.\nCloud infrastructure matters for organizations with real data volumes. Snowflake, Databricks, and the major cloud providers are not going away. Data pipelines and governance remain a human responsibility even as execution gets more automated.\nGit and version control remain foundational. AI generates code. Git manages what happens to it. Without it, reproducibility is a promise nobody can keep.\nPrompting and LLM fluency is the new entry-level skill on the left side. Not prompt engineering as a formal specialty. But the ability to articulate a problem clearly to an AI tool and evaluate its output with judgment. This is becoming as fundamental as knowing how to write a SQL query.\nWhat organizations will actually invest in going forward is simpler than most platform vendors want to admit: clean data infrastructure, Git discipline, and AI API access. The expensive platforms in the middle are under pressure from exactly this combination.\n{ To be fair: this is a directional argument. Platform vendors will adapt. But cost-benefit pressure is real and growing. }"
+  },
+  {
+    "objectID": "blogs/posts/what-is-left-for-data-scientists/index.html#going-forward-data-science-as-kaizen",
+    "href": "blogs/posts/what-is-left-for-data-scientists/index.html#going-forward-data-science-as-kaizen",
+    "title": "What Is Left for a Data Scientist When AI Writes the Code?",
+    "section": "Going Forward: Data Science as Kaizen",
+    "text": "Going Forward: Data Science as Kaizen\nKaizen is a Japanese concept. It means continuous small improvement. Not a big transformation program. Not a moonshot. Small, disciplined, honest steps forward, one problem at a time.\nThis is what data science should look like in an AI world.\nNot chasing the latest model architecture. Not proving technical sophistication. Not adopting the most expensive platform.\nUnderstanding the current state of a real business process. Defining clearly what better looks like. Measuring the change honestly. Improving one thing. Controlling the result. Then the next problem.\nThe business analytics curriculum that many data scientists dismissed as not rigorous enough contains exactly this thinking. Statistical process control, process capability analysis, structured root cause thinking. Not old-fashioned. Underused.\nThe data scientists who thrive going forward will not be the ones who mastered the most tools. The tools will keep changing. They always do.\nThey will be the ones who can sit across from a business head, understand what is genuinely uncertain for that person, and bring the right analysis to reduce that uncertainty. With humility. One domain at a time.\nThe parallel lines never meet until there is a gentle nudge.\nGoing forward, that gentle nudge is not a better algorithm. It is a better question."
   },
   {
     "objectID": "blogs/posts/representation_models/index.html",

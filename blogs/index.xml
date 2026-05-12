@@ -10,7 +10,129 @@
 <atom:link href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/index.xml" rel="self" type="application/rss+xml"/>
 <description>LETS BREATHE DATA</description>
 <generator>quarto-1.7.32</generator>
-<lastBuildDate>Sun, 23 Feb 2025 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 11 May 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>What Is Left for a Data Scientist When AI Writes the Code?</title>
+  <dc:creator>Arun Koundinya Parasa</dc:creator>
+  <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/what-is-left-for-data-scientists/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Something is changing. Not just the tools. The entire job description of a data scientist is being quietly rewritten.</p>
+<p>Let us look at what is going away, what is staying, and honestly, what we should have been doing all along.</p>
+<section id="the-code-is-getting-automated" class="level2">
+<h2 class="anchored" data-anchor-id="the-code-is-getting-automated">The Code Is Getting Automated</h2>
+<p>A few years ago, writing a proper modular Python project needed real software engineering discipline. A clean <code>src/</code> folder, CI/CD pipelines, experiment tracking, versioned model artifacts. It took months to learn. More months to practice.</p>
+<p>Today, the same project can be produced in a weekend with just three prompts. { This is not speculation. It has been done. My personal project. Look at the video below. }</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="movie.MP4"></video></div>
+<p>The numbers back this up. GitHub Copilot alone now generates <strong>46% of all code</strong> written by its users. { Up from 27% at launch in 2022. Source: <a href="https://www.quantumrun.com/consulting/github-copilot-statistics/">GitHub Statistics, 2025</a> } Developers using AI tools complete coding tasks <strong>55% faster</strong> on average. { Research across 4,800 developers by GitHub and Accenture. Source: <a href="https://www.secondtalent.com/resources/github-copilot-statistics/">Second Talent, 2026</a> } And as of 2025, <strong>41% of all code worldwide is AI-generated or AI-assisted</strong>. { Source: <a href="https://www.secondtalent.com/resources/ai-coding-assistant-statistics/">Second Talent, 2026</a> }</p>
+<p>This is not a future prediction. This is today.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/what-is-left-for-data-scientists/software.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="411"></p>
+</figure>
+</div>
+<p>Red gets automated. Blue stays human. The judgment of what to build and why; that still needs a person.</p>
+</section>
+<section id="the-model-is-getting-automated-too" class="level2">
+<h2 class="anchored" data-anchor-id="the-model-is-getting-automated-too">The Model Is Getting Automated Too</h2>
+<p>If code automation was the first wave, ML automation is the second.</p>
+<p>AutoML platforms like Vertex AI, SageMaker Autopilot, and H2O Driverless AI take a CSV, try multiple algorithms, tune hyperparameters, and return a ranked leaderboard. Feature engineering assistance, SHAP explanations, and drift monitoring dashboards are all available out of the box.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/what-is-left-for-data-scientists/ml.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="364"></p>
+</figure>
+</div>
+<p>Red is largely automated. Yellow is partially automated and moving fast. Blue remains human.</p>
+<p>That last blue box is the most important one in the entire chart. No tool answers it.</p>
+</section>
+<section id="data-science-is-a-confluence-of-three-worlds" class="level2">
+<h2 class="anchored" data-anchor-id="data-science-is-a-confluence-of-three-worlds">Data Science Is a Confluence of Three Worlds</h2>
+<p>Before we ask what is left, we need to understand what data science actually is. It sits at the intersection of three worlds.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/what-is-left-for-data-scientists/image.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="405"></p>
+</figure>
+</div>
+<p>Business and Mathematics together is <strong>Traditional Research</strong>. Think Supply Chain Analytics, Operations Research, simulation and modelling. This is the “lay of the land” layer. { I wrote about this earlier in my <a href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/">domain knowledge post</a> }</p>
+<p>Mathematics and Technology together is <strong>Machine Learning</strong>. Algorithms, statistical learning, model training.</p>
+<p>Business and Technology together is <strong>Software Engineering</strong>. Building systems that actually work in the real world.</p>
+<p>Data Science sits at the center where all three meet.</p>
+<p>Here is the honest observation. AI is eating the Machine Learning automation and Software Engineering automation. What it is not eating is the Business layer, and the Traditional Research that connects to it.</p>
+</section>
+<section id="what-is-traditional-research-in-non-tech-companies" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-traditional-research-in-non-tech-companies">What Is Traditional Research in Non-Tech Companies?</h2>
+<p>In non-tech companies, Traditional Research does not mean academic journals. It means understanding the real problem before opening a laptop.</p>
+<p>In <strong>Supply Chain Analytics</strong>, it means knowing safety stock formulas, reorder levels, service levels, and the bullwhip effect before writing a single line of forecasting code.</p>
+<p>In <strong>HR Analytics</strong>, it means understanding attrition drivers, compensation bands, and what management actually decides on before building a retention model.</p>
+<p>In <strong>Operations Analytics</strong>, it means knowing process flow, bottleneck theory, and cost per unit before running an optimization.</p>
+<p>In <strong>Customer Analytics</strong>, it means understanding the Customer Lifecycle, the difference between retention and win-back, and what “loyalty” actually means for that specific business.</p>
+<p>In <strong>Marketing Analytics</strong>, it means knowing media mix constraints, the seasonality of the business, and what a 1% lift in conversion actually translates to in revenue.</p>
+<p>None of this knowledge comes from a dataset. It comes from curiosity, asking the right questions, and sometimes just sitting with a business head long enough to understand how they think.</p>
+<p>This is the layer AI cannot replace. Not because AI lacks computation power. But because this layer requires <strong>knowing the problem before you define the data.</strong></p>
+</section>
+<section id="so-what-is-left-the-dikw-answer." class="level2">
+<h2 class="anchored" data-anchor-id="so-what-is-left-the-dikw-answer.">So What Is Left? The DIKW Answer.</h2>
+<p>The DIKW pyramid { Data, Information, Knowledge, Wisdom } has been in information science literature since the 1980s. It is simple. And it maps precisely onto what is happening today.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/what-is-left-for-data-scientists/dikw.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="181"></p>
+</figure>
+</div>
+<p>Red is AI’s territory today. Green is contested and AI is moving into it quickly. Blue is where humans own the outcome.</p>
+<p>Most data science teams today operate in red. They hand the output to a business head who needs blue. The gap in between is not a tools problem. It is a translation problem.</p>
+<p>The person who can translate is the most valuable person in the room.</p>
+</section>
+<section id="the-consulting-layer-where-dmaic-lives" class="level2">
+<h2 class="anchored" data-anchor-id="the-consulting-layer-where-dmaic-lives">The Consulting Layer: Where DMAIC Lives</h2>
+<p>That translation has a name. And it is older than most data scientists realize.</p>
+<p><strong>DMAIC. Define. Measure. Analyze. Improve. Control.</strong></p>
+<p>Six Sigma was developed by Bill Smith at Motorola in 1986 to reduce manufacturing defects through statistical discipline. { Source: <a href="https://www.sixsigmaonline.org/six-sigma-history/">Six Sigma History, sixsigmaonline.org</a> } By the late 1990s, nearly two thirds of Fortune 500 companies were running Six Sigma programs. The DMAIC framework was its core contribution: a disciplined, repeatable way to move from a business problem to a proven, measurable solution.</p>
+<p><img src="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/what-is-left-for-data-scientists/dmaic.png" class="img-fluid"></p>
+<p>AI handles Measure and Analyze well. Improve is shared. But <strong>Define and Control</strong> remain human.</p>
+<p>Data scientists jumped straight to Measure and Analyze. They assumed someone else had already framed the problem correctly. Often nobody had.</p>
+<p>That is precisely why business leaders say “there are no actionable insights from the team.” The team answered a question the business was not asking.</p>
+<p>SMART goal framing, process mapping, scope definition, root cause thinking. These were dismissed as old-fashioned consulting tools not worthy of a data scientist’s attention. They are the Define phase. And the Define phase is what makes everything else matter.</p>
+</section>
+<section id="what-technical-skills-are-still-needed" class="level2">
+<h2 class="anchored" data-anchor-id="what-technical-skills-are-still-needed">What Technical Skills Are Still Needed?</h2>
+<p>Technical skills still matter. Just fewer of them, and different ones.</p>
+<p><strong>Python and SQL</strong> remain foundational. R, SAS, and SAP are declining in job postings. { Source: <a href="https://www.stratascratch.com/blog/data-science-in-2024-what-has-changed/">StrataScratch, 2024</a> } This is observable in the market today and is not disputed.</p>
+<p><strong>Cloud infrastructure</strong> matters for organizations with real data volumes. Snowflake, Databricks, and the major cloud providers are not going away. Data pipelines and governance remain a human responsibility even as execution gets more automated.</p>
+<p><strong>Git and version control</strong> remain foundational. AI generates code. Git manages what happens to it. Without it, reproducibility is a promise nobody can keep.</p>
+<p><strong>Prompting and LLM fluency</strong> is the new entry-level skill on the left side. Not prompt engineering as a formal specialty. But the ability to articulate a problem clearly to an AI tool and evaluate its output with judgment. This is becoming as fundamental as knowing how to write a SQL query.</p>
+<p>What organizations will actually invest in going forward is simpler than most platform vendors want to admit: <strong>clean data infrastructure, Git discipline, and AI API access.</strong> The expensive platforms in the middle are under pressure from exactly this combination.</p>
+<p>{ To be fair: this is a directional argument. Platform vendors will adapt. But cost-benefit pressure is real and growing. }</p>
+</section>
+<section id="going-forward-data-science-as-kaizen" class="level2">
+<h2 class="anchored" data-anchor-id="going-forward-data-science-as-kaizen">Going Forward: Data Science as Kaizen</h2>
+<p>Kaizen is a Japanese concept. It means continuous small improvement. Not a big transformation program. Not a moonshot. Small, disciplined, honest steps forward, one problem at a time.</p>
+<p>This is what data science should look like in an AI world.</p>
+<p>Not chasing the latest model architecture. Not proving technical sophistication. Not adopting the most expensive platform.</p>
+<p>Understanding the current state of a real business process. Defining clearly what better looks like. Measuring the change honestly. Improving one thing. Controlling the result. Then the next problem.</p>
+<p>The business analytics curriculum that many data scientists dismissed as not rigorous enough contains exactly this thinking. Statistical process control, process capability analysis, structured root cause thinking. Not old-fashioned. Underused.</p>
+<p>The data scientists who thrive going forward will not be the ones who mastered the most tools. The tools will keep changing. They always do.</p>
+<p>They will be the ones who can sit across from a business head, understand what is genuinely uncertain for that person, and bring the right analysis to reduce that uncertainty. With humility. One domain at a time.</p>
+<p><strong>The parallel lines never meet until there is a gentle nudge.</strong></p>
+<p>Going forward, that gentle nudge is not a better algorithm. It is a better question.</p>
+<script src="https://giscus.app/client.js" data-repo="ArunKoundinya/AIBasicswithAK" data-repo-id="R_kgDOLXPVRw" data-category="General" data-category-id="DIC_kwDOLXPVR84CdeVx" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="purple_dark" data-lang="en" crossorigin="anonymous" async="">
+</script>
+
+
+</section>
+
+ ]]></description>
+  <category>data science</category>
+  <category>AI</category>
+  <category>consulting</category>
+  <category>business analytics</category>
+  <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/what-is-left-for-data-scientists/</guid>
+  <pubDate>Mon, 11 May 2026 04:00:00 GMT</pubDate>
+  <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/what-is-left-for-data-scientists/image.png" medium="image" type="image/png" height="131" width="144"/>
+</item>
 <item>
   <title>Representation Models - Text Classification</title>
   <dc:creator>Arun Koundinya Parasa</dc:creator>
