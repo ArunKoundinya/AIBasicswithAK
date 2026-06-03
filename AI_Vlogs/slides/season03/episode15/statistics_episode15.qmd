@@ -1,0 +1,263 @@
+---
+title: "AI Basics with AK"
+subtitle: "Season 03 - Introduction to Statistics"
+format:
+  revealjs:
+    incremental: false
+    auto-stretch: true
+    slide-number: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Episode 15 - ANOVA: Analysis of Variance
+
+## The Problem ANOVA Solves
+
+::::::: columns
+:::: {.column width="50%"}
+### What If You Have More Than Two Groups?
+
+::: {style="font-size: 50%;"}
+A pharmaceutical company tests **three** different drugs on blood pressure.
+
+Drug A: 30 patients Drug B: 30 patients Drug C: 30 patients
+
+**Question:** Is there a difference in effectiveness across all three drugs?
+
+A t-test compares **two** groups. We have **three.**
+
+What do we do?
+:::
+::::
+
+:::: {.column width="50%"}
+### The Temptation & Wrong Answer
+
+::: {style="font-size: 50%;"}
+*"Just run three t-tests!"*
+
+-   A vs B
+-   A vs C
+-   B vs C
+
+This sounds reasonable. But it creates a serious problem.
+
+Each test has a 5% chance of a Type I error.
+
+Three tests → the error **compounds.**
+
+$$P(\text{at least one false positive}) = 1 - (0.95)^3 \approx 0.143$$
+
+> You've inflated your false positive rate from 5% to **14.3%** without realising it.
+:::
+::::
+:::::::
+
+## ANOVA's Answer: One Test for All Groups
+
+::: {style="font-size: 70%;"}
+**ANOVA — Analysis of Variance** tests whether **any** group means differ — in a single test.
+
+> H₀: All group means are equal → μ₁ = μ₂ = μ₃ = ... = μₖ
+
+> H₁: At least one group mean is different
+
+**Key point:** ANOVA does not tell you *which* groups differ.
+
+It tells you *whether* a difference exists somewhere.
+
+For *which* groups differ → we use **post-hoc tests** (later in this episode).
+
+**One test. One α. No inflation.**
+:::
+
+## The Core Idea: Variance as Evidence
+
+::::::: columns
+:::: {.column width="50%"}
+### The Intuition
+
+::: {style="font-size: 65%;"}
+Instead of comparing means directly —
+
+ANOVA compares **two types of variance:**
+
+**Between-group variance:** How spread are the group means from the overall mean?
+
+**Within-group variance:** How spread are individual observations within each group?
+
+> If between-group variance is much larger than within-group variance — the groups are genuinely different.
+:::
+::::
+
+:::: {.column width="50%"}
+### The Signal-to-Noise Ratio
+
+::: {style="font-size: 65%;"}
+$$F = \frac{\text{Between-group variance}}{\text{Within-group variance}} = \frac{\text{Signal}}{\text{Noise}}$$
+
+-   **Large F** → Group means vary more than random noise → Evidence against H₀
+-   **Small F ≈ 1** → Groups vary no more than expected by chance → No evidence against H₀
+
+This ratio is called the **F-statistic.**
+
+It follows an **F-distribution** under H₀.
+:::
+::::
+:::::::
+
+## Visualizing Between vs Within Variance
+
+```{python}
+import numpy as np
+import plotly.graph_objects as go
+from scipy import stats
+
+np.random.seed(42)
+
+# Scenario selector: low vs high F
+scenarios = [
+    {
+        "label": "Low F — Groups overlap (H₀ likely true)",
+        "means": [50, 52, 51],
+        "sd": 8,
+        "n": 20,
+        "color": ['steelblue', 'darkorange', '#2e8b57']
+    },
+    {
+        "label": "Moderate F — Some separation",
+        "means": [45, 52, 58],
+        "sd": 7,
+        "n": 20,
+        "color": ['steelblue', 'darkorange', '#2e8b57']
+    },
+    {
+        "label": "High F — Clear group separation (Reject H₀)",
+        "means": [40, 55, 70],
+        "sd": 5,
+        "n": 20,
+        "color": ['steelblue', 'darkorange', '#2e8b57']
+    }
+]
+
+fig = go.Figure()
+
+for i, sc in enumerate(scenarios):
+    vis = (i == 0)
+    groups = [np.random.normal(m, sc["sd"], sc["n"]) for m in sc["means"]]
+    labels = ['Drug A', 'Drug B', 'Drug C']
+
+    # Compute F-statistic
+    f_stat, p_val = stats.f_oneway(*groups)
+    grand_mean = np.mean(np.concatenate(groups))
+
+    for j, (grp, label, color) in enumerate(zip(groups, labels, sc["color"])):
+        fig.add_trace(go.Box(
+            y=grp,
+            name=label,
+            marker_color=color,
+            boxmean=True,
+            visible=vis
+        ))
+
+    # Grand mean line
+    fig.add_trace(go.Scatter(
+        x=[-0.5, 2.5],
+        y=[grand_mean, grand_mean],
+        mode='lines',
+        line=dict(color='firebrick', dash='dash', width=2),
+        name='Grand Mean',
+        visible=vis,
+        showlegend=(i == 0)
+    ))
+
+buttons = []
+for i, sc in enumerate(scenarios):
+    groups = [np.random.normal(m, sc["sd"], sc["n"]) for m in sc["means"]]
+    f_stat, p_val = stats.f_oneway(*groups)
+    decision = "Reject H₀ ❌" if p_val < 0.05 else "Fail to Reject H₀ ✅"
+    n_traces = 4  # 3 box + 1 grand mean line
+    vis = []
+    for j in range(len(scenarios)):
+        vis += [j == i] * n_traces
+    buttons.append(dict(
+        label=sc["label"].split('—')[0].strip(),
+        method='update',
+        args=[{'visible': vis},
+              {'title': f'{sc["label"]} | F = {f_stat:.2f} | p = {p_val:.4f} | {decision}'}]
+    ))
+
+groups0 = [np.random.normal(m, scenarios[0]["sd"], scenarios[0]["n"]) for m in scenarios[0]["means"]]
+f0, p0 = stats.f_oneway(*groups0)
+fig.update_layout(
+    title=f'{scenarios[0]["label"]} | F = {f0:.2f} | p = {p0:.4f} | {"Reject H₀ ❌" if p0 < 0.05 else "Fail to Reject H₀ ✅"}',
+    yaxis_title='Observed Value',
+    height=460,
+    updatemenus=[dict(
+        buttons=buttons, direction='down',
+        x=0.01, y=1.18,
+        xanchor='left', yanchor='top'
+    )],
+    showlegend=True
+)
+
+fig.show()
+```
+
+::: {style="font-size: 50%;"}
+> Switch scenarios to see how group separation drives F. When groups barely overlap, F is large and we reject H₀.
+:::
+
+## ANOVA Tells You Someone Differs But Not Who
+
+::: {style="font-size: 70%;"}
+After rejecting H₀ in ANOVA, we know:
+
+> *"At least one group mean is different."*
+
+But we don't know:
+
+-   Is A different from B?
+-   Is B different from C?
+-   Are all three different?
+
+**This is where post-hoc tests come in.**
+
+Post-hoc tests make **pairwise comparisons** after ANOVA — while controlling the family-wise error rate.
+
+The most common: **Tukey's Honest Significant Difference (HSD)**
+:::
+
+## Tukey's HSD — Post-Hoc Test
+
+
+::: {style="font-size: 65%;"}
+Tukey's HSD computes a **minimum difference** that two group means must exceed to be considered significantly different.
+
+$$HSD = q \times \sqrt{\frac{MS_W}{n}}$$
+
+-   **q** = studentised range statistic (from table)
+-   **MS_W** = within-group mean square from ANOVA
+-   **n** = group size (equal groups)
+
+If \|x̄ᵢ − x̄ⱼ\| \> HSD → groups i and j are significantly different.
+:::
+
+
+## Assumptions of One-Way ANOVA
+
+::: {style="font-size: 70%;"}
+ANOVA is powerful — but it rests on three assumptions:
+
+**Independence** Observations within and across groups must be independent. Each subject appears in only one group.
+
+**Normality** Data within each group should be approximately normally distributed. ANOVA is robust to mild violations when n is large (CLT again).
+
+**Homogeneity of Variance (Homoscedasticity)** All groups should have roughly equal variances.
+
+:::
+
+# Thank You

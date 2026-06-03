@@ -442,6 +442,16 @@ This format is inspired from my [data visualization](https://datavizaz.org) clas
 <td>10th May 2026</td>
 </tr>
 
+<tr>
+<td>Episode - 15</td>
+<td>ANOVA</td>
+<td><a href="slides/season03/episode15/statistics_episode15.html" target="_blank">Link</a></td>
+<td>NA</td>
+<td><a href="" target="_blank">Link</a></td>
+<td>NA</td>
+<td>3rd June 2026</td>
+</tr>
+
 </table>
 </div>
 
