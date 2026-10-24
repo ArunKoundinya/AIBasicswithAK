@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Every episode of the AI Basics with AK YouTube series, with slides, homework and demo code: Season 2 Introduction to Python Programming and Season 3 Introduction to Statistics.">
 
-<title>AI Basics with AK –  AI Basics with AK</title>
+<title>Episode guide – AI Basics with AK</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,17 +31,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../logo.png" rel="icon" type="image/png">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-25cb606da3a62b75b45781cfd62e2df7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d08bc2f7f77220ce7e22a3f8516e8627.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3289fadc87013f5e0c4f20393858af91.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,20 +71,106 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-episodes .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-season','listing-episode','listing-date','listing-video','listing-slides','listing-homework','listing-demo',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-title","listing-season","listing-episode","listing-date","listing-video","listing-slides","listing-homework","listing-demo"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-episodes'] = new List('listing-episodes', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<!-- Search engine ownership verification. Paste the content values from
+     Google Search Console and Bing Webmaster Tools, then uncomment. -->
+<!-- <meta name="google-site-verification" content="PASTE-GOOGLE-CODE"> -->
+<!-- <meta name="msvalidate.01" content="PASTE-BING-CODE"> -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Episode guide">
+<meta property="og:description" content="Every episode of the AI Basics with AK YouTube series, with slides, homework and demo code: Season 2 Introduction to Python Programming and Season 3 Introduction to Statistics.">
+<meta property="og:image" content="https://arunkoundinya.github.io/AIBasicswithAK/images/social-card.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Episode guide">
+<meta property="og:site_name" content="AI Basics with AK">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Episode guide">
+<meta name="twitter:description" content="Every episode of the AI Basics with AK YouTube series, with slides, homework and demo code: Season 2 Introduction to Python Programming and Season 3 Introduction to Statistics.">
+<meta name="twitter:image" content="https://arunkoundinya.github.io/AIBasicswithAK/images/social-card.png">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo.py -->
+<link rel="canonical" href="https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "AI Basics with AK — episode guide", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 1 | Why Python?", "description": "Season 2, episode 1 of AI Basics with AK: Why Python?. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/zynrOOSNXro/hqdefault.jpg", "uploadDate": "2024-03-01", "contentUrl": "https://www.youtube.com/watch?v=zynrOOSNXro", "embedUrl": "https://www.youtube.com/embed/zynrOOSNXro", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 2 | Python Data Types", "description": "Season 2, episode 2 of AI Basics with AK: Python Data Types. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/-41cT7lAsZ4/hqdefault.jpg", "uploadDate": "2024-03-08", "contentUrl": "https://www.youtube.com/watch?v=-41cT7lAsZ4", "embedUrl": "https://www.youtube.com/embed/-41cT7lAsZ4", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 3 | Numbers & Booleans", "description": "Season 2, episode 3 of AI Basics with AK: Numbers & Booleans. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/i4ubGLFbu30/hqdefault.jpg", "uploadDate": "2024-03-17", "contentUrl": "https://www.youtube.com/watch?v=i4ubGLFbu30", "embedUrl": "https://www.youtube.com/embed/i4ubGLFbu30", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 4 | Strings & Characters - 1", "description": "Season 2, episode 4 of AI Basics with AK: Strings & Characters - 1. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/Pr-qno6m3kA/hqdefault.jpg", "uploadDate": "2024-03-24", "contentUrl": "https://www.youtube.com/watch?v=Pr-qno6m3kA", "embedUrl": "https://www.youtube.com/embed/Pr-qno6m3kA", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 5 | Strings & Characters - 2", "description": "Season 2, episode 5 of AI Basics with AK: Strings & Characters - 2. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/YtblBrvnqII/hqdefault.jpg", "uploadDate": "2024-03-31", "contentUrl": "https://www.youtube.com/watch?v=YtblBrvnqII", "embedUrl": "https://www.youtube.com/embed/YtblBrvnqII", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 6 | Strings & Characters - 3", "description": "Season 2, episode 6 of AI Basics with AK: Strings & Characters - 3. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/-DrQBPWuz9I/hqdefault.jpg", "uploadDate": "2024-04-07", "contentUrl": "https://www.youtube.com/watch?v=-DrQBPWuz9I", "embedUrl": "https://www.youtube.com/embed/-DrQBPWuz9I", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 7, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 7 | Loops and Breaks", "description": "Season 2, episode 7 of AI Basics with AK: Loops and Breaks. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/9T4GwNTjgmo/hqdefault.jpg", "uploadDate": "2024-04-15", "contentUrl": "https://www.youtube.com/watch?v=9T4GwNTjgmo", "embedUrl": "https://www.youtube.com/embed/9T4GwNTjgmo", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 8, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 8 | Lists & Tuples", "description": "Season 2, episode 8 of AI Basics with AK: Lists & Tuples. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/FCYLnHAdO98/hqdefault.jpg", "uploadDate": "2024-04-22", "contentUrl": "https://www.youtube.com/watch?v=FCYLnHAdO98", "embedUrl": "https://www.youtube.com/embed/FCYLnHAdO98", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 9, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 9 | List Operations", "description": "Season 2, episode 9 of AI Basics with AK: List Operations. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/OF_nlGYck_0/hqdefault.jpg", "uploadDate": "2024-05-11", "contentUrl": "https://www.youtube.com/watch?v=OF_nlGYck_0", "embedUrl": "https://www.youtube.com/embed/OF_nlGYck_0", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 10, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 10 | Dictionaries", "description": "Season 2, episode 10 of AI Basics with AK: Dictionaries. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/J0KG3TiQ7e4/hqdefault.jpg", "uploadDate": "2024-05-13", "contentUrl": "https://www.youtube.com/watch?v=J0KG3TiQ7e4", "embedUrl": "https://www.youtube.com/embed/J0KG3TiQ7e4", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 11, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 11 | Functions", "description": "Season 2, episode 11 of AI Basics with AK: Functions. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/w-019_VLkNs/hqdefault.jpg", "uploadDate": "2024-05-17", "contentUrl": "https://www.youtube.com/watch?v=w-019_VLkNs", "embedUrl": "https://www.youtube.com/embed/w-019_VLkNs", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 12, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 12 | Lambda Functions", "description": "Season 2, episode 12 of AI Basics with AK: Lambda Functions. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/d_foHhfc8Bw/hqdefault.jpg", "uploadDate": "2024-05-31", "contentUrl": "https://www.youtube.com/watch?v=d_foHhfc8Bw", "embedUrl": "https://www.youtube.com/embed/d_foHhfc8Bw", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 13, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 13 | Lambda with Map, Filter & Reduce", "description": "Season 2, episode 13 of AI Basics with AK: Lambda with Map, Filter & Reduce. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/973XwAKfTsc/hqdefault.jpg", "uploadDate": "2024-06-17", "contentUrl": "https://www.youtube.com/watch?v=973XwAKfTsc", "embedUrl": "https://www.youtube.com/embed/973XwAKfTsc", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 14, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 14 | Object-Oriented Programming", "description": "Season 2, episode 14 of AI Basics with AK: Object-Oriented Programming. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/7hP2vN3yZZc/hqdefault.jpg", "uploadDate": "2024-07-21", "contentUrl": "https://www.youtube.com/watch?v=7hP2vN3yZZc", "embedUrl": "https://www.youtube.com/embed/7hP2vN3yZZc", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 15, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 15 | Classes & Objects", "description": "Season 2, episode 15 of AI Basics with AK: Classes & Objects. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/hemBUSaTaJ0/hqdefault.jpg", "uploadDate": "2024-07-28", "contentUrl": "https://www.youtube.com/watch?v=hemBUSaTaJ0", "embedUrl": "https://www.youtube.com/embed/hemBUSaTaJ0", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 16, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 16 | Inheritance", "description": "Season 2, episode 16 of AI Basics with AK: Inheritance. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/3k_oiIbtotY/hqdefault.jpg", "uploadDate": "2024-07-31", "contentUrl": "https://www.youtube.com/watch?v=3k_oiIbtotY", "embedUrl": "https://www.youtube.com/embed/3k_oiIbtotY", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 17, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 17 | Multiple Inheritance", "description": "Season 2, episode 17 of AI Basics with AK: Multiple Inheritance. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/zLKdAo2BCRE/hqdefault.jpg", "uploadDate": "2025-04-06", "contentUrl": "https://www.youtube.com/watch?v=zLKdAo2BCRE", "embedUrl": "https://www.youtube.com/embed/zLKdAo2BCRE", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 18, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 18 | Multi Threading & Multi Processing", "description": "Season 2, episode 18 of AI Basics with AK: Multi Threading & Multi Processing. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/vxwTvnnoNS8/hqdefault.jpg", "uploadDate": "2025-04-13", "contentUrl": "https://www.youtube.com/watch?v=vxwTvnnoNS8", "embedUrl": "https://www.youtube.com/embed/vxwTvnnoNS8", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 19, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 19 | Debugging the Code", "description": "Season 2, episode 19 of AI Basics with AK: Debugging the Code. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/2UJ94KxKwXs/hqdefault.jpg", "uploadDate": "2025-04-20", "contentUrl": "https://www.youtube.com/watch?v=2UJ94KxKwXs", "embedUrl": "https://www.youtube.com/embed/2UJ94KxKwXs", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 20, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 20 | End to End Project", "description": "Season 2, episode 20 of AI Basics with AK: End to End Project. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/g8Jvx-AgN7w/hqdefault.jpg", "uploadDate": "2025-04-27", "contentUrl": "https://www.youtube.com/watch?v=g8Jvx-AgN7w", "embedUrl": "https://www.youtube.com/embed/g8Jvx-AgN7w", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 21, "item": {"@type": "VideoObject", "name": "Introduction to Python Programming | Season 2 Episode 21 | Deploying the Project", "description": "Season 2, episode 21 of AI Basics with AK: Deploying the Project. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/c6foBK39eSQ/hqdefault.jpg", "uploadDate": "2025-05-04", "contentUrl": "https://www.youtube.com/watch?v=c6foBK39eSQ", "embedUrl": "https://www.youtube.com/embed/c6foBK39eSQ", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 22, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 1 | What is Statistics?", "description": "Season 3, episode 1 of AI Basics with AK: What is Statistics?. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/Fofh-2hJAYQ/hqdefault.jpg", "uploadDate": "2025-05-30", "contentUrl": "https://www.youtube.com/watch?v=Fofh-2hJAYQ", "embedUrl": "https://www.youtube.com/embed/Fofh-2hJAYQ", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 23, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 2 | Types of Data", "description": "Season 3, episode 2 of AI Basics with AK: Types of Data. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/xMrkHjzACNI/hqdefault.jpg", "uploadDate": "2025-07-28", "contentUrl": "https://www.youtube.com/watch?v=xMrkHjzACNI", "embedUrl": "https://www.youtube.com/embed/xMrkHjzACNI", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 24, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 3 | Descriptive Statistics", "description": "Season 3, episode 3 of AI Basics with AK: Descriptive Statistics. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/1Ao6BqrUu_Q/hqdefault.jpg", "uploadDate": "2025-08-04", "contentUrl": "https://www.youtube.com/watch?v=1Ao6BqrUu_Q", "embedUrl": "https://www.youtube.com/embed/1Ao6BqrUu_Q", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 25, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 4 | Data Visualization", "description": "Season 3, episode 4 of AI Basics with AK: Data Visualization. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/tEbyY9UDhi4/hqdefault.jpg", "uploadDate": "2025-08-24", "contentUrl": "https://www.youtube.com/watch?v=tEbyY9UDhi4", "embedUrl": "https://www.youtube.com/embed/tEbyY9UDhi4", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 26, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 5 | Basics of Probability", "description": "Season 3, episode 5 of AI Basics with AK: Basics of Probability. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/x3e14_EzwDI/hqdefault.jpg", "uploadDate": "2025-09-08", "contentUrl": "https://www.youtube.com/watch?v=x3e14_EzwDI", "embedUrl": "https://www.youtube.com/embed/x3e14_EzwDI", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 27, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 6 | Probability Distributions", "description": "Season 3, episode 6 of AI Basics with AK: Probability Distributions. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/_YMpg_RdQFI/hqdefault.jpg", "uploadDate": "2025-11-08", "contentUrl": "https://www.youtube.com/watch?v=_YMpg_RdQFI", "embedUrl": "https://www.youtube.com/embed/_YMpg_RdQFI", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 28, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 7 | Central Limit Theorem", "description": "Season 3, episode 7 of AI Basics with AK: Central Limit Theorem. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/q7bxXTYudos/hqdefault.jpg", "uploadDate": "2026-01-12", "contentUrl": "https://www.youtube.com/watch?v=q7bxXTYudos", "embedUrl": "https://www.youtube.com/embed/q7bxXTYudos", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 29, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 8 | Confidence Intervals", "description": "Season 3, episode 8 of AI Basics with AK: Confidence Intervals. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/RjJLZWQb3so/hqdefault.jpg", "uploadDate": "2026-02-03", "contentUrl": "https://www.youtube.com/watch?v=RjJLZWQb3so", "embedUrl": "https://www.youtube.com/embed/RjJLZWQb3so", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 30, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 9 | T-Distribution", "description": "Season 3, episode 9 of AI Basics with AK: T-Distribution. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/Jvg9bFq6KVo/hqdefault.jpg", "uploadDate": "2026-03-07", "contentUrl": "https://www.youtube.com/watch?v=Jvg9bFq6KVo", "embedUrl": "https://www.youtube.com/embed/Jvg9bFq6KVo", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 31, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 10 | Hypothesis Testing", "description": "Season 3, episode 10 of AI Basics with AK: Hypothesis Testing. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/Gv6ZR9ThmPo/hqdefault.jpg", "uploadDate": "2026-03-10", "contentUrl": "https://www.youtube.com/watch?v=Gv6ZR9ThmPo", "embedUrl": "https://www.youtube.com/embed/Gv6ZR9ThmPo", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 32, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 11 | Type I & Type II Errors", "description": "Season 3, episode 11 of AI Basics with AK: Type I & Type II Errors. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/bEx6OrVw86Y/hqdefault.jpg", "uploadDate": "2026-03-22", "contentUrl": "https://www.youtube.com/watch?v=bEx6OrVw86Y", "embedUrl": "https://www.youtube.com/embed/bEx6OrVw86Y", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 33, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 12 | Two-Sample Tests", "description": "Season 3, episode 12 of AI Basics with AK: Two-Sample Tests. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/KW4ttIE7Jhk/hqdefault.jpg", "uploadDate": "2026-04-16", "contentUrl": "https://www.youtube.com/watch?v=KW4ttIE7Jhk", "embedUrl": "https://www.youtube.com/embed/KW4ttIE7Jhk", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 34, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 13 | Chi-Square Tests", "description": "Season 3, episode 13 of AI Basics with AK: Chi-Square Tests. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/YimKvuJf3k0/hqdefault.jpg", "uploadDate": "2026-04-29", "contentUrl": "https://www.youtube.com/watch?v=YimKvuJf3k0", "embedUrl": "https://www.youtube.com/embed/YimKvuJf3k0", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 35, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 14 | Degrees of Freedom", "description": "Season 3, episode 14 of AI Basics with AK: Degrees of Freedom. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/G9CI3cwaz6g/hqdefault.jpg", "uploadDate": "2026-05-10", "contentUrl": "https://www.youtube.com/watch?v=G9CI3cwaz6g", "embedUrl": "https://www.youtube.com/embed/G9CI3cwaz6g", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}, {"@type": "ListItem", "position": 36, "item": {"@type": "VideoObject", "name": "Introduction to Statistics | Season 3 Episode 15 | ANOVA", "description": "Season 3, episode 15 of AI Basics with AK: ANOVA. Slides and notes at https://arunkoundinya.github.io/AIBasicswithAK/AI_Vlogs/", "thumbnailUrl": "https://i.ytimg.com/vi/17uIWsg8bQY/hqdefault.jpg", "uploadDate": "2026-06-11", "contentUrl": "https://www.youtube.com/watch?v=17uIWsg8bQY", "embedUrl": "https://www.youtube.com/embed/17uIWsg8bQY", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}}}]}</script>
+<link rel="apple-touch-icon" href="https://arunkoundinya.github.io/AIBasicswithAK/images/apple-touch-icon.png">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed hub quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo-round.png" alt="AI Basics with AK" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title"><img src="https://arunkoundinya.github.io/AIBasicswithAK/logo.png" style="width: 2.2em; height: 2.2em; border-radius: 30%;"> <b>AI Basics with AK</b></span>
+    <span class="navbar-title">AI Basics with AK</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -96,26 +185,35 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../AI_Vlogs/index.html" aria-current="page"> 
-<span class="menu-text">AI_Vlogs</span></a>
+<span class="menu-text">Episodes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../blogs/index.html"> 
-<span class="menu-text">Blogs</span></a>
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://arunkoundinya.github.io/"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../blogs/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="https://www.youtube.com/@AIBasicswithAK"> <i class="bi bi-youtube" role="img" aria-label="YouTube">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="http://arunkoundinya.github.io/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="../blogs/index.xml"> <i class="bi bi-rss" role="img" aria-label="RSS">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/arunkoundinya0710/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://github.com/ArunKoundinya/AIBasicswithAK"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/arunkoundinya0710/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -127,467 +225,754 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Episode guide</h1></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">AI Basics with AK</h1>
-<p class="subtitle lead">Notes for my Vlogs</p>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
+<header id="title-block-header">
 
 
 </header>
 
 
-<p>This format is inspired from my <a href="https://datavizaz.org">data visualization</a> class; So will be sticking to this format.</p>
-<style>
-    .tb table.collapsible {
-        width: 1008px;
-        border-collapse: collapse;
-        margin: 50px auto;
-        font-family: 'Calibri (Body)';
-    }
+<div class="page-head">
+<p><span class="kicker">YouTube series · notes &amp; code</span></p>
+<section id="episode-guide" class="level1 unnumbered unlisted">
+<h1 class="unnumbered unlisted">Episode guide</h1>
+<p>Every episode, with the slides I teach from, homework to practise on, and the demo code. Slides open in the browser; press <strong>F</strong> for full screen and <strong>S</strong> for speaker notes. Season 1 is on <a href="https://www.youtube.com/@AIBasicswithAK/videos">YouTube</a>; notes start from Season 2.</p>
+</section>
+</div>
+<div id="listing-episodes" class="quarto-listing quarto-listing-container-custom">
+<div class="ep-toolbar">
+  <nav class="jump" aria-label="Jump to season">
+    <a class="pill" href="#season-3">Season 3 · Introduction to Statistics</a><a class="pill" href="#season-2">Season 2 · Introduction to Python Programming</a>
+  </nav>
+  <input type="search" id="ep-search" placeholder="Search episodes, e.g. lambda, t-test" aria-label="Search episodes">
+</div>
 
-    .tb .collapsible td {
-        padding: 10px;
-        border: 1px solid #ccc;
-        text-align: center;
-        font-size: 16px;
-    }
+<section class="season-block" id="season-3">
+  <div class="season-block-head">
+    <span class="big">03</span>
+    <div><span class="kicker">Season 3</span><h2 class="anchored">Introduction to Statistics</h2></div>
+    <p class="meta">15 episodes<br>May 30, 2025 – Jun 11, 2026</p>
+  </div>
+  <p class="season-intro">Statistics for people who want to use it, not just pass an exam: data types, summaries and charts, probability, sampling, confidence intervals and the family of hypothesis tests.</p>
+  
+  <article class="ep-row" data-q="what is statistics? season 3 episode 1">
+    <span class="ep-num">E01</span>
+    
+    <a class="thumb" href="https://youtu.be/Fofh-2hJAYQ" target="_blank" rel="noopener" aria-label="Watch What is Statistics? on YouTube">
+      <img src="https://i.ytimg.com/vi/Fofh-2hJAYQ/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">What is Statistics?</h3>
+      <p class="meta">May 30, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/Fofh-2hJAYQ" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode01/statistics_episode01.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="types of data season 3 episode 2">
+    <span class="ep-num">E02</span>
+    
+    <a class="thumb" href="https://youtu.be/xMrkHjzACNI" target="_blank" rel="noopener" aria-label="Watch Types of Data on YouTube">
+      <img src="https://i.ytimg.com/vi/xMrkHjzACNI/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Types of Data</h3>
+      <p class="meta">Jul 28, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/xMrkHjzACNI" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode02/statistics_episode02.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="descriptive statistics season 3 episode 3">
+    <span class="ep-num">E03</span>
+    
+    <a class="thumb" href="https://youtu.be/1Ao6BqrUu_Q" target="_blank" rel="noopener" aria-label="Watch Descriptive Statistics on YouTube">
+      <img src="https://i.ytimg.com/vi/1Ao6BqrUu_Q/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Descriptive Statistics</h3>
+      <p class="meta">Aug 4, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/1Ao6BqrUu_Q" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode03/statistics_episode03.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="data visualization season 3 episode 4">
+    <span class="ep-num">E04</span>
+    
+    <a class="thumb" href="https://youtu.be/tEbyY9UDhi4" target="_blank" rel="noopener" aria-label="Watch Data Visualization on YouTube">
+      <img src="https://i.ytimg.com/vi/tEbyY9UDhi4/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Data Visualization</h3>
+      <p class="meta">Aug 24, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/tEbyY9UDhi4" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode04/statistics_episode04.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="basics of probability season 3 episode 5">
+    <span class="ep-num">E05</span>
+    
+    <a class="thumb" href="https://youtu.be/x3e14_EzwDI" target="_blank" rel="noopener" aria-label="Watch Basics of Probability on YouTube">
+      <img src="https://i.ytimg.com/vi/x3e14_EzwDI/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Basics of Probability</h3>
+      <p class="meta">Sep 8, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/x3e14_EzwDI" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode05/statistics_episode05.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="probability distributions season 3 episode 6">
+    <span class="ep-num">E06</span>
+    
+    <a class="thumb" href="https://youtu.be/_YMpg_RdQFI" target="_blank" rel="noopener" aria-label="Watch Probability Distributions on YouTube">
+      <img src="https://i.ytimg.com/vi/_YMpg_RdQFI/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Probability Distributions</h3>
+      <p class="meta">Nov 8, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/_YMpg_RdQFI" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode06/statistics_episode06.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="central limit theorem season 3 episode 7">
+    <span class="ep-num">E07</span>
+    
+    <a class="thumb" href="https://youtu.be/q7bxXTYudos" target="_blank" rel="noopener" aria-label="Watch Central Limit Theorem on YouTube">
+      <img src="https://i.ytimg.com/vi/q7bxXTYudos/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Central Limit Theorem</h3>
+      <p class="meta">Jan 12, 2026</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/q7bxXTYudos" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode07/statistics_episode07.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="confidence intervals season 3 episode 8">
+    <span class="ep-num">E08</span>
+    
+    <a class="thumb" href="https://youtu.be/RjJLZWQb3so" target="_blank" rel="noopener" aria-label="Watch Confidence Intervals on YouTube">
+      <img src="https://i.ytimg.com/vi/RjJLZWQb3so/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Confidence Intervals</h3>
+      <p class="meta">Feb 3, 2026</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/RjJLZWQb3so" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode08/statistics_episode08.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="t-distribution season 3 episode 9">
+    <span class="ep-num">E09</span>
+    
+    <a class="thumb" href="https://youtu.be/Jvg9bFq6KVo" target="_blank" rel="noopener" aria-label="Watch T-Distribution on YouTube">
+      <img src="https://i.ytimg.com/vi/Jvg9bFq6KVo/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">T-Distribution</h3>
+      <p class="meta">Mar 7, 2026</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/Jvg9bFq6KVo" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode09/statistics_episode09.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="hypothesis testing season 3 episode 10">
+    <span class="ep-num">E10</span>
+    
+    <a class="thumb" href="https://youtu.be/Gv6ZR9ThmPo" target="_blank" rel="noopener" aria-label="Watch Hypothesis Testing on YouTube">
+      <img src="https://i.ytimg.com/vi/Gv6ZR9ThmPo/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Hypothesis Testing</h3>
+      <p class="meta">Mar 10, 2026</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/Gv6ZR9ThmPo" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode10/statistics_episode10.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season03/episode10/homework.html">Homework</a>
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="type i &amp; type ii errors season 3 episode 11">
+    <span class="ep-num">E11</span>
+    
+    <a class="thumb" href="https://youtu.be/bEx6OrVw86Y" target="_blank" rel="noopener" aria-label="Watch Type I &amp; Type II Errors on YouTube">
+      <img src="https://i.ytimg.com/vi/bEx6OrVw86Y/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Type I &amp; Type II Errors</h3>
+      <p class="meta">Mar 22, 2026</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/bEx6OrVw86Y" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode11/statistics_episode11.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season03/episode11/homework.html">Homework</a>
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="two-sample tests season 3 episode 12">
+    <span class="ep-num">E12</span>
+    
+    <a class="thumb" href="https://youtu.be/KW4ttIE7Jhk" target="_blank" rel="noopener" aria-label="Watch Two-Sample Tests on YouTube">
+      <img src="https://i.ytimg.com/vi/KW4ttIE7Jhk/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Two-Sample Tests</h3>
+      <p class="meta">Apr 16, 2026</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/KW4ttIE7Jhk" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode12/statistics_episode12.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season03/episode12/homework.html">Homework</a>
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="chi-square tests season 3 episode 13">
+    <span class="ep-num">E13</span>
+    
+    <a class="thumb" href="https://youtu.be/YimKvuJf3k0" target="_blank" rel="noopener" aria-label="Watch Chi-Square Tests on YouTube">
+      <img src="https://i.ytimg.com/vi/YimKvuJf3k0/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Chi-Square Tests</h3>
+      <p class="meta">Apr 29, 2026</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/YimKvuJf3k0" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode13/statistics_episode13.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="degrees of freedom season 3 episode 14">
+    <span class="ep-num">E14</span>
+    
+    <a class="thumb" href="https://youtu.be/G9CI3cwaz6g" target="_blank" rel="noopener" aria-label="Watch Degrees of Freedom on YouTube">
+      <img src="https://i.ytimg.com/vi/G9CI3cwaz6g/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Degrees of Freedom</h3>
+      <p class="meta">May 10, 2026</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/G9CI3cwaz6g" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode14/statistics_episode14.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row latest" data-q="anova season 3 episode 15">
+    <span class="ep-num">E15</span>
+    
+    <a class="thumb" href="https://youtu.be/17uIWsg8bQY" target="_blank" rel="noopener" aria-label="Watch ANOVA on YouTube">
+      <img src="https://i.ytimg.com/vi/17uIWsg8bQY/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">ANOVA</h3>
+      <p class="meta">Jun 11, 2026</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/17uIWsg8bQY" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season03/episode15/statistics_episode15.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+</section>
 
-    .tb {
-        margin: 10px 0;
-    }
-
-    .tb span+span,
-    .collapsible {
-        display: none;
-    }
-
-    .tb input[type="checkbox"]:checked ~ span {
-        display: none;
-    }
-
-    .tb input[type="checkbox"]:checked ~ span+span {
-        display: inline;
-    }
-
-    .tb input[type="checkbox"]:checked ~ .collapsible {
-        display: table;
-    }
-
-    .tb a {
-        color: #3498db; /* Set link color */
-        text-decoration: none; /* Remove underlines */
-    }
-
-    .tb a:hover {
-        text-decoration: underline; /* Add underline on hover */
-    }
-</style>
+<section class="season-block" id="season-2">
+  <div class="season-block-head">
+    <span class="big">02</span>
+    <div><span class="kicker">Season 2</span><h2 class="anchored">Introduction to Python Programming</h2></div>
+    <p class="meta">21 episodes<br>Mar 1, 2024 – May 4, 2025</p>
+  </div>
+  <p class="season-intro">Python from zero: data types, strings, loops, collections, functions, object-oriented programming, concurrency and debugging, ending with a project you build and deploy.</p>
+  
+  <article class="ep-row" data-q="why python? season 2 episode 1">
+    <span class="ep-num">E01</span>
+    
+    <a class="thumb" href="https://youtu.be/zynrOOSNXro" target="_blank" rel="noopener" aria-label="Watch Why Python? on YouTube">
+      <img src="https://i.ytimg.com/vi/zynrOOSNXro/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Why Python?</h3>
+      <p class="meta">Mar 1, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/zynrOOSNXro" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode01/why-python.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode01/homework.html">Homework</a>
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="python data types season 2 episode 2">
+    <span class="ep-num">E02</span>
+    
+    <a class="thumb" href="https://youtu.be/-41cT7lAsZ4" target="_blank" rel="noopener" aria-label="Watch Python Data Types on YouTube">
+      <img src="https://i.ytimg.com/vi/-41cT7lAsZ4/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Python Data Types</h3>
+      <p class="meta">Mar 8, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/-41cT7lAsZ4" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode02/variables_datatypes.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode02/homework.html">Homework</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode02/Demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="numbers &amp; booleans season 2 episode 3">
+    <span class="ep-num">E03</span>
+    
+    <a class="thumb" href="https://youtu.be/i4ubGLFbu30" target="_blank" rel="noopener" aria-label="Watch Numbers &amp; Booleans on YouTube">
+      <img src="https://i.ytimg.com/vi/i4ubGLFbu30/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Numbers &amp; Booleans</h3>
+      <p class="meta">Mar 17, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/i4ubGLFbu30" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode03/numbers_booleans.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode03/homework.html">Homework</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode03/epi03demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="strings &amp; characters - 1 season 2 episode 4">
+    <span class="ep-num">E04</span>
+    
+    <a class="thumb" href="https://youtu.be/Pr-qno6m3kA" target="_blank" rel="noopener" aria-label="Watch Strings &amp; Characters - 1 on YouTube">
+      <img src="https://i.ytimg.com/vi/Pr-qno6m3kA/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Strings &amp; Characters - 1</h3>
+      <p class="meta">Mar 24, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/Pr-qno6m3kA" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode04/strings_characters_1.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode04/homework.html">Homework</a>
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="strings &amp; characters - 2 season 2 episode 5">
+    <span class="ep-num">E05</span>
+    
+    <a class="thumb" href="https://youtu.be/YtblBrvnqII" target="_blank" rel="noopener" aria-label="Watch Strings &amp; Characters - 2 on YouTube">
+      <img src="https://i.ytimg.com/vi/YtblBrvnqII/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Strings &amp; Characters - 2</h3>
+      <p class="meta">Mar 31, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/YtblBrvnqII" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode05/strings_characters_2.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode05/homework.html">Homework</a>
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="strings &amp; characters - 3 season 2 episode 6">
+    <span class="ep-num">E06</span>
+    
+    <a class="thumb" href="https://youtu.be/-DrQBPWuz9I" target="_blank" rel="noopener" aria-label="Watch Strings &amp; Characters - 3 on YouTube">
+      <img src="https://i.ytimg.com/vi/-DrQBPWuz9I/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Strings &amp; Characters - 3</h3>
+      <p class="meta">Apr 7, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/-DrQBPWuz9I" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode06/strings_characters_3.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode06/homework.html">Homework</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode06/demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="loops and breaks season 2 episode 7">
+    <span class="ep-num">E07</span>
+    
+    <a class="thumb" href="https://youtu.be/9T4GwNTjgmo" target="_blank" rel="noopener" aria-label="Watch Loops and Breaks on YouTube">
+      <img src="https://i.ytimg.com/vi/9T4GwNTjgmo/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Loops and Breaks</h3>
+      <p class="meta">Apr 15, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/9T4GwNTjgmo" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode07/Loops_Breaks.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode07/homework.html">Homework</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode07/epi07demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="lists &amp; tuples season 2 episode 8">
+    <span class="ep-num">E08</span>
+    
+    <a class="thumb" href="https://youtu.be/FCYLnHAdO98" target="_blank" rel="noopener" aria-label="Watch Lists &amp; Tuples on YouTube">
+      <img src="https://i.ytimg.com/vi/FCYLnHAdO98/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Lists &amp; Tuples</h3>
+      <p class="meta">Apr 22, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/FCYLnHAdO98" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode08/lists_tuples.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode08/homework.html">Homework</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode08/epi08demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="list operations season 2 episode 9">
+    <span class="ep-num">E09</span>
+    
+    <a class="thumb" href="https://youtu.be/OF_nlGYck_0" target="_blank" rel="noopener" aria-label="Watch List Operations on YouTube">
+      <img src="https://i.ytimg.com/vi/OF_nlGYck_0/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">List Operations</h3>
+      <p class="meta">May 11, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/OF_nlGYck_0" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode09/List_Operations.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode09/homework.html">Homework</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode09/epi09demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="dictionaries season 2 episode 10">
+    <span class="ep-num">E10</span>
+    
+    <a class="thumb" href="https://youtu.be/J0KG3TiQ7e4" target="_blank" rel="noopener" aria-label="Watch Dictionaries on YouTube">
+      <img src="https://i.ytimg.com/vi/J0KG3TiQ7e4/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Dictionaries</h3>
+      <p class="meta">May 13, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/J0KG3TiQ7e4" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode10/Dictionaries.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode10/homework.html">Homework</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode10/epi10demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="functions season 2 episode 11">
+    <span class="ep-num">E11</span>
+    
+    <a class="thumb" href="https://youtu.be/w-019_VLkNs" target="_blank" rel="noopener" aria-label="Watch Functions on YouTube">
+      <img src="https://i.ytimg.com/vi/w-019_VLkNs/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Functions</h3>
+      <p class="meta">May 17, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/w-019_VLkNs" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode11/Functions.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode11/homework.html">Homework</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode11/epi11demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="lambda functions season 2 episode 12">
+    <span class="ep-num">E12</span>
+    
+    <a class="thumb" href="https://youtu.be/d_foHhfc8Bw" target="_blank" rel="noopener" aria-label="Watch Lambda Functions on YouTube">
+      <img src="https://i.ytimg.com/vi/d_foHhfc8Bw/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Lambda Functions</h3>
+      <p class="meta">May 31, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/d_foHhfc8Bw" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode12/Lamba_Functions.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode12/homework.html">Homework</a>
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="lambda with map, filter &amp; reduce season 2 episode 13">
+    <span class="ep-num">E13</span>
+    
+    <a class="thumb" href="https://youtu.be/973XwAKfTsc" target="_blank" rel="noopener" aria-label="Watch Lambda with Map, Filter &amp; Reduce on YouTube">
+      <img src="https://i.ytimg.com/vi/973XwAKfTsc/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Lambda with Map, Filter &amp; Reduce</h3>
+      <p class="meta">Jun 17, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/973XwAKfTsc" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode13/Lambda_map_filter_reduce.html">Slides</a>
+        
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode13/epi13demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="object-oriented programming season 2 episode 14">
+    <span class="ep-num">E14</span>
+    
+    <a class="thumb" href="https://youtu.be/7hP2vN3yZZc" target="_blank" rel="noopener" aria-label="Watch Object-Oriented Programming on YouTube">
+      <img src="https://i.ytimg.com/vi/7hP2vN3yZZc/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Object-Oriented Programming</h3>
+      <p class="meta">Jul 21, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/7hP2vN3yZZc" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode14/object_oriented.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="classes &amp; objects season 2 episode 15">
+    <span class="ep-num">E15</span>
+    
+    <a class="thumb" href="https://youtu.be/hemBUSaTaJ0" target="_blank" rel="noopener" aria-label="Watch Classes &amp; Objects on YouTube">
+      <img src="https://i.ytimg.com/vi/hemBUSaTaJ0/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Classes &amp; Objects</h3>
+      <p class="meta">Jul 28, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/hemBUSaTaJ0" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode15/objects_classes.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode15/homework.html">Homework</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode15/epi15demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="inheritance season 2 episode 16">
+    <span class="ep-num">E16</span>
+    
+    <a class="thumb" href="https://youtu.be/3k_oiIbtotY" target="_blank" rel="noopener" aria-label="Watch Inheritance on YouTube">
+      <img src="https://i.ytimg.com/vi/3k_oiIbtotY/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Inheritance</h3>
+      <p class="meta">Jul 31, 2024</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/3k_oiIbtotY" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode16/inheritance.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode16/homework.html">Homework</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode16/epi16demo.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="multiple inheritance season 2 episode 17">
+    <span class="ep-num">E17</span>
+    
+    <a class="thumb" href="https://youtu.be/zLKdAo2BCRE" target="_blank" rel="noopener" aria-label="Watch Multiple Inheritance on YouTube">
+      <img src="https://i.ytimg.com/vi/zLKdAo2BCRE/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Multiple Inheritance</h3>
+      <p class="meta">Apr 6, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/zLKdAo2BCRE" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode17/multi-inheritance.html">Slides</a>
+        <a class="pill" href="../AI_Vlogs/homework/season02/episode17/homework.html">Homework</a>
+        
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="multi threading &amp; multi processing season 2 episode 18">
+    <span class="ep-num">E18</span>
+    
+    <a class="thumb" href="https://youtu.be/vxwTvnnoNS8" target="_blank" rel="noopener" aria-label="Watch Multi Threading &amp; Multi Processing on YouTube">
+      <img src="https://i.ytimg.com/vi/vxwTvnnoNS8/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Multi Threading &amp; Multi Processing</h3>
+      <p class="meta">Apr 13, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/vxwTvnnoNS8" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode18/multi-threading-processing.html">Slides</a>
+        
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode18/epidemo18.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="debugging the code season 2 episode 19">
+    <span class="ep-num">E19</span>
+    
+    <a class="thumb" href="https://youtu.be/2UJ94KxKwXs" target="_blank" rel="noopener" aria-label="Watch Debugging the Code on YouTube">
+      <img src="https://i.ytimg.com/vi/2UJ94KxKwXs/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Debugging the Code</h3>
+      <p class="meta">Apr 20, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/2UJ94KxKwXs" target="_blank" rel="noopener">▶ Watch</a>
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode19/python_debugging.html">Slides</a>
+        
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode19/epidemo19.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="end to end project season 2 episode 20">
+    <span class="ep-num">E20</span>
+    
+    <a class="thumb" href="https://youtu.be/g8Jvx-AgN7w" target="_blank" rel="noopener" aria-label="Watch End to End Project on YouTube">
+      <img src="https://i.ytimg.com/vi/g8Jvx-AgN7w/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">End to End Project</h3>
+      <p class="meta">Apr 27, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/g8Jvx-AgN7w" target="_blank" rel="noopener">▶ Watch</a>
+        
+        
+        <a class="pill" href="https://github.com/ArunKoundinya/AIBasicswithAK/blob/master/AI_Vlogs/slides/season02/episode20/EndtoEnd_PythonProject.ipynb" target="&quot;_blank&quot;" rel="&quot;noopener&quot;">Code</a>
+      </div>
+    </div>
+  </article>
+  
+  <article class="ep-row" data-q="deploying the project season 2 episode 21">
+    <span class="ep-num">E21</span>
+    
+    <a class="thumb" href="https://youtu.be/c6foBK39eSQ" target="_blank" rel="noopener" aria-label="Watch Deploying the Project on YouTube">
+      <img src="https://i.ytimg.com/vi/c6foBK39eSQ/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div>
+      <h3 class="anchored">Deploying the Project</h3>
+      <p class="meta">May 4, 2025</p>
+      <div class="pills">
+        <a class="pill watch" href="https://youtu.be/c6foBK39eSQ" target="_blank" rel="noopener">▶ Watch</a>
+        
+        
+        <a class="pill" href="../AI_Vlogs/slides/season02/episode21/deploying.py">Code</a>
+      </div>
+    </div>
+  </article>
+  
+</section>
 
 <script>
-    $(document).ready(function () {
-        $('[data-toggle="toggle"]').change(function () {
-            $(this).parents('.tb').find('.collapsible').toggle();
-        });
-    });
+(() => {
+  const box = document.getElementById("ep-search");
+  if (!box) return;
+  box.addEventListener("input", () => {
+    const q = box.value.trim().toLowerCase();
+    document.querySelectorAll(".ep-row").forEach(r =>
+      r.classList.toggle("hidden", q && !r.dataset.q.includes(q)));
+    document.querySelectorAll(".season-block").forEach(s =>
+      s.style.display = s.querySelector(".ep-row:not(.hidden)") ? "" : "none");
+  });
+})();
 </script>
-
-<div class="tb">
-    <input type="checkbox" data-toggle="toggle">
-    <span>Season-2 : Introduction to Python Programming</span><span>Season-2</span>
-    
-<table id="season02" class="collapsible caption-top table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td style="background-color: #3498db; color: white"><strong>Episode</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Episode Title</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Slides / Handout</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Home Work</strong></td>
-<td style="background-color: #3498db; color: white"><strong>YouTube Video Link</strong></td>
-<td style="background-color: #3498db; color: white"><strong>YouTube Demo File</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Date of Upload</strong></td>
-</tr>
-<tr class="even">
-<td>Episode - 01</td>
-<td>Why Python?</td>
-<td><a href="slides/season02/episode01/why-python.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode01/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/zynrOOSNXro?feature=shared" target="_blank">Link</a></td>
-<td>NA</td>
-<td>1st March 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 02</td>
-<td>Python Data Types</td>
-<td><a href="slides/season02/episode02/variables_datatypes.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode02/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/-41cT7lAsZ4" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode02/Demo.py" target="_blank">Demo File</a></td>
-<td>8th March 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 03</td>
-<td>Numbers &amp; Booleans</td>
-<td><a href="slides/season02/episode03/numbers_booleans.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode03/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/i4ubGLFbu30" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode03/epi03demo.py" target="_blank">Demo File</a></td>
-<td>17th March 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 04</td>
-<td>Strings &amp; Characters - 1</td>
-<td><a href="slides/season02/episode04/strings_characters_1.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode04/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/Pr-qno6m3kA" target="_blank">Link</a></td>
-<td>NA</td>
-<td>24th March 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 05</td>
-<td>Strings &amp; Characters - 2</td>
-<td><a href="slides/season02/episode05/strings_characters_2.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode05/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/YtblBrvnqII" target="_blank">Link</a></td>
-<td>NA</td>
-<td>31st March 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 06</td>
-<td>Strings &amp; Characters - 3</td>
-<td><a href="slides/season02/episode06/strings_characters_3.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode06/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/-DrQBPWuz9I" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode06/demo.py" target="_blank">Demo File</a></td>
-<td>7th April 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 07</td>
-<td>Loops and Breaks</td>
-<td><a href="slides/season02/episode07/Loops_Breaks.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode07/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/9T4GwNTjgmo" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode07/epi07demo.py" target="_blank">Demo File</a></td>
-<td>15th April 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 08</td>
-<td>Lists &amp; Tuples</td>
-<td><a href="slides/season02/episode08/lists_tuples.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode08/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/FCYLnHAdO98" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode08/epi08demo.py" target="_blank">Demo File</a></td>
-<td>22nd April 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 09</td>
-<td>List Operations</td>
-<td><a href="slides/season02/episode09/List_Operations.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode09/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/OF_nlGYck_0" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode09/epi09demo.py" target="_blank">Demo File</a></td>
-<td>11th May 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 10</td>
-<td>Dictionaries</td>
-<td><a href="slides/season02/episode10/Dictionaries.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode10/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/J0KG3TiQ7e4" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode10/epi10demo.py" target="_blank">Demo File</a></td>
-<td>13th May 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 11</td>
-<td>Functions</td>
-<td><a href="slides/season02/episode11/Functions.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode11/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/w-019_VLkNs" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode11/epi11demo.py" target="_blank">Demo File</a></td>
-<td>17th May 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 12</td>
-<td>Lambda Functions</td>
-<td><a href="slides/season02/episode12/Lamba_Functions.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode12/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/d_foHhfc8Bw" target="_blank">Link</a></td>
-<td>NA</td>
-<td>31st May 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 13</td>
-<td>Lambda Functions with Map,Reduce &amp; Filter</td>
-<td><a href="slides/season02/episode13/Lambda_map_filter_reduce.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/973XwAKfTsc" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode13/epi13demo.py" target="_blank">Demo File</a></td>
-<td>17th June 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 14</td>
-<td>Object Orientied Programming</td>
-<td><a href="slides/season02/episode14/object_oriented.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/7hP2vN3yZZc" target="_blank">Link</a></td>
-<td>NA</td>
-<td>21st July 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 15</td>
-<td>Classes &amp; Objects</td>
-<td><a href="slides/season02/episode15/objects_classes.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode15/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/hemBUSaTaJ0" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode15/epi15demo.py" target="_blank">Demo File</a></td>
-<td>28th July 2024</td>
-</tr>
-<tr class="odd">
-<td>Episode - 16</td>
-<td>Inheritance</td>
-<td><a href="slides/season02/episode16/inheritance.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode16/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/3k_oiIbtotY" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode16/epi16demo.py" target="_blank">Demo File</a></td>
-<td>31st July 2024</td>
-</tr>
-<tr class="even">
-<td>Episode - 17</td>
-<td>Mutiple Inheritance</td>
-<td><a href="slides/season02/episode17/multi-inheritance.html" target="_blank">Link</a></td>
-<td><a href="homework/season02/episode17/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/zLKdAo2BCRE" target="_blank">Link</a></td>
-<td>NA</td>
-<td>6th April 2025</td>
-</tr>
-<tr class="odd">
-<td>Episode - 18</td>
-<td>Multi Threading &amp; Multi Processing</td>
-<td><a href="slides/season02/episode18/multi-threading-processing.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/vxwTvnnoNS8" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode18/epidemo18.py" target="_blank">Demo File</a></td>
-<td>13th April 2025</td>
-</tr>
-<tr class="even">
-<td>Episode - 19</td>
-<td>Debugging the Code</td>
-<td><a href="slides/season02/episode19/python_debugging.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/2UJ94KxKwXs" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode19/epidemo19.py" target="_blank">Demo File</a></td>
-<td>20th April 2025</td>
-</tr>
-<tr class="odd">
-<td>Episode - 20</td>
-<td>End to End Project</td>
-<td>NA</td>
-<td>NA</td>
-<td><a href="https://youtu.be/g8Jvx-AgN7w" target="_blank">Link</a></td>
-<td><a href="https://github.com/ArunKoundinya/AIBasicswithAK/blob/master/AI_Vlogs/slides/season02/episode20/EndtoEnd_PythonProject.ipynb" target="_blank">Link</a></td>
-<td>27th April 2025</td>
-</tr>
-<tr class="even">
-<td>Episode - 21</td>
-<td>Deploying the Project</td>
-<td>NA</td>
-<td>NA</td>
-<td><a href="https://youtu.be/c6foBK39eSQ" target="_blank">Link</a></td>
-<td><a href="slides/season02/episode21/deploying.py" target="_blank">Demo File</a></td>
-<td>4th May 2025</td>
-</tr>
-</tbody>
-</table>
-
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 
-<div class="tb">
-    <input type="checkbox" data-toggle="toggle">
-    <span>Season 03 - Introduction to Statistics</span><span>Season-3</span>
-    
-<table id="season03" class="collapsible caption-top table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td style="background-color: #3498db; color: white"><strong>Episode</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Episode Title</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Slides / Handout</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Home Work</strong></td>
-<td style="background-color: #3498db; color: white"><strong>YouTube Video Link</strong></td>
-<td style="background-color: #3498db; color: white"><strong>YouTube Demo File</strong></td>
-<td style="background-color: #3498db; color: white"><strong>Date of Upload</strong></td>
-</tr>
-<tr class="even">
-<td>Episode - 01</td>
-<td>What is Statistics?</td>
-<td><a href="slides/season03/episode01/statistics_episode01.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/Fofh-2hJAYQ" target="_blank">Link</a></td>
-<td>NA</td>
-<td>30th May 2025</td>
-</tr>
-<tr class="odd">
-<td>Episode - 02</td>
-<td>Types of Data?</td>
-<td><a href="slides/season03/episode02/statistics_episode02.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/xMrkHjzACNI" target="_blank">Link</a></td>
-<td>NA</td>
-<td>28th July 2025</td>
-</tr>
-<tr class="even">
-<td>Episode - 03</td>
-<td>Descriptive Statistics</td>
-<td><a href="slides/season03/episode03/statistics_episode03.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/1Ao6BqrUu_Q" target="_blank">Link</a></td>
-<td>NA</td>
-<td>4th August 2025</td>
-</tr>
-<tr class="odd">
-<td>Episode - 04</td>
-<td>Data Visualization</td>
-<td><a href="slides/season03/episode04/statistics_episode04.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/tEbyY9UDhi4" target="_blank">Link</a></td>
-<td>NA</td>
-<td>24th August 2025</td>
-</tr>
-<tr class="even">
-<td>Episode - 05</td>
-<td>Basics of Probability</td>
-<td><a href="slides/season03/episode05/statistics_episode05.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/x3e14_EzwDI" target="_blank">Link</a></td>
-<td>NA</td>
-<td>8th September 2025</td>
-</tr>
-<tr class="odd">
-<td>Episode - 06</td>
-<td>Probability Distributions</td>
-<td><a href="slides/season03/episode06/statistics_episode06.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/_YMpg_RdQFI" target="_blank">Link</a></td>
-<td>NA</td>
-<td>8th November 2025</td>
-</tr>
-<tr class="even">
-<td>Episode - 07</td>
-<td>Central Limit Theorem</td>
-<td><a href="slides/season03/episode07/statistics_episode07.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/q7bxXTYudos" target="_blank">Link</a></td>
-<td>NA</td>
-<td>12th Jan 2026</td>
-</tr>
-<tr class="odd">
-<td>Episode - 08</td>
-<td>Confidence Intervals</td>
-<td><a href="slides/season03/episode08/statistics_episode08.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/RjJLZWQb3so" target="_blank">Link</a></td>
-<td>NA</td>
-<td>3rd Feb 2026</td>
-</tr>
-<tr class="even">
-<td>Episode - 09</td>
-<td>T-Distribution</td>
-<td><a href="slides/season03/episode09/statistics_episode09.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/Jvg9bFq6KVo" target="_blank">Link</a></td>
-<td>NA</td>
-<td>7th Mar 2026</td>
-</tr>
-<tr class="odd">
-<td>Episode - 10</td>
-<td>Hypothesis Testing</td>
-<td><a href="slides/season03/episode10/statistics_episode10.html" target="_blank">Link</a></td>
-<td><a href="homework/season03/episode10/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/Gv6ZR9ThmPo" target="_blank">Link</a></td>
-<td>NA</td>
-<td>10th Mar 2026</td>
-</tr>
-<tr class="even">
-<td>Episode - 11</td>
-<td>Type I &amp; Type II Errors</td>
-<td><a href="slides/season03/episode11/statistics_episode11.html" target="_blank">Link</a></td>
-<td><a href="homework/season03/episode11/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/bEx6OrVw86Y" target="_blank">Link</a></td>
-<td>NA</td>
-<td>22nd Mar 2026</td>
-</tr>
-<tr class="odd">
-<td>Episode - 12</td>
-<td>Two-Sample Tests</td>
-<td><a href="slides/season03/episode12/statistics_episode12.html" target="_blank">Link</a></td>
-<td><a href="homework/season03/episode12/homework.html" target="_blank">Link</a></td>
-<td><a href="https://youtu.be/KW4ttIE7Jhk" target="_blank">Link</a></td>
-<td>NA</td>
-<td>16th Apr 2026</td>
-</tr>
-<tr class="even">
-<td>Episode - 13</td>
-<td>Chi-Square Tests</td>
-<td><a href="slides/season03/episode13/statistics_episode13.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="https://youtu.be/YimKvuJf3k0" target="_blank">Link</a></td>
-<td>NA</td>
-<td>29th Apr 2026</td>
-</tr>
-<tr class="odd">
-<td>Episode - 14</td>
-<td>Degrees of Freedom</td>
-<td><a href="slides/season03/episode14/statistics_episode14.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="" target="_blank">Link</a></td>
-<td>NA</td>
-<td>10th May 2026</td>
-</tr>
-<tr class="even">
-<td>Episode - 15</td>
-<td>ANOVA</td>
-<td><a href="slides/season03/episode15/statistics_episode15.html" target="_blank">Link</a></td>
-<td>NA</td>
-<td><a href="" target="_blank">Link</a></td>
-<td>NA</td>
-<td>3rd June 2026</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-<div class="tb">
-    <input type="checkbox">
-    <span>Season-4</span><span>Hide</span>
-    
-<table id="season04" class="collapsible caption-top table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td>Not Yet Available</td>
-</tr>
-</tbody>
-</table>
-
-</div>
 
 
 
@@ -992,6 +1377,19 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2024 – 2026 Arun Koundinya Parasa · More writing at <a href="https://arunkoundinya.github.io/CanvassAndAnalyze/">Canvass And Analyze</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with 💙 and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 

@@ -5,10 +5,15 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>&lt;img src=&#39;https://arunkoundinya.github.io/AIBasicswithAK/logo.png&#39; style=&#39;width: 2.2em; height: 2.2em; border-radius: 30%;&#39;&gt; &lt;b&gt;AI Basics with AK&lt;/b&gt;</title>
+<title>AI Basics with AK — blog</title>
 <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/</link>
 <atom:link href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/index.xml" rel="self" type="application/rss+xml"/>
-<description>LETS BREATHE DATA</description>
+<description>Explainers and opinions on data science and AI by Arun Koundinya Parasa: LLMs, representation models, classification metrics, and what is left for data scientists when AI writes the code.</description>
+<image>
+<url>https://arunkoundinya.github.io/AIBasicswithAK/../images/social-card.png</url>
+<title>AI Basics with AK — blog</title>
+<link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/</link>
+</image>
 <generator>quarto-1.7.32</generator>
 <lastBuildDate>Mon, 11 May 2026 04:00:00 GMT</lastBuildDate>
 <item>
@@ -16,7 +21,6 @@
   <dc:creator>Arun Koundinya Parasa</dc:creator>
   <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/what-is-left-for-data-scientists/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -139,9 +143,8 @@
 </section>
 
  ]]></description>
-  <category>data science</category>
+  <category>career</category>
   <category>AI</category>
-  <category>consulting</category>
   <category>business analytics</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/what-is-left-for-data-scientists/</guid>
   <pubDate>Mon, 11 May 2026 04:00:00 GMT</pubDate>
@@ -152,7 +155,6 @@
   <dc:creator>Arun Koundinya Parasa</dc:creator>
   <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/representation_models/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -232,9 +234,9 @@
 </section>
 
  ]]></description>
-  <category>nlp</category>
-  <category>llm</category>
-  <category>deeplearning</category>
+  <category>LLMs</category>
+  <category>NLP</category>
+  <category>deep learning</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/representation_models/</guid>
   <pubDate>Sun, 23 Feb 2025 05:00:00 GMT</pubDate>
   <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/representation_models/image.jpg" medium="image" type="image/jpeg"/>
@@ -244,7 +246,6 @@
   <dc:creator>Arun Koundinya Parasa</dc:creator>
   <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/foundation-models-llm/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -342,9 +343,9 @@
 </section>
 
  ]]></description>
-  <category>nlp</category>
-  <category>llm</category>
-  <category>deeplearning</category>
+  <category>LLMs</category>
+  <category>NLP</category>
+  <category>deep learning</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/foundation-models-llm/</guid>
   <pubDate>Sat, 15 Feb 2025 05:00:00 GMT</pubDate>
   <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/foundation-models-llm/image.png" medium="image" type="image/png" height="85" width="144"/>
@@ -354,7 +355,6 @@
   <dc:creator>Arun Koundinya Parasa</dc:creator>
   <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -517,10 +517,8 @@
 </section>
 
  ]]></description>
-  <category>classification</category>
-  <category>modelling</category>
+  <category>machine learning</category>
   <category>metrics</category>
-  <category>binaryclassifcation</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/</guid>
   <pubDate>Wed, 10 Apr 2024 04:00:00 GMT</pubDate>
   <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/metrics-classification-model/confusion.png" medium="image" type="image/png" height="89" width="144"/>
@@ -530,7 +528,6 @@
   <dc:creator>Arun Koundinya Parasa</dc:creator>
   <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -582,6 +579,7 @@
 </section>
 
  ]]></description>
+  <category>career</category>
   <category>programming</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/</guid>
   <pubDate>Sun, 17 Mar 2024 04:00:00 GMT</pubDate>
@@ -592,7 +590,6 @@
   <dc:creator>Arun Koundinya Parasa</dc:creator>
   <link>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -647,8 +644,8 @@
 
 
  ]]></description>
-  <category>domain</category>
-  <category>operations</category>
+  <category>career</category>
+  <category>domain knowledge</category>
   <guid>https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/</guid>
   <pubDate>Tue, 25 Jul 2023 04:00:00 GMT</pubDate>
   <media:content url="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/is-domain-knowledge-important/image.png" medium="image" type="image/png" height="131" width="144"/>

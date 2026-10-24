@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Explainers and opinions on data science and AI by Arun Koundinya Parasa: LLMs, representation models, classification metrics, and what is left for data scientists when AI writes the code.">
 
-<title>My Views and learnings on AI –  AI Basics with AK</title>
+<title>Blog – AI Basics with AK</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../logo.png" rel="icon" type="image/png">
+<link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-listing/list.min.js"></script>
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -39,10 +40,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-25cb606da3a62b75b45781cfd62e2df7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d08bc2f7f77220ce7e22a3f8516e8627.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3289fadc87013f5e0c4f20393858af91.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,20 +74,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-posts .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-language','listing-freeze','listing-toc','listing-title','listing-author','listing-date','listing-description','listing-categories','listing-image','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-language","listing-freeze","listing-toc","listing-title","listing-author","listing-date","listing-description","listing-categories","listing-image","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-posts'] = new List('listing-posts', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -99,6 +100,11 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<!-- Search engine ownership verification. Paste the content values from
+     Google Search Console and Bing Webmaster Tools, then uncomment. -->
+<!-- <meta name="google-site-verification" content="PASTE-GOOGLE-CODE"> -->
+<!-- <meta name="msvalidate.01" content="PASTE-BING-CODE"> -->
+<meta name="robots" content="index, follow, max-image-preview:large">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -131,17 +137,39 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="<img src='https://arunkoundinya.github.io/AIBasicswithAK/logo.png' style='width: 2.2em; height: 2.2em; border-radius: 30%;'> <b>AI Basics with AK</b>" href="index.xml" data-external="1"></head>
+<link rel="alternate" type="application/rss+xml" title="AI Basics with AK — blog" href="index.xml" data-external="1"><meta property="og:title" content="Blog">
+<meta property="og:description" content="Explainers and opinions on data science and AI by Arun Koundinya Parasa: LLMs, representation models, classification metrics, and what is left for data scientists when AI writes the code.">
+<meta property="og:image" content="https://arunkoundinya.github.io/AIBasicswithAK/images/social-card.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Blog">
+<meta property="og:site_name" content="AI Basics with AK">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Blog">
+<meta name="twitter:description" content="Explainers and opinions on data science and AI by Arun Koundinya Parasa: LLMs, representation models, classification metrics, and what is left for data scientists when AI writes the code.">
+<meta name="twitter:image" content="https://arunkoundinya.github.io/AIBasicswithAK/images/social-card.png">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo.py -->
+<link rel="canonical" href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arunkoundinya.github.io/AIBasicswithAK/blogs/">
+<link rel="apple-touch-icon" href="https://arunkoundinya.github.io/AIBasicswithAK/images/apple-touch-icon.png">
+</head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed hub quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo-round.png" alt="AI Basics with AK" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title"><img src="https://arunkoundinya.github.io/AIBasicswithAK/logo.png" style="width: 2.2em; height: 2.2em; border-radius: 30%;"> <b>AI Basics with AK</b></span>
+    <span class="navbar-title">AI Basics with AK</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -156,26 +184,35 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../AI_Vlogs/index.html"> 
-<span class="menu-text">AI_Vlogs</span></a>
+<span class="menu-text">Episodes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../blogs/index.html" aria-current="page"> 
-<span class="menu-text">Blogs</span></a>
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://arunkoundinya.github.io/"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../blogs/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="https://www.youtube.com/@AIBasicswithAK"> <i class="bi bi-youtube" role="img" aria-label="YouTube">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="http://arunkoundinya.github.io/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="../blogs/index.xml"> <i class="bi bi-rss" role="img" aria-label="RSS">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/arunkoundinya0710/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://github.com/ArunKoundinya/AIBasicswithAK"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/arunkoundinya0710/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -187,247 +224,115 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">My Views and learnings on AI</h1>
-            <p class="subtitle lead">Having AI for breakfast</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmluYXJ5Y2xhc3NpZmNhdGlvbg==">binaryclassifcation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YnVzaW5lc3MlMjBhbmFseXRpY3M=">business analytics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2xhc3NpZmljYXRpb24=">classification <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29uc3VsdGluZw==">consulting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YSUyMHNjaWVuY2U=">data science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGVlcGxlYXJuaW5n">deeplearning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZG9tYWlu">domain <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGxt">llm <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bWV0cmljcw==">metrics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bW9kZWxsaW5n">modelling <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmxw">nlp <span class="quarto-category-count">(2)</span></div><div class="category" data-category="b3BlcmF0aW9ucw==">operations <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvZ3JhbW1pbmc=">programming <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Blog</h1></header>
+
+<header id="title-block-header">
 
 
+</header>
 
 
+<div class="page-head">
+<p><span class="kicker">Explainers &amp; opinions</span></p>
+<section id="blog" class="level1 unnumbered unlisted">
+<h1 class="unnumbered unlisted">Blog</h1>
+<p>Longer reads that go with the videos: how large language models work, how to choose a metric, and what the job of a data scientist is becoming.</p>
+</section>
+</div>
+<div id="listing-posts" class="quarto-listing quarto-listing-container-custom">
 
+<div class="cat-filter" role="group" aria-label="Filter by topic">
+  <button class="active" data-cat="">all</button>
+  <button data-cat="AI">AI</button><button data-cat="LLMs">LLMs</button><button data-cat="NLP">NLP</button><button data-cat="business analytics">business analytics</button><button data-cat="career">career</button><button data-cat="deep learning">deep learning</button><button data-cat="domain knowledge">domain knowledge</button><button data-cat="machine learning">machine learning</button><button data-cat="metrics">metrics</button><button data-cat="programming">programming</button>
+</div>
 
+<div class="post-grid feature list">
 
+  <a class="post-card" href="../blogs/posts/what-is-left-for-data-scientists/index.html" data-cats="career|AI|business analytics" data-index="0" data-categories="Y2FyZWVyJTJDQUklMkNidXNpbmVzcyUyMGFuYWx5dGljcw==" data-listing-date-sort="1778472000000" data-listing-file-modified-sort="1792862757300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1898">
+    <div class="card-img"><img src="../blogs/posts/what-is-left-for-data-scientists/image.png" alt="" loading="lazy"></div>
+    <div class="card-body">
+      <span class="kicker">career</span>
+      <h4 class="anchored">What Is Left for a Data Scientist When AI Writes the Code?</h4>
+      <div class="excerpt">AI now writes the code and AutoML builds the model. What stays human for a data scientist: the DIKW climb from data to wisdom, the consulting layer of DMAIC, and data science as…</div>
+      <p class="meta">May 11, 2026<span class="dot">·</span>10 min</p>
+    </div>
+  </a>
 
+  <a class="post-card" href="../blogs/posts/representation_models/index.html" data-cats="LLMs|NLP|deep learning" data-index="1" data-categories="TExNcyUyQ05MUCUyQ2RlZXAlMjBsZWFybmluZw==" data-listing-date-sort="1740286800000" data-listing-file-modified-sort="1792862757300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="754">
+    <div class="card-img"><img src="../blogs/posts/representation_models/image.jpg" alt="" loading="lazy"></div>
+    <div class="card-body">
+      <span class="kicker">LLMs</span>
+      <h4 class="anchored">Representation Models - Text Classification</h4>
+      <div class="excerpt">How representation models turn text into numbers: what BERT is, how masked language modelling and next sentence prediction train it, and how sentence transformers power text…</div>
+      <p class="meta">Feb 23, 2025<span class="dot">·</span>4 min</p>
+    </div>
+  </a>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZGF0YSUyMHNjaWVuY2UlMkNBSSUyQ2NvbnN1bHRpbmclMkNidXNpbmVzcyUyMGFuYWx5dGljcw==" data-listing-date-sort="1778472000000" data-listing-file-modified-sort="1778554205005" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1898">
-<div class="thumbnail"><a href="../blogs/posts/what-is-left-for-data-scientists/index.html" class="no-external">
+  <a class="post-card" href="../blogs/posts/foundation-models-llm/index.html" data-cats="LLMs|NLP|deep learning" data-index="2" data-categories="TExNcyUyQ05MUCUyQ2RlZXAlMjBsZWFybmluZw==" data-listing-date-sort="1739595600000" data-listing-file-modified-sort="1792862757299" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="837">
+    <div class="card-img"><img src="../blogs/posts/foundation-models-llm/image.png" alt="" loading="lazy"></div>
+    <div class="card-body">
+      <span class="kicker">LLMs</span>
+      <h4 class="anchored">Foundation Models - LLMs</h4>
+      <div class="excerpt">What a foundation model is, explained with a restaurant's base gravy, plus how large language models and the transformer behind them work, and the main types of LLMs.</div>
+      <p class="meta">Feb 15, 2025<span class="dot">·</span>5 min</p>
+    </div>
+  </a>
 
-<img loading="lazy" src="../blogs/posts/what-is-left-for-data-scientists/image.png" class="thumbnail-image">
+  <a class="post-card" href="../blogs/posts/metrics-classification-model/index.html" data-cats="machine learning|metrics" data-index="3" data-categories="bWFjaGluZSUyMGxlYXJuaW5nJTJDbWV0cmljcw==" data-listing-date-sort="1712721600000" data-listing-file-modified-sort="1792862757300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1554">
+    <div class="card-img"><img src="../blogs/posts/metrics-classification-model/confusion.png" alt="" loading="lazy"></div>
+    <div class="card-body">
+      <span class="kicker">machine learning</span>
+      <h4 class="anchored">What metrics to be chosen for classification modelling?</h4>
+      <div class="excerpt">Accuracy, recall, precision or F1? The confusion matrix made simple, and how to choose one metric for cross-sell, customer attrition and fraud models by starting from how the…</div>
+      <p class="meta">Apr 10, 2024<span class="dot">·</span>8 min</p>
+    </div>
+  </a>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blogs/posts/what-is-left-for-data-scientists/index.html" class="no-external">What Is Left for a Data Scientist When AI Writes the Code?</a>
-</h3>
-<div class="listing-categories">
+  <a class="post-card" href="../blogs/posts/learn-programming/index.html" data-cats="career|programming" data-index="4" data-categories="Y2FyZWVyJTJDcHJvZ3JhbW1pbmc=" data-listing-date-sort="1710648000000" data-listing-file-modified-sort="1792862757300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="588">
+    <div class="card-img"><img src="../blogs/posts/learn-programming/image.png" alt="" loading="lazy"></div>
+    <div class="card-body">
+      <span class="kicker">career</span>
+      <h4 class="anchored">Does Data Scientists need to learn programming?</h4>
+      <div class="excerpt">Coding is not copy and paste from ChatGPT. Why data scientists still need to understand the full cycle of programming: what to code, how to code, testing, and coding within…</div>
+      <p class="meta">Mar 17, 2024<span class="dot">·</span>3 min</p>
+    </div>
+  </a>
 
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHNjaWVuY2U='); return false;">data science</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29uc3VsdGluZw=='); return false;">consulting</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YnVzaW5lc3MlMjBhbmFseXRpY3M='); return false;">business analytics</div>
+  <a class="post-card" href="../blogs/posts/is-domain-knowledge-important/index.html" data-cats="career|domain knowledge" data-index="5" data-categories="Y2FyZWVyJTJDZG9tYWluJTIwa25vd2xlZGdl" data-listing-date-sort="1690257600000" data-listing-file-modified-sort="1792862757299" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="891">
+    <div class="card-img"><img src="../blogs/posts/is-domain-knowledge-important/image.png" alt="" loading="lazy"></div>
+    <div class="card-body">
+      <span class="kicker">career</span>
+      <h4 class="anchored">Does Data Scientists need to understand Domain Knowledge?</h4>
+      <div class="excerpt">A retail stocking case from my own work shows why a forecast alone doesn't answer the business question, and why data scientists need domain knowledge before they build models.</div>
+      <p class="meta">Jul 25, 2023<span class="dot">·</span>5 min</p>
+    </div>
+  </a>
 
 </div>
-<div class="delink listing-description"><a href="../blogs/posts/what-is-left-for-data-scientists/index.html" class="no-external">
-Something is changing. Not just the tools. The entire job description of a data scientist is being quietly rewritten.
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blogs/posts/what-is-left-for-data-scientists/index.html" class="no-external">
-<div class="listing-date">
-May 11, 2026
-</div>
-<div class="listing-author">
-Arun Koundinya Parasa
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmxwJTJDbGxtJTJDZGVlcGxlYXJuaW5n" data-listing-date-sort="1740286800000" data-listing-file-modified-sort="1746542684469" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="754">
-<div class="thumbnail"><a href="../blogs/posts/representation_models/index.html" class="no-external">
 
-<img loading="lazy" src="../blogs/posts/representation_models/image.jpg" class="thumbnail-image">
+<script>
+(() => {
+  const btns = document.querySelectorAll(".cat-filter button");
+  btns.forEach(b => b.addEventListener("click", () => {
+    btns.forEach(x => x.classList.toggle("active", x === b));
+    document.querySelectorAll(".post-card").forEach(c =>
+      c.classList.toggle("hidden", !!b.dataset.cat && !c.dataset.cats.split("|").includes(b.dataset.cat)));
+  }));
+})();
+</script>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blogs/posts/representation_models/index.html" class="no-external">Representation Models - Text Classification</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmxw'); return false;">nlp</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGxt'); return false;">llm</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGVlcGxlYXJuaW5n'); return false;">deeplearning</div>
-
-</div>
-<div class="delink listing-description"><a href="../blogs/posts/representation_models/index.html" class="no-external">
-In the previous article, we explored the <code>master chef</code> analogy for foundation models. We also discussed how <code>transformers</code> serve as the basic architecture for <code>large language…</code><code></code><code></code><code></code><code></code>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blogs/posts/representation_models/index.html" class="no-external">
-<div class="listing-date">
-Feb 23, 2025
-</div>
-<div class="listing-author">
-Arun Koundinya Parasa
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="bmxwJTJDbGxtJTJDZGVlcGxlYXJuaW5n" data-listing-date-sort="1739595600000" data-listing-file-modified-sort="1746542684461" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="837">
-<div class="thumbnail"><a href="../blogs/posts/foundation-models-llm/index.html" class="no-external">
-
-<img loading="lazy" src="../blogs/posts/foundation-models-llm/image.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blogs/posts/foundation-models-llm/index.html" class="no-external">Foundation Models - LLMs</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmxw'); return false;">nlp</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGxt'); return false;">llm</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGVlcGxlYXJuaW5n'); return false;">deeplearning</div>
-
-</div>
-<div class="delink listing-description"><a href="../blogs/posts/foundation-models-llm/index.html" class="no-external">
-In an era of chatgpt-enabled applications, most of us would have come across a term called as <code>foundation model</code>. In this article we will go through the basics of <code>foundation…</code><code></code>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blogs/posts/foundation-models-llm/index.html" class="no-external">
-<div class="listing-date">
-Feb 15, 2025
-</div>
-<div class="listing-author">
-Arun Koundinya Parasa
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Y2xhc3NpZmljYXRpb24lMkNtb2RlbGxpbmclMkNtZXRyaWNzJTJDYmluYXJ5Y2xhc3NpZmNhdGlvbg==" data-listing-date-sort="1712721600000" data-listing-file-modified-sort="1746542684467" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1554">
-<div class="thumbnail"><a href="../blogs/posts/metrics-classification-model/index.html" class="no-external">
-
-<img loading="lazy" src="../blogs/posts/metrics-classification-model/confusion.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blogs/posts/metrics-classification-model/index.html" class="no-external">What metrics to be chosen for classification modelling?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y2xhc3NpZmljYXRpb24='); return false;">classification</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bW9kZWxsaW5n'); return false;">modelling</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWV0cmljcw=='); return false;">metrics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YmluYXJ5Y2xhc3NpZmNhdGlvbg=='); return false;">binaryclassifcation</div>
-
-</div>
-<div class="delink listing-description"><a href="../blogs/posts/metrics-classification-model/index.html" class="no-external">
-This blog is a response to my teammates’ questions on <code>WhatsApp</code>. I’m sharing what I learned and my views on each question in a separate blog.
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blogs/posts/metrics-classification-model/index.html" class="no-external">
-<div class="listing-date">
-Apr 10, 2024
-</div>
-<div class="listing-author">
-Arun Koundinya Parasa
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="cHJvZ3JhbW1pbmc=" data-listing-date-sort="1710648000000" data-listing-file-modified-sort="1746542684466" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="588">
-<div class="thumbnail"><a href="../blogs/posts/learn-programming/index.html" class="no-external">
-
-<img loading="lazy" src="../blogs/posts/learn-programming/image.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blogs/posts/learn-programming/index.html" class="no-external">Does Data Scientists need to learn programming?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvZ3JhbW1pbmc='); return false;">programming</div>
-
-</div>
-<div class="delink listing-description"><a href="../blogs/posts/learn-programming/index.html" class="no-external">
-In an era of AI-enabled applications, chats, and programming (now with Devin), many youngsters and new entrants in the data science field assume that learning programming…
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blogs/posts/learn-programming/index.html" class="no-external">
-<div class="listing-date">
-Mar 17, 2024
-</div>
-<div class="listing-author">
-Arun Koundinya Parasa
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="ZG9tYWluJTJDb3BlcmF0aW9ucw==" data-listing-date-sort="1690257600000" data-listing-file-modified-sort="1746542684462" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="891">
-<div class="thumbnail"><a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">
-
-<img loading="lazy" src="../blogs/posts/is-domain-knowledge-important/image.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">Does Data Scientists need to understand Domain Knowledge?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZG9tYWlu'); return false;">domain</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b3BlcmF0aW9ucw=='); return false;">operations</div>
-
-</div>
-<div class="delink listing-description"><a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">
-This article intends to explain domain knowledge’s importance to freshers. The example provided below is from my own experience.
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blogs/posts/is-domain-knowledge-important/index.html" class="no-external">
-<div class="listing-date">
-Jul 25, 2023
-</div>
-<div class="listing-author">
-Arun Koundinya Parasa
-</div>
-</a>
-</div>
-</div>
-</div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -828,6 +733,19 @@ Arun Koundinya Parasa
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2024 – 2026 Arun Koundinya Parasa · More writing at <a href="https://arunkoundinya.github.io/CanvassAndAnalyze/">Canvass And Analyze</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with 💙 and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 

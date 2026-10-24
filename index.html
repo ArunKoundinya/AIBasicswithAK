@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Companion site to the AI Basics with AK YouTube series by Arun Koundinya Parasa: slides, homework and code for every episode on Python, statistics and AI, plus explainer blogs.">
 
-<title>AI Basics with AK –  AI Basics with AK</title>
+<title>Free videos, slides and homework on Python, statistics and AI – AI Basics with AK</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,17 +31,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./logo.png" rel="icon" type="image/png">
+<link href="./images/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-25cb606da3a62b75b45781cfd62e2df7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d08bc2f7f77220ce7e22a3f8516e8627.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3289fadc87013f5e0c4f20393858af91.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,20 +71,191 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-now .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-season','listing-episode','listing-date','listing-video','listing-slides','listing-homework','listing-demo',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-title","listing-season","listing-episode","listing-date","listing-video","listing-slides","listing-homework","listing-demo"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-now'] = new List('listing-now', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-seasons .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-season','listing-episode','listing-date','listing-video','listing-slides','listing-homework','listing-demo',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-title","listing-season","listing-episode","listing-date","listing-video","listing-slides","listing-homework","listing-demo"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-seasons'] = new List('listing-seasons', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-recent .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-season','listing-episode','listing-date','listing-video','listing-slides','listing-homework','listing-demo',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-season","listing-episode","listing-date","listing-video","listing-slides","listing-homework","listing-demo"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-recent'] = new List('listing-recent', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-posts .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-language','listing-freeze','listing-toc','listing-title','listing-author','listing-date','listing-description','listing-categories','listing-image','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-language","listing-freeze","listing-toc","listing-title","listing-author","listing-date","listing-description","listing-categories","listing-image","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-posts'] = new List('listing-posts', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<!-- Search engine ownership verification. Paste the content values from
+     Google Search Console and Bing Webmaster Tools, then uncomment. -->
+<!-- <meta name="google-site-verification" content="PASTE-GOOGLE-CODE"> -->
+<!-- <meta name="msvalidate.01" content="PASTE-BING-CODE"> -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Free videos, slides and homework on Python, statistics and AI">
+<meta property="og:description" content="Companion site to the AI Basics with AK YouTube series by Arun Koundinya Parasa: slides, homework and code for every episode on Python, statistics and AI, plus explainer blogs.">
+<meta property="og:image" content="https://arunkoundinya.github.io/AIBasicswithAK/images/social-card.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Free videos, slides and homework on Python, statistics and AI">
+<meta property="og:site_name" content="AI Basics with AK">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Free videos, slides and homework on Python, statistics and AI">
+<meta name="twitter:description" content="Companion site to the AI Basics with AK YouTube series by Arun Koundinya Parasa: slides, homework and code for every episode on Python, statistics and AI, plus explainer blogs.">
+<meta name="twitter:image" content="https://arunkoundinya.github.io/AIBasicswithAK/images/social-card.png">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo.py -->
+<link rel="canonical" href="https://arunkoundinya.github.io/AIBasicswithAK/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arunkoundinya.github.io/AIBasicswithAK/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "AI Basics with AK", "url": "https://arunkoundinya.github.io/AIBasicswithAK/", "description": "Companion site to the AI Basics with AK YouTube series by Arun Koundinya Parasa: slides, homework and code for every episode on Python, statistics and AI, plus explainer blogs.", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}, "potentialAction": {"@type": "SearchAction", "target": "https://arunkoundinya.github.io/AIBasicswithAK/search.html?q={query}", "query-input": "required name=query"}}, {"@type": "EducationalOrganization", "name": "AI Basics with AK", "url": "https://arunkoundinya.github.io/AIBasicswithAK/", "logo": "https://arunkoundinya.github.io/AIBasicswithAK/images/favicon.png", "founder": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}, "sameAs": ["https://www.youtube.com/@AIBasicswithAK"]}]}</script>
+<link rel="apple-touch-icon" href="https://arunkoundinya.github.io/AIBasicswithAK/images/apple-touch-icon.png">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed home quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/logo-round.png" alt="AI Basics with AK" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title"><img src="https://arunkoundinya.github.io/AIBasicswithAK/logo.png" style="width: 2.2em; height: 2.2em; border-radius: 30%;"> <b>AI Basics with AK</b></span>
+    <span class="navbar-title">AI Basics with AK</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -96,26 +270,35 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./AI_Vlogs/index.html"> 
-<span class="menu-text">AI_Vlogs</span></a>
+<span class="menu-text">Episodes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./blogs/index.html"> 
-<span class="menu-text">Blogs</span></a>
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://arunkoundinya.github.io/"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="./blogs/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="https://www.youtube.com/@AIBasicswithAK"> <i class="bi bi-youtube" role="img" aria-label="YouTube">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="http://arunkoundinya.github.io/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="./blogs/index.xml"> <i class="bi bi-rss" role="img" aria-label="RSS">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/arunkoundinya0710/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://github.com/ArunKoundinya/AIBasicswithAK"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/arunkoundinya0710/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -127,42 +310,210 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">AI Basics with AK</h1></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">AI Basics with AK</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
+<header id="title-block-header">
 
 
 </header>
 
 
-<p>Welcome to my AI Vlog Series Hub! 🚀 This website is crafted to elevate your experience with my YouTube AI Vlog Series. Let’s dive into the exciting content structured into two sections:</p>
-<p>💻 Notes and Codes: Uncover the magic behind the scenes! Starting from Season-2 onward, immerse yourself in detailed notes and codes. May be presented in markdown files or dynamic presentations.</p>
-<p>📚 Assisted Blogs: Thoughtfully created blogs designed to complement the AI Vlog Series. It has fascinating details that bring the series to life.</p>
-<p>I’m thrilled to embark on this next chapter, and I hope you’ll find joy and enrichment in exploring these resources. Your support is my motivation—thank you for being a part of this exciting adventure! 🌟</p>
-<p>My Last three videos</p>
-<div class="quarto-video"><iframe data-external="1" src="https://www.youtube.com/embed/YimKvuJf3k0?si=AGCTtt9u3l_Yoshs" width="400" height="300" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<div class="quarto-video"><iframe data-external="1" src="https://www.youtube.com/embed/KW4ttIE7Jhk?si=8IbFM-q_6IPy3kFJ" width="400" height="300" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<div class="quarto-video"><iframe data-external="1" src="https://www.youtube.com/embed/bEx6OrVw86Y?si=cY-iS0bgyTJYOyXh" width="400" height="300" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="home-hero">
+<div class="hero-copy">
+<p><span class="kicker">Free YouTube course · slides · homework · code</span></p>
+<section id="learn-the-basics-of-ai-one-episode-at-a-time." class="level1 unnumbered unlisted">
+<h1 class="unnumbered unlisted">Learn the basics of AI, <em>one episode at a time.</em></h1>
+<p><span class="lede">Short videos on Python, statistics and the ideas behind modern AI, each with the slides I teach from, homework to practise on, and the demo code. Explained simply, in plain language.</span></p>
+<div class="cta">
+<p><a href="https://www.youtube.com/@AIBasicswithAK?sub_confirmation=1" class="btn-ak yt">▶ Subscribe on YouTube</a> <a href="./AI_Vlogs/index.html" class="btn-ak ghost">Browse all episodes</a></p>
+</div>
+</section>
+</div>
+<div class="hero-aside">
+<div id="listing-now" class="quarto-listing quarto-listing-container-custom">
+<div class="now-card list">
+  <a class="thumb" href="https://youtu.be/17uIWsg8bQY" target="_blank" rel="noopener" aria-label="Watch ANOVA on YouTube">
+    <img src="https://i.ytimg.com/vi/17uIWsg8bQY/hqdefault.jpg" alt="" loading="eager">
+  </a>
+  <div class="now-body">
+    <span class="kicker">● Latest · Season 3, Episode 15</span>
+    <h3 class="anchored">ANOVA</h3>
+    <p class="meta">Jun 11, 2026</p>
+    <div class="pills">
+      <a class="pill watch" href="https://youtu.be/17uIWsg8bQY" target="_blank" rel="noopener">▶ Watch</a>
+      <a class="pill" href="AI_Vlogs/slides/season03/episode15/statistics_episode15.html">Slides</a>
+      
+      
+    </div>
+  </div>
+  <div class="stats">
+    <div><strong>36</strong><span>Episodes</span></div>
+    <div><strong>2</strong><span>Seasons</span></div>
+    <div><strong>34</strong><span>Slide decks</span></div>
+  </div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</div>
+</div>
+<section id="h-seasons" class="level2 unnumbered unlisted section-head">
+<h2 class="unnumbered unlisted anchored" data-anchor-id="h-seasons">Pick a season</h2>
+<p><span class="meta">Each season builds from zero</span></p>
+</section>
+<div id="listing-seasons" class="quarto-listing quarto-listing-container-custom">
+<div class="season-grid list">
+
+  <a class="season-card s3" href="AI_Vlogs/index.html#season-3" data-glyph="σ">
+    <span class="status live">Now airing</span>
+    <span class="kicker">Season 03</span>
+    <h3 class="anchored">Introduction to Statistics</h3>
+    <p>From types of data to hypothesis tests and ANOVA: the statistics every data scientist leans on, built up one idea at a time.</p>
+    
+    <span class="season-meta">15 episodes · 3 with homework</span>
+    
+  </a>
+
+  <a class="season-card s2" href="AI_Vlogs/index.html#season-2" data-glyph="{ }">
+    <span class="status">Complete</span>
+    <span class="kicker">Season 02</span>
+    <h3 class="anchored">Introduction to Python Programming</h3>
+    <p>From your first variable to classes, threads, debugging and an end-to-end project you deploy yourself.</p>
+    
+    <span class="season-meta">21 episodes · 15 with homework</span>
+    
+  </a>
+
+  <a class="season-card s4" href="https://www.youtube.com/@AIBasicswithAK?sub_confirmation=1" data-glyph="?">
+    <span class="status">Planned</span>
+    <span class="kicker">Season 04</span>
+    <h3 class="anchored">Coming next</h3>
+    <p>The next season is in the works. Subscribe on YouTube to hear when the first episode lands.</p>
+    
+    <span class="season-meta">Subscribe to get notified →</span>
+    
+  </a>
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+<section id="h-recent" class="level2 unnumbered unlisted section-head">
+<h2 class="unnumbered unlisted anchored" data-anchor-id="h-recent">Recent episodes</h2>
+<p><a href="./AI_Vlogs/index.html">Episode guide →</a></p>
+</section>
+<div id="listing-recent" class="quarto-listing quarto-listing-container-custom">
+<div class="ep-grid list">
+
+  <article class="ep-card" data-index="0" data-listing-date-sort="1781150400000">
+    
+    <a class="thumb" href="https://youtu.be/17uIWsg8bQY" target="_blank" rel="noopener" aria-label="Watch ANOVA on YouTube">
+      <img src="https://i.ytimg.com/vi/17uIWsg8bQY/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div class="body">
+      <span class="kicker">S03 · E15</span>
+      <h4 class="anchored">ANOVA</h4>
+      <div class="pills">
+        <a class="pill" href="AI_Vlogs/slides/season03/episode15/statistics_episode15.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+
+  <article class="ep-card" data-index="1" data-listing-date-sort="1778385600000">
+    
+    <a class="thumb" href="https://youtu.be/G9CI3cwaz6g" target="_blank" rel="noopener" aria-label="Watch Degrees of Freedom on YouTube">
+      <img src="https://i.ytimg.com/vi/G9CI3cwaz6g/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div class="body">
+      <span class="kicker">S03 · E14</span>
+      <h4 class="anchored">Degrees of Freedom</h4>
+      <div class="pills">
+        <a class="pill" href="AI_Vlogs/slides/season03/episode14/statistics_episode14.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+
+  <article class="ep-card" data-index="2" data-listing-date-sort="1777435200000">
+    
+    <a class="thumb" href="https://youtu.be/YimKvuJf3k0" target="_blank" rel="noopener" aria-label="Watch Chi-Square Tests on YouTube">
+      <img src="https://i.ytimg.com/vi/YimKvuJf3k0/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    
+    <div class="body">
+      <span class="kicker">S03 · E13</span>
+      <h4 class="anchored">Chi-Square Tests</h4>
+      <div class="pills">
+        <a class="pill" href="AI_Vlogs/slides/season03/episode13/statistics_episode13.html">Slides</a>
+        
+        
+      </div>
+    </div>
+  </article>
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+<section id="h-blog" class="level2 unnumbered unlisted section-head">
+<h2 class="unnumbered unlisted anchored" data-anchor-id="h-blog">From the blog</h2>
+<p><a href="./blogs/index.html">All posts →</a></p>
+</section>
+<div id="listing-posts" class="quarto-listing quarto-listing-container-custom">
+
+<div class="post-grid list">
+
+  <a class="post-card" href="./blogs/posts/what-is-left-for-data-scientists/index.html" data-cats="career|AI|business analytics" data-index="0" data-categories="Y2FyZWVyJTJDQUklMkNidXNpbmVzcyUyMGFuYWx5dGljcw==" data-listing-date-sort="1778472000000" data-listing-file-modified-sort="1792862757300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1898">
+    <div class="card-img"><img src="./blogs/posts/what-is-left-for-data-scientists/image.png" alt="" loading="lazy"></div>
+    <div class="card-body">
+      <span class="kicker">career</span>
+      <h4 class="anchored">What Is Left for a Data Scientist When AI Writes the Code?</h4>
+      <div class="excerpt">AI now writes the code and AutoML builds the model. What stays human for a data scientist: the DIKW climb from data to wisdom, the consulting layer…</div>
+      <p class="meta">May 2026<span class="dot">·</span>10 min</p>
+    </div>
+  </a>
+
+  <a class="post-card" href="./blogs/posts/representation_models/index.html" data-cats="LLMs|NLP|deep learning" data-index="1" data-categories="TExNcyUyQ05MUCUyQ2RlZXAlMjBsZWFybmluZw==" data-listing-date-sort="1740286800000" data-listing-file-modified-sort="1792862757300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="754">
+    <div class="card-img"><img src="./blogs/posts/representation_models/image.jpg" alt="" loading="lazy"></div>
+    <div class="card-body">
+      <span class="kicker">LLMs</span>
+      <h4 class="anchored">Representation Models - Text Classification</h4>
+      <div class="excerpt">How representation models turn text into numbers: what BERT is, how masked language modelling and next sentence prediction train it, and how…</div>
+      <p class="meta">Feb 2025<span class="dot">·</span>4 min</p>
+    </div>
+  </a>
+
+  <a class="post-card" href="./blogs/posts/foundation-models-llm/index.html" data-cats="LLMs|NLP|deep learning" data-index="2" data-categories="TExNcyUyQ05MUCUyQ2RlZXAlMjBsZWFybmluZw==" data-listing-date-sort="1739595600000" data-listing-file-modified-sort="1792862757299" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="837">
+    <div class="card-img"><img src="./blogs/posts/foundation-models-llm/image.png" alt="" loading="lazy"></div>
+    <div class="card-body">
+      <span class="kicker">LLMs</span>
+      <h4 class="anchored">Foundation Models - LLMs</h4>
+      <div class="excerpt">What a foundation model is, explained with a restaurant's base gravy, plus how large language models and the transformer behind them work, and the…</div>
+      <p class="meta">Feb 2025<span class="dot">·</span>5 min</p>
+    </div>
+  </a>
+
+</div>
+
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+<div class="subscribe-band">
+<section id="dont-miss-the-next-episode" class="level2 unnumbered unlisted">
+<h2 class="unnumbered unlisted anchored" data-anchor-id="dont-miss-the-next-episode">Don’t miss the next episode</h2>
+<p>Subscribe on YouTube for the videos, or follow the blog by RSS. For essays on psychology, culture and management, see my other site, <a href="https://arunkoundinya.github.io/CanvassAndAnalyze/">Canvass And Analyze</a>.</p>
+</section>
+<div class="cta">
+<p><a href="https://www.youtube.com/@AIBasicswithAK?sub_confirmation=1" class="btn-ak yt">▶ YouTube</a> <a href="blogs/index.xml" class="btn-ak ghost">RSS feed</a></p>
+</div>
+</div>
+
 
 
 
@@ -567,6 +918,19 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2024 – 2026 Arun Koundinya Parasa · More writing at <a href="https://arunkoundinya.github.io/CanvassAndAnalyze/">Canvass And Analyze</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with 💙 and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 

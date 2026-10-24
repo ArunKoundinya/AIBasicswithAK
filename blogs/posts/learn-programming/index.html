@@ -8,8 +8,9 @@
 
 <meta name="author" content="Arun Koundinya Parasa">
 <meta name="dcterms.date" content="2024-03-17">
+<meta name="description" content="Coding is not copy and paste from ChatGPT. Why data scientists still need to understand the full cycle of programming: what to code, how to code, testing, and coding within limits.">
 
-<title>Does Data Scientists need to learn programming? –  AI Basics with AK</title>
+<title>Does Data Scientists need to learn programming? – AI Basics with AK</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,17 +33,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../logo.png" rel="icon" type="image/png">
+<link href="../../../images/favicon.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-25cb606da3a62b75b45781cfd62e2df7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-d08bc2f7f77220ce7e22a3f8516e8627.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-bd4ea3b65fc58dce0e228cbf165dcd65.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,20 +71,50 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<!-- Search engine ownership verification. Paste the content values from
+     Google Search Console and Bing Webmaster Tools, then uncomment. -->
+<!-- <meta name="google-site-verification" content="PASTE-GOOGLE-CODE"> -->
+<!-- <meta name="msvalidate.01" content="PASTE-BING-CODE"> -->
+<meta name="robots" content="index, follow, max-image-preview:large">
 
 
 <link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Does Data Scientists need to learn programming? – AI Basics with AK">
+<meta property="og:description" content="Coding is not copy and paste from ChatGPT. Why data scientists still need to understand the full cycle of programming: what to code, how to code, testing, and coding within limits.">
+<meta property="og:image" content="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Does Data Scientists need to learn programming? – AI Basics with AK">
+<meta property="og:site_name" content="AI Basics with AK">
+<meta property="og:image:height" content="756">
+<meta property="og:image:width" content="887">
+<meta name="twitter:title" content="Does Data Scientists need to learn programming? – AI Basics with AK">
+<meta name="twitter:description" content="Coding is not copy and paste from ChatGPT. Why data scientists still need to understand the full cycle of programming: what to code, how to code, testing, and coding within limits.">
+<meta name="twitter:image" content="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/image.png">
+<meta name="twitter:image-height" content="756">
+<meta name="twitter:image-width" content="887">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo.py -->
+<link rel="canonical" href="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/">
+<meta name="author" content="Arun Koundinya Parasa">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-03-17">
+<meta property="og:url" content="https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Does Data Scientists need to learn programming?", "description": "Coding is not copy and paste from ChatGPT. Why data scientists still need to understand the full cycle of programming: what to code, how to code, testing, and coding within limits.", "datePublished": "2024-03-17", "author": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}, "publisher": {"@type": "Person", "name": "Arun Koundinya Parasa", "url": "https://arunkoundinya.github.io/", "sameAs": ["https://www.linkedin.com/in/arunkoundinya0710/", "https://github.com/ArunKoundinya", "https://www.youtube.com/@AIBasicswithAK"]}, "mainEntityOfPage": "https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/", "url": "https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/", "inLanguage": "en", "isPartOf": {"@type": "Blog", "name": "AI Basics with AK", "url": "https://arunkoundinya.github.io/AIBasicswithAK/blogs/"}, "image": "https://arunkoundinya.github.io/AIBasicswithAK/blogs/posts/learn-programming/image.png", "keywords": "career, programming"}</script>
+<link rel="apple-touch-icon" href="https://arunkoundinya.github.io/AIBasicswithAK/images/apple-touch-icon.png">
 </head>
 
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/logo-round.png" alt="AI Basics with AK" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title"><img src="https://arunkoundinya.github.io/AIBasicswithAK/logo.png" style="width: 2.2em; height: 2.2em; border-radius: 30%;"> <b>AI Basics with AK</b></span>
+    <span class="navbar-title">AI Basics with AK</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -98,26 +129,35 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../AI_Vlogs/index.html"> 
-<span class="menu-text">AI_Vlogs</span></a>
+<span class="menu-text">Episodes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../blogs/index.html"> 
-<span class="menu-text">Blogs</span></a>
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://arunkoundinya.github.io/"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../../../blogs/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="https://www.youtube.com/@AIBasicswithAK"> <i class="bi bi-youtube" role="img" aria-label="YouTube">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="http://arunkoundinya.github.io/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="../../../blogs/index.xml"> <i class="bi bi-rss" role="img" aria-label="RSS">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/arunkoundinya0710/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://github.com/ArunKoundinya/AIBasicswithAK"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/arunkoundinya0710/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -129,48 +169,53 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Does Data Scientists need to learn programming?</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">programming</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Arun Koundinya Parasa </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">March 17, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Does Data Scientists need to learn programming?</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">career</div>
+    <div class="quarto-category">programming</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Coding is not copy and paste from ChatGPT. Why data scientists still need to understand the full cycle of programming: what to code, how to code, testing, and coding within limits.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Arun Koundinya Parasa </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 17, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <p>In an era of AI-enabled applications, chats, and programming (<a href="https://www.cognition-labs.com/blog-posts">now with Devin</a>), many youngsters and new entrants in the data science field assume that learning programming isn’t needed as almost all codes are available either on stack overflow or ChatGPT.</p>
@@ -620,6 +665,19 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2024 – 2026 Arun Koundinya Parasa · More writing at <a href="https://arunkoundinya.github.io/CanvassAndAnalyze/">Canvass And Analyze</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with 💙 and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
