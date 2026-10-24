@@ -207,6 +207,12 @@ code { font-size: .88em; }
     margin: .7rem 0 1.2rem;
     em { color: $blue; }
   }
+  .hero-brand { display: flex; align-items: center; gap: 1rem; }
+  .hero-brand p { margin: 0; }
+  .hero-logo {
+    width: 96px; height: 96px; border-radius: 50%;
+    box-shadow: 0 0 0 4px $paper, 0 0 0 5px $rule, 0 12px 28px -14px rgba($ink, .45);
+  }
   .lede { font-size: 1.12rem; color: $ink-soft; max-width: 34rem; margin-bottom: 1.8rem; }
   .cta { display: flex; gap: .7rem; flex-wrap: wrap; }
 }
@@ -509,6 +515,7 @@ main.content p.meta { font-size: .76rem; margin-bottom: 0; }
 @media (max-width: 860px) {
   .home-hero, .subscribe-band { grid-template-columns: 1fr; }
   .home-hero { gap: 2rem; padding-top: 2rem; }
+  .home-hero .hero-logo { width: 72px; height: 72px; }
   .subscribe-band { padding: 2rem 1.5rem; .cta { justify-content: flex-start; } }
   .ep-toolbar input { min-width: 0; width: 100%; }
 }

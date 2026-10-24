@@ -36,7 +36,11 @@ listing:
 
 ::: {.home-hero}
 ::: {.hero-copy}
+::: {.hero-brand}
+![](images/logo-hero.png){.hero-logo fig-alt="AI Basics with AK logo"}
+
 [Free YouTube course · slides · homework · code]{.kicker}
+:::
 
 # Learn the basics of AI, <em>one episode at a time.</em> {.unnumbered .unlisted}
 
