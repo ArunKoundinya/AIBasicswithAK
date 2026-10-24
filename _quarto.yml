@@ -1,44 +1,59 @@
 project:
   type: website
+  resources:
+    - "AI_Vlogs/slides/**/*.py"
+    - "images/*"
+  post-render:
+    - scripts/seo.py
 
 website:
-  #comments:
-    #giscus:
-      #repo: ArunKoundinya/AIBasicswithAK
-
-  title: "<img src='https://arunkoundinya.github.io/AIBasicswithAK/logo.png' style='width: 2.2em; height: 2.2em; border-radius: 30%;'> <b>AI Basics with AK</b>"
+  title: "AI Basics with AK"
   site-url: https://arunkoundinya.github.io/AIBasicswithAK/
-  description: "LETS BREATHE DATA"
-  favicon: "logo.png"
+  description: "Free videos, slides, homework and code on Python, statistics and AI, by Arun Koundinya Parasa."
+  favicon: "images/favicon.png"
+  open-graph: true
+  twitter-card: true
+  image: images/social-card.png
+  # Analytics: uncomment once you have an ID (or use GoatCounter in include-in-header).
+  # google-analytics: "G-XXXXXXXXXX"
   navbar:
+    logo: images/logo-round.png
+    logo-alt: "AI Basics with AK"
     left:
       - href: index.qmd
         text: Home
       - href: AI_Vlogs/index.qmd
-        text: AI_Vlogs
+        text: Episodes
       - href: blogs/index.qmd
-        text: Blogs
-
-
-    right: 
+        text: Blog
+      - text: About
+        href: https://arunkoundinya.github.io/
+    right:
+      - icon: youtube
+        href: https://www.youtube.com/@AIBasicswithAK
+        aria-label: YouTube
       - icon: rss
         href: blogs/index.xml
+        aria-label: RSS
       - icon: github
-        href: http://arunkoundinya.github.io/
+        href: https://github.com/ArunKoundinya/AIBasicswithAK
+        aria-label: GitHub
       - icon: linkedin
-        href: https://www.linkedin.com/in/arunkoundinya0710/  
+        href: https://www.linkedin.com/in/arunkoundinya0710/
+        aria-label: LinkedIn
 
-page-footer:
-  right: "This page is built with 💛 and [Quarto](https://quarto.org/)."
-  left: "&copy; Copyright 2025, Arun Koundinya Parasa"
-  background: "#36494E" 
-
+  page-footer:
+    left: "&copy; 2024 – 2026 Arun Koundinya Parasa · More writing at [Canvass And Analyze](https://arunkoundinya.github.io/CanvassAndAnalyze/)"
+    right: "Built with 💙 and [Quarto](https://quarto.org/)."
 
 format:
   html:
-    theme: cerulean
+    theme: [cosmo, theme.scss]
     css: styles.css
+    include-in-header: _seo-head.html
     toc: true
+    grid:
+      body-width: 780px
 
 execute:
   freeze: auto

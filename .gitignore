@@ -9,3 +9,4 @@ blogs/index.feed-full-staged
 blogs/index-listing.json
 65a2d858604c57e1
 .venv/
+.claude/

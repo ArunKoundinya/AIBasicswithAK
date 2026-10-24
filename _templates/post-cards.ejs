@@ -1,0 +1,39 @@
+<%
+// Blog cards. On the blog page (template-params: filter) a category filter is shown.
+const filter = typeof templateParams !== "undefined" && templateParams.filter;
+const feature = typeof templateParams !== "undefined" && templateParams.feature;
+const cats = [...new Set(items.flatMap(i => i.categories || []))].sort();
+%>
+```{=html}
+<% if (filter && cats.length) { %>
+<div class="cat-filter" role="group" aria-label="Filter by topic">
+  <button class="active" data-cat="">all</button>
+  <% for (const c of cats) { %><button data-cat="<%= c %>"><%= c %></button><% } %>
+</div>
+<% } %>
+<div class="post-grid<%- feature ? ' feature' : '' %> list">
+<% for (const item of items) { %>
+  <a class="post-card" href="<%- item.path %>" data-cats="<%= (item.categories || []).join('|') %>" <%= metadataAttrs(item) %>>
+    <% if (item.image) { %><div class="card-img"><img src="<%- item.image %>" alt="" loading="lazy"></div><% } %>
+    <div class="card-body">
+      <span class="kicker"><%= (item.categories || ["blog"])[0] %></span>
+      <h4><%= item.title %></h4>
+      <% if (item.description) { %><div class="excerpt"><%= item.description %></div><% } %>
+      <p class="meta"><%= item.date %><% if (item['reading-time']) { %><span class="dot">·</span><%= item['reading-time'] %><% } %></p>
+    </div>
+  </a>
+<% } %>
+</div>
+<% if (filter) { %>
+<script>
+(() => {
+  const btns = document.querySelectorAll(".cat-filter button");
+  btns.forEach(b => b.addEventListener("click", () => {
+    btns.forEach(x => x.classList.toggle("active", x === b));
+    document.querySelectorAll(".post-card").forEach(c =>
+      c.classList.toggle("hidden", !!b.dataset.cat && !c.dataset.cats.split("|").includes(b.dataset.cat)));
+  }));
+})();
+</script>
+<% } %>
+```

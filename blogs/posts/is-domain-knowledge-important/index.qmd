@@ -2,7 +2,8 @@
 title: "Does Data Scientists need to understand Domain Knowledge?"
 author: "Arun Koundinya Parasa"
 date: "2023-07-25"
-categories: [domain, operations]
+description: "A retail stocking case from my own work shows why a forecast alone doesn't answer the business question, and why data scientists need domain knowledge before they build models."
+categories: [career, domain knowledge]
 image: "image.png"
 ---
 

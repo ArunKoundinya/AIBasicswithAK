@@ -1,0 +1,514 @@
+/*-- scss:defaults --*/
+
+// Same family as arunkoundinya.github.io (ink, paper, Inter Tight, Instrument Serif)
+// with this site's own accent: the blue used for it on the portfolio.
+$paper:       #FBF8F2;
+$paper-deep:  #F1ECE2;
+$card:        #FFFFFF;
+$ink:         #0F1B2D;
+$ink-soft:    #34425A;
+$muted:       #637089;
+$rule:        #E2DBCD;
+$blue:        #2F6DB5;
+$blue-d:      #1F4E8A;
+$blue-wash:   #E6EEF8;
+$signal:      #C2560E;   // "new" / "now playing" highlights
+$yt-red:      #E62117;
+
+$font-family-sans-serif: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-family-display:    "Instrument Serif", Georgia, serif;
+$font-family-monospace:  "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+$body-bg:      $paper;
+$body-color:   $ink;
+$primary:      $blue;
+$secondary:    $muted;
+$link-color:   $blue;
+$link-hover-color: $blue-d;
+$border-color: $rule;
+
+$font-family-base:     $font-family-sans-serif;
+$headings-font-family: $font-family-sans-serif;
+$headings-font-weight: 650;
+$headings-color:       $ink;
+$font-size-root:       16px;
+$line-height-base:     1.7;
+
+$navbar-bg:  $paper;
+$navbar-fg:  $ink;
+$navbar-hl:  $blue;
+$footer-bg:  $ink;
+$footer-fg:  #C9D2E0;
+
+$code-bg:    $paper-deep;
+$code-color: $blue-d;
+$code-block-bg: #F5F2EB;
+$toc-color:  $blue;
+
+/*-- scss:rules --*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+// ---------- Global ----------
+body { background: $paper; color: $ink; }
+::selection { background: rgba($blue, .18); }
+a { text-underline-offset: .18em; text-decoration-thickness: 1px; }
+
+.kicker,
+.meta,
+.pill,
+.ep-num { font-family: $font-family-monospace; }
+
+h1, h2, h3, h4 { letter-spacing: -.015em; }
+.display, .quarto-title h1.title { font-family: $font-family-display; font-weight: 400; letter-spacing: -.01em; }
+
+// ---------- Navbar ----------
+.navbar { border-bottom: 1px solid $rule; padding-top: .55rem; padding-bottom: .55rem; }
+.navbar-brand .navbar-title { font-weight: 700; font-size: 1.1rem; letter-spacing: -.01em; }
+.navbar-logo { height: 40px; width: 40px; max-height: 40px; border-radius: 50%; }
+.navbar .nav-link { font-size: .88rem; font-weight: 500; }
+.navbar .bi-youtube { color: $yt-red; }
+
+// ---------- Footer ----------
+.nav-footer { font-size: .8rem; }
+.nav-footer a { color: #9DBDE6; }
+
+// ---------- Article pages (blogs, homework) ----------
+#title-block-header.quarto-title-block {
+  text-align: left;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid $rule;
+}
+.quarto-title h1.title { font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.08; }
+.quarto-title .subtitle { color: $muted; font-size: 1.15rem; margin-top: .5rem; }
+.quarto-title .quarto-categories .quarto-category {
+  background: $blue-wash;
+  border: none;
+  color: $blue-d;
+  font-family: $font-family-monospace;
+  font-size: .68rem;
+  letter-spacing: .04em;
+  text-transform: lowercase;
+  border-radius: 999px;
+  opacity: 1;
+}
+.quarto-title-meta-heading {
+  font-family: $font-family-monospace;
+  text-transform: uppercase;
+  font-size: .66rem;
+  letter-spacing: .08em;
+  color: $muted;
+}
+.quarto-title-meta-contents { font-size: .92rem; }
+
+main.content p, main.content li { font-size: 1.06rem; }
+main.content h2 { margin-top: 2.6rem; font-size: 1.55rem; border-bottom: none; }
+main.content h3 { margin-top: 2rem; font-size: 1.25rem; }
+main.content img { border-radius: 8px; }
+
+blockquote {
+  border-left: 3px solid $blue;
+  background: $blue-wash;
+  padding: .9rem 1.2rem;
+  color: $ink-soft;
+  border-radius: 0 8px 8px 0;
+}
+hr { border-color: $rule; opacity: 1; margin: 2.5rem auto; width: 30%; }
+div.sourceCode, pre.sourceCode { border: 1px solid $rule; border-radius: 8px; }
+code { font-size: .88em; }
+
+// Description is for search snippets and cards; don't repeat it under the title
+#title-block-header .description { display: none; }
+
+// ---------- Shared bits ----------
+.kicker {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .68rem;
+  font-weight: 600;
+  color: $blue;
+}
+.meta { font-size: .76rem; color: $muted; }
+.meta .dot { margin: 0 .4rem; opacity: .6; }
+
+.section-head,
+.section-head > section {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 2px solid $ink;
+  padding-top: .7rem;
+  margin: 4rem 0 1.5rem;
+  > section { border: none; padding: 0; margin: 0; width: 100%; }
+  p { margin: 0; }
+  .anchorjs-link { display: none; }
+  h2 { font-size: 1.45rem; margin: 0 !important; border: none; padding: 0; }
+  a { font-size: .84rem; font-weight: 500; text-decoration: none; }
+}
+
+.btn-ak {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .7rem 1.25rem;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: $ink;
+  color: $paper !important;
+  border: 1px solid $ink;
+  transition: background .15s, color .15s, border-color .15s;
+  &:hover { background: $blue; border-color: $blue; }
+  &.ghost { background: transparent; color: $ink !important; }
+  &.ghost:hover { background: $ink; color: $paper !important; }
+  &.yt { background: $yt-red; border-color: $yt-red; }
+  &.yt:hover { background: darken($yt-red, 8%); border-color: darken($yt-red, 8%); }
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .28rem .7rem;
+  border-radius: 999px;
+  border: 1px solid $rule;
+  background: $card;
+  color: $ink-soft;
+  font-size: .72rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color .15s, color .15s, background .15s;
+  &:hover { border-color: $blue; color: $blue; }
+  &.watch { background: $ink; border-color: $ink; color: $paper; }
+  &.watch:hover { background: $yt-red; border-color: $yt-red; color: #fff; }
+  &.off { opacity: .45; pointer-events: none; border-style: dashed; background: transparent; }
+}
+
+// ---------- Home: hero ----------
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 3.5rem 0 3rem;
+  border-bottom: 1px solid $rule;
+
+  h1 {
+    font-family: $font-family-display;
+    font-weight: 400;
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    line-height: 1;
+    letter-spacing: -.02em;
+    margin: .7rem 0 1.2rem;
+    em { color: $blue; }
+  }
+  .lede { font-size: 1.12rem; color: $ink-soft; max-width: 34rem; margin-bottom: 1.8rem; }
+  .cta { display: flex; gap: .7rem; flex-wrap: wrap; }
+}
+
+// Latest-episode card (hero aside)
+.now-card {
+  background: $card;
+  border: 1px solid $rule;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba($ink, .06), 0 18px 40px -24px rgba($ink, .35);
+  .now-body { padding: 1.1rem 1.3rem 1.3rem; }
+  .kicker { color: $signal; }
+  h3 { font-size: 1.25rem; margin: .35rem 0 .3rem; line-height: 1.25; }
+  .pills { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .9rem; }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid $rule;
+    background: $paper;
+    > div { padding: .9rem 1rem; text-align: center; }
+    > div + div { border-left: 1px solid $rule; }
+    strong { display: block; font-family: $font-family-display; font-weight: 400; font-size: 1.9rem; line-height: 1; color: $blue; }
+    span { font-family: $font-family-monospace; font-size: .62rem; color: $muted; text-transform: uppercase; letter-spacing: .08em; }
+  }
+}
+
+// YouTube thumbnail with play badge
+.thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: $ink;
+  overflow: hidden;
+  img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s, opacity .2s; }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 58px; height: 40px;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    background: rgba($ink, .78) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l8 5-8 5z' fill='white'/%3E%3C/svg%3E") center / 26px no-repeat;
+    transition: background-color .2s;
+  }
+  &:hover img { transform: scale(1.04); }
+  &:hover::after { background-color: $yt-red; }
+  &.empty { display: flex; align-items: center; justify-content: center; color: rgba($paper, .7); font-family: $font-family-monospace; font-size: .8rem; }
+  &.empty::after { display: none; }
+}
+
+// ---------- Home: seasons ----------
+.season-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+.season-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  color: $paper !important;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+  &:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -18px rgba($ink, .6); }
+  &::after {
+    content: attr(data-glyph);
+    position: absolute;
+    right: .6rem;
+    bottom: -.8rem;
+    font-family: $font-family-display;
+    font-size: 8rem;
+    line-height: 1;
+    opacity: .13;
+    pointer-events: none;
+  }
+  .kicker { color: rgba($paper, .75); }
+  .status {
+    position: absolute; top: 1.3rem; right: 1.3rem;
+    font-family: $font-family-monospace; font-size: .62rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .08em;
+    padding: .2rem .55rem; border-radius: 999px;
+    background: rgba($paper, .16);
+  }
+  .status.live { background: $signal; }
+  h3 { color: $paper; font-family: $font-family-display; font-weight: 400; font-size: 1.85rem; line-height: 1.05; margin: .7rem 0 .6rem; }
+  p { font-size: .92rem; line-height: 1.55; opacity: .88; margin-bottom: 1rem; flex: 1; }
+  .season-meta { font-family: $font-family-monospace; font-size: .72rem; opacity: .85; }
+  .bar { height: 4px; border-radius: 4px; background: rgba($paper, .2); margin-top: .7rem; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: $paper; border-radius: 4px; }
+  &.s3 { background: $blue; }
+  &.s2 { background: $ink; }
+  &.s4 { background: transparent; color: $ink !important; border: 1.5px dashed $muted;
+         h3 { color: $ink; } .kicker, .season-meta { color: $muted; } .status { background: $paper-deep; color: $muted; }
+         &::after { color: $muted; } }
+}
+
+// ---------- Episode cards (home: latest) ----------
+.ep-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+}
+.ep-card {
+  display: flex;
+  flex-direction: column;
+  background: $card;
+  border: 1px solid $rule;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+  &:hover { transform: translateY(-3px); box-shadow: 0 12px 26px -16px rgba($ink, .35); }
+  .body { padding: .95rem 1.1rem 1.1rem; display: flex; flex-direction: column; flex: 1; }
+  h4 { font-size: 1.02rem; line-height: 1.3; margin: .3rem 0 .7rem; flex: 1; }
+  .pills { display: flex; gap: .35rem; flex-wrap: wrap; }
+}
+
+// ---------- Blog cards ----------
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background: $card;
+  border: 1px solid $rule;
+  border-radius: 12px;
+  overflow: hidden;
+  color: inherit !important;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+  &:hover { transform: translateY(-3px); box-shadow: 0 12px 26px -16px rgba($ink, .35); h4 { color: $blue; } }
+  .card-img {
+    aspect-ratio: 16 / 9;
+    background: $paper-deep;
+    border-bottom: 1px solid $rule;
+    img { width: 100%; height: 100%; object-fit: contain; padding: .6rem; border-radius: 0; }
+  }
+  .card-body { padding: 1.05rem 1.2rem 1.2rem; display: flex; flex-direction: column; flex: 1; }
+  h4 { font-size: 1.08rem; line-height: 1.3; margin: .35rem 0 .5rem; }
+  .excerpt { font-size: .9rem; line-height: 1.55; color: $ink-soft; flex: 1; margin-bottom: .8rem; }
+}
+.post-grid.feature .post-card:first-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  .card-img { aspect-ratio: auto; min-height: 260px; max-height: 340px; border-bottom: none; border-right: 1px solid $rule; }
+  .card-body { padding: 1.8rem; justify-content: center; }
+  h4 { font-family: $font-family-display; font-weight: 400; font-size: 2rem; line-height: 1.1; }
+  .excerpt { font-size: 1rem; flex: 0; }
+  @media (max-width: 760px) { grid-template-columns: 1fr; .card-img { border-right: none; border-bottom: 1px solid $rule; min-height: 0; aspect-ratio: 16 / 9; } }
+}
+
+// Category filter on the blog page
+.cat-filter { display: flex; flex-wrap: wrap; gap: .45rem; margin: 0 0 1.8rem; }
+.cat-filter button {
+  font-family: $font-family-monospace;
+  font-size: .72rem;
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  border: 1px solid $rule;
+  background: $card;
+  color: $ink-soft;
+  cursor: pointer;
+  &:hover { border-color: $blue; color: $blue; }
+  &.active { background: $ink; border-color: $ink; color: $paper; }
+}
+.post-card.hidden { display: none; }
+
+// ---------- Subscribe band ----------
+.subscribe-band {
+  margin: 4.5rem 0 1rem;
+  padding: 2.6rem;
+  border-radius: 18px;
+  background: $ink;
+  color: $paper;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  h2 { color: $paper; font-family: $font-family-display; font-weight: 400; font-size: 2.1rem; margin: 0 0 .5rem; border: none; }
+  p { color: #C9D2E0; margin: 0; }
+  a:not(.btn-ak) { color: #9DBDE6; }
+  .cta { display: flex; gap: .7rem; flex-wrap: wrap; justify-content: flex-end; }
+  .btn-ak.ghost { color: $paper !important; border-color: rgba($paper, .35); }
+  .btn-ak.ghost:hover { background: $paper; color: $ink !important; }
+}
+
+// ---------- Page headers (Episodes, Blog) ----------
+.page-head {
+  padding: 2.8rem 0 1.8rem;
+  border-bottom: 1px solid $rule;
+  margin-bottom: 1.5rem;
+  h1 { font-family: $font-family-display; font-weight: 400; font-size: clamp(2.6rem, 6vw, 3.8rem); line-height: 1; margin: .5rem 0 .9rem; }
+  p { font-size: 1.1rem; color: $ink-soft; max-width: 42rem; margin: 0; }
+}
+
+// ---------- Episodes page ----------
+.ep-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 0;
+  border-bottom: 1px solid $rule;
+  .jump { display: flex; gap: .4rem; flex-wrap: wrap; }
+  input {
+    font-family: $font-family-sans-serif;
+    font-size: .88rem;
+    padding: .45rem .9rem;
+    min-width: 220px;
+    border: 1px solid $rule;
+    border-radius: 999px;
+    background: $card;
+    &:focus { outline: 2px solid rgba($blue, .35); border-color: $blue; }
+  }
+}
+.season-block { scroll-margin-top: 80px; margin-top: 3rem; }
+.season-block-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.2rem;
+  align-items: end;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $ink;
+  .big { font-family: $font-family-display; font-size: 4.2rem; line-height: .8; color: $blue; }
+  h2 { margin: .2rem 0 0 !important; font-size: 1.6rem; }
+  .meta { text-align: right; }
+}
+.ep-row {
+  display: grid;
+  grid-template-columns: 3rem 168px 1fr;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid $rule;
+  .ep-num { font-size: .85rem; font-weight: 600; color: $blue; }
+  .thumb { border-radius: 8px; }
+  .thumb::after { width: 40px; height: 28px; border-radius: 8px; background-size: 18px; }
+  h3 { font-size: 1.08rem; margin: 0 0 .25rem; line-height: 1.3; }
+  .pills { display: flex; gap: .35rem; flex-wrap: wrap; margin-top: .55rem; }
+  &.latest h3::after {
+    content: "Latest";
+    margin-left: .5rem;
+    font-family: $font-family-monospace; font-size: .6rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .08em; vertical-align: middle;
+    color: #fff; background: $signal; padding: .15rem .45rem; border-radius: 999px;
+  }
+  @media (max-width: 640px) {
+    grid-template-columns: 2.2rem 1fr;
+    .thumb { display: none; }
+  }
+}
+.ep-row.hidden { display: none; }
+.season-intro { color: $ink-soft; margin: 1rem 0 .5rem; max-width: 46rem; }
+.empty-note {
+  padding: 1.5rem;
+  border: 1.5px dashed $rule;
+  border-radius: 12px;
+  color: $muted;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+// ---------- Listing-page housekeeping ----------
+.home #title-block-header,
+.hub #title-block-header { display: none; }
+.home main.content, .hub main.content { padding-top: 0; }
+main.content .ep-card h4, main.content .post-card h4 { margin-top: .4rem; }
+main.content .season-card h3 { font-size: 1.85rem; margin: .7rem 0 .6rem; }
+main.content .now-card h3 { font-size: 1.3rem; margin: .3rem 0 .2rem; }
+main.content .subscribe-band h2 { font-size: 2.1rem; margin: 0 0 .5rem; }
+main.content .page-head h1 { margin-top: .5rem; }
+main.content .season-block-head h2 { font-size: 1.6rem; }
+main.content .ep-row h3 { font-size: 1.08rem; margin: 0 0 .2rem; }
+main.content .ep-row p, main.content .ep-row .meta { margin: 0; }
+.now-card, .season-card, .ep-card, .ep-row, .post-card { .anchorjs-link { display: none; } }
+main.content .post-card .excerpt, main.content .season-card p { font-size: .9rem; }
+main.content p.meta { font-size: .76rem; margin-bottom: 0; }
+
+// Related link at the end of a blog post
+.also-read {
+  margin: 3.5rem 0 1rem;
+  padding: 1.3rem 1.5rem;
+  border-radius: 12px;
+  background: $blue-wash;
+  font-size: .98rem;
+  p { margin: 0; }
+}
+
+// ---------- Responsive ----------
+@media (max-width: 860px) {
+  .home-hero, .subscribe-band { grid-template-columns: 1fr; }
+  .home-hero { gap: 2rem; padding-top: 2rem; }
+  .subscribe-band { padding: 2rem 1.5rem; .cta { justify-content: flex-start; } }
+  .ep-toolbar input { min-width: 0; width: 100%; }
+}

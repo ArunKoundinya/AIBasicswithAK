@@ -1,0 +1,286 @@
+# Every episode of the YouTube series. This file drives the Episodes page and the
+# home page. To add an episode, copy a block and fill it in. Paths are relative to
+# the site root; `video` is the YouTube video id (the part after youtu.be/).
+
+- title: "Why Python?"
+  season: 2
+  episode: 1
+  date: 2024-03-01
+  video: "zynrOOSNXro"
+  slides: AI_Vlogs/slides/season02/episode01/why-python.html
+  homework: AI_Vlogs/homework/season02/episode01/homework.html
+
+- title: "Python Data Types"
+  season: 2
+  episode: 2
+  date: 2024-03-08
+  video: "-41cT7lAsZ4"
+  slides: AI_Vlogs/slides/season02/episode02/variables_datatypes.html
+  homework: AI_Vlogs/homework/season02/episode02/homework.html
+  demo: AI_Vlogs/slides/season02/episode02/Demo.py
+
+- title: "Numbers & Booleans"
+  season: 2
+  episode: 3
+  date: 2024-03-17
+  video: "i4ubGLFbu30"
+  slides: AI_Vlogs/slides/season02/episode03/numbers_booleans.html
+  homework: AI_Vlogs/homework/season02/episode03/homework.html
+  demo: AI_Vlogs/slides/season02/episode03/epi03demo.py
+
+- title: "Strings & Characters - 1"
+  season: 2
+  episode: 4
+  date: 2024-03-24
+  video: "Pr-qno6m3kA"
+  slides: AI_Vlogs/slides/season02/episode04/strings_characters_1.html
+  homework: AI_Vlogs/homework/season02/episode04/homework.html
+
+- title: "Strings & Characters - 2"
+  season: 2
+  episode: 5
+  date: 2024-03-31
+  video: "YtblBrvnqII"
+  slides: AI_Vlogs/slides/season02/episode05/strings_characters_2.html
+  homework: AI_Vlogs/homework/season02/episode05/homework.html
+
+- title: "Strings & Characters - 3"
+  season: 2
+  episode: 6
+  date: 2024-04-07
+  video: "-DrQBPWuz9I"
+  slides: AI_Vlogs/slides/season02/episode06/strings_characters_3.html
+  homework: AI_Vlogs/homework/season02/episode06/homework.html
+  demo: AI_Vlogs/slides/season02/episode06/demo.py
+
+- title: "Loops and Breaks"
+  season: 2
+  episode: 7
+  date: 2024-04-15
+  video: "9T4GwNTjgmo"
+  slides: AI_Vlogs/slides/season02/episode07/Loops_Breaks.html
+  homework: AI_Vlogs/homework/season02/episode07/homework.html
+  demo: AI_Vlogs/slides/season02/episode07/epi07demo.py
+
+- title: "Lists & Tuples"
+  season: 2
+  episode: 8
+  date: 2024-04-22
+  video: "FCYLnHAdO98"
+  slides: AI_Vlogs/slides/season02/episode08/lists_tuples.html
+  homework: AI_Vlogs/homework/season02/episode08/homework.html
+  demo: AI_Vlogs/slides/season02/episode08/epi08demo.py
+
+- title: "List Operations"
+  season: 2
+  episode: 9
+  date: 2024-05-11
+  video: "OF_nlGYck_0"
+  slides: AI_Vlogs/slides/season02/episode09/List_Operations.html
+  homework: AI_Vlogs/homework/season02/episode09/homework.html
+  demo: AI_Vlogs/slides/season02/episode09/epi09demo.py
+
+- title: "Dictionaries"
+  season: 2
+  episode: 10
+  date: 2024-05-13
+  video: "J0KG3TiQ7e4"
+  slides: AI_Vlogs/slides/season02/episode10/Dictionaries.html
+  homework: AI_Vlogs/homework/season02/episode10/homework.html
+  demo: AI_Vlogs/slides/season02/episode10/epi10demo.py
+
+- title: "Functions"
+  season: 2
+  episode: 11
+  date: 2024-05-17
+  video: "w-019_VLkNs"
+  slides: AI_Vlogs/slides/season02/episode11/Functions.html
+  homework: AI_Vlogs/homework/season02/episode11/homework.html
+  demo: AI_Vlogs/slides/season02/episode11/epi11demo.py
+
+- title: "Lambda Functions"
+  season: 2
+  episode: 12
+  date: 2024-05-31
+  video: "d_foHhfc8Bw"
+  slides: AI_Vlogs/slides/season02/episode12/Lamba_Functions.html
+  homework: AI_Vlogs/homework/season02/episode12/homework.html
+
+- title: "Lambda with Map, Filter & Reduce"
+  season: 2
+  episode: 13
+  date: 2024-06-17
+  video: "973XwAKfTsc"
+  slides: AI_Vlogs/slides/season02/episode13/Lambda_map_filter_reduce.html
+  demo: AI_Vlogs/slides/season02/episode13/epi13demo.py
+
+- title: "Object-Oriented Programming"
+  season: 2
+  episode: 14
+  date: 2024-07-21
+  video: "7hP2vN3yZZc"
+  slides: AI_Vlogs/slides/season02/episode14/object_oriented.html
+
+- title: "Classes & Objects"
+  season: 2
+  episode: 15
+  date: 2024-07-28
+  video: "hemBUSaTaJ0"
+  slides: AI_Vlogs/slides/season02/episode15/objects_classes.html
+  homework: AI_Vlogs/homework/season02/episode15/homework.html
+  demo: AI_Vlogs/slides/season02/episode15/epi15demo.py
+
+- title: "Inheritance"
+  season: 2
+  episode: 16
+  date: 2024-07-31
+  video: "3k_oiIbtotY"
+  slides: AI_Vlogs/slides/season02/episode16/inheritance.html
+  homework: AI_Vlogs/homework/season02/episode16/homework.html
+  demo: AI_Vlogs/slides/season02/episode16/epi16demo.py
+
+- title: "Multiple Inheritance"
+  season: 2
+  episode: 17
+  date: 2025-04-06
+  video: "zLKdAo2BCRE"
+  slides: AI_Vlogs/slides/season02/episode17/multi-inheritance.html
+  homework: AI_Vlogs/homework/season02/episode17/homework.html
+
+- title: "Multi Threading & Multi Processing"
+  season: 2
+  episode: 18
+  date: 2025-04-13
+  video: "vxwTvnnoNS8"
+  slides: AI_Vlogs/slides/season02/episode18/multi-threading-processing.html
+  demo: AI_Vlogs/slides/season02/episode18/epidemo18.py
+
+- title: "Debugging the Code"
+  season: 2
+  episode: 19
+  date: 2025-04-20
+  video: "2UJ94KxKwXs"
+  slides: AI_Vlogs/slides/season02/episode19/python_debugging.html
+  demo: AI_Vlogs/slides/season02/episode19/epidemo19.py
+
+- title: "End to End Project"
+  season: 2
+  episode: 20
+  date: 2025-04-27
+  video: "g8Jvx-AgN7w"
+  demo: https://github.com/ArunKoundinya/AIBasicswithAK/blob/master/AI_Vlogs/slides/season02/episode20/EndtoEnd_PythonProject.ipynb
+
+- title: "Deploying the Project"
+  season: 2
+  episode: 21
+  date: 2025-05-04
+  video: "c6foBK39eSQ"
+  demo: AI_Vlogs/slides/season02/episode21/deploying.py
+
+- title: "What is Statistics?"
+  season: 3
+  episode: 1
+  date: 2025-05-30
+  video: "Fofh-2hJAYQ"
+  slides: AI_Vlogs/slides/season03/episode01/statistics_episode01.html
+
+- title: "Types of Data"
+  season: 3
+  episode: 2
+  date: 2025-07-28
+  video: "xMrkHjzACNI"
+  slides: AI_Vlogs/slides/season03/episode02/statistics_episode02.html
+
+- title: "Descriptive Statistics"
+  season: 3
+  episode: 3
+  date: 2025-08-04
+  video: "1Ao6BqrUu_Q"
+  slides: AI_Vlogs/slides/season03/episode03/statistics_episode03.html
+
+- title: "Data Visualization"
+  season: 3
+  episode: 4
+  date: 2025-08-24
+  video: "tEbyY9UDhi4"
+  slides: AI_Vlogs/slides/season03/episode04/statistics_episode04.html
+
+- title: "Basics of Probability"
+  season: 3
+  episode: 5
+  date: 2025-09-08
+  video: "x3e14_EzwDI"
+  slides: AI_Vlogs/slides/season03/episode05/statistics_episode05.html
+
+- title: "Probability Distributions"
+  season: 3
+  episode: 6
+  date: 2025-11-08
+  video: "_YMpg_RdQFI"
+  slides: AI_Vlogs/slides/season03/episode06/statistics_episode06.html
+
+- title: "Central Limit Theorem"
+  season: 3
+  episode: 7
+  date: 2026-01-12
+  video: "q7bxXTYudos"
+  slides: AI_Vlogs/slides/season03/episode07/statistics_episode07.html
+
+- title: "Confidence Intervals"
+  season: 3
+  episode: 8
+  date: 2026-02-03
+  video: "RjJLZWQb3so"
+  slides: AI_Vlogs/slides/season03/episode08/statistics_episode08.html
+
+- title: "T-Distribution"
+  season: 3
+  episode: 9
+  date: 2026-03-07
+  video: "Jvg9bFq6KVo"
+  slides: AI_Vlogs/slides/season03/episode09/statistics_episode09.html
+
+- title: "Hypothesis Testing"
+  season: 3
+  episode: 10
+  date: 2026-03-10
+  video: "Gv6ZR9ThmPo"
+  slides: AI_Vlogs/slides/season03/episode10/statistics_episode10.html
+  homework: AI_Vlogs/homework/season03/episode10/homework.html
+
+- title: "Type I & Type II Errors"
+  season: 3
+  episode: 11
+  date: 2026-03-22
+  video: "bEx6OrVw86Y"
+  slides: AI_Vlogs/slides/season03/episode11/statistics_episode11.html
+  homework: AI_Vlogs/homework/season03/episode11/homework.html
+
+- title: "Two-Sample Tests"
+  season: 3
+  episode: 12
+  date: 2026-04-16
+  video: "KW4ttIE7Jhk"
+  slides: AI_Vlogs/slides/season03/episode12/statistics_episode12.html
+  homework: AI_Vlogs/homework/season03/episode12/homework.html
+
+- title: "Chi-Square Tests"
+  season: 3
+  episode: 13
+  date: 2026-04-29
+  video: "YimKvuJf3k0"
+  slides: AI_Vlogs/slides/season03/episode13/statistics_episode13.html
+
+- title: "Degrees of Freedom"
+  season: 3
+  episode: 14
+  date: 2026-05-10
+  video: "G9CI3cwaz6g"
+  slides: AI_Vlogs/slides/season03/episode14/statistics_episode14.html
+
+- title: "ANOVA"
+  season: 3
+  episode: 15
+  date: 2026-06-11
+  video: "17uIWsg8bQY"
+  slides: AI_Vlogs/slides/season03/episode15/statistics_episode15.html

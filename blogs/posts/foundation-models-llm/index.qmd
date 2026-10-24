@@ -2,7 +2,8 @@
 title: "Foundation Models - LLMs"
 author: "Arun Koundinya Parasa"
 date: "2025-02-15"
-categories: [nlp, llm, deeplearning]
+description: "What a foundation model is, explained with a restaurant's base gravy, plus how large language models and the transformer behind them work, and the main types of LLMs."
+categories: [LLMs, NLP, deep learning]
 image: "image.png"
 ---
 

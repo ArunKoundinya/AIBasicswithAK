@@ -1,0 +1,32 @@
+<%
+// Hero card: the newest episode plus series-wide counts.
+const root = (typeof templateParams !== "undefined" && templateParams.root) || "";
+const eps = items.filter(i => i.video);
+const ep = eps[0] || items[0];
+const seasons = new Set(items.map(i => i.season)).size;
+const notes = items.filter(i => i.slides).length;
+const href = (p) => p && p.startsWith("http") ? p : root + p;
+%>
+```{=html}
+<div class="now-card list">
+  <a class="thumb" href="https://youtu.be/<%- ep.video %>" target="_blank" rel="noopener" aria-label="Watch <%= ep.title %> on YouTube">
+    <img src="https://i.ytimg.com/vi/<%- ep.video %>/hqdefault.jpg" alt="" loading="eager">
+  </a>
+  <div class="now-body">
+    <span class="kicker">● Latest · Season <%= ep.season %>, Episode <%= ep.episode %></span>
+    <h3><%= ep.title %></h3>
+    <p class="meta"><%= ep.date %></p>
+    <div class="pills">
+      <a class="pill watch" href="https://youtu.be/<%- ep.video %>" target="_blank" rel="noopener">▶ Watch</a>
+      <% if (ep.slides) { %><a class="pill" href="<%- href(ep.slides) %>">Slides</a><% } %>
+      <% if (ep.homework) { %><a class="pill" href="<%- href(ep.homework) %>">Homework</a><% } %>
+      <% if (ep.demo) { %><a class="pill" href="<%- href(ep.demo) %>">Code</a><% } %>
+    </div>
+  </div>
+  <div class="stats">
+    <div><strong><%= items.length %></strong><span>Episodes</span></div>
+    <div><strong><%= seasons %></strong><span>Seasons</span></div>
+    <div><strong><%= notes %></strong><span>Slide decks</span></div>
+  </div>
+</div>
+```

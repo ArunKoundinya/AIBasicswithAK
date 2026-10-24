@@ -1,8 +1,9 @@
 ---
-title: "Representation Models - Text Classification "
+title: "Representation Models - Text Classification"
 author: "Arun Koundinya Parasa"
 date: "2025-02-23"
-categories: [nlp, llm, deeplearning]
+description: "How representation models turn text into numbers: what BERT is, how masked language modelling and next sentence prediction train it, and how sentence transformers power text classification."
+categories: [LLMs, NLP, deep learning]
 image: "image.jpg"
 ---
 

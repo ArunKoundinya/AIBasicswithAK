@@ -1,28 +1,95 @@
 ---
 title: "AI Basics with AK"
+pagetitle: "Free videos, slides and homework on Python, statistics and AI"
+description: "Companion site to the AI Basics with AK YouTube series by Arun Koundinya Parasa: slides, homework and code for every episode on Python, statistics and AI, plus explainer blogs."
+image: images/social-card.png
+page-layout: full
+title-block-style: none
+toc: false
+comments: false
+body-classes: home
+listing:
+  - id: now
+    contents: AI_Vlogs/episodes.yml
+    sort: "date desc"
+    template: _templates/now-card.ejs
+    page-size: 1000
+    date-format: "MMM D, YYYY"
+  - id: seasons
+    contents: AI_Vlogs/episodes.yml
+    sort: "date desc"
+    template: _templates/season-cards.ejs
+    page-size: 1000
+  - id: recent
+    contents: AI_Vlogs/episodes.yml
+    sort: "date desc"
+    max-items: 3
+    template: _templates/ep-cards.ejs
+  - id: posts
+    contents: "blogs/posts/*/index.qmd"
+    sort: "date desc"
+    max-items: 3
+    template: _templates/post-cards.ejs
+    date-format: "MMM YYYY"
+    max-description-length: 150
 ---
 
-Welcome to my AI Vlog Series Hub! 🚀 This website is crafted to elevate your experience with my YouTube AI Vlog Series. Let's dive into the exciting content structured into two sections:
+::: {.home-hero}
+::: {.hero-copy}
+[Free YouTube course · slides · homework · code]{.kicker}
 
-💻 Notes and Codes: Uncover the magic behind the scenes! Starting from Season-2 onward, immerse yourself in detailed notes and codes. May be presented in markdown files or dynamic presentations.
+# Learn the basics of AI, <em>one episode at a time.</em> {.unnumbered .unlisted}
 
-📚 Assisted Blogs: Thoughtfully created blogs designed to complement the AI Vlog Series. It has fascinating details that bring the series to life.
+[Short videos on Python, statistics and the ideas behind modern AI, each with the slides I teach from, homework to practise on, and the demo code. Explained simply, in plain language.]{.lede}
 
-I'm thrilled to embark on this next chapter, and I hope you'll find joy and enrichment in exploring these resources. Your support is my motivation—thank you for being a part of this exciting adventure! 🌟
+::: {.cta}
+[▶ Subscribe on YouTube](https://www.youtube.com/@AIBasicswithAK?sub_confirmation=1){.btn-ak .yt}
+[Browse all episodes](AI_Vlogs/index.qmd){.btn-ak .ghost}
+:::
+:::
 
-My Last three videos
+::: {.hero-aside}
+::: {#now}
+:::
+:::
+:::
 
-{{< video https://www.youtube.com/embed/YimKvuJf3k0?si=AGCTtt9u3l_Yoshs width="400" height="300" >}}
+::: {.section-head}
+## Pick a season {#h-seasons .unnumbered .unlisted}
 
-{{< video https://www.youtube.com/embed/KW4ttIE7Jhk?si=8IbFM-q_6IPy3kFJ width="400" height="300" >}}
+[Each season builds from zero]{.meta}
+:::
 
-{{< video https://www.youtube.com/embed/bEx6OrVw86Y?si=cY-iS0bgyTJYOyXh width="400" height="300" >}}
+::: {#seasons}
+:::
 
+::: {.section-head}
+## Recent episodes {#h-recent .unnumbered .unlisted}
 
+[Episode guide →](AI_Vlogs/index.qmd)
+:::
 
+::: {#recent}
+:::
 
+::: {.section-head}
+## From the blog {#h-blog .unnumbered .unlisted}
 
+[All posts →](blogs/index.qmd)
+:::
 
+::: {#posts}
+:::
 
+::: {.subscribe-band}
+::: {}
+## Don't miss the next episode {.unnumbered .unlisted}
 
+Subscribe on YouTube for the videos, or follow the blog by RSS. For essays on psychology, culture and management, see my other site, [Canvass And Analyze](https://arunkoundinya.github.io/CanvassAndAnalyze/).
+:::
 
+::: {.cta}
+[▶ YouTube](https://www.youtube.com/@AIBasicswithAK?sub_confirmation=1){.btn-ak .yt}
+[RSS feed](blogs/index.xml){.btn-ak .ghost}
+:::
+:::

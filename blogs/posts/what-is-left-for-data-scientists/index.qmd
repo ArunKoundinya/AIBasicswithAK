@@ -2,7 +2,8 @@
 title: "What Is Left for a Data Scientist When AI Writes the Code?"
 author: "Arun Koundinya Parasa"
 date: "2026-05-11"
-categories: [data science, AI, consulting, business analytics]
+description: "AI now writes the code and AutoML builds the model. What stays human for a data scientist: the DIKW climb from data to wisdom, the consulting layer of DMAIC, and data science as kaizen."
+categories: [career, AI, business analytics]
 image: "image.png"
 ---
 

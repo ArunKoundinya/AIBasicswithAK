@@ -1,14 +1,34 @@
 ---
-title: "My Views and learnings on AI"
-subtitle: "Having AI for breakfast"
+title: "Blog"
+pagetitle: "Blog"
+description: "Explainers and opinions on data science and AI by Arun Koundinya Parasa: LLMs, representation models, classification metrics, and what is left for data scientists when AI writes the code."
+image: ../images/social-card.png
+page-layout: full
+title-block-style: none
+toc: false
+body-classes: hub
 listing:
+  id: posts
   contents: posts
   sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-  feed: true
-page-layout: full
-title-block-banner: true
+  template: ../_templates/post-cards.ejs
+  template-params:
+    filter: true
+    feature: true
+  date-format: "MMM D, YYYY"
+  max-description-length: 180
+  page-size: 1000
+  feed:
+    title: "AI Basics with AK — blog"
 ---
+
+::: {.page-head}
+[Explainers & opinions]{.kicker}
+
+# Blog {.unnumbered .unlisted}
+
+Longer reads that go with the videos: how large language models work, how to choose a metric, and what the job of a data scientist is becoming.
+:::
+
+::: {#posts}
+:::

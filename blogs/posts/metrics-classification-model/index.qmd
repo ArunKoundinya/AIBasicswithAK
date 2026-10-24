@@ -2,7 +2,8 @@
 title: "What metrics to be chosen for classification modelling?"
 author: "Arun Koundinya Parasa"
 date: "2024-04-10"
-categories: [classification, modelling, metrics, binaryclassifcation]
+description: "Accuracy, recall, precision or F1? The confusion matrix made simple, and how to choose one metric for cross-sell, customer attrition and fraud models by starting from how the business will use the predictions."
+categories: [machine learning, metrics]
 image: "confusion.png"
 ---
 

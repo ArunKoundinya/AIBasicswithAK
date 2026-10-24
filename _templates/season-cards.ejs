@@ -1,0 +1,35 @@
+<%
+// Season cards on the home page. Episode counts come from AI_Vlogs/episodes.yml;
+// a season with no episodes yet shows as "coming next".
+const root = (typeof templateParams !== "undefined" && templateParams.root) || "";
+const SEASONS = [
+  { n: 3, name: "Introduction to Statistics", glyph: "σ",
+    blurb: "From types of data to hypothesis tests and ANOVA: the statistics every data scientist leans on, built up one idea at a time." },
+  { n: 2, name: "Introduction to Python Programming", glyph: "{ }",
+    blurb: "From your first variable to classes, threads, debugging and an end-to-end project you deploy yourself." },
+  { n: 4, name: "Coming next", glyph: "?",
+    blurb: "The next season is in the works. Subscribe on YouTube to hear when the first episode lands." },
+];
+const latest = items[0];  // listing is sorted "date desc"
+%>
+```{=html}
+<div class="season-grid list">
+<% for (const s of SEASONS) {
+     const eps = items.filter(i => i.season === s.n);
+     const live = latest && latest.season === s.n;
+     const hw = eps.filter(i => i.homework).length;
+     const status = eps.length === 0 ? "Planned" : (live ? "Now airing" : "Complete"); %>
+  <a class="season-card s<%- s.n %>" href="<%- eps.length ? root + 'AI_Vlogs/index.html#season-' + s.n : 'https://www.youtube.com/@AIBasicswithAK?sub_confirmation=1' %>" data-glyph="<%= s.glyph %>">
+    <span class="status<%- live ? ' live' : '' %>"><%= status %></span>
+    <span class="kicker">Season <%= String(s.n).padStart(2, "0") %></span>
+    <h3><%= s.name %></h3>
+    <p><%= s.blurb %></p>
+    <% if (eps.length) { %>
+    <span class="season-meta"><%= eps.length %> episodes<% if (hw) { %> · <%= hw %> with homework<% } %></span>
+    <% } else { %>
+    <span class="season-meta">Subscribe to get notified →</span>
+    <% } %>
+  </a>
+<% } %>
+</div>
+```

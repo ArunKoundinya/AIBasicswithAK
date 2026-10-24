@@ -1,0 +1,68 @@
+<%
+// Full episode guide, grouped by season (newest season first).
+// Season names and intros live here; episodes live in AI_Vlogs/episodes.yml.
+const root = (typeof templateParams !== "undefined" && templateParams.root) || "";
+const href = (p) => p && p.startsWith("http") ? p : root + p;
+const SEASONS = {
+  3: { name: "Introduction to Statistics",
+       intro: "Statistics for people who want to use it, not just pass an exam: data types, summaries and charts, probability, sampling, confidence intervals and the family of hypothesis tests." },
+  2: { name: "Introduction to Python Programming",
+       intro: "Python from zero: data types, strings, loops, collections, functions, object-oriented programming, concurrency and debugging, ending with a project you build and deploy." },
+};
+const latest = items[0];  // listing is sorted "date desc"
+const nums = [...new Set(items.map(i => i.season))].sort((a, b) => b - a);
+const pad = (n) => String(n).padStart(2, "0");
+%>
+```{=html}
+<div class="ep-toolbar">
+  <nav class="jump" aria-label="Jump to season">
+    <% for (const n of nums) { %><a class="pill" href="#season-<%- n %>">Season <%= n %> · <%= (SEASONS[n] || {}).name || "" %></a><% } %>
+  </nav>
+  <input type="search" id="ep-search" placeholder="Search episodes, e.g. lambda, t-test" aria-label="Search episodes">
+</div>
+<% for (const n of nums) {
+     const eps = items.filter(i => i.season === n).sort((a, b) => a.episode - b.episode);
+     const first = eps[0], last = eps[eps.length - 1]; %>
+<section class="season-block" id="season-<%- n %>">
+  <div class="season-block-head">
+    <span class="big"><%= pad(n) %></span>
+    <div><span class="kicker">Season <%= n %></span><h2><%= (SEASONS[n] || {}).name || ("Season " + n) %></h2></div>
+    <p class="meta"><%= eps.length %> episodes<br><%= first.date %> – <%= last.date %></p>
+  </div>
+  <% if (SEASONS[n]) { %><p class="season-intro"><%= SEASONS[n].intro %></p><% } %>
+  <% for (const ep of eps) { %>
+  <article class="ep-row<%- ep === latest ? ' latest' : '' %>" data-q="<%= (ep.title + ' season ' + n + ' episode ' + ep.episode).toLowerCase() %>">
+    <span class="ep-num">E<%= pad(ep.episode) %></span>
+    <% if (ep.video) { %>
+    <a class="thumb" href="https://youtu.be/<%- ep.video %>" target="_blank" rel="noopener" aria-label="Watch <%= ep.title %> on YouTube">
+      <img src="https://i.ytimg.com/vi/<%- ep.video %>/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    <% } else { %><div class="thumb empty">Soon</div><% } %>
+    <div>
+      <h3><%= ep.title %></h3>
+      <p class="meta"><%= ep.date %></p>
+      <div class="pills">
+        <% if (ep.video) { %><a class="pill watch" href="https://youtu.be/<%- ep.video %>" target="_blank" rel="noopener">▶ Watch</a><% } %>
+        <% if (ep.slides) { %><a class="pill" href="<%- href(ep.slides) %>">Slides</a><% } %>
+        <% if (ep.homework) { %><a class="pill" href="<%- href(ep.homework) %>">Homework</a><% } %>
+        <% if (ep.demo) { %><a class="pill" href="<%- href(ep.demo) %>"<%- ep.demo.startsWith("http") ? ' target="_blank" rel="noopener"' : '' %>>Code</a><% } %>
+      </div>
+    </div>
+  </article>
+  <% } %>
+</section>
+<% } %>
+<script>
+(() => {
+  const box = document.getElementById("ep-search");
+  if (!box) return;
+  box.addEventListener("input", () => {
+    const q = box.value.trim().toLowerCase();
+    document.querySelectorAll(".ep-row").forEach(r =>
+      r.classList.toggle("hidden", q && !r.dataset.q.includes(q)));
+    document.querySelectorAll(".season-block").forEach(s =>
+      s.style.display = s.querySelector(".ep-row:not(.hidden)") ? "" : "none");
+  });
+})();
+</script>
+```

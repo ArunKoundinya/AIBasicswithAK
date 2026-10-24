@@ -1,0 +1,27 @@
+<%
+// Compact episode cards (home page "Recent episodes").
+const root = (typeof templateParams !== "undefined" && templateParams.root) || "";
+const href = (p) => p && p.startsWith("http") ? p : root + p;
+%>
+```{=html}
+<div class="ep-grid list">
+<% for (const ep of items) { %>
+  <article class="ep-card" <%= metadataAttrs(ep) %>>
+    <% if (ep.video) { %>
+    <a class="thumb" href="https://youtu.be/<%- ep.video %>" target="_blank" rel="noopener" aria-label="Watch <%= ep.title %> on YouTube">
+      <img src="https://i.ytimg.com/vi/<%- ep.video %>/mqdefault.jpg" alt="" loading="lazy">
+    </a>
+    <% } else { %><div class="thumb empty">Video coming soon</div><% } %>
+    <div class="body">
+      <span class="kicker">S<%= String(ep.season).padStart(2, "0") %> · E<%= String(ep.episode).padStart(2, "0") %></span>
+      <h4><%= ep.title %></h4>
+      <div class="pills">
+        <% if (ep.slides) { %><a class="pill" href="<%- href(ep.slides) %>">Slides</a><% } %>
+        <% if (ep.homework) { %><a class="pill" href="<%- href(ep.homework) %>">Homework</a><% } %>
+        <% if (ep.demo) { %><a class="pill" href="<%- href(ep.demo) %>">Code</a><% } %>
+      </div>
+    </div>
+  </article>
+<% } %>
+</div>
+```

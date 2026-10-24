@@ -2,7 +2,8 @@
 title: "Does Data Scientists need to learn programming?"
 author: "Arun Koundinya Parasa"
 date: "2024-03-17"
-categories: [programming]
+description: "Coding is not copy and paste from ChatGPT. Why data scientists still need to understand the full cycle of programming: what to code, how to code, testing, and coding within limits."
+categories: [career, programming]
 image: "image.png"
 ---
 
