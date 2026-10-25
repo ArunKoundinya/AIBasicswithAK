@@ -97,3 +97,38 @@ Subscribe on YouTube for the videos, or follow the blog by RSS. For essays on ps
 [RSS feed](blogs/index.xml){.btn-ak .ghost}
 :::
 :::
+
+::: {.section-head}
+## More from Arun {#h-more .unnumbered .unlisted}
+
+[Other sites I write and build]{.meta}
+:::
+
+```{=html}
+<div class="sister-grid">
+  <a class="sister-card" href="https://arunkoundinya.github.io/CanvassAndAnalyze/" style="--c:#B4532A">
+    <span class="kicker">Essays</span>
+    <h3>Canvass And Analyze</h3>
+    <p>Essays on psychology, analytics and management.</p>
+    <span class="go">Read the essays →</span>
+  </a>
+  <a class="sister-card" href="https://arunkoundinya.github.io/TidyTuesday/" style="--c:#0B7A5C">
+    <span class="kicker">Data viz</span>
+    <h3>Tidy Tuesday</h3>
+    <p>Weekly TidyTuesday charts in R and Python, each with the code.</p>
+    <span class="go">See the charts →</span>
+  </a>
+  <a class="sister-card" href="https://arunkoundinya.github.io/DeepLearning/" style="--c:#7A4A9E">
+    <span class="kicker">Study notes</span>
+    <h3>Deep Learning notebook</h3>
+    <p>Notebooks on TensorFlow, neural networks, CNNs, LSTMs and NLP. Each one runs in Colab.</p>
+    <span class="go">Open the notes →</span>
+  </a>
+  <a class="sister-card" href="https://arunkoundinya.github.io/" style="--c:#0F1B2D">
+    <span class="kicker">About me</span>
+    <h3>Portfolio</h3>
+    <p>Who I am, what I work on, and how to get in touch.</p>
+    <span class="go">Meet Arun →</span>
+  </a>
+</div>
+```

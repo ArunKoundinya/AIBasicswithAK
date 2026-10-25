@@ -43,7 +43,7 @@ website:
         aria-label: LinkedIn
 
   page-footer:
-    left: "&copy; 2024 – 2026 Arun Koundinya Parasa · More writing at [Canvass And Analyze](https://arunkoundinya.github.io/CanvassAndAnalyze/)"
+    left: "&copy; 2024 – 2026 [Arun Koundinya Parasa](https://arunkoundinya.github.io/) · Also: [Canvass And Analyze](https://arunkoundinya.github.io/CanvassAndAnalyze/) · [Tidy Tuesday](https://arunkoundinya.github.io/TidyTuesday/) · [Deep Learning](https://arunkoundinya.github.io/DeepLearning/)"
     right: "Built with 💙 and [Quarto](https://quarto.org/)."
 
 format:

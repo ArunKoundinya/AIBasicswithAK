@@ -142,6 +142,10 @@ code { font-size: .88em; }
   border-top: 2px solid $ink;
   padding-top: .7rem;
   margin: 4rem 0 1.5rem;
+  // Quarto offsets a targeted section with a ::before spacer, which would become a
+  // third flex item; use scroll-margin for the sticky navbar instead
+  scroll-margin-top: 70px;
+  &:target::before { display: none; }
   > section { border: none; padding: 0; margin: 0; width: 100%; }
   p { margin: 0; }
   .anchorjs-link { display: none; }
@@ -407,6 +411,35 @@ code { font-size: .88em; }
   .btn-ak.ghost { color: $paper !important; border-color: rgba($paper, .35); }
   .btn-ak.ghost:hover { background: $paper; color: $ink !important; }
 }
+
+// ---------- Home: sister sites ----------
+.sister-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  @media (max-width: 1000px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 560px)  { grid-template-columns: 1fr; }
+}
+.sister-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.2rem 1.25rem 1.25rem;
+  background: $card;
+  border: 1px solid $rule;
+  border-top: 4px solid var(--c, #{$blue});
+  border-radius: 12px;
+  color: $ink !important;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  .kicker { color: var(--c, #{$blue}); }
+  h3 { font-family: $font-family-display; font-weight: 400; font-size: 1.5rem; line-height: 1.1; margin: .45rem 0 .5rem; }
+  p { font-size: .9rem; line-height: 1.55; color: $ink-soft; margin: 0 0 1rem; flex: 1; }
+  .go { font-size: .82rem; font-weight: 600; color: var(--c, #{$blue}); }
+  &:hover { transform: translateY(-3px); box-shadow: 0 12px 26px -16px rgba($ink, .35); border-color: var(--c, #{$blue}); }
+}
+main.content .sister-card h3 { font-size: 1.5rem; margin: .45rem 0 .5rem; }
+main.content .sister-card p { font-size: .9rem; }
 
 // ---------- Page headers (Episodes, Blog) ----------
 .page-head {
